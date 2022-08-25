@@ -87,76 +87,79 @@
 \indexentry{series regression|hyperpage}{71}
 \indexentry{sieve method|hyperpage}{71}
 \indexentry{$k$-nearest-neighbor regression|hyperpage}{71}
-\indexentry{kernel regression|hyperpage}{71}
-\indexentry{bandwidth|hyperpage}{71}
+\indexentry{kernel regression|hyperpage}{72}
+\indexentry{bandwidth|hyperpage}{72}
 \indexentry{local constant regression|hyperpage}{72}
 \indexentry{kernel function|hyperpage}{72}
-\indexentry{social interaction|hyperpage}{75}
-\indexentry{linear-in-means model|hyperpage}{75}
-\indexentry{endogenous effects|hyperpage}{75}
-\indexentry{contextual effect|hyperpage}{75}
-\indexentry{correlated effects|hyperpage}{75}
-\indexentry{spillover effect|hyperpage}{76}
-\indexentry{social multiplier effect|hyperpage}{76}
-\indexentry{reflection problem|hyperpage}{76}
-\indexentry{social network|hyperpage}{76}
-\indexentry{spatial dependence|hyperpage}{77}
-\indexentry{spatial autocorrelation|hyperpage}{77}
-\indexentry{spatial statistics|hyperpage}{77}
-\indexentry{spatial econometrics|hyperpage}{77}
-\indexentry{endogenous effects|hyperpage}{80}
-\indexentry{contextual effect|hyperpage}{80}
-\indexentry{correlated effects|hyperpage}{80}
-\indexentry{linear-in-means model|hyperpage}{80}
-\indexentry{reflection problem|hyperpage}{81}
-\indexentry{social network|hyperpage}{85}
-\indexentry{graph|hyperpage}{85}
-\indexentry{isolated|hyperpage}{86}
-\indexentry{complementarity|hyperpage}{87}
-\indexentry{conformity|hyperpage}{87}
-\indexentry{intransitive triad|hyperpage}{90}
-\indexentry{spatial data|hyperpage}{93}
-\indexentry{GIS|hyperpage}{93}
-\indexentry{spatial autocorrelation|hyperpage}{94}
-\indexentry{Rook contiguity|hyperpage}{94}
-\indexentry{Queen contiguity|hyperpage}{94}
-\indexentry{spatial weight|hyperpage}{95}
-\indexentry{spatial weight matrix|hyperpage}{96}
-\indexentry{Moran's I|hyperpage}{96}
-\indexentry{Geary's C|hyperpage}{96}
-\indexentry{spatial stochastic process|hyperpage}{97}
-\indexentry{isotropy|hyperpage}{98}
-\indexentry{increasing domain asymptotics|hyperpage}{98}
-\indexentry{infill asymptotics|hyperpage}{99}
-\indexentry{spatial lag model|hyperpage}{100}
-\indexentry{spatial error model|hyperpage}{100}
-\indexentry{spatial lag model|hyperpage}{100}
-\indexentry{spatial error model|hyperpage}{102}
-\indexentry{graph|hyperpage}{113}
-\indexentry{vertex|hyperpage}{113}
-\indexentry{edge|hyperpage}{113}
-\indexentry{loop|hyperpage}{113}
-\indexentry{multiple edges|hyperpage}{113}
-\indexentry{simple graph|hyperpage}{114}
-\indexentry{directed graph|hyperpage}{114}
-\indexentry{directed graph|hyperpage}{114}
-\indexentry{complete graph|hyperpage}{114}
-\indexentry{walk|hyperpage}{115}
-\indexentry{closed|hyperpage}{115}
-\indexentry{length|hyperpage}{115}
-\indexentry{trail|hyperpage}{115}
-\indexentry{path|hyperpage}{115}
-\indexentry{cycle|hyperpage}{115}
-\indexentry{connected|hyperpage}{115}
-\indexentry{adjacent|hyperpage}{116}
-\indexentry{incident|hyperpage}{116}
-\indexentry{degree|hyperpage}{116}
-\indexentry{isolated vertex|hyperpage}{116}
-\indexentry{end vertex|hyperpage}{116}
-\indexentry{Eulerian graph|hyperpage}{117}
-\indexentry{Eulerian trail|hyperpage}{117}
-\indexentry{adjacency matrix|hyperpage}{118}
-\indexentry{degree centrality|hyperpage}{119}
-\indexentry{eccentricity|hyperpage}{120}
-\indexentry{Bonacich centrality|hyperpage}{120}
-\indexentry{Neumann series|hyperpage}{124}
+\indexentry{local linear regression|hyperpage}{73}
+\indexentry{curse of dimensionality|hyperpage}{73}
+\indexentry{Fourier series|hyperpage}{74}
+\indexentry{social interaction|hyperpage}{76}
+\indexentry{linear-in-means model|hyperpage}{76}
+\indexentry{endogenous effects|hyperpage}{76}
+\indexentry{contextual effect|hyperpage}{76}
+\indexentry{correlated effects|hyperpage}{76}
+\indexentry{spillover effect|hyperpage}{77}
+\indexentry{social multiplier effect|hyperpage}{77}
+\indexentry{reflection problem|hyperpage}{77}
+\indexentry{social network|hyperpage}{77}
+\indexentry{spatial dependence|hyperpage}{78}
+\indexentry{spatial autocorrelation|hyperpage}{78}
+\indexentry{spatial statistics|hyperpage}{78}
+\indexentry{spatial econometrics|hyperpage}{78}
+\indexentry{endogenous effects|hyperpage}{81}
+\indexentry{contextual effect|hyperpage}{81}
+\indexentry{correlated effects|hyperpage}{81}
+\indexentry{linear-in-means model|hyperpage}{81}
+\indexentry{reflection problem|hyperpage}{82}
+\indexentry{social network|hyperpage}{86}
+\indexentry{graph|hyperpage}{86}
+\indexentry{isolated|hyperpage}{87}
+\indexentry{complementarity|hyperpage}{88}
+\indexentry{conformity|hyperpage}{88}
+\indexentry{intransitive triad|hyperpage}{91}
+\indexentry{spatial data|hyperpage}{94}
+\indexentry{GIS|hyperpage}{94}
+\indexentry{spatial autocorrelation|hyperpage}{95}
+\indexentry{Rook contiguity|hyperpage}{95}
+\indexentry{Queen contiguity|hyperpage}{95}
+\indexentry{spatial weight|hyperpage}{96}
+\indexentry{spatial weight matrix|hyperpage}{97}
+\indexentry{Moran's I|hyperpage}{97}
+\indexentry{Geary's C|hyperpage}{97}
+\indexentry{spatial stochastic process|hyperpage}{98}
+\indexentry{isotropy|hyperpage}{99}
+\indexentry{increasing domain asymptotics|hyperpage}{99}
+\indexentry{infill asymptotics|hyperpage}{100}
+\indexentry{spatial lag model|hyperpage}{101}
+\indexentry{spatial error model|hyperpage}{101}
+\indexentry{spatial lag model|hyperpage}{101}
+\indexentry{spatial error model|hyperpage}{103}
+\indexentry{graph|hyperpage}{114}
+\indexentry{vertex|hyperpage}{114}
+\indexentry{edge|hyperpage}{114}
+\indexentry{loop|hyperpage}{114}
+\indexentry{multiple edges|hyperpage}{114}
+\indexentry{simple graph|hyperpage}{115}
+\indexentry{directed graph|hyperpage}{115}
+\indexentry{directed graph|hyperpage}{115}
+\indexentry{complete graph|hyperpage}{115}
+\indexentry{walk|hyperpage}{116}
+\indexentry{closed|hyperpage}{116}
+\indexentry{length|hyperpage}{116}
+\indexentry{trail|hyperpage}{116}
+\indexentry{path|hyperpage}{116}
+\indexentry{cycle|hyperpage}{116}
+\indexentry{connected|hyperpage}{116}
+\indexentry{adjacent|hyperpage}{117}
+\indexentry{incident|hyperpage}{117}
+\indexentry{degree|hyperpage}{117}
+\indexentry{isolated vertex|hyperpage}{117}
+\indexentry{end vertex|hyperpage}{117}
+\indexentry{Eulerian graph|hyperpage}{118}
+\indexentry{Eulerian trail|hyperpage}{118}
+\indexentry{adjacency matrix|hyperpage}{119}
+\indexentry{degree centrality|hyperpage}{120}
+\indexentry{eccentricity|hyperpage}{121}
+\indexentry{Bonacich centrality|hyperpage}{121}
+\indexentry{Neumann series|hyperpage}{125}

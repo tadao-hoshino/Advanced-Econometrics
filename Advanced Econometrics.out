@@ -39,65 +39,66 @@
 \BOOKMARK [2][-]{subsection.6.3.2}{Stochastic equilibrium selection rule}{section.6.3}% 39
 \BOOKMARK [2][-]{subsection.6.3.3}{When the sign of \040is unknown}{section.6.3}% 40
 \BOOKMARK [1][-]{section.6.4}{Estimation of first-price auction models}{chapter.6}% 41
-\BOOKMARK [0][-]{chapter.7}{Bootstrap}{part.1}% 42
-\BOOKMARK [1][-]{section.7.1}{The basic idea of the bootstrap method}{chapter.7}% 43
-\BOOKMARK [1][-]{section.7.2}{Asymptotic refinements}{chapter.7}% 44
-\BOOKMARK [1][-]{section.7.3}{Other bootstrap resampling schemes}{chapter.7}% 45
-\BOOKMARK [2][-]{subsection.7.3.1}{Parametric bootstrap}{section.7.3}% 46
-\BOOKMARK [2][-]{subsection.7.3.2}{Residual bootstrap}{section.7.3}% 47
-\BOOKMARK [2][-]{subsection.7.3.3}{Wild bootstrap}{section.7.3}% 48
-\BOOKMARK [0][-]{chapter.8}{Nonparametric Regression}{part.1}% 49
-\BOOKMARK [1][-]{section.8.1}{Nonparametric regression}{chapter.8}% 50
-\BOOKMARK [2][-]{subsection.8.1.1}{Series regression}{section.8.1}% 51
-\BOOKMARK [1][-]{section.8.2}{Semiparamtric regression}{chapter.8}% 52
-\BOOKMARK [2][-]{subsection.8.2.1}{Partially linear models}{section.8.2}% 53
-\BOOKMARK [2][-]{subsection.8.2.2}{Generalized additive models}{section.8.2}% 54
-\BOOKMARK [2][-]{subsection.8.2.3}{Functional coefficient models}{section.8.2}% 55
-\BOOKMARK [-1][-]{part.2}{II Econometric Analysis of Cross-Sectional Dependence Models}{}% 56
-\BOOKMARK [0][-]{chapter.9}{Cross-Sectional Dependence}{part.2}% 57
-\BOOKMARK [1][-]{section.9.1}{Social interaction}{chapter.9}% 58
-\BOOKMARK [1][-]{section.9.2}{Social network}{chapter.9}% 59
-\BOOKMARK [1][-]{section.9.3}{Spatial dependence}{chapter.9}% 60
-\BOOKMARK [0][-]{chapter.10}{The Reflection Problem}{part.2}% 61
-\BOOKMARK [1][-]{section.10.1}{Linear-in-means model}{chapter.10}% 62
-\BOOKMARK [1][-]{section.10.2}{The reflection problem}{chapter.10}% 63
-\BOOKMARK [1][-]{section.10.3}{Numerical simulation with R}{chapter.10}% 64
-\BOOKMARK [1][-]{section.10.4}{A game theoretic interpretation}{chapter.10}% 65
-\BOOKMARK [0][-]{chapter.11}{Social Interactions through Social Networks}{part.2}% 66
-\BOOKMARK [1][-]{section.11.1}{Common types of social network graphs}{chapter.11}% 67
-\BOOKMARK [1][-]{section.11.2}{Linear-in-means social network model}{chapter.11}% 68
-\BOOKMARK [1][-]{section.11.3}{Using network structure to identify social interactions}{chapter.11}% 69
-\BOOKMARK [1][-]{section.11.4}{Estimation}{chapter.11}% 70
-\BOOKMARK [0][-]{chapter.12}{Spatial Data}{part.2}% 71
-\BOOKMARK [1][-]{section.12.1}{Spatial data}{chapter.12}% 72
-\BOOKMARK [1][-]{section.12.2}{Moran's I and Geary's C}{chapter.12}% 73
-\BOOKMARK [2][-]{subsection.12.2.1}{Spatial weight matrix}{section.12.2}% 74
-\BOOKMARK [2][-]{subsection.12.2.2}{Moran's I and Geary's C}{section.12.2}% 75
-\BOOKMARK [1][-]{section.12.3}{Spatial random variables}{chapter.12}% 76
-\BOOKMARK [2][-]{subsection.12.3.1}{Spatial stochastic process}{section.12.3}% 77
-\BOOKMARK [2][-]{subsection.12.3.2}{Spatial sampling}{section.12.3}% 78
-\BOOKMARK [0][-]{chapter.13}{Spatial Econometrics}{part.2}% 79
-\BOOKMARK [1][-]{section.13.1}{Spatial lag model}{chapter.13}% 80
-\BOOKMARK [2][-]{subsection.13.1.1}{Maximum likelihood estimation}{section.13.1}% 81
-\BOOKMARK [2][-]{subsection.13.1.2}{2SLS estimation}{section.13.1}% 82
-\BOOKMARK [1][-]{section.13.2}{Spatial error model}{chapter.13}% 83
-\BOOKMARK [2][-]{subsection.13.2.1}{Maximum likelihood estimation}{section.13.2}% 84
-\BOOKMARK [2][-]{subsection.13.2.2}{Method of moments estimation}{section.13.2}% 85
-\BOOKMARK [1][-]{section.13.3}{Empirical analysis with R: Household burglary in Tokyo}{chapter.13}% 86
-\BOOKMARK [0][-]{chapter.14}{Binary Response Models with Spatial Interactions}{part.2}% 87
-\BOOKMARK [1][-]{section.14.1}{Spatial probit models}{chapter.14}% 88
-\BOOKMARK [2][-]{subsection.14.1.1}{Two spatial-lag probit models}{section.14.1}% 89
-\BOOKMARK [2][-]{subsection.14.1.2}{Spatial-error probit model}{section.14.1}% 90
-\BOOKMARK [1][-]{section.14.2}{GMM estimation of spatial probit models}{chapter.14}% 91
-\BOOKMARK [0][-]{appendix.1.A}{Appendix Introductory Graph Theory}{part.2}% 92
-\BOOKMARK [1][-]{section.1.A.1}{Basic terminology}{appendix.1.A}% 93
-\BOOKMARK [1][-]{section.1.A.2}{Paths, Cycles and Connectivity}{appendix.1.A}% 94
-\BOOKMARK [1][-]{section.1.A.3}{Degree}{appendix.1.A}% 95
-\BOOKMARK [1][-]{section.1.A.4}{Eulerian graph}{appendix.1.A}% 96
-\BOOKMARK [1][-]{section.1.A.5}{Adjacency matrix}{appendix.1.A}% 97
-\BOOKMARK [1][-]{section.1.A.6}{Centrality in networks}{appendix.1.A}% 98
-\BOOKMARK [0][-]{appendix.1.B}{Appendix Supplementary Mathematical Notes}{part.2}% 99
-\BOOKMARK [1][-]{section.1.B.1}{Some supplementary results in probability theory.}{appendix.1.B}% 100
-\BOOKMARK [1][-]{section.1.B.2}{Neumann series expansion}{appendix.1.B}% 101
-\BOOKMARK [1][-]{section.1.B.3}{Expectation of a truncated random variable}{appendix.1.B}% 102
-\BOOKMARK [1][-]{section.1.B.4}{The inverse of a partitioned matrix}{appendix.1.B}% 103
+\BOOKMARK [1][-]{section.6.5}{BLP Demand Estimation}{chapter.6}% 42
+\BOOKMARK [0][-]{chapter.7}{Bootstrap}{part.1}% 43
+\BOOKMARK [1][-]{section.7.1}{The basic idea of the bootstrap method}{chapter.7}% 44
+\BOOKMARK [1][-]{section.7.2}{Asymptotic refinements}{chapter.7}% 45
+\BOOKMARK [1][-]{section.7.3}{Other bootstrap resampling schemes}{chapter.7}% 46
+\BOOKMARK [2][-]{subsection.7.3.1}{Parametric bootstrap}{section.7.3}% 47
+\BOOKMARK [2][-]{subsection.7.3.2}{Residual bootstrap}{section.7.3}% 48
+\BOOKMARK [2][-]{subsection.7.3.3}{Wild bootstrap}{section.7.3}% 49
+\BOOKMARK [0][-]{chapter.8}{Nonparametric Regression}{part.1}% 50
+\BOOKMARK [1][-]{section.8.1}{Nonparametric regression}{chapter.8}% 51
+\BOOKMARK [2][-]{subsection.8.1.1}{Series regression}{section.8.1}% 52
+\BOOKMARK [1][-]{section.8.2}{Semiparamtric regression}{chapter.8}% 53
+\BOOKMARK [2][-]{subsection.8.2.1}{Partially linear models}{section.8.2}% 54
+\BOOKMARK [2][-]{subsection.8.2.2}{Generalized additive models}{section.8.2}% 55
+\BOOKMARK [2][-]{subsection.8.2.3}{Functional coefficient models}{section.8.2}% 56
+\BOOKMARK [-1][-]{part.2}{II Econometric Analysis of Cross-Sectional Dependence Models}{}% 57
+\BOOKMARK [0][-]{chapter.9}{Cross-Sectional Dependence}{part.2}% 58
+\BOOKMARK [1][-]{section.9.1}{Social interaction}{chapter.9}% 59
+\BOOKMARK [1][-]{section.9.2}{Social network}{chapter.9}% 60
+\BOOKMARK [1][-]{section.9.3}{Spatial dependence}{chapter.9}% 61
+\BOOKMARK [0][-]{chapter.10}{The Reflection Problem}{part.2}% 62
+\BOOKMARK [1][-]{section.10.1}{Linear-in-means model}{chapter.10}% 63
+\BOOKMARK [1][-]{section.10.2}{The reflection problem}{chapter.10}% 64
+\BOOKMARK [1][-]{section.10.3}{Numerical simulation with R}{chapter.10}% 65
+\BOOKMARK [1][-]{section.10.4}{A game theoretic interpretation}{chapter.10}% 66
+\BOOKMARK [0][-]{chapter.11}{Social Interactions through Social Networks}{part.2}% 67
+\BOOKMARK [1][-]{section.11.1}{Common types of social network graphs}{chapter.11}% 68
+\BOOKMARK [1][-]{section.11.2}{Linear-in-means social network model}{chapter.11}% 69
+\BOOKMARK [1][-]{section.11.3}{Using network structure to identify social interactions}{chapter.11}% 70
+\BOOKMARK [1][-]{section.11.4}{Estimation}{chapter.11}% 71
+\BOOKMARK [0][-]{chapter.12}{Spatial Data}{part.2}% 72
+\BOOKMARK [1][-]{section.12.1}{Spatial data}{chapter.12}% 73
+\BOOKMARK [1][-]{section.12.2}{Moran's I and Geary's C}{chapter.12}% 74
+\BOOKMARK [2][-]{subsection.12.2.1}{Spatial weight matrix}{section.12.2}% 75
+\BOOKMARK [2][-]{subsection.12.2.2}{Moran's I and Geary's C}{section.12.2}% 76
+\BOOKMARK [1][-]{section.12.3}{Spatial random variables}{chapter.12}% 77
+\BOOKMARK [2][-]{subsection.12.3.1}{Spatial stochastic process}{section.12.3}% 78
+\BOOKMARK [2][-]{subsection.12.3.2}{Spatial sampling}{section.12.3}% 79
+\BOOKMARK [0][-]{chapter.13}{Spatial Econometrics}{part.2}% 80
+\BOOKMARK [1][-]{section.13.1}{Spatial lag model}{chapter.13}% 81
+\BOOKMARK [2][-]{subsection.13.1.1}{Maximum likelihood estimation}{section.13.1}% 82
+\BOOKMARK [2][-]{subsection.13.1.2}{2SLS estimation}{section.13.1}% 83
+\BOOKMARK [1][-]{section.13.2}{Spatial error model}{chapter.13}% 84
+\BOOKMARK [2][-]{subsection.13.2.1}{Maximum likelihood estimation}{section.13.2}% 85
+\BOOKMARK [2][-]{subsection.13.2.2}{Method of moments estimation}{section.13.2}% 86
+\BOOKMARK [1][-]{section.13.3}{Empirical analysis with R: Household burglary in Tokyo}{chapter.13}% 87
+\BOOKMARK [0][-]{chapter.14}{Binary Response Models with Spatial Interactions}{part.2}% 88
+\BOOKMARK [1][-]{section.14.1}{Spatial probit models}{chapter.14}% 89
+\BOOKMARK [2][-]{subsection.14.1.1}{Two spatial-lag probit models}{section.14.1}% 90
+\BOOKMARK [2][-]{subsection.14.1.2}{Spatial-error probit model}{section.14.1}% 91
+\BOOKMARK [1][-]{section.14.2}{GMM estimation of spatial probit models}{chapter.14}% 92
+\BOOKMARK [0][-]{appendix.1.A}{Appendix Introductory Graph Theory}{part.2}% 93
+\BOOKMARK [1][-]{section.1.A.1}{Basic terminology}{appendix.1.A}% 94
+\BOOKMARK [1][-]{section.1.A.2}{Paths, Cycles and Connectivity}{appendix.1.A}% 95
+\BOOKMARK [1][-]{section.1.A.3}{Degree}{appendix.1.A}% 96
+\BOOKMARK [1][-]{section.1.A.4}{Eulerian graph}{appendix.1.A}% 97
+\BOOKMARK [1][-]{section.1.A.5}{Adjacency matrix}{appendix.1.A}% 98
+\BOOKMARK [1][-]{section.1.A.6}{Centrality in networks}{appendix.1.A}% 99
+\BOOKMARK [0][-]{appendix.1.B}{Appendix Supplementary Mathematical Notes}{part.2}% 100
+\BOOKMARK [1][-]{section.1.B.1}{Some supplementary results in probability theory.}{appendix.1.B}% 101
+\BOOKMARK [1][-]{section.1.B.2}{Neumann series expansion}{appendix.1.B}% 102
+\BOOKMARK [1][-]{section.1.B.3}{Expectation of a truncated random variable}{appendix.1.B}% 103
+\BOOKMARK [1][-]{section.1.B.4}{The inverse of a partitioned matrix}{appendix.1.B}% 104

@@ -305,7 +305,7 @@ Consider a linear regression model:
 \begin{align}\label{eq:linmodel}
 	Y = X^\top \beta_0 + \eps, 
 \end{align}
-where $Y$ is a dependent variable, $X$ is a vector of explanatory variables, and $\eps$ is an unobserved random variable (i.e., error term) satisfying $\E[\eps | X] = 0$.
+where $Y$ is a dependent variable, $X$ is a vector of explanatory variables, and $\eps$ is an unobserved random variable (i.e., error term) satisfying $\E[\eps \mid X] = 0$.
 $\beta_0$ is the true coefficient vector to be estimated.
 When the data $\{(Y_i, X_i): 1 \le i \le n\}$ are available, the \textbf{ordinary least squares\index{OLS}} (OLS) estimator $\hat \beta_n^{ols}$ of $\beta_0$ is given by
 \begin{align}\label{eq:ols}
@@ -317,22 +317,22 @@ When the data $\{(Y_i, X_i): 1 \le i \le n\}$ are available, the \textbf{ordinar
 \end{align}
 provided that $\frac{1}{n}\sum_{i = 1}^n X_i X_i^\top$ is a nonsingular matrix. 
 
-Here, note that the conditional expectation function $\E[Y | X]$ is a minimizer of the \textbf{mean squared error\index{MSE}} (MSE) among all possible regression functions:
+Here, note that the conditional expectation function $\E[Y \mid X]$ is a minimizer of the \textbf{mean squared error\index{MSE}} (MSE) among all possible regression functions:
 \begin{align}\label{eq:msemin}
-	\E[Y|X] = \argmin_{g \in \mcl{G}} \E[(Y - g(X))^2],
+	\E[Y \mid X] = \argmin_{g \in \mcl{G}} \E[(Y - g(X))^2],
 \end{align}
 where $\mcl{G}$ is the set of all measurable functions of $X$.
-Since we have assumed that $\E[\eps | X] = 0 $ ($\iff \E [Y|X] = X^\top \beta_0$), we can restrict the above MSE minimization with respect to the class of linear functions of $X$:
+Since we have assumed that $\E[\eps \mid X] = 0 $ ($\iff \E [Y \mid X] = X^\top \beta_0$), we can restrict the above MSE minimization with respect to the class of linear functions of $X$:
 \begin{align*}
 	\beta_0 
 	& = \argmin_{\beta \in \mbb{R}^{\text{dim}(X)}} \E[(Y - X^\top \beta)^2]\\
 	& = \E[XX^\top]^{-1} \E[XY].
 \end{align*} 
-Thus, we can see that the OLS objective function in \eqref{eq:ols} is the sample analog of the population MSE, and that the estimated regression function, say $\hat g_n(X) \equiv X^\top \hat \beta_n^{ols}$, is an estimator of $\E[Y|X]$.\footnote{\label{foot:ols_moment}
-	Another interpretation of the OLS estimator is that it is a sample solution to the moment equation $\E[Y | X] = X^\top\beta$.
+Thus, we can see that the OLS objective function in \eqref{eq:ols} is the sample analog of the population MSE, and that the estimated regression function, say $\hat g_n(X) \equiv X^\top \hat \beta_n^{ols}$, is an estimator of $\E[Y \mid X]$.\footnote{\label{foot:ols_moment}
+	Another interpretation of the OLS estimator is that it is a sample solution to the moment equation $\E[Y \mid X] = X^\top\beta$.
 	Premultiplying $X$ on both sides of this equation and taking the expectation yield
 	\begin{align*}
-		\E[X \E[Y|X]] = \E[XX^\top]\beta_0
+		\E[X \E[Y \mid X]] = \E[XX^\top]\beta_0
 		& \iff \E[XY] = \E[XX^\top]\beta_0 \\
 		& \iff \beta_0 = \E[XX^\top]^{-1}\E[XY].
 	\end{align*}
@@ -391,7 +391,7 @@ implying that
 	Prove \eqref{eq:msemin}.
 \end{exercise}
 \begin{exercise}\upshape
-	Suppose now that the error term is heteroskedastic in the following sense: $\E[\eps^2 | X] = \sigma^2(X)$.
+	Suppose now that the error term is heteroskedastic in the following sense: $\E[\eps^2 \mid X] = \sigma^2(X)$.
 	Derive the asymptotic distribution of $\sqrt{n}(\hat \beta_n^{ols} - \beta_0)$.
 \end{exercise}
 \begin{exercise}\upshape
@@ -399,7 +399,7 @@ implying that
 	\[
 	Y = X^\top \beta_0 + \eps,
 	\]
-	where $\E[\eps | X] = 0$.
+	where $\E[\eps \mid X] = 0$.
 	Define the \textbf{ridge regression} estimator:
 	\[
 	\hat \beta_n^{ridge} \equiv \left(\frac{1}{n}\sum_{i = 1}^n X_i X_i^\top + \lambda I_{\text{dim}(X)} \right)^{-1}\frac{1}{n}\sum_{i = 1}^n X_i Y_i,
@@ -786,8 +786,8 @@ Since we cannot observe both potential outcomes $Y_i(0)$ and $Y_i(1)$ at the sam
 Therefore, studies on treatment effects typically aim at estimating treatment effects averaged over some subpopulation; for example, 
 \begin{align*}
 	&\text{ATE (the average treatment effect)}: \E[Y(1) - Y(0)]\\
-	&\text{CATE (the conditional average treatment effect)}: \E[Y(1) - Y(0) | X = x] \\
-	&\text{ATET (the average treatment effect on the treated)}: \E[Y(1) - Y(0) | D = 1].
+	&\text{CATE (the conditional average treatment effect)}: \E[Y(1) - Y(0) \mid X = x] \\
+	&\text{ATET (the average treatment effect on the treated)}: \E[Y(1) - Y(0) \mid D = 1].
 \end{align*}
 
 In a seminal paper, \cite{imbens1994identification} studied conditions under which the 2SLS estimate can be interpreted as the \textbf{LATE} (local average treatment effect) -- the average treatment effect for those whose treatment status is altered by the instrument. 
@@ -819,15 +819,15 @@ If we can assume that there are no defiers, we can distinguish the latent types 
 The assumption of no defiers is called \textbf{monotonicity assumption\index{monotonicity assumption}} because, when no defiers exist, increasing $Z$ from 0 to 1 never decreases $D$.
 In addition, assume that $Z$ is independent of the potential outcomes (i.e., the exclusion restriction) and the individuals' types such that
 \begin{align*}
-	& \Pr(\text{Always-taker} | Z = 1) = \Pr(\text{Always-taker} | Z = 0) = \pi_A\\
-	& \Pr(\text{Never-taker} | Z = 1) = \Pr(\text{Never-taker} | Z = 0) = \pi_N\\
-	& \Pr(\text{Complier} | Z = 1) = \Pr(\text{Complier} | Z = 0) = \pi_C.
+	& \Pr(\text{Always-taker} \mid Z = 1) = \Pr(\text{Always-taker} \mid Z = 0) = \pi_A\\
+	& \Pr(\text{Never-taker} \mid Z = 1) = \Pr(\text{Never-taker} \mid Z = 0) = \pi_N\\
+	& \Pr(\text{Complier} \mid Z = 1) = \Pr(\text{Complier} \mid Z = 0) = \pi_C.
 \end{align*}
 Under these conditions, one can show that
 \begin{align}\label{eq:LATE}
 \begin{split}
-	\underset{\text{\bf LATE}}{\E[Y(1) - Y(0) | \text{Complier}]} 
-	& = \frac{\E[Y | Z = 1] - \E[Y | Z = 0]}{\E[D | Z = 1] - \E[D | Z = 0]}\\
+	\underset{\text{\bf LATE}}{\E[Y(1) - Y(0) \mid \text{Complier}]} 
+	& = \frac{\E[Y \mid Z = 1] - \E[Y \mid Z = 0]}{\E[D \mid Z = 1] - \E[D \mid Z = 0]}\\
 	& = \frac{\Cov(Z, Y)}{\Cov(Z, D)}.
 \end{split}
 \end{align}
@@ -835,32 +835,32 @@ The term on the left-hand side of \eqref{eq:LATE} is called \textbf{LATE\index{L
 The first equality of \eqref{eq:LATE} can be shown as follows.
 Observe that
 \small{\begin{align*}
-	\E[Y |Z = 1 ] 
-	& = \E[Y |Z = 1, \text{AT} ] \cdot \Pr(\text{AT}| Z = 1) + \E[Y | Z = 1, \text{NT} ] \cdot \Pr(\text{NT}|Z = 1) + \E[Y | Z = 1, \text{C} ] \cdot \Pr(\text{C}|Z = 1)\\
-	& = \E[Y(1) |Z = 1, \text{AT} ] \cdot \pi_A + \E[Y(0) | Z = 1, \text{NT} ] \cdot \pi_N + E[Y(1) | Z = 1, \text{C} ] \cdot \pi_C\\
-	& = \E[Y(1) | \text{AT} ] \cdot \pi_A  + E[Y(0) | \text{NT} ] \cdot \pi_N  + E[Y(1) | \text{C} ] \cdot \pi_C,
+	\E[Y \mid Z = 1 ] 
+	& = \E[Y \mid Z = 1, \text{AT} ] \cdot \Pr(\text{AT} \mid Z = 1) + \E[Y \mid Z = 1, \text{NT} ] \cdot \Pr(\text{NT} \mid Z = 1) + \E[Y \mid Z = 1, \text{C} ] \cdot \Pr(\text{C} \,mid Z = 1)\\
+	& = \E[Y(1) \mid Z = 1, \text{AT} ] \cdot \pi_A + \E[Y(0) \mid Z = 1, \text{NT} ] \cdot \pi_N + E[Y(1) \mid Z = 1, \text{C} ] \cdot \pi_C\\
+	& = \E[Y(1) \mid \text{AT} ] \cdot \pi_A  + E[Y(0) \mid \text{NT} ] \cdot \pi_N  + E[Y(1) \mid \text{C} ] \cdot \pi_C,
 \end{align*}}
 \normalsize
 where the last equality follows from the exclusion restriction.
 Similarly, we can show that
 \begin{align*}
-	\E[Y | Z = 0]
-	& = \E[Y(1) | \text{AT} ] \cdot \pi_A + \E[ Y(0) | \text{NT} ] \cdot \pi_N  + \E[ Y(0) | \text{C} ]  \cdot \pi_C
+	\E[Y \mid Z = 0]
+	& = \E[Y(1) \mid \text{AT} ] \cdot \pi_A + \E[ Y(0) \mid \text{NT} ] \cdot \pi_N  + \E[ Y(0) \mid \text{C} ]  \cdot \pi_C
 \end{align*}
 Thus, 
 \begin{align*}
-	\E [ Y |Z = 1 ] - E[ Y | Z = 0 ] 
-	&= \left\{ \E[ Y(1)| \text{Complier} ] - \E[ Y(0) | \text{Complier} ] \right\} \cdot \pi_C\\
+	\E [ Y \mid Z = 1 ] - E[ Y \mid Z = 0 ] 
+	&= \left\{ \E[ Y(1) \mid \text{Complier} ] - \E[ Y(0) \mid \text{Complier} ] \right\} \cdot \pi_C\\
 	& = \mbf{LATE}\cdot\pi_C
 \end{align*}
 Here, since we have assumed that there are no defiers, we must have
 \begin{align*}
-	\E[ D |Z = 1 ]   &  = \pi_C + \pi_A \\
-	\E[ D |Z = 0 ]   &  = \pi_A.
+	\E[ D \mid Z = 1 ]   &  = \pi_C + \pi_A \\
+	\E[ D \mid Z = 0 ]   &  = \pi_A.
 \end{align*}
 Therefore, it holds that
 \begin{equation*}
-	\E [D | Z = 1 ] - \E[ D | Z = 0 ] = \pi_C.
+	\E [D \mid Z = 1 ] - \E[ D \mid Z = 0 ] = \pi_C.
 \end{equation*}
 Finally, combining these results gives the desired equality, provided that $\pi_C > 0$.
 
@@ -870,7 +870,7 @@ This means that the 2SLS estimator for $\alpha_0$ can be seen as an estimator of
 
 \hrulefill
 \begin{exercise}\upshape
-	Prove the following equality: $\displaystyle \frac{\Cov(Z, Y)}{\Cov(Z, D)} = \frac{\E[Y | Z = 1] - \E[Y | Z = 0]}{\E[D | Z = 1] - \E[D | Z = 0]}$.
+	Prove the following equality: $\displaystyle \frac{\Cov(Z, Y)}{\Cov(Z, D)} = \frac{\E[Y \mid Z = 1] - \E[Y \mid Z = 0]}{\E[D \mid Z = 1] - \E[D \mid Z = 0]}$.
 \end{exercise}
 
 \section{Numerical simulations with \textbf{R}}
@@ -2403,7 +2403,7 @@ Then, for any observationally equivalent $S_1, S^* \in H_1 \times \Gamma_2$, we 
 	\E^*[Y \mid X]
 	& = \Phi \left(\frac{X^\top \beta^*}{\sigma^*} \right).
 \end{align*}
-Since $S$ and $S^*$ are observationally equivalent ($F^1_{Y,X} = F^*_{Y,X}$), we have $\E_1[Y |X] = \E^*[Y |X]$ almost surely (a.s.), which implies
+Since $S$ and $S^*$ are observationally equivalent ($F^1_{Y,X} = F^*_{Y,X}$), we have $\E_1[Y \mid X] = \E^*[Y \mid X]$ almost surely (a.s.), which implies
 \begin{align}\label{eq:prob_nonident}
 	\Phi \left( \frac{X^\top \beta_1}{\sigma_1} \right) = \Phi \left( \frac{X^\top \beta^*}{\sigma^*} \right ) \;\; \text{a.s.}
 	\Longrightarrow \Pr\left(\frac{X^\top \beta_1}{\sigma_1} = \frac{X^\top \beta^*}{\sigma^*}\right) = 1
@@ -2868,6 +2868,10 @@ For practical implementation of this approach, see \cite{ciliberto2009market}.
 
 To be added in a future update.
 
+\section{BLP Demand Estimation}
+
+To be added in a future update.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3151,9 +3155,9 @@ Hence, the heteroskedasticity in the original sample is retained in the bootstra
 
 \chapter{Nonparametric Regression}
 
-As shown in \eqref{eq:msemin},  in terms of minimization of MSE, the most optimal regression function is the conditional expectation function $\E [Y | X]$.
-Thus, the validity of linear regression hinges on whether the funcitonal-form assumption $\E[Y | X] = X^\top\beta$ is true for some $\beta$ or not.
-In reality, however, it would be extremely rare that data follow such a linear relationship exactly, and if the functional-form assumption is not met, what the linear regression produces is only a ``linear approaximation" of $\E[Y | X]$.
+As shown in \eqref{eq:msemin},  in terms of minimization of MSE, the most optimal regression function is the conditional expectation function $\E [Y \mid X]$.
+Thus, the validity of linear regression hinges on whether the funcitonal-form assumption $\E[Y \mid X] = X^\top\beta$ is true for some $\beta$ or not.
+In reality, however, it would be extremely rare that data follow such a linear relationship exactly, and if the functional-form assumption is not met, what the linear regression produces is only a ``linear approaximation" of $\E[Y \mid X]$.
 As shown in the figure below, linear approximation is not always informative and sometimes even misleading.
 \begin{figure}[h!]
 	\begin{center}
@@ -3162,14 +3166,14 @@ As shown in the figure below, linear approximation is not always informative and
 	\end{center}
 \end{figure}
 
-Thus, ideally, we would like to estimate $\E [Y | X]$ without imposing any a priori functional-form assumptions.
+Thus, ideally, we would like to estimate $\E [Y \mid X]$ without imposing any a priori functional-form assumptions.
 Such a regression approach is called \textbf{nonparametric\index{nonparametric}}.
-In contrast, if one assumes a specific functional form $g(X, \theta)$ for $\E[Y|X]$ with a finite dimensional parameter vector $\theta$, this approach is \textbf{parametric\index{parametric}}.
+In contrast, if one assumes a specific functional form $g(X, \theta)$ for $\E[Y \mid X]$ with a finite dimensional parameter vector $\theta$, this approach is \textbf{parametric\index{parametric}}.
 The most typical parametric regression models are linear regression models.
 For another example, if the range of a dependent variable is restricted to $(0,1)$, a logistic regression model $g(X, \theta) = \exp(X^\top \theta)/[1 + \exp(X^\top \theta)]$ is commonly used. 
-The intermediate case between the nonparametric and parametric models is called \textbf{semiparamtric\index{semiparametric}}.
-As explained below, estimating a fully nonparametric regression is almost infeasible in practice due to the curse of dimensionality unless the dimension of $X$ is less than two or three.
-On the other hand, assuming a full parametric specification is restrictive.
+The intermediate case between nonparametric and parametric models is called \textbf{semiparamtric\index{semiparametric}}.
+As explained below, estimating a fully nonparametric regression model is almost infeasible in practice due to the curse of dimensionality unless the dimension of $X$ is less than two or three.
+On the other hand, assuming a full parametric specification has a risk of model misspecification biases.
 Then, the main idea of semiparametric regression models is to introduce mild functional form assumptions to facilitate the estimation while retaining the flexibility of nonparametric models for certain variables.
 For example, if one assumes that the impact of a subset $X_1$ of $X$ on $Y$, say $h(\cdot)$, is nonlinear and its functional form is left unspecified, and that the remaining subset $X_2$ is linearly related to $Y$, then the resulting regression model would be 
 \begin{align*}
@@ -3184,7 +3188,7 @@ Suppose we would like to estimate the following regression model:
 \begin{align*}
 	Y = m(X) + \eps.
 \end{align*}
-Here, we assume that $\E[\eps | X] = 0$ (i.e., $X$ is exogenous) so that $m(X) = \E[Y|X]$.
+Here, we assume that $\E[\eps \mid X] = 0$ (i.e., $X$ is exogenous) so that $m(X) = \E[Y \mid X]$.
 If we additionally assume a parametric regression model $g(X, \theta) = m(X)$, once an estimator $\hat \theta_n$ for $\theta$ is obtained, we can estimate $g(x, \hat \theta_n) \approx m(x)$ for any $x$.
 However, the correct parametric specification is usually unknown to us.
 Then, we consider estimating $m(\cdot)$ with its functional form unrestricted, except for some smoothness constraints.
@@ -3208,7 +3212,7 @@ The $k$NN regression estimator simply computes the average of $Y$ over the $k$-c
 \end{align*}
 Clearly, to establish the consistency of the $k$NN estimator, $|X^{(k)} - x|$ must get closer to zero as $n$ increases.
 On the other hand, $k$ should increase to infinity to apply the law of large numbers to $\hat m^{knn}_n(x)$. 
-(There is a bias-variance trade-off in terms of the choice of $k$.)
+That is, there is a bias-variance trade-off in terms of the choice of $k$.
 Therefore, to meet these conditions simultaneously, we should carefully choose $k$ so that it grows to infinity but not too fast (specifically, $k \to \infty$ and $k/n \to 0$).
 
 Another popularly used local regression method is the \textbf{kernel regression\index{kernel regression}}.
@@ -3249,6 +3253,9 @@ That is, the local linear kernel regression estimator is defined as $\hat m^{ll}
 \end{align*}
 It is known that by adding an additional regressor $(X_i - x)$, the local linear regression estimator achieves a nice bias-correction property that the local constant estimator does not have (for more details, see, e.g., \cite{li2007nonparametric}).
 
+Similar to the $k$NN regression estimator, there is a bias-variance trade-off for the choice of the bandwidth parameter $h$.
+In order for the kernel regression estimator to be consistent, $h$ must converge to zero sufficiently slowly so that $nh$ can increase to infinity and the law of large numbers can be applied (note that the effective sample size for a kernel regression is of order $O(nh)$).
+
 \begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width = 18cm]{localreg.png}
@@ -3258,13 +3265,36 @@ It is known that by adding an additional regressor $(X_i - x)$, the local linear
 
 So far, we have focesed on the case where the dimension of $X$ is just one.
 When $X = (X_1, \ldots, X_d)$ is a general $d$-dimensional variable, the aforementioned estimators require some modifications.
-Specifically, we need to introduce a ``multivariate'' kernel weighting function, say $\mathbf{K}(u)$, where $u = (u_1, \ldots, u_d) \in \mathbb{R}^d$.
-One simple way to construct $\mathbf{K}(u)$ is to take the product of one-dimensional kernel functions: $\mathbf{K}(u) = \prod_{j=1}^d K(u_d)$.
+Specifically, we introduce a ``multivariate'' kernel weighting function, say $\mathbf{K}(u)$, where $u = (u_1, \ldots, u_d) \in \mathbb{R}^d$, and we can estimate $m(x)$ in a similar manner using $\mathbf{K}(u)$ in the place of $K(u)$.
+One simple way to construct $\mathbf{K}(u)$ is to take the product of one-dimensional kernel functions: $\mathbf{K}(u) = \prod_{j=1}^d K(u_j)$.
 For example, letting $u_j = (X_{i,j} -x_j)/h$ for a bandwith $h$ common to all $j$, the product uniform kernel function can be written as
 \begin{align*}
 	\mathbf{K}\left(\frac{X_i - x}{h}\right) = \frac{1}{2^d}\mathbf{1}\{|X_{i,1} - x_1| \le h\}\mathbf{1}\{|X_{i,2} - x_2| \le h\} \times \cdots \times \mathbf{1}\{|X_{i,d} - x_d| \le h\}.
 \end{align*}
+This means that only the observations contained in the $d$-dimensional cube centered at $x$ with each side length of $2h$ can be used for estimating $m(x)$.
+If the data are uniformly distributed on $\mathcal{X}$, the size of the subsample in each cube is of order $O(nh^d)$.
+Therefore, since $h$ is assumed to tend to zero, the size of the effective sample decreases ``exponentially'' (not proportionally) with respect to $d$.
+Thus, nonparametric estimation of $m(x)$ becomes less feasible quickly and inefficient as $d$ grows.
+This issue is known as the \textbf{curse of dimensionality\index{curse of dimensionality}}.
+As far as I can see in the empirical literature, full nonparametric regression has rarely been considered when $d$ is larger than 3, except when the sample size is very large (e.g., $10^5$ or more).
+
 \subsection{Series regression}
+
+Again, we first focus on the case of one-dimensional $X$, and extend the discussion to more general cases later.
+The idea of approximating a general continuous function by a linear combination of basis functions has a long history.
+Perhaps one of the most familiar to readers is the Maclaurin expansion (i.e., the Taylor expansion at 0):
+assuming that $m(\cdot)$ is sufficiently many times differentiable, at each $x \in \mathcal{X}$
+\begin{align*}
+	m(x) = m(0) + m^{(1)}(0)x + \frac{m^{(2)}(0)}{2!}x^2 + \cdots + \frac{m^{(k)}(0)}{k!}x^k + \cdots,
+\end{align*}
+where $m^{(k)}$ denotes the $k$-th order derivative of $m$.
+This means that if $m(\cdot)$ is sufficiently smooth, we can approximate $m(x)$ by $m(x) \approx p(x)^\top \theta$, where $p(x) = (1, x, x^2, \ldots, x^k)^\top$ (i.e., the \textbf{power series} of order $k$) and $\theta = (m(0), m^{(1)}(0), \ldots, m^{(k)}(0)/k!)^\top$.
+
+A similar well-known result is the Weierstrass approximation theorem.
+The theorem states that for any continuous function on a closed interval $\mathcal{X}$, the same power-series approximation holds in the sense that the approximation error $m(x) - p(x)^\top \theta$ can be made arbitrarily small for any $x \in \mathcal{X}$ by choosing a sufficiently large $k$ and an appropriate coefficient vector $\theta$. 
+Remarkably, the differentiability is not required here.
+
+Historically, the most important series expansion result for humankind would be the \textbf{Fourier series\index{Fourier series}} expansion.
 
 \section{Semiparamtric regression}
 
