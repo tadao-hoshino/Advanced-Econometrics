@@ -1,0 +1,436 @@
+% Encoding: UTF-8
+@article{banerjee2013diffusion,
+  title={The diffusion of microfinance},
+  author={Banerjee, Abhijit and Chandrasekhar, Arun G and Duflo, Esther and Jackson, Matthew O},
+  journal={Science},
+  volume={341},
+  number={6144},
+  year={2013},
+  publisher={American Association for the Advancement of Science}
+}
+
+@Article{ciliberto2009market,
+  author    = {Ciliberto, Federico and Tamer, Elie},
+  title     = {Market structure and multiple equilibria in airline markets},
+  journal   = {Econometrica},
+  year      = {2009},
+  volume    = {77},
+  number    = {6},
+  pages     = {1791--1828},
+  publisher = {Wiley Online Library},
+}
+
+@Article{bajari2010identification,
+  author    = {Bajari, Patrick and Hong, Han and Ryan, Stephen P},
+  title     = {Identification and estimation of a discrete game of complete information},
+  journal   = {Econometrica},
+  year      = {2010},
+  volume    = {78},
+  number    = {5},
+  pages     = {1529--1568},
+  publisher = {Wiley Online Library},
+}
+
+@Article{levitt1997using,
+  author    = {Levitt, Steven D},
+  title     = {Using Electoral Cycles in Police Hiring to Estimate the Effect of Police on Crime},
+  journal   = {The American Economic Review},
+  year      = {1997},
+  pages     = {270--290},
+  publisher = {JSTOR},
+}
+
+@InCollection{stock2005testing,
+  author    = {Stock, James and Yogo, Motohiro},
+  title     = {Testing for weak instruments in linear {IV} regression},
+  booktitle = {Identification and inference for econometric models: Essays in honor of Thomas Rothenberg},
+  year      = {2005},
+}
+
+@Article{imbens1994identification,
+  author  = {Imbens, Guido W and Angrist, Joshua D},
+  title   = {Identification and Estimation of Local Average Treatment Effects},
+  journal = {Econometrica},
+  year    = {1994},
+  volume  = {62},
+  number  = {2},
+  pages   = {467--475},
+}
+
+@InCollection{newey1994large,
+  author    = {Newey, Whitney K and McFadden, Daniel},
+  title     = {Large sample estimation and hypothesis testing},
+  booktitle = {Handbook of econometrics},
+  publisher = {Elsevier},
+  year      = {1994},
+  volume    = {4},
+  pages     = {2111--2245},
+}
+
+@Book{bickel1998efficient,
+  title     = {Efficient and adaptive estimation for semiparametric models},
+  publisher = {Springer},
+  year      = {1998},
+  author    = {Bickel, PJ and Klaassen, CAJ and Ritov, Y and Wellner, JA},
+}
+
+@Book{van2000asymptotic,
+  author    = {Van der Vaart, Aad W},
+  publisher = {Cambridge university press},
+  title     = {Asymptotic statistics},
+  year      = {2000},
+  edition   = {3},
+}
+
+@Article{lewbel2019identification,
+  author  = {Lewbel, Arthur},
+  title   = {The identification zoo: Meanings of identification in econometrics},
+  journal = {Journal of Economic Literature},
+  year    = {2019},
+  volume  = {57},
+  number  = {4},
+  pages   = {835--903},
+}
+
+@Article{matzkin2013nonparametric,
+  author    = {Matzkin, Rosa L},
+  title     = {Nonparametric identification in structural economic models},
+  journal   = {Annual Review of Econonomics},
+  year      = {2013},
+  volume    = {5},
+  number    = {1},
+  pages     = {457--486},
+  publisher = {Annual Reviews},
+}
+
+@Article{hurwicz1950generalization,
+  author    = {Hurwicz, Leonid},
+  title     = {Generalization of the concept of identification},
+  journal   = {Statistical Inference in Dynamic Economic Models},
+  year      = {1950},
+  volume    = {10},
+  pages     = {245--57},
+  publisher = {Wiley New York},
+}
+
+@Article{manski1975maximum,
+  author    = {Manski, Charles F},
+  title     = {Maximum score estimation of the stochastic utility model of choice},
+  journal   = {Journal of Econometrics},
+  year      = {1975},
+  volume    = {3},
+  number    = {3},
+  pages     = {205--228},
+  publisher = {Elsevier},
+}
+
+@Article{bontemps2012set,
+  author    = {Bontemps, Christian and Magnac, Thierry and Maurin, Eric},
+  title     = {Set identified linear models},
+  journal   = {Econometrica},
+  year      = {2012},
+  volume    = {80},
+  number    = {3},
+  pages     = {1129--1155},
+  publisher = {Wiley Online Library},
+}
+
+@Article{LUCAS197619,
+  author  = {Robert E. Lucas},
+  title   = {Econometric policy evaluation: A critique},
+  journal = {Carnegie-Rochester Conference Series on Public Policy},
+  year    = {1976},
+  volume  = {1},
+  pages   = {19-46},
+  issn    = {0167-2231},
+  doi     = {https://doi.org/10.1016/S0167-2231(76)80003-6},
+  url     = {https://www.sciencedirect.com/science/article/pii/S0167223176800036},
+}
+
+@Article{bajari2015machine,
+  author  = {Bajari, Patrick and Nekipelov, Denis and Ryan, Stephen P. and Yang, Miaoyu},
+  title   = {Machine Learning Methods for Demand Estimation},
+  journal = {American Economic Review},
+  year    = {2015},
+  volume  = {105},
+  number  = {5},
+  pages   = {481-85},
+  month   = {May},
+  doi     = {10.1257/aer.p20151021},
+  url     = {https://www.aeaweb.org/articles?id=10.1257/aer.p20151021},
+}
+
+@Article{de2013econometric,
+  author    = {De Paula, Aureo},
+  title     = {Econometric analysis of games with multiple equilibria},
+  journal   = {Annual Review of Econnomics},
+  year      = {2013},
+  volume    = {5},
+  number    = {1},
+  pages     = {107--131},
+  publisher = {Annual Reviews},
+}
+
+@Article{berry1992estimation,
+  author    = {Berry, Steven T},
+  title     = {Estimation of a Model of Entry in the Airline Industry},
+  journal   = {Econometrica},
+  year      = {1992},
+  pages     = {889--917},
+  publisher = {JSTOR},
+}
+
+@Article{bresnahan1990entry,
+  author    = {Bresnahan, Timothy F and Reiss, Peter C},
+  title     = {Entry in monopoly market},
+  journal   = {The Review of Economic Studies},
+  year      = {1990},
+  volume    = {57},
+  number    = {4},
+  pages     = {531--553},
+  publisher = {Wiley-Blackwell},
+}
+
+@Article{tamer2003incomplete,
+  author    = {Tamer, Elie},
+  title     = {Incomplete simultaneous discrete response model with multiple equilibria},
+  journal   = {The Review of Economic Studies},
+  year      = {2003},
+  volume    = {70},
+  number    = {1},
+  pages     = {147--165},
+  publisher = {Wiley-Blackwell},
+}
+
+@InProceedings{akaike1973information,
+  author       = {Akaike, H},
+  title        = {Information theory and an extension of the maximum likelihood principle},
+  booktitle    = {2nd International Symposium on Information Theory},
+  year         = {1973},
+  pages        = {267--281},
+  organization = {Akad{\'e}miai Kiad{\'o} Location Budapest, Hungary},
+}
+
+@Article{efron1979bootstrap,
+  author    = {B. Efron},
+  title     = {Bootstrap Methods: Another Look at the Jackknife},
+  journal   = {The Annals of Statistics},
+  year      = {1979},
+  volume    = {7},
+  number    = {1},
+  pages     = {1--26},
+  issn      = {00905364},
+  abstract  = {We discuss the following problem: given a random sample X = (X1, X2, ⋯, Xn) from an unknown probability distribution F, estimate the sampling distribution of some prespecified random variable R(X, F), on the basis of the observed data x. (Standard jackknife theory gives an approximate mean and variance in the case R(X, F) = θ(F̂) - θ(F), θ some parameter of interest.) A general method, called the "bootstrap," is introduced, and shown to work satisfactorily on a variety of estimation problems. The jackknife is shown to be a linear approximation method for the bootstrap. The exposition proceeds by a series of examples: variance of the sample median, error rates in a linear discriminant analysis, ratio estimation, estimating regression parameters, etc.},
+  publisher = {Institute of Mathematical Statistics},
+  url       = {http://www.jstor.org/stable/2958830},
+}
+
+@InCollection{HOROWITZ20013159,
+  author    = {Joel L. Horowitz},
+  title     = {The Bootstrap},
+  booktitle = {Handbook of Econometrics},
+  publisher = {Elsevier},
+  year      = {2001},
+  editor    = {James J. Heckman and Edward Leamer},
+  volume    = {5},
+  chapter   = {52},
+  pages     = {3159-3228},
+  abstract  = {The bootstrap is a method for estimating the distribution of an estimator or test statistic by resampling one’s data or a model estimated from the data. Under conditions that hold in a wide variety of econometric applications, the bootstrap provides approximations to distributions of statistics, coverage probabilities of confidence intervals, and rejection probabilities of hypothesis tests that are more accurate than the approximations of first-order asymptotic distribution theory. The reductions in the differences between true and nominal coverage or rejection probabilities can be very large. The bootstrap is a practical technique that is ready for use in applications. This chapter explains and illustrates the usefulness and limitations of the bootstrap in contexts of interest in econometrics. The chapter outlines the theory of the bootstrap, provides numerical illustrations of its performance, and gives simple instructions on how to implement the bootstrap in applications. The presentation is informal and expository. Its aim is to provide an intuitive understanding of how the bootstrap works and a feeling for its practical value in econometrics.},
+  doi       = {https://doi.org/10.1016/S1573-4412(01)05005-X},
+  issn      = {1573-4412},
+  keywords  = {JEL classification:, C12, C13, C15},
+  url       = {https://www.sciencedirect.com/science/article/pii/S157344120105005X},
+}
+
+@Article{horowitz2019bootstrap,
+  author    = {Horowitz, Joel L},
+  title     = {Bootstrap methods in econometrics},
+  journal   = {Annual Review of Economics},
+  year      = {2019},
+  volume    = {11},
+  pages     = {193--224},
+  publisher = {Annual Reviews},
+}
+
+@Book{hall1992bootstrap,
+  title     = {The bootstrap and {E}dgeworth expansion},
+  publisher = {Springer},
+  year      = {1992},
+  author    = {Hall, Peter},
+}
+
+@Article{mammen1992bootstrap,
+  author    = {Mammen, Enno},
+  title     = {Bootstrap, wild bootstrap, and asymptotic normality},
+  journal   = {Probability Theory and Related Fields},
+  year      = {1992},
+  volume    = {93},
+  number    = {4},
+  pages     = {439--455},
+  publisher = {Springer},
+}
+
+@Article{manski1993identification,
+  author    = {Manski, Charles F},
+  title     = {Identification of endogenous social effects: The reflection problem},
+  journal   = {The Review of Economic Studies},
+  year      = {1993},
+  volume    = {60},
+  number    = {3},
+  pages     = {531--542},
+  publisher = {Wiley-Blackwell},
+}
+
+@Article{arpino2017implementing,
+  author  = {Arpino, Bruno and Benedictis, Luca De and Mattei, Alessandra},
+  title   = {Implementing propensity score matching with network data: the effect of the General Agreement on Tariffs and Trade on bilateral trade},
+  journal = {Journal of the Royal Statistical Society: Series C},
+  year    = {2017},
+  number  = {3},
+  pages   = {537--554},
+}
+
+@InCollection{said2010author,
+  author    = {Said, Yasmin H and Wegman, Edward J and Sharabati, Walid K},
+  title     = {Author--Coauthor Social Networks and Emerging Scientific Subfields},
+  booktitle = {Data Analysis and Classification},
+  publisher = {Springer},
+  year      = {2010},
+  pages     = {257--268},
+}
+
+@Article{bramoulle2009identification,
+  author    = {Bramoull{\'e}, Yann and Djebbari, Habiba and Fortin, Bernard},
+  title     = {Identification of peer effects through social networks},
+  journal   = {Journal of Econometrics},
+  year      = {2009},
+  volume    = {150},
+  number    = {1},
+  pages     = {41--55},
+  publisher = {Elsevier},
+}
+
+@Article{harling2014spatial,
+  author    = {Harling, Guy and Castro, Marcia C},
+  title     = {A spatial analysis of social and economic determinants of tuberculosis in Brazil},
+  journal   = {Health \& Place},
+  year      = {2014},
+  volume    = {25},
+  pages     = {56--67},
+  publisher = {Elsevier},
+}
+
+@Article{hoshino2018semiparametric,
+  author    = {Hoshino, Tadao},
+  title     = {Semiparametric spatial autoregressive models with endogenous regressors: With an application to crime data},
+  journal   = {Journal of Business \& Economic Statistics},
+  year      = {2018},
+  volume    = {36},
+  number    = {1},
+  pages     = {160--172},
+  publisher = {Taylor \& Francis},
+}
+
+@Book{anselin1988spatial,
+  title     = {Spatial Econometrics: Methods and Models},
+  publisher = {Springer},
+  year      = {1988},
+  author    = {Anselin, L},
+}
+
+@Article{lee2014binary,
+  author    = {Lee, Lung-fei and Li, Ji and Lin, Xu},
+  title     = {Binary choice models with social network under heterogeneous rational expectations},
+  journal   = {Review of Economics and Statistics},
+  year      = {2014},
+  volume    = {96},
+  number    = {3},
+  pages     = {402--417},
+  publisher = {The MIT Press},
+}
+
+@Article{lee2007identification,
+  author    = {Lee, Lung-Fei},
+  title     = {Identification and estimation of econometric models with group interactions, contextual factors and fixed effects},
+  journal   = {Journal of Econometrics},
+  year      = {2007},
+  volume    = {140},
+  number    = {2},
+  pages     = {333--374},
+  publisher = {Elsevier},
+}
+
+@Article{lee2004asymptotic,
+  author    = {Lee, Lung-Fei},
+  title     = {Asymptotic distributions of quasi-maximum likelihood estimators for spatial autoregressive models},
+  journal   = {Econometrica},
+  year      = {2004},
+  volume    = {72},
+  number    = {6},
+  pages     = {1899--1925},
+  publisher = {Wiley Online Library},
+}
+
+@Article{kelejian1998generalized,
+  author    = {Kelejian, Harry H and Prucha, Ingmar R},
+  title     = {A generalized spatial two-stage least squares procedure for estimating a spatial autoregressive model with autoregressive disturbances},
+  journal   = {The Journal of Real Estate Finance and Economics},
+  year      = {1998},
+  volume    = {17},
+  number    = {1},
+  pages     = {99--121},
+  publisher = {Springer},
+}
+
+@Article{kelejian1999generalized,
+  author    = {Kelejian, Harry H and Prucha, Ingmar R},
+  title     = {A generalized moments estimator for the autoregressive parameter in a spatial model},
+  journal   = {International Economic Review},
+  year      = {1999},
+  volume    = {40},
+  number    = {2},
+  pages     = {509--533},
+  publisher = {Wiley Online Library},
+}
+
+@Article{kelejian2010specification,
+  author    = {Kelejian, Harry H and Prucha, Ingmar R},
+  title     = {Specification and estimation of spatial autoregressive models with autoregressive and heteroskedastic disturbances},
+  journal   = {Journal of Econometrics},
+  year      = {2010},
+  volume    = {157},
+  number    = {1},
+  pages     = {53--67},
+  publisher = {Elsevier},
+}
+
+@Book{lesage2009introduction,
+  title     = {Introduction to spatial econometrics},
+  publisher = {Chapman and Hall/CRC},
+  year      = {2009},
+  author    = {LeSage, James and Pace, Robert Kelley},
+}
+
+@Article{soetevent2007discrete,
+  author    = {Soetevent, Adriaan R and Kooreman, Peter},
+  title     = {A discrete-choice model with social interactions: with an application to high school teen behavior},
+  journal   = {Journal of Applied Econometrics},
+  year      = {2007},
+  volume    = {22},
+  number    = {3},
+  pages     = {599--624},
+  publisher = {Wiley Online Library},
+}
+
+@Article{pinkse1998contracting,
+  author    = {Pinkse, Joris and Slade, Margaret E},
+  title     = {Contracting in space: An application of spatial statistics to discrete-choice models},
+  journal   = {Journal of Econometrics},
+  year      = {1998},
+  volume    = {85},
+  number    = {1},
+  pages     = {125--154},
+  publisher = {Elsevier},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

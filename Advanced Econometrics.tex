@@ -1,0 +1,36 @@
+\documentclass[10.5pt, A4paper, openany, uplatex]{book}
+\usepackage{docmute}
+\input{settings}
+
+\graphicspath{{./figs/}}
+\bibliographystyle{apalike} 
+
+\title{
+	\textbf{Advanced Econometrics}\footnote{Updated irregularly. Please check the course page occasionally for the latest version. } \\
+	\Large \flushleft{Part I.\hspace{5pt}  Methods of Econometrics} \\
+	\Large \flushleft{Part II. Econometric Analysis of Cross-Sectional Dependence Models}	
+}
+
+\normalsize
+
+\author{Tadao Hoshino (星野匡郎)\thanks{
+		School of Political Science and Economics, Waseda University. 1-6-1 Nishi-waseda, Shinjuku-ku, Tokyo 169-8050, Japan. Email: thoshino@waseda.jp. 
+		If you find any typos and errors please let me know.}}
+\date{\today}
+\makeindex
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+\mainmatter 
+
+\include{PART1}
+\include{PART2}
+\include{appendices}
+
+\clearpage	
+\bibliography{references}
+
+\printindex
+
+\end{document}

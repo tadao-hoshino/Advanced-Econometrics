@@ -1,0 +1,53 @@
+This is pBibTeX, Version 0.99d-j0.34 (utf8.euc) (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Advanced Econometrics.aux
+The style file: apalike.bst
+A level-1 auxiliary file: PART1.aux
+A level-1 auxiliary file: PART2.aux
+A level-1 auxiliary file: appendices.aux
+Database file #1: references.bib
+Warning--there's a number but no volume in arpino2017implementing
+Warning--empty publisher in stock2005testing
+You've used 41 entries,
+            1935 wiz_defined-function locations,
+            727 strings with 9886 characters,
+and the built_in function-call counts, 16362 in all, are:
+= -- 1680
+> -- 460
+< -- 42
++ -- 156
+- -- 142
+* -- 1354
+:= -- 2734
+add.period$ -- 127
+call.type$ -- 41
+change.case$ -- 272
+chr.to.int$ -- 41
+cite$ -- 43
+duplicate$ -- 653
+empty$ -- 1269
+format.name$ -- 207
+if$ -- 3278
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 45
+newline$ -- 208
+num.names$ -- 125
+pop$ -- 209
+preamble$ -- 1
+purify$ -- 275
+quote$ -- 0
+skip$ -- 513
+stack$ -- 0
+substring$ -- 1440
+swap$ -- 102
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 238
+warning$ -- 2
+while$ -- 158
+width$ -- 0
+write$ -- 537
+is.kanji.str$ -- 0
+(There were 2 warnings)

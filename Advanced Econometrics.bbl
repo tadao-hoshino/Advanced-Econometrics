@@ -1,0 +1,230 @@
+\begin{thebibliography}{}
+
+\bibitem[Akaike, 1973]{akaike1973information}
+Akaike, H. (1973).
+\newblock Information theory and an extension of the maximum likelihood
+  principle.
+\newblock In {\em 2nd International Symposium on Information Theory}, pages
+  267--281. Akad{\'e}miai Kiad{\'o} Location Budapest, Hungary.
+
+\bibitem[Anselin, 1988]{anselin1988spatial}
+Anselin, L. (1988).
+\newblock {\em Spatial Econometrics: Methods and Models}.
+\newblock Springer.
+
+\bibitem[Arpino et~al., 2017]{arpino2017implementing}
+Arpino, B., Benedictis, L.~D., and Mattei, A. (2017).
+\newblock Implementing propensity score matching with network data: the effect
+  of the general agreement on tariffs and trade on bilateral trade.
+\newblock {\em Journal of the Royal Statistical Society: Series C},
+  (3):537--554.
+
+\bibitem[Bajari et~al., 2010]{bajari2010identification}
+Bajari, P., Hong, H., and Ryan, S.~P. (2010).
+\newblock Identification and estimation of a discrete game of complete
+  information.
+\newblock {\em Econometrica}, 78(5):1529--1568.
+
+\bibitem[Bajari et~al., 2015]{bajari2015machine}
+Bajari, P., Nekipelov, D., Ryan, S.~P., and Yang, M. (2015).
+\newblock Machine learning methods for demand estimation.
+\newblock {\em American Economic Review}, 105(5):481--85.
+
+\bibitem[Ballester et~al., 2006]{ballester2006s}
+Ballester, C., Calv{\'o}-Armengol, A., and Zenou, Y. (2006).
+\newblock Who's who in networks. wanted: The key player.
+\newblock {\em Econometrica}, 74(5):1403--1417.
+
+\bibitem[Berry, 1992]{berry1992estimation}
+Berry, S.~T. (1992).
+\newblock Estimation of a model of entry in the airline industry.
+\newblock {\em Econometrica}, pages 889--917.
+
+\bibitem[Bontemps et~al., 2012]{bontemps2012set}
+Bontemps, C., Magnac, T., and Maurin, E. (2012).
+\newblock Set identified linear models.
+\newblock {\em Econometrica}, 80(3):1129--1155.
+
+\bibitem[Bramoull{\'e} et~al., 2009]{bramoulle2009identification}
+Bramoull{\'e}, Y., Djebbari, H., and Fortin, B. (2009).
+\newblock Identification of peer effects through social networks.
+\newblock {\em Journal of Econometrics}, 150(1):41--55.
+
+\bibitem[Bresnahan and Reiss, 1990]{bresnahan1990entry}
+Bresnahan, T.~F. and Reiss, P.~C. (1990).
+\newblock Entry in monopoly market.
+\newblock {\em The Review of Economic Studies}, 57(4):531--553.
+
+\bibitem[Ciliberto and Tamer, 2009]{ciliberto2009market}
+Ciliberto, F. and Tamer, E. (2009).
+\newblock Market structure and multiple equilibria in airline markets.
+\newblock {\em Econometrica}, 77(6):1791--1828.
+
+\bibitem[De~Paula, 2013]{de2013econometric}
+De~Paula, A. (2013).
+\newblock Econometric analysis of games with multiple equilibria.
+\newblock {\em Annual Review of Econnomics}, 5(1):107--131.
+
+\bibitem[Efron, 1979]{efron1979bootstrap}
+Efron, B. (1979).
+\newblock Bootstrap methods: Another look at the jackknife.
+\newblock {\em The Annals of Statistics}, 7(1):1--26.
+
+\bibitem[Hall, 1992]{hall1992bootstrap}
+Hall, P. (1992).
+\newblock {\em The bootstrap and {E}dgeworth expansion}.
+\newblock Springer.
+
+\bibitem[Harling and Castro, 2014]{harling2014spatial}
+Harling, G. and Castro, M.~C. (2014).
+\newblock A spatial analysis of social and economic determinants of
+  tuberculosis in brazil.
+\newblock {\em Health \& Place}, 25:56--67.
+
+\bibitem[Horowitz, 2001]{HOROWITZ20013159}
+Horowitz, J.~L. (2001).
+\newblock The bootstrap.
+\newblock In Heckman, J.~J. and Leamer, E., editors, {\em Handbook of
+  Econometrics}, volume~5, chapter~52, pages 3159--3228. Elsevier.
+
+\bibitem[Horowitz, 2019]{horowitz2019bootstrap}
+Horowitz, J.~L. (2019).
+\newblock Bootstrap methods in econometrics.
+\newblock {\em Annual Review of Economics}, 11:193--224.
+
+\bibitem[Hoshino, 2018]{hoshino2018semiparametric}
+Hoshino, T. (2018).
+\newblock Semiparametric spatial autoregressive models with endogenous
+  regressors: With an application to crime data.
+\newblock {\em Journal of Business \& Economic Statistics}, 36(1):160--172.
+
+\bibitem[Hurwicz, 1950]{hurwicz1950generalization}
+Hurwicz, L. (1950).
+\newblock Generalization of the concept of identification.
+\newblock {\em Statistical Inference in Dynamic Economic Models}, 10:245--57.
+
+\bibitem[Imbens and Angrist, 1994]{imbens1994identification}
+Imbens, G.~W. and Angrist, J.~D. (1994).
+\newblock Identification and estimation of local average treatment effects.
+\newblock {\em Econometrica}, 62(2):467--475.
+
+\bibitem[Kelejian and Prucha, 1998]{kelejian1998generalized}
+Kelejian, H.~H. and Prucha, I.~R. (1998).
+\newblock A generalized spatial two-stage least squares procedure for
+  estimating a spatial autoregressive model with autoregressive disturbances.
+\newblock {\em The Journal of Real Estate Finance and Economics},
+  17(1):99--121.
+
+\bibitem[Kelejian and Prucha, 1999]{kelejian1999generalized}
+Kelejian, H.~H. and Prucha, I.~R. (1999).
+\newblock A generalized moments estimator for the autoregressive parameter in a
+  spatial model.
+\newblock {\em International Economic Review}, 40(2):509--533.
+
+\bibitem[Kelejian and Prucha, 2010]{kelejian2010specification}
+Kelejian, H.~H. and Prucha, I.~R. (2010).
+\newblock Specification and estimation of spatial autoregressive models with
+  autoregressive and heteroskedastic disturbances.
+\newblock {\em Journal of Econometrics}, 157(1):53--67.
+
+\bibitem[Lee, 2004]{lee2004asymptotic}
+Lee, L.-F. (2004).
+\newblock Asymptotic distributions of quasi-maximum likelihood estimators for
+  spatial autoregressive models.
+\newblock {\em Econometrica}, 72(6):1899--1925.
+
+\bibitem[Lee, 2007]{lee2007identification}
+Lee, L.-F. (2007).
+\newblock Identification and estimation of econometric models with group
+  interactions, contextual factors and fixed effects.
+\newblock {\em Journal of Econometrics}, 140(2):333--374.
+
+\bibitem[Lee et~al., 2014]{lee2014binary}
+Lee, L.-f., Li, J., and Lin, X. (2014).
+\newblock Binary choice models with social network under heterogeneous rational
+  expectations.
+\newblock {\em Review of Economics and Statistics}, 96(3):402--417.
+
+\bibitem[LeSage and Pace, 2009]{lesage2009introduction}
+LeSage, J. and Pace, R.~K. (2009).
+\newblock {\em Introduction to spatial econometrics}.
+\newblock Chapman and Hall/CRC.
+
+\bibitem[Levitt, 1997]{levitt1997using}
+Levitt, S.~D. (1997).
+\newblock Using electoral cycles in police hiring to estimate the effect of
+  police on crime.
+\newblock {\em The American Economic Review}, pages 270--290.
+
+\bibitem[Lewbel, 2019]{lewbel2019identification}
+Lewbel, A. (2019).
+\newblock The identification zoo: Meanings of identification in econometrics.
+\newblock {\em Journal of Economic Literature}, 57(4):835--903.
+
+\bibitem[Lucas, 1976]{LUCAS197619}
+Lucas, R.~E. (1976).
+\newblock Econometric policy evaluation: A critique.
+\newblock {\em Carnegie-Rochester Conference Series on Public Policy},
+  1:19--46.
+
+\bibitem[Mammen, 1992]{mammen1992bootstrap}
+Mammen, E. (1992).
+\newblock Bootstrap, wild bootstrap, and asymptotic normality.
+\newblock {\em Probability Theory and Related Fields}, 93(4):439--455.
+
+\bibitem[Manski, 1975]{manski1975maximum}
+Manski, C.~F. (1975).
+\newblock Maximum score estimation of the stochastic utility model of choice.
+\newblock {\em Journal of Econometrics}, 3(3):205--228.
+
+\bibitem[Manski, 1993]{manski1993identification}
+Manski, C.~F. (1993).
+\newblock Identification of endogenous social effects: The reflection problem.
+\newblock {\em The Review of Economic Studies}, 60(3):531--542.
+
+\bibitem[Matzkin, 2013]{matzkin2013nonparametric}
+Matzkin, R.~L. (2013).
+\newblock Nonparametric identification in structural economic models.
+\newblock {\em Annual Review of Econonomics}, 5(1):457--486.
+
+\bibitem[Newey and McFadden, 1994]{newey1994large}
+Newey, W.~K. and McFadden, D. (1994).
+\newblock Large sample estimation and hypothesis testing.
+\newblock In {\em Handbook of econometrics}, volume~4, pages 2111--2245.
+  Elsevier.
+
+\bibitem[Pinkse and Slade, 1998]{pinkse1998contracting}
+Pinkse, J. and Slade, M.~E. (1998).
+\newblock Contracting in space: An application of spatial statistics to
+  discrete-choice models.
+\newblock {\em Journal of Econometrics}, 85(1):125--154.
+
+\bibitem[Said et~al., 2010]{said2010author}
+Said, Y.~H., Wegman, E.~J., and Sharabati, W.~K. (2010).
+\newblock Author--coauthor social networks and emerging scientific subfields.
+\newblock In {\em Data Analysis and Classification}, pages 257--268. Springer.
+
+\bibitem[Soetevent and Kooreman, 2007]{soetevent2007discrete}
+Soetevent, A.~R. and Kooreman, P. (2007).
+\newblock A discrete-choice model with social interactions: with an application
+  to high school teen behavior.
+\newblock {\em Journal of Applied Econometrics}, 22(3):599--624.
+
+\bibitem[Stock and Yogo, 2005]{stock2005testing}
+Stock, J. and Yogo, M. (2005).
+\newblock Testing for weak instruments in linear {IV} regression.
+\newblock In {\em Identification and inference for econometric models: Essays
+  in honor of Thomas Rothenberg}.
+
+\bibitem[Tamer, 2003]{tamer2003incomplete}
+Tamer, E. (2003).
+\newblock Incomplete simultaneous discrete response model with multiple
+  equilibria.
+\newblock {\em The Review of Economic Studies}, 70(1):147--165.
+
+\bibitem[Van~der Vaart, 2000]{van2000asymptotic}
+Van~der Vaart, A.~W. (2000).
+\newblock {\em Asymptotic statistics}.
+\newblock Cambridge university press, 3 edition.
+
+\end{thebibliography}
