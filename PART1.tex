@@ -3295,6 +3295,27 @@ The theorem states that for any continuous function on a closed interval $\mathc
 Remarkably, the differentiability is not required here.
 
 Historically, the most important series expansion result for humankind would be the \textbf{Fourier series\index{Fourier series}} expansion.
+The French mathematician Joseph Fourier (1768-1830) claimed that any periodic function can be decomposed into a linear combination of sine and cosine curves.
+Although its formal proof was not given by Fourier, it was later shown that his claim was after all true for a surprisingly wide class of functions.
+Then, named after his discovery, the following series expansion is called the Fourier series expansion: for a continuous function $m(\cdot)$ on a closed interval $\mathcal{X}$,
+\begin{align*}
+	m(x) = a_0 + a_1\sin(\omega x) + b_1\cos(\omega x) + a_2\sin(\omega 2 x) + b_2\cos(\omega 2 x) + \cdots + a_k\sin(\omega k x) + b_1\cos(\omega k x) + \cdots,
+\end{align*}
+where $\omega$ is a constant determined by the size of $\mathcal{X}$.
+
+In Figure \ref{fig:seriesreg}, we provide the numerical simulation results for the power series approximation and the Fourier series approximation.
+In the figure, the true functional form of $m(\cdot)$ is presented as the dotted curve.
+We can clearly observe that in both series expansions, we can achieve a more precise approximation as the order of the series increases.
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width = 17cm]{seriesreg.png}
+		\caption{Series approximation}\label{fig:seriesreg}
+	\end{center}
+\end{figure}
+
+As such, with suitable conitnuity conditions, a fairly large class of functions can be approximated by some series expansion.
+In addition to those introduced above, basis functions commonly used include splines, wavelets, artificial neural networks, and so forth (see \cite{chen2007large} for their definitions and other examples).
 
 \section{Semiparamtric regression}
 

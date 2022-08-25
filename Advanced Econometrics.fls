@@ -941,6 +941,9 @@ INPUT extractbb -B cropbox -O ./figs//kernels.png
 INPUT ./figs//localreg.png
 INPUT ./figs//localreg.png
 INPUT extractbb -B cropbox -O ./figs//localreg.png
+INPUT ./figs//seriesreg.png
+INPUT ./figs//seriesreg.png
+INPUT extractbb -B cropbox -O ./figs//seriesreg.png
 INPUT ./PART2.tex
 INPUT ./PART2.tex
 INPUT ./PART2.tex
