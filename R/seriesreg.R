@@ -16,36 +16,36 @@
 	pol
 	}
 
- pol3 <- predict(lm(Y ~ Pol(3) - 1))
- pol6 <- predict(lm(Y ~ Pol(6) - 1))
- pol12 <- predict(lm(Y ~ Pol(12) - 1))
+ pol2 <- predict(lm(Y ~ Pol(2) - 1))
+ pol4 <- predict(lm(Y ~ Pol(4) - 1))
+ pol10 <- predict(lm(Y ~ Pol(10) - 1))
 
  par(mfrow = c(1,2))
 
  plot(xx, Y, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, lty = 2, xlab = "x", ylab = "m(x)", main = "Power Series")
  par(new = T)
- plot(xx, pol3, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 2)
+ plot(xx, pol2, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 2)
  par(new = T)
- plot(xx, pol6, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 3)
+ plot(xx, pol4, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 3)
  par(new = T)
- plot(xx, pol12, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 4)
- legend("topright", c("True m(x)", "k = 3", "k = 6", "k = 12"), lty = c(2,1,1,1), lwd = c(2,2,2,2), col = c(1,2,3,4))
+ plot(xx, pol10, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 4)
+ legend("topright", c("True m(x)", "k = 2", "k = 4", "k = 10"), lty = c(2,1,1,1), lwd = c(2,2,2,2), col = c(1,2,3,4))
 
  Fou <- function(k){
 	fou <- 1
 	for(i in 1:k) fou <- cbind(fou, cos(i*xx), sin(i*xx))
-	fou[, 1:(1 + k)]
+	fou
 	}
 
- fou3 <- predict(lm(Y ~ Fou(3) - 1))
- fou6 <- predict(lm(Y ~ Fou(6) - 1))
- fou12 <- predict(lm(Y ~ Fou(12) - 1))
+ fou2 <- predict(lm(Y ~ Fou(2) - 1))
+ fou4 <- predict(lm(Y ~ Fou(4) - 1))
+ fou10 <- predict(lm(Y ~ Fou(10) - 1))
 
  plot(xx, Y, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, lty = 2, xlab = "x", ylab = "m(x)", main = "Fourier Series")
  par(new = T)
- plot(xx, fou3, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 2)
+ plot(xx, fou2, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 2)
  par(new = T)
- plot(xx, fou6, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 3)
+ plot(xx, fou4, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 3)
  par(new = T)
- plot(xx, fou12, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 4)
- legend("topright", c("True m(x)", "k = 3", "k = 6", "k = 12"), lty = c(2,1,1,1), lwd = c(2,2,2,2), col = c(1,2,3,4))
+ plot(xx, fou10, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 4)
+ legend("topright", c("True m(x)", "k = 2", "k = 4", "k = 10"), lty = c(2,1,1,1), lwd = c(2,2,2,2), col = c(1,2,3,4))

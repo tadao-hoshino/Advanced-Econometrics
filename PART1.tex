@@ -3224,12 +3224,13 @@ Therefore, to meet these conditions simultaneously, we should carefully choose $
 
 Another popularly used local regression method is the \textbf{kernel regression\index{kernel regression}}.
 The idea of kernel regression is similar to that of $k$NN regression, but differs in that it specifies a \textbf{bandwidth\index{bandwidth}} $h$ such that only the observations whose $X_i$ falling into the interval $[x-h, \; x+h]$ are used to compute the estimator.
-For example, the \textbf{local constant regression\index{local constant regression}} estimator is defined as
+For example, a \textbf{local constant regression\index{local constant regression}} estimator is given by
 \begin{align*}
 	\hat m^{const}_n(x) \equiv \frac{\sum_{i = 1}^n \mathbf{1}\{|X_i - x | \le h\} Y_i}{\sum_{i = 1}^n\mathbf{1}\{|X_i - x | \le h\}}.
 \end{align*}
-The above approach is slightly inefficient because, once the criterion $|X_i - x | \le h$ is met, the observations adjacent to $x$ and those not that close to $x$ have the same contributions to the estimator.
-Thus, it is possible to improve the estimator by assigning larger weights for the observations closer to the evaluation point $x \in \mathcal{X}$. 
+The above estimator is slightly inefficient in practice because, once the criterion $|X_i - x | \le h$ is met, the observations adjacent to $x$ and those not that close to $x$ have the same contributions to the estimator.
+Thus, it is possible to improve the estimator by assigning larger weights for the observations closer to the evaluation point $x \in \mathcal{X}$.
+
 To this end, we introduce a general weighting function $K(\cdot)$, which is referred to as the \textbf{kernel function\index{kernel function}}.
 The kernel function is a continuous density function (i.e., $\int K(u)\text{d}u = 1$), and is assumed to be symmetric around zero (i.e., $\int u K(u)\text{d}u = 0$).
 Some typical choices for the kernel function are: uniform kernel $K(u) = \frac{1}{2}\mathbf{1}\{|u| \le 1\}$, Epanechnikov kernel $K(u) = \frac{3}{4}(1-u^2)\mathbf{1}\{|u| \le 1\}$, and Gaussian kernel $K(u) = \frac{1}{\sqrt{2\pi}}\exp(-u^2/2)$; see Figure \ref{fig:kernels}.
@@ -3246,20 +3247,22 @@ One can easily see that the local constant estimator given above is numerically 
 	\hat m^{const}_n(x) = \frac{(nh)^{-1}\sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i}{(nh)^{-1}\sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right)}
 \end{align*}
 with $K$ being the uniform kernel.
-Dividing both the numerator and the denominator by $nh$ is for technical convenience.
+Dividing both the numerator and denominator by $nh$ is for technical convenience.
 By a sraightforward computation, one can find that this $\hat m^{const}_n(x)$ is equivalent to the solution of the following weighted least squares problem:
 \begin{align*}
 	\hat m^{const}_n(x) = \argmin_a \sum_{i = 1}^n (Y_i - a)^2K\left( \frac{X_i - x}{h}\right).
 \end{align*}
-Hence, this estimator can be viewed as fitting a constant-only model to the (weighted) observations in the neighborhood of $x$.
+Hence, the local constant estimator can be viewed as fitting a constant-only model to the (weighted) local observations in the neighborhood of $x$ (this is why the estimator is called local ``constant'').
 
-As an extension of the local constant approach, we can consider fitting a simple linear regression model to the local observations instead of simply taking the average or fitting a constant-only model.
+As an extension of the local constant approach, we can consider fitting a linear regression model to the local observations instead of simply taking the average or fitting a constant-only model.
 Such an approach is called the \textbf{local linear regression\index{local linear regression}}.
 That is, the local linear kernel regression estimator is defined as $\hat m^{ll}_n(x) \equiv \hat a_n$, where
 \begin{align*}
 	(\hat a_n, \hat b_n) = \argmin_{(a, b)} \sum_{i = 1}^n (Y_i - a - b (X_i -x))^2K\left( \frac{X_i - x}{h}\right).
 \end{align*}
 It is known that by including an additional regressor $(X_i - x)$, the local linear regression estimator achieves a nice bias-correction property that the local constant estimator does not have (for more details, see, e.g., \cite{li2007nonparametric}).
+As a further generalization, one may consider including $(X_i - x)^2$, $(X_i - x)^3$, \ldots as additional regressors.
+In general, these estimators are called the local polynomial estimators.
 
 \begin{figure}[h!]
 	\begin{center}
@@ -3278,19 +3281,19 @@ Observe that
 	& = \frac{1}{h}\int K\left( \frac{w - x}{h}\right) \E[ Y \mid X = w] f_X (w)\text{d}w \;\; \text{(LIE)} \\
 	& = \int K(u) \E[ Y \mid X = x + uh] f_X (x + uh)\text{d}u \;\; \text{(change of variables: $u = (w-x)/h$)}.
 \end{align*}
-Recalling that $\int K(u)\text{d}u = 1$ and assuming that $\E[ Y \mid X = \cdot]$ and $f_X (\cdot)$ are bounded continuous functions, as $h \to 0$, we have 
+Recalling that $\int K(u)\text{d}u = 1$ and assuming that $\E[ Y \mid X = \cdot]$ and $f_X (\cdot)$ are bounded continuous functions, we have 
 \begin{align*}
-	\int K(u) \E[ Y \mid X = x + uh] f_X (x + uh)\text{d}u \to \E[ Y \mid X = x] f_X (x)
+	\lim_{h \to 0} \int K(u) \E[ Y \mid X = x + uh] f_X (x + uh)\text{d}u = \E[ Y \mid X = x] f_X (x)
 \end{align*}
 by the bounded convergence theorem.
 By similar but slightly more tedious calculations, we can show that the variance of $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i$ is of order $O((nh)^{-1})$.
-Thus, if $nh \to \infty$, by Chebyshev's inequality, we get $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i \overset{p}{\to} \E[ Y \mid X = x] f_X (x)$.
+Thus, if $nh \to \infty$ as $n \to \infty$, by Chebyshev's inequality, we get $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i \overset{p}{\to} \E[ Y \mid X = x] f_X (x)$.
 
-By the same argument, we can prove that the denominator of $\hat m^{const}_n(x)$, $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right)$, converges to $f_X(x)$ in probability (this is the so-called \textbf{kernel density estimator\index{kernel density estimator}}) as $h \to 0$ and $nh \to \infty$.
+By the same argument as above, we can prove that the denominator of $\hat m^{const}_n(x)$, $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right)$, converges to $f_X(x)$ in probability (this is the so-called \textbf{kernel density estimator\index{kernel density estimator}}) if $h \to 0$ and $nh \to \infty$ as $n \to \infty$.
 Combining these results together, the consistency of $\hat m^{const}_n(x)$ is proved.
 
 Note that, similar to the $k$NN regression estimator, there is a bias-variance trade-off for the choice of the bandwidth $h$.
-As we have discussed, $h$ must converge to zero sufficiently slowly so that $nh$ can increase to infinity.
+As we have discussed, as $n$ increases, $h$ must converge to zero sufficiently slowly so that $nh$ can increase to infinity.
 Intuitively, the effective sample size for a kernel regression is of order $O(nh)$ for each evaluation point, and thus to apply the law of large numbers, $nh$ must grow to infinity.
 
 \bigskip
@@ -3347,26 +3350,26 @@ We can clearly observe that in both series expansions, more and more precise app
 \end{figure}
 
 As such, with suitable conitnuity conditions, a fairly large class of functions can be approximated by some series expansion.
-In addition to those introduced above, basis functions commonly used include splines, wavelets, artificial neural networks, and so forth (see \cite{chen2007large} for their definitions and other examples).
+In addition to those introduced above, basis functions popularly used in applications include splines, wavelets, artificial neural networks, and so forth (see \cite{chen2007large} for their definitions and other examples).
 Now, let $\{p_1(x), p_2(x), \ldots \}$ be a sequence of $\mathbb{R}$-valued basis functions, and $p(x) = (p_1(x), \ldots p_k(x))^\top$.
 We assume that for a sufficiently large $k$, there exists a $k \times 1$ vector $\theta_0$ such that the target function $m(\cdot)$ can be well-approximated by $p(\cdot)^\top\theta_0$ uniformly over $\mathcal{X}$ in the following sense:
 \begin{align*}
 	|m(x) - p(x)^\top\theta_0 | \le O(\lambda(k)) \;\; \text{for any $x \in \mathcal{X}$},
 \end{align*}
-where $\lambda(k)$ is a constant depending on $k$ and the choice of the basis function (and also the dimension of $X$) satisfying $\lambda(k) \to 0$ as $k \to \infty$.
-Among the basis functions listed above, while the power series is quite popular, it is known that the power series expansion has relatively a ``slower'' convergence rate than the others.
-
+where $\lambda(k)$ is a constant depending on $k$ and the choice of the basis function (and also the dimension of $X$) satisfying $\lambda(k) \to 0$ as $k \to \infty$.\footnote{
+	Among the basis functions listed above, while the power series is quite popular, it is known that the power series expansion has relatively a ``slower'' convergence rate than the others.
+}
 Using this series approximation, we can rewrite \eqref{eq:nonpara} as follows:
 \begin{align*}
 	Y
 	& = m(X) + \eps\\
-	& = p(x)^\top\theta_0 + \eta
+	& = p(X)^\top\theta_0 + \eta
 \end{align*}
-where $\eta \equiv v(k) + \eps$, and $v(k) \equiv m(x) - p(x)^\top\theta_0$.
+where $\eta \equiv v(k) + \eps$, and $v(k) \equiv m(X) - p(X)^\top\theta_0$.
 Thus, the nonparametric regression model can be transformed into a ``linear regression'' model with increasing dimension.
 Indeed, we can estimate $\theta_0$ simply by running an OLS regression of $Y$ on $p(x)$:\footnote{
 	Here, we implicitly assume for simplicity that $\frac{1}{n}\sum_{i = 1}^n p(X_i)p(X_i)^\top$ is a nonsingular matrix.
-	However, noting that the dimension of this matrix grows to infinity, it is generally possible that the matrix is not invertible for finite $n$.
+	However, noting that the dimension of this matrix grows to infinity along with $n$, it is generally possible that the matrix is not invertible for finite $n$.
 	In that case, the inverse should be replaced by a generalized inverse.
 	}
 \begin{align*}
@@ -3377,20 +3380,19 @@ Indeed, we can estimate $\theta_0$ simply by running an OLS regression of $Y$ on
 Once we obtain $\hat \theta_n$, for any given $x \in \mathcal{X}$, we can estimate $m(x)$ by 
 \begin{align*}
 	\hat m_n(x) 
-	& = p(x)^\top \hat \theta_n \\ 
+	& \equiv p(x)^\top \hat \theta_n \\ 
 	& = p(x)^\top \left(\frac{1}{n}\sum_{i = 1}^n p(X_i)p(X_i)^\top\right)^{-1}\frac{1}{n}\sum_{i = 1}^n p(X_i)Y_i.
 \end{align*}
-Thus, compared to the kernel regression approach, series regression is much easier to implement.\footnote{
-	However, deriving local asymptotic properties is more difficult for series regression than for kernel regression.
-	}
+Thus, compared to the kernel regression approach, series regression is much easier to implement.
+
 To prove the consistency of $\hat m_n(x)$, by the triangle inequality, observe that
 \begin{align*}
 	|\hat m_n(x) - m(x)|
 	& \le |p(x)^\top (\hat \theta_n - \theta_0)| + |m(x) - p(x)^\top \theta_0| \\
 	& \le |p(x)^\top (\hat \theta_n - \theta_0)| + O(\lambda(k))
 \end{align*}
-Then, since we have assumed $O(\lambda(k)) = o(1)$, it suffices to show that $|p(x)^\top (\hat \theta_n - \theta_0)| = o(1)$.
-Here, assuming that the basis functions are bounded, we have $||p(x)|| = (p_1^2(x) + \cdot + p_k^2(x))^{1/2} = O(\sqrt{k})$.
+Then, since we have assumed $O(\lambda(k)) = o(1)$, it suffices to show that $|p(x)^\top (\hat \theta_n - \theta_0)| = o_P(1)$.
+Here, assuming that the basis functions are bounded, we have $||p(x)|| = (p_1^2(x) + \cdots + p_k^2(x))^{1/2} = O(\sqrt{k})$.
 Further, under some conditions, we can show that
 \begin{align}\label{eq:seriesrate}
 		||\hat \theta_n - \theta_0|| = O_P\left( \sqrt{\frac{k}{n}} \right).
@@ -3407,6 +3409,73 @@ Here, we only state the result under the homoskedasticity assumption $\E[\eps^2 
 \end{align*}
 Then, based on this result, we can compute the confidence interval for each $m(x)$.
 \end{comment}
+
+\bigskip
+
+Now we turn to the cases where $X = (X_1, \ldots, X_d)$ is a general $d$-dimensional variable.
+As can be inferred from a multivariate Taylor expansion, if $X$ is $d$-dimensional, the number of basis functions required to approximate the target function increases in the order $O(k^d)$.
+In general, we can construct a multivariate basis functions by taking the Kronecker product of univariate basis functions:
+\begin{align*}
+	p(x) = p(x_1) \otimes p(x_2) \otimes \cdots \otimes p(x_d).
+\end{align*}
+Thus, if $d$ is not small, the number of coefficient parameters to be estimated easily reaches several hundreds, resulting in a serious loss of efficiency.
+This is the series-regression version of the curse of dimensionality.
+
+\subsection{A numerical illustration: estimation of Engel curve}
+
+As an empirical illustration, we nonparametrically estimate the Engel curve for food consumption using the local constant kernel regression and the series regression based on B-splines; a B-spline function is a piecewise polynomial defined by a set of ``cut points'', called \textbf{knots}.
+
+Install \textbf{np} and \textbf{splines} packages, and load them.
+The data used here is \texttt{Engel95}, a random sample taken from the U.K. Family Expenditure Survey 1995, which can be imported from the \textbf{np} package.
+
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
+ library(np) # run nonparametric kernel regression
+ library(splines) # compute b-spline functions
+
+ data("Engel95") # sample size n = 1655
+ food <- Engel95$food # share of food consumption
+ inc  <- Engel95$logexp # log of total expenditure 
+\end{lstlisting}
+
+We first run the kernel regression using the \textbf{npreg} function.
+This function automatically computes an optimal bandwidth parameter $h$, so that we do not need to specify it.
+
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
+# Kernel regression #
+ mhat_kernel <- npreg(food $\sim$ inc)
+\end{lstlisting}
+
+Next, we perform the series regression.
+The B-spline basis function can be computed using the \textbf{bs} function.
+Here, we set the 25\%, 50\%, and 75\% empirical quantiles of \texttt{inc} as the three knot values and create B-splines with $k = 6$.
+After the B-splines are created, we simply run an OLS regression.
+
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
+# Spline series regression #
+ knots <- quantile(inc, (1:3)/4)
+ p <- bs(inc, knots = knots) # compute the B-splines with k = 6 (excluding the intercept)
+ mhat_spline <- predict(lm(food $\sim$ p))
+\end{lstlisting}
+
+The estimation results can be visually presented as follows.
+Consequently, we can see that both the kernel and series regressions work very similarly.
+
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
+ plot(inc, food, xlim = range(inc), ylim = range(food), 
+	main = "Nonparametric regression", xlab = "inc", ylab = "food")
+ par(new = T)
+ plot(inc[order(inc)], mhat_kernel$mean[order(inc)], xlab = "", ylab = "",
+	xlim = range(inc), ylim = range(food), type = "l", lwd = 2, col = 2)
+ par(new = T)
+ plot(inc[order(inc)], mhat_spline[order(inc)], xlab = "", ylab = "",
+	xlim = range(inc), ylim = range(food), type = "l", lwd = 2, col = 3)
+ legend("topright", c("Kernel regression", "Spline series regression"), 
+	lty = c(1,1), lwd = c(2,2), col = c(2,3))
+\end{lstlisting}
+
+\begin{center}
+	\includegraphics[width = 12cm]{engel.png}
+\end{center}
 
 \section{Semiparamtric regression}
 
