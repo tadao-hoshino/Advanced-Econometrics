@@ -361,13 +361,13 @@ Then, by WLLN, $\frac{1}{n}\sum_{i = 1}^n X_i X_i^\top \overset{p}{\to} \E[XX^\t
 Further, by the continuity of matrix inversion, we can show that $\left(\frac{1}{n}\sum_{i = 1}^n X_i X_i^\top \right)^{-1} \overset{p}{\to} \E[XX^\top]^{-1}$.
 In addition, it holds that $\frac{1}{n}\sum_{i = 1}^n X_i \eps_i \overset{p}{\to} \mbf{0}$ since
 \[
-	\E[X_i \eps_i ] = \E[X_i \E[\eps_i|X_i]] = \mbf{0}
+	\E[X_i \eps_i ] = \E[X_i \E[\eps_i \mid X_i]] = \mbf{0}
 \]
-by the law of iterated expectations and $\E[\eps_i | X_i] = 0$.
+by the law of iterated expectations (LIE) and $\E[\eps_i \mid X_i] = 0$.
 Finally, we can prove \eqref{eq:convzero} by Lemma \ref{lem:prodconv}.
 
 \paragraph{Proof of asymptotic normality}
-Suppose that $\E[\eps^2 | X ] = \sigma^2 < \infty$ (i.e., \textbf{homoskedasticity\index{homoskedasticity}}) for simplicity.
+Suppose that $\E[\eps^2 \mid X ] = \sigma^2 < \infty$ (i.e., \textbf{homoskedasticity\index{homoskedasticity}}) for simplicity.
 Write
 \[
 	\sqrt{n}(\hat \beta_n^{ols} - \beta_0) = \left(\frac{1}{n}\sum_{i = 1}^n X_i X_i^\top \right)^{-1}\frac{1}{\sqrt{n}}\sum_{i = 1}^n X_i \eps_i.
@@ -380,7 +380,7 @@ The mean of $\frac{1}{\sqrt{n}}\sum_{i = 1}^n X_i \eps_i$ is zero, and the varia
 	& = \E\left[ \frac{1}{n}\sum_{i = 1}^n X_iX_i^\top \eps^2_i \right]\\
 	& = \sigma^2 \frac{1}{n}\sum_{i = 1}^n  \E[  X_iX_i^\top ] = \sigma^2 \E[  XX^\top ],
 \end{align*}
-where the second equality follows by the independence assumption, and the third equality is by the law of iterated expectations and the homoskedasticity assumption.
+where the second equality follows by the independence assumption, and the third equality is by LIE and the homoskedasticity assumption.
 Hence, by CLT, we have
 \[
 	\frac{1}{\sqrt{n}}\sum_{i = 1}^n X_i \eps_i \overset{d}{\to} \mbf{N}(\mbf{0}, \sigma^2 \E[XX^\top]),
@@ -1486,7 +1486,7 @@ the information matrix $I(\beta_0)$ is obtained by
 	& = \E\left[ XX^\top  \frac{(D - F(X^\top \beta_0))^2 [f(X^\top \beta_0)]^2}{[F(X^\top \beta_0) \cdot (1 -  F(X^\top\beta_0))]^2 }\right] \\
 	& = \E\left[ XX^\top  \frac{[f(X^\top \beta_0)]^2}{F(X^\top \beta_0) \cdot (1 -  F(X^\top\beta_0)) }\right] 
 \end{align*}
-by the law of iterated expectations.
+by LIE.
 Hence, we have
 \[
 	\sqrt{n}(\hat \beta_n^{mle} - \beta_0) \overset{d}{\to} \mbf{N}\left( \mbf{0}, \E\left[ XX^\top  \frac{[f(X^\top \beta_0)]^2}{F(X^\top \beta_0) \cdot (1 -  F(X^\top\beta_0)) }\right]^{-1}  \right).
@@ -1499,7 +1499,7 @@ By the chain rule, the Hessian $H(X; \beta_0)$ can be written as
 	& = \partial s(X; \beta_0)/ \partial \beta^\top \\
 	& = - XX^\top \frac{[f(X^\top \beta_0)]^2}{F(X^\top \beta_0) \cdot (1 -  F(X^\top\beta_0)) } + X (D - F(X^\top \beta_0)) \cdot \frac{\partial}{\partial \beta^\top} \left[ \frac{f(X^\top \beta_0)}{F(X^\top \beta_0) \cdot (1 -  F(X^\top\beta_0)) }\right].
 \end{align*}
-By the law of iterated expectations, we can see that the second term on the right-hand side will be zero after taking the expectation.
+By LIE, we can see that the second term on the right-hand side will be zero after taking the expectation.
 Thus, we have $-\E[H(X; \beta_0) ] = I(\beta_0)$, as desired.
 
 \hrulefill
@@ -1903,7 +1903,7 @@ If $J = K$, we say that $\theta_0$ is just-identified, and if $J > K$, it is ove
 	\[
 		\E[D -  \Phi(X^\top \theta_0) \mid X] = 0.
 	\]
-	This ``conditional" moment restriction implies the ``unconditional" moment restrictions $\E [X (D -  \Phi(X^\top \theta_0))] = \mbf{0}$ by the law of iterated expectations:
+	This ``conditional" moment restriction implies the ``unconditional" moment restrictions $\E [X (D -  \Phi(X^\top \theta_0))] = \mbf{0}$ by LIE:
 	\begin{align*}
 	\E [X (D -  \Phi(X^\top \theta_0))] 
 	& = \E \left\{ \E[X (D -  \Phi(X^\top \theta_0)) \mid X] \right\} \\
@@ -2350,7 +2350,7 @@ The above definition says that when the observable variables contain sufficientl
 	\[
 	\E [XY ] = \E[XX^\top] \beta
 	\]
-	by the law of iterated expectations.
+	by LIE.
 	The above relationship is not sufficient to point-identify $\beta$ because the matrix $\E [XX^\top]$ may not be of full rank.
 	That is, there are possibly infinite number of different  $\beta$'s that satisfy the above equality.
 
@@ -3243,10 +3243,11 @@ Some typical choices for the kernel function are: uniform kernel $K(u) = \frac{1
 
 One can easily see that the local constant estimator given above is numerically equivalent to
 \begin{align*}
-	\hat m^{const}_n(x) = \frac{\sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i}{\sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right)}
+	\hat m^{const}_n(x) = \frac{(nh)^{-1}\sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i}{(nh)^{-1}\sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right)}
 \end{align*}
 with $K$ being the uniform kernel.
-Further, by a sraightforward computation, one can find that this $\hat m^{const}_n(x)$ is equivalent to the solution of the following weighted least squares problem:
+Dividing both the numerator and the denominator by $nh$ is for technical convenience.
+By a sraightforward computation, one can find that this $\hat m^{const}_n(x)$ is equivalent to the solution of the following weighted least squares problem:
 \begin{align*}
 	\hat m^{const}_n(x) = \argmin_a \sum_{i = 1}^n (Y_i - a)^2K\left( \frac{X_i - x}{h}\right).
 \end{align*}
@@ -3258,10 +3259,7 @@ That is, the local linear kernel regression estimator is defined as $\hat m^{ll}
 \begin{align*}
 	(\hat a_n, \hat b_n) = \argmin_{(a, b)} \sum_{i = 1}^n (Y_i - a - b (X_i -x))^2K\left( \frac{X_i - x}{h}\right).
 \end{align*}
-It is known that by adding an additional regressor $(X_i - x)$, the local linear regression estimator achieves a nice bias-correction property that the local constant estimator does not have (for more details, see, e.g., \cite{li2007nonparametric}).
-
-Similar to the $k$NN regression estimator, there is a bias-variance trade-off for the choice of the bandwidth parameter $h$.
-In order for the kernel regression estimator to be consistent, $h$ must converge to zero sufficiently slowly so that $nh$ can increase to infinity and the law of large numbers can be applied (note that the effective sample size for a kernel regression is of order $O(nh)$).
+It is known that by including an additional regressor $(X_i - x)$, the local linear regression estimator achieves a nice bias-correction property that the local constant estimator does not have (for more details, see, e.g., \cite{li2007nonparametric}).
 
 \begin{figure}[h!]
 	\begin{center}
@@ -3269,6 +3267,33 @@ In order for the kernel regression estimator to be consistent, $h$ must converge
 		\caption{Loacal nonparametric regression}
 	\end{center}
 \end{figure}
+
+Here, let us provide a sketch for the proof of the consistency of $\hat m^{const}_n(x)$.
+Let $f_X$ be the density function of $X$.
+We first show that the numerator term of $\hat m^{const}_n(x)$ converges to $\E[Y \mid X = x]f_X(x)$ in probability.
+Observe that
+\begin{align*}
+	\E\left[\frac{1}{nh} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i \right] 
+	& = \frac{1}{h}\E\left[ K\left( \frac{X - x}{h}\right) Y \right] \;\; \text{(IID assumption)}\\
+	& = \frac{1}{h}\int K\left( \frac{w - x}{h}\right) \E[ Y \mid X = w] f_X (w)\text{d}w \;\; \text{(LIE)} \\
+	& = \int K(u) \E[ Y \mid X = x + uh] f_X (x + uh)\text{d}u \;\; \text{(change of variables: $u = (w-x)/h$)}.
+\end{align*}
+Recalling that $\int K(u)\text{d}u = 1$ and assuming that $\E[ Y \mid X = \cdot]$ and $f_X (\cdot)$ are bounded continuous functions, as $h \to 0$, we have 
+\begin{align*}
+	\int K(u) \E[ Y \mid X = x + uh] f_X (x + uh)\text{d}u \to \E[ Y \mid X = x] f_X (x)
+\end{align*}
+by the bounded convergence theorem.
+By similar but slightly more tedious calculations, we can show that the variance of $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i$ is of order $O((nh)^{-1})$.
+Thus, if $nh \to \infty$, by Chebyshev's inequality, we get $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i \overset{p}{\to} \E[ Y \mid X = x] f_X (x)$.
+
+By the same argument, we can prove that the denominator of $\hat m^{const}_n(x)$, $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right)$, converges to $f_X(x)$ in probability (this is the so-called \textbf{kernel density estimator\index{kernel density estimator}}) as $h \to 0$ and $nh \to \infty$.
+Combining these results together, the consistency of $\hat m^{const}_n(x)$ is proved.
+
+Note that, similar to the $k$NN regression estimator, there is a bias-variance trade-off for the choice of the bandwidth $h$.
+As we have discussed, $h$ must converge to zero sufficiently slowly so that $nh$ can increase to infinity.
+Intuitively, the effective sample size for a kernel regression is of order $O(nh)$ for each evaluation point, and thus to apply the law of large numbers, $nh$ must grow to infinity.
+
+\bigskip
 
 So far, we have focesed on the case where the dimension of $X$ is just one.
 When $X = (X_1, \ldots, X_d)$ is a general $d$-dimensional variable, the aforementioned estimators require some modifications.
@@ -3298,7 +3323,7 @@ where $m^{(k)}$ denotes the $k$-th order derivative of $m$.
 This suggests that if $m(\cdot)$ is sufficiently smooth, we can approximate $m(x)$ by $m(x) \approx p(x)^\top \theta$, where $p(x) = (1, x, x^2, \ldots, x^k)^\top$ (i.e., the \textbf{power series} of order $k$) and $\theta = (m(0), m^{(1)}(0), \ldots, m^{(k)}(0)/k!)^\top$.
 
 A similar well-known result is the Weierstrass approximation theorem.
-The theorem states that for any continuous function on a closed interval $\mathcal{X}$, the same power-series approximation holds in the sense that the approximation error $m(x) - p(x)^\top \theta$ can be made arbitrarily small for any $x \in \mathcal{X}$ by choosing a sufficiently large $k$ and an appropriate coefficient vector $\theta$. 
+The theorem states that for any continuous function on a closed interval $\mathcal{X}$, the same power-series approximation holds in the sense that the approximation error $m(x) - p(x)^\top \theta$ can be made arbitrarily small for any $x \in \mathcal{X}$ by choosing a sufficiently large polynomial order and an appropriate coefficient vector $\theta$. 
 Remarkably, the differentiability is not required here.
 
 Historically, the most important series expansion result for humankind would be the \textbf{Fourier series\index{Fourier series}} expansion.
@@ -3358,10 +3383,30 @@ Once we obtain $\hat \theta_n$, for any given $x \in \mathcal{X}$, we can estima
 Thus, compared to the kernel regression approach, series regression is much easier to implement.\footnote{
 	However, deriving local asymptotic properties is more difficult for series regression than for kernel regression.
 	}
-
+To prove the consistency of $\hat m_n(x)$, by the triangle inequality, observe that
+\begin{align*}
+	|\hat m_n(x) - m(x)|
+	& \le |p(x)^\top (\hat \theta_n - \theta_0)| + |m(x) - p(x)^\top \theta_0| \\
+	& \le |p(x)^\top (\hat \theta_n - \theta_0)| + O(\lambda(k))
+\end{align*}
+Then, since we have assumed $O(\lambda(k)) = o(1)$, it suffices to show that $|p(x)^\top (\hat \theta_n - \theta_0)| = o(1)$.
+Here, assuming that the basis functions are bounded, we have $||p(x)|| = (p_1^2(x) + \cdot + p_k^2(x))^{1/2} = O(\sqrt{k})$.
+Further, under some conditions, we can show that
 \begin{align}\label{eq:seriesrate}
-		||\hat \theta_n - \theta_0|| = O_P\left( \sqrt{\frac{K}{n}} \right) 
+		||\hat \theta_n - \theta_0|| = O_P\left( \sqrt{\frac{k}{n}} \right).
 \end{align}
+A sketch of the proof of this result can be found in the appendix of this chapter.
+Then, combining these results with Cauchy-Schwarz inequality gives that $|p(x)^\top (\hat \theta_n - \theta_0)| \le ||p(x)|| \cdot ||\hat \theta_n - \theta_0 || = O_P(k/\sqrt{n})$.
+Thus, if $k$ grows sufficiently slowly such that $k/\sqrt{n} \to 0$ is satisfied, we obtain $\hat m_n(x) - m(x) \overset{p}{\to} 0$ for any $x \in \mathcal{X}$, as desired.
+
+\begin{comment}
+To prove the asymptotic normality, we require much stronger conditions.
+Here, we only state the result under the homoskedasticity assumption $\E[\eps^2 \mid X] = \sigma^2$: for a given $x \in \mathcal{X}$,
+\begin{align*}
+	\frac{\sqrt{n}(\hat m_n(x) - m(x))}{\sigma \sqrt{p(x)^\top \E[p(X)p(X)^\top]^{-1}p(x)}} \overset{d}{\to} N(0,1).
+\end{align*}
+Then, based on this result, we can compute the confidence interval for each $m(x)$.
+\end{comment}
 
 \section{Semiparamtric regression}
 
