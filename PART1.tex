@@ -207,6 +207,10 @@ WLLN states that the sample mean is a consistent estimator of the population mea
 	Then, if $Z_n \overset{p}{\to} \mu$, we have $g(Z_n) \overset{p}{\to} g(\mu)$.
 \end{exercise}
 
+\section{Laudau's notation: big $O$ and small $o$}
+
+to be written soon: $O$, $o$, $O_P$, $o_P$
+
 \section{Convergence in distribution}\label{subsec:indist}
 
 Let $Z_n \in \mbb{R}$ be a  sequence of random variables, and $Z \in \mbb{R}$ be a random variable with distribution function  $F_Z(z) \equiv \Pr(Z \le z)$.
@@ -3185,9 +3189,9 @@ We first discuss the implementation and limitations of nonparametric regression 
 \section{Nonparametric regression}
 
 Suppose we would like to estimate the following regression model:
-\begin{align*}
+\begin{align}\label{eq:nonpara}
 	Y = m(X) + \eps.
-\end{align*}
+\end{align}
 Here, we assume that $\E[\eps \mid X] = 0$ (i.e., $X$ is exogenous) so that $m(X) = \E[Y \mid X]$.
 If we additionally assume a parametric regression model $g(X, \theta) = m(X)$, once an estimator $\hat \theta_n$ for $\theta$ is obtained, we can estimate $g(x, \hat \theta_n) \approx m(x)$ for any $x$.
 However, the correct parametric specification is usually unknown to us.
@@ -3201,12 +3205,15 @@ Since any local estimator only gives an estimate of $m(\cdot)$ at a specific poi
 In contrast, the global approach considers a basis expansion of the function $m(x)\approx p(x)^\top \theta$ and estimates the whole functional form of $m(\cdot)$ at once.
 Here, $p(\cdot)$ is a vector of known basis functions of increasing dimension, and $\theta$ is the corresponding coefficient vector.
 This type of nonparametric regression is particuarly called \textbf{series regression\index{series regression}} estimator or \textbf{sieve method\index{sieve method}}.
-The details of series regression are relegated to the next subsection.
 
-Here, we briefly describe the local approach.
+\subsection{$k$-nearest-neighbor regression and kernel regression}
+
+We first describe the local approach.
 For simplicity, we temporarily assume that $X$ is one-dimensional.
 One simplest local regression method is the \textbf{$k$-nearest-neighbor ($k$NN) regression\index{$k$-nearest-neighbor regression}}.
-The $k$NN regression estimator simply computes the average of $Y$ over the $k$-closest observations to $x$ on $\mathcal{X}$; that is, re-ordering the observations by $|X_i - x|$, so that $|X^{(1)} - x| \le |X^{(2)} - x| \le \cdots \le |X^{(n)} - x|$, estimate $m(x)$ by
+The $k$NN regression estimator simply computes the average of $Y$ over the $k$-closest observations to $x$ on $\mathcal{X}$.
+Suppose we have $n$ IID observations $\{(Y_i, X_i): 1 \le i \le n\}$.
+Re-ordering the observations by $|X_i - x|$, so that $|X^{(1)} - x| \le |X^{(2)} - x| \le \cdots \le |X^{(n)} - x|$, estimate $m(x)$ by
 \begin{align*}
 	\hat m^{knn}_n(x) \equiv \frac{1}{k}\sum_{i = 1}^k Y^{(i)}.
 \end{align*}
@@ -3280,7 +3287,7 @@ As far as I can see in the empirical literature, full nonparametric regression h
 
 \subsection{Series regression}
 
-Again, we first focus on the case of one-dimensional $X$, and extend the discussion to more general cases later.
+Again, we first focus on the estimation of the model in \eqref{eq:nonpara} with a one-dimensional $X$, and extend the discussion to more general cases later.
 The idea of approximating a general continuous function by a linear combination of basis functions has a long history.
 Perhaps one of the most familiar to readers is the Maclaurin expansion (i.e., the Taylor expansion at 0):
 assuming that $m(\cdot)$ is sufficiently many times differentiable, at each $x \in \mathcal{X}$
@@ -3288,7 +3295,7 @@ assuming that $m(\cdot)$ is sufficiently many times differentiable, at each $x \
 	m(x) = m(0) + m^{(1)}(0)x + \frac{m^{(2)}(0)}{2!}x^2 + \cdots + \frac{m^{(k)}(0)}{k!}x^k + \cdots,
 \end{align*}
 where $m^{(k)}$ denotes the $k$-th order derivative of $m$.
-This means that if $m(\cdot)$ is sufficiently smooth, we can approximate $m(x)$ by $m(x) \approx p(x)^\top \theta$, where $p(x) = (1, x, x^2, \ldots, x^k)^\top$ (i.e., the \textbf{power series} of order $k$) and $\theta = (m(0), m^{(1)}(0), \ldots, m^{(k)}(0)/k!)^\top$.
+This suggests that if $m(\cdot)$ is sufficiently smooth, we can approximate $m(x)$ by $m(x) \approx p(x)^\top \theta$, where $p(x) = (1, x, x^2, \ldots, x^k)^\top$ (i.e., the \textbf{power series} of order $k$) and $\theta = (m(0), m^{(1)}(0), \ldots, m^{(k)}(0)/k!)^\top$.
 
 A similar well-known result is the Weierstrass approximation theorem.
 The theorem states that for any continuous function on a closed interval $\mathcal{X}$, the same power-series approximation holds in the sense that the approximation error $m(x) - p(x)^\top \theta$ can be made arbitrarily small for any $x \in \mathcal{X}$ by choosing a sufficiently large $k$ and an appropriate coefficient vector $\theta$. 
@@ -3296,16 +3303,16 @@ Remarkably, the differentiability is not required here.
 
 Historically, the most important series expansion result for humankind would be the \textbf{Fourier series\index{Fourier series}} expansion.
 The French mathematician Joseph Fourier (1768-1830) claimed that any periodic function can be decomposed into a linear combination of sine and cosine curves.
-Although its formal proof was not given by Fourier, it was later shown that his claim was after all true for a surprisingly wide class of functions.
+Although its formal proof was not given by Fourier, it was later shown that his claim was after all true for a wide class of functions.
 Then, named after his discovery, the following series expansion is called the Fourier series expansion: for a continuous function $m(\cdot)$ on a closed interval $\mathcal{X}$,
 \begin{align*}
-	m(x) = a_0 + a_1\sin(\omega x) + b_1\cos(\omega x) + a_2\sin(\omega 2 x) + b_2\cos(\omega 2 x) + \cdots + a_k\sin(\omega k x) + b_1\cos(\omega k x) + \cdots,
+	m(x) = a_0 + a_1\sin(\omega x) + b_1\cos(\omega x) + a_2\sin(\omega 2 x) + b_2\cos(\omega 2 x) + \cdots + a_k\sin(\omega k x) + b_k\cos(\omega k x) + \cdots,
 \end{align*}
 where $\omega$ is a constant determined by the size of $\mathcal{X}$.
 
 In Figure \ref{fig:seriesreg}, we provide the numerical simulation results for the power series approximation and the Fourier series approximation.
 In the figure, the true functional form of $m(\cdot)$ is presented as the dotted curve.
-We can clearly observe that in both series expansions, we can achieve a more precise approximation as the order of the series increases.
+We can clearly observe that in both series expansions, more and more precise approximation can be achieved by increasing the order of the basis functions.
 
 \begin{figure}[h!]
 	\begin{center}
@@ -3316,6 +3323,45 @@ We can clearly observe that in both series expansions, we can achieve a more pre
 
 As such, with suitable conitnuity conditions, a fairly large class of functions can be approximated by some series expansion.
 In addition to those introduced above, basis functions commonly used include splines, wavelets, artificial neural networks, and so forth (see \cite{chen2007large} for their definitions and other examples).
+Now, let $\{p_1(x), p_2(x), \ldots \}$ be a sequence of $\mathbb{R}$-valued basis functions, and $p(x) = (p_1(x), \ldots p_k(x))^\top$.
+We assume that for a sufficiently large $k$, there exists a $k \times 1$ vector $\theta_0$ such that the target function $m(\cdot)$ can be well-approximated by $p(\cdot)^\top\theta_0$ uniformly over $\mathcal{X}$ in the following sense:
+\begin{align*}
+	|m(x) - p(x)^\top\theta_0 | \le O(\lambda(k)) \;\; \text{for any $x \in \mathcal{X}$},
+\end{align*}
+where $\lambda(k)$ is a constant depending on $k$ and the choice of the basis function (and also the dimension of $X$) satisfying $\lambda(k) \to 0$ as $k \to \infty$.
+Among the basis functions listed above, while the power series is quite popular, it is known that the power series expansion has relatively a ``slower'' convergence rate than the others.
+
+Using this series approximation, we can rewrite \eqref{eq:nonpara} as follows:
+\begin{align*}
+	Y
+	& = m(X) + \eps\\
+	& = p(x)^\top\theta_0 + \eta
+\end{align*}
+where $\eta \equiv v(k) + \eps$, and $v(k) \equiv m(x) - p(x)^\top\theta_0$.
+Thus, the nonparametric regression model can be transformed into a ``linear regression'' model with increasing dimension.
+Indeed, we can estimate $\theta_0$ simply by running an OLS regression of $Y$ on $p(x)$:\footnote{
+	Here, we implicitly assume for simplicity that $\frac{1}{n}\sum_{i = 1}^n p(X_i)p(X_i)^\top$ is a nonsingular matrix.
+	However, noting that the dimension of this matrix grows to infinity, it is generally possible that the matrix is not invertible for finite $n$.
+	In that case, the inverse should be replaced by a generalized inverse.
+	}
+\begin{align*}
+	\hat \theta_n 
+	& \equiv \argmin_\theta \frac{1}{n}\sum_{i = 1}^n (Y_i -  p(X_i)^\top\theta)^2 \\
+	& = \left(\frac{1}{n}\sum_{i = 1}^n p(X_i)p(X_i)^\top\right)^{-1}\frac{1}{n}\sum_{i = 1}^n p(X_i)Y_i
+\end{align*}
+Once we obtain $\hat \theta_n$, for any given $x \in \mathcal{X}$, we can estimate $m(x)$ by 
+\begin{align*}
+	\hat m_n(x) 
+	& = p(x)^\top \hat \theta_n \\ 
+	& = p(x)^\top \left(\frac{1}{n}\sum_{i = 1}^n p(X_i)p(X_i)^\top\right)^{-1}\frac{1}{n}\sum_{i = 1}^n p(X_i)Y_i.
+\end{align*}
+Thus, compared to the kernel regression approach, series regression is much easier to implement.\footnote{
+	However, deriving local asymptotic properties is more difficult for series regression than for kernel regression.
+	}
+
+\begin{align}\label{eq:seriesrate}
+		||\hat \theta_n - \theta_0|| = O_P\left( \sqrt{\frac{K}{n}} \right) 
+\end{align}
 
 \section{Semiparamtric regression}
 
@@ -3324,5 +3370,7 @@ In addition to those introduced above, basis functions commonly used include spl
 \subsection{Generalized additive models}
 
 \subsection{Functional coefficient models}
+
+\section*{Appendix: Proof of \eqref{eq:seriesrate}}
 
 \end{document}

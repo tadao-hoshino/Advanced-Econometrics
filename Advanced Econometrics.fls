@@ -875,6 +875,16 @@ INPUT ./figs//Limit.png
 INPUT ./figs//Limit.png
 INPUT ./figs//Limit.xbb
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/latex-fonts/lasyb10.tfm
 INPUT ./figs//probconv.png
 INPUT ./figs//probconv.png
 INPUT ./figs//probconv.xbb
