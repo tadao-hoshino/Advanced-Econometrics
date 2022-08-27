@@ -3161,7 +3161,7 @@ Hence, the heteroskedasticity in the original sample is retained in the bootstra
 
 Consider a general regression model: $Y = g(X) + \eps$.
 As shown in \eqref{eq:msemin}, in terms of minimization of MSE, the best regression function is the conditional expectation function: $g(X) = \E[Y \mid X]$.
-A linear regression model $Y = X^\top\beta + \eps$ is a special case where $g(X) = X^\top \beta$, and thus its optimality hinges on whether the funcitonal-form assumption $\E[Y \mid X] = X^\top\beta$ is satisfied or not.
+A linear regression model $Y = X^\top\beta + \eps$ is a special case when we impose a funcitonal form  assumption $g(X) = X^\top \beta$, and thus its optimality hinges on whether the assumption $\E[Y \mid X] = X^\top\beta$ is satisfied or not.
 In reality, however, it would be extremely rare that the data follow such a linear relationship exactly, and if the functional form assumption does not hold, what the linear regression produces is only a ``linear approximation" of $\E[Y \mid X]$.
 As shown in the figure below, linear approximation is not always informative and sometimes even misleading.
 
@@ -3177,9 +3177,9 @@ Thus, ideally, we would like to estimate $\E [Y \mid X]$ without imposing any a 
 Such a regression approach is called \textbf{nonparametric\index{nonparametric}}.
 In contrast, if one assumes a specific functional form $g(X, \theta)$ with a finite dimensional parameter vector $\theta$, this approach is \textbf{parametric\index{parametric}}.
 The most typical parametric regression models are linear regression models.
-For another example, if the range of a dependent variable is restricted to $(0,1)$, a logistic regression model $g(X, \theta) = \exp(X^\top \theta)/[1 + \exp(X^\top \theta)]$ is popularlyF used. 
+For another example, if the range of a dependent variable is restricted to $(0,1)$, a logistic regression model $g(X, \theta) = \exp(X^\top \theta)/[1 + \exp(X^\top \theta)]$ is popularly used. 
 The intermediate case between nonparametric and parametric models is called \textbf{semiparamtric\index{semiparametric}}.
-As explained below, estimating a fully nonparametric regression model is almost infeasible in practice due to the curse of dimensionality unless the dimension of $X$ is less than two or three.
+As explained below, estimating a fully nonparametric regression model is almost infeasible in practice due to the curse of dimensionality unless the dimension of $X$ is less than three or at most four.
 On the other hand, assuming a full parametric specification has a risk of model misspecification biases.
 Then, the main idea of semiparametric regression models is to introduce mild functional form assumptions to facilitate the estimation while retaining the flexibility of nonparametric models for certain variables.
 For example, if one assumes that the impact of a subset $X_1$ of $X$ on $Y$, say $\varphi(\cdot)$, is nonlinear and its functional form is left unspecified, and that the remaining subset $X_2$ is linearly related to $Y$, then the resulting regression model would be 
@@ -3187,7 +3187,6 @@ For example, if one assumes that the impact of a subset $X_1$ of $X$ on $Y$, say
 	Y = \varphi(X_1) + X_2^\top\beta + \eps.
 \end{align*}
 This type of semiparametric model is called a partially linear regression model, which will be discussed in detail later.
-We first discuss the implementation and limitations of nonparametric regression models in the next section.
 
 Note that if $X$ is a discrete random variable, the estimation of $\E[Y \mid X]$ is straightforward; split the data into subsamples according to the realized value of $X$, and compute the average of $Y$ for each subsample.
 Thus, hereinafter, we assume that $X$ is a continuous random variable.
@@ -3210,7 +3209,7 @@ The local approach is to estimate $g_0(x)$ by fitting a simple model using only 
 Since any local estimator only gives an estimate of $g_0(\cdot)$ at a specific point $x$, if one wants to recover the whole shape of $g_0(\cdot)$, it is necessary to repeat the estimation at different points many times.
 In contrast, the global approach considers a basis expansion of the function $g_0(x)\approx p(x)^\top \theta_0$ and estimates the whole functional form of $g_0(\cdot)$ at once.
 Here, $p(\cdot)$ is a vector of known basis functions of increasing dimension, and $\theta_0$ is the corresponding coefficient vector.
-This type of nonparametric regression is particuarly called \textbf{series regression\index{series regression}} estimator or \textbf{sieve method\index{sieve method}}.
+This type of nonparametric regression is called \textbf{series regression\index{series regression}} estimator or \textbf{sieve method\index{sieve method}}.
 
 \subsection{$k$-nearest-neighbor regression and kernel regression}
 
@@ -3219,7 +3218,7 @@ For simplicity, we temporarily assume that $X$ is one-dimensional.
 One simplest local regression method is the \textbf{$k$-nearest-neighbor ($k$NN) regression\index{$k$-nearest-neighbor regression}}.
 The $k$NN regression estimator simply computes the average of $Y$ over the $k$-closest observations to $x$ on $\mathcal{X}$.
 Suppose we have $n$ IID observations $\{(Y_i, X_i): 1 \le i \le n\}$.
-Re-ordering the observations in the increasing order of $|X_i - x|$, so that $|X^{(1)} - x| \le |X^{(2)} - x| \le \cdots \le |X^{(n)} - x|$, estimate $g_0(x)$ by
+Re-ordering the observations in the increasing order of $|X_i - x|$, so that $|X^{(1)} - x| \le |X^{(2)} - x| \le \cdots \le |X^{(n)} - x|$, we estimate $g_0(x)$ by
 \begin{align*}
 	\hat g^{knn}_n(x) \equiv \frac{1}{k}\sum_{i = 1}^k Y^{(i)}.
 \end{align*}
@@ -3231,7 +3230,7 @@ Therefore, to meet these conditions simultaneously, we need to deliberately choo
 \bigskip
 
 Another popularly used local regression method is the \textbf{kernel regression\index{kernel regression}}.
-The idea of kernel regression is similar to that of $k$NN regression, but differs in that it introduces a \textbf{bandwidth\index{bandwidth}} parameter $h$ such that only the observations whose $X_i$ falling into the interval $[x-h, \; x+h]$ are used to compute the estimator.
+The idea of kernel regression is similar to that of $k$NN regression, but differs in that it introduces a \textbf{bandwidth\index{bandwidth}} parameter $h$ such that only the observations whose $X$ value falling into the interval $[x-h, \; x+h]$ are used to compute the estimator.
 For example, a \textbf{local constant regression\index{local constant regression}} estimator is given by
 \begin{align*}
 	\hat g^{const}_n(x) \equiv \frac{\sum_{i = 1}^n \mathbf{1}\{|X_i - x | \le h\} Y_i}{\sum_{i = 1}^n\mathbf{1}\{|X_i - x | \le h\}}.
@@ -3256,7 +3255,7 @@ One can easily see that the local constant estimator given above is numerically 
 \end{align*}
 with $K$ being the uniform kernel.
 Dividing both the numerator and denominator by $nh$ is for technical convenience.
-From a sraightforward calculation, one can find that this $\hat g^{const}_n(x)$ is equivalent to the solution of the following weighted least squares problem:
+From a straightforward calculation, one can find that this $\hat g^{const}_n(x)$ is equivalent to the solution of the following weighted least squares problem:
 \begin{align*}
 	\hat g^{const}_n(x) = \argmin_a \sum_{i = 1}^n (Y_i - a)^2K\left( \frac{X_i - x}{h}\right).
 \end{align*}
@@ -3291,11 +3290,11 @@ Observe that
 \end{align*}
 Recalling that $\int K(u)\text{d}u = 1$ and assuming that $\E[ Y \mid X = \cdot]$ and $f_X (\cdot)$ are bounded continuous functions, we have 
 \begin{align*}
-	\lim_{h \to 0} \int K(u) \E[ Y \mid X = x + uh] f_X (x + uh)\text{d}u = \E[ Y \mid X = x] f_X (x)
+	\lim_{h \to 0} \E\left[\frac{1}{nh} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i \right] = \E[ Y \mid X = x] f_X (x)
 \end{align*}
 by the bounded convergence theorem.
 By similar but slightly more tedious calculations, we can show that the variance of $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i$ is of order $O((nh)^{-1})$.
-Thus, if $nh \to \infty$ as $n \to \infty$, by Chebyshev's inequality, we get $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i \overset{p}{\to} \E[ Y \mid X = x] f_X (x)$.
+Thus, if $h \to 0$ and $nh \to \infty$ as $n \to \infty$, by Chebyshev's inequality, we get $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i \overset{p}{\to} \E[ Y \mid X = x] f_X (x)$.
 
 By the same argument as above, we can prove that the denominator of $\hat g^{const}_n(x)$, $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right)$, converges to $f_X(x)$ in probability (this is the so-called \textbf{kernel density estimator\index{kernel density estimator}}) if $h \to 0$ and $nh \to \infty$ as $n \to \infty$.
 Combining these results together, the consistency of $\hat g^{const}_n(x)$ is proved.
@@ -3306,11 +3305,11 @@ Intuitively, the effective sample size for a kernel regression is of order $O(nh
 
 \bigskip
 
-So far, we have focesed on the case where the dimension of $X$ is just one.
+So far, we have focused on the case where the dimension of $X$ is just one.
 When $X = (X_1, \ldots, X_d)$ is a general $d$-dimensional variable, the aforementioned estimators require some modifications.
 Specifically, we introduce a ``multivariate'' kernel weighting function, say $\mathbf{K}(u)$, where $u = (u_1, \ldots, u_d) \in \mathbb{R}^d$, and we can estimate $g_0(x)$ in a similar manner using $\mathbf{K}(u)$ in the place of $K(u)$.
 One simple way to construct $\mathbf{K}(u)$ is to take the product of one-dimensional kernel functions: $\mathbf{K}(u) = \prod_{j=1}^d K(u_j)$.
-For example, letting $u_j = (X_{i,j} -x_j)/h$ for a bandwith $h$ common to all $j$, the product uniform kernel function is
+For example, if one employs the same bandwith $h$ for all $X_j$'s, the product uniform kernel function is
 \begin{align*}
 	\mathbf{K}\left(\frac{X_i - x}{h}\right) = \frac{1}{2^d}\mathbf{1}\{|X_{i,1} - x_1| \le h\}\mathbf{1}\{|X_{i,2} - x_2| \le h\} \times \cdots \times \mathbf{1}\{|X_{i,d} - x_d| \le h\}.
 \end{align*}
@@ -3331,7 +3330,7 @@ assuming that $g_0(\cdot)$ is sufficiently many times differentiable, at each $x
 	g_0(x) = g_0(0) + g_0^{(1)}(0)x + \frac{g_0^{(2)}(0)}{2!}x^2 + \cdots + \frac{g_0^{(k)}(0)}{k!}x^k + \cdots,
 \end{align*}
 where $g_0^{(k)}$ denotes the $k$-th order derivative of $g_0$.
-This suggests that if $g_0(\cdot)$ is sufficiently smooth, we can approximate $g_0(x)$ by $g_0(x) \approx p(x)^\top \theta_0$, where $p(x) = (1, x, x^2, \ldots, x^k)^\top$, the \textbf{power series} of order $k$, and $\theta_0 = (g_0(0), g_0^{(1)}(0), \ldots, g_0^{(k)}(0)/k!)^\top$.
+This suggests that if $g_0(\cdot)$ is sufficiently smooth, we can approximate $g_0(x)$ by $g_0(x) \approx p(x)^\top \theta_0$ with $p(x) = (1, x, x^2, \ldots, x^k)^\top$, the \textbf{power series} of order $k$, and $\theta_0 = (g_0(0), g_0^{(1)}(0), \ldots, g_0^{(k)}(0)/k!)^\top$.
 
 A similar well-known result is the Weierstrass approximation theorem.
 The theorem states that for any continuous function on a closed interval $\mathcal{X}$, the same power-series approximation holds in the sense that the approximation error $g_0(x) - p(x)^\top \theta_0$ can be made arbitrarily small for any $x \in \mathcal{X}$ by choosing a sufficiently large polynomial order and an appropriate coefficient vector $\theta_0$. 
@@ -3358,7 +3357,7 @@ We can clearly observe that in both series expansions, more and more precise app
 \end{figure}
 
 As such, with suitable conitnuity conditions, a fairly large class of functions can be approximated by some series expansion.
-In addition to those introduced above, basis functions popularly used in applications include splines, wavelets, artificial neural networks, and so forth (see \cite{chen2007large} for their definitions and other examples).
+In addition to those introduced above, basis functions that are often adopted in applications include splines, wavelets, artificial neural networks, and so forth (see \cite{chen2007large} for their definitions and other examples).
 Now, let $\{p_1(x), p_2(x), \ldots \}$ be a sequence of $\mathbb{R}$-valued basis functions, and $p(x) = (p_1(x), \ldots , p_k(x))^\top$.
 We assume that for a sufficiently large $k$, there exists a $k \times 1$ vector $\theta_0$ such that the target function $g_0(\cdot)$ can be well-approximated by $p(\cdot)^\top\theta_0$ uniformly over $\mathcal{X}$ in the following sense:
 \begin{align*}
@@ -3373,7 +3372,7 @@ Using this series approximation, we can rewrite \eqref{eq:nonpara} as follows:
 	& = g_0(x) + \eps\\
 	& = p(X)^\top\theta_0 + \eta
 \end{align*}
-where $\eta \equiv v(k) + \eps$, and $v(k) \equiv g_0(x) - p(X)^\top\theta_0$.
+where $\eta \equiv g_0(x) - p(X)^\top\theta_0 + \eps$.
 Thus, the nonparametric regression model can be transformed into a ``linear regression'' model with increasing dimension.
 Indeed, we can estimate $\theta_0$ simply by running an OLS regression of $Y$ on $p(x)$:\footnote{
 	Here, we implicitly assume for simplicity that $\frac{1}{n}\sum_{i = 1}^n p(X_i)p(X_i)^\top$ is a nonsingular matrix.
@@ -3396,13 +3395,13 @@ To prove the consistency of $\hat g_n(x)$, by the triangle inequality, observe t
 \end{align*}
 Hence, it suffices to show that $|p(x)^\top (\hat \theta_n - \theta_0)| = o_P(1)$.
 Here, assuming that the basis functions are bounded, we have $||p(x)|| = (p_1^2(x) + \cdots + p_k^2(x))^{1/2} = O(\sqrt{k})$.
-Further, under some conditions, we can show that
+Further, under some regularity conditions, we can show that
 \begin{align}\label{eq:seriesrate}
 		||\hat \theta_n - \theta_0|| = O_P\left( \sqrt{\frac{k}{n}} \right).
 \end{align}
 A sketch of the proof of this result can be found in the appendix of this chapter.
 Then, combining these results with Cauchy-Schwarz inequality gives that $|p(x)^\top (\hat \theta_n - \theta_0)| \le ||p(x)|| \cdot ||\hat \theta_n - \theta_0 || = O_P(k/\sqrt{n})$.
-Thus, if $k$ grows sufficiently slowly such that $k/\sqrt{n} \to 0$ is satisfied, we obtain $\hat g_n(x) - g_0(x) \overset{p}{\to} 0$ for any $x \in \mathcal{X}$, as desired.
+Thus, if $k$ grows to infinity sufficiently slowly such that $k/\sqrt{n} \to 0$ is maintained, we obtain $\hat g_n(x) - g_0(x) \overset{p}{\to} 0$ for any $x \in \mathcal{X}$, as desired.
 
 \begin{comment}
 To prove the asymptotic normality, we require much stronger conditions.
@@ -3424,7 +3423,7 @@ In general, we can construct a multivariate basis functions by taking the Kronec
 Thus, if $d$ is not small, the number of coefficient parameters to be estimated easily reaches several hundreds, resulting in a serious loss of efficiency.
 This is the series-regression version of the curse of dimensionality.
 
-\subsection{A numerical illustration: estimation of Engel curve}
+\subsection{An empirical illustration: estimation of Engel curve}
 
 As an empirical illustration, we nonparametrically estimate the Engel curve for food consumption using the local constant kernel regression and the series regression based on B-splines; a B-spline function is a piecewise polynomial defined by a set of ``cut points'', called \textbf{knots}.
 
@@ -3437,7 +3436,7 @@ The data used here is \texttt{Engel95}, a random sample taken from the U.K. Fami
 
  data("Engel95") # sample size n = 1655
  food <- Engel95$food # share of food consumption
- inc  <- Engel95$logexp # log of total expenditure 
+ exp  <- Engel95$logexp # log of total expenditure 
 \end{lstlisting}
 
 We first run the kernel regression using the \textbf{npreg} function.
@@ -3445,33 +3444,33 @@ This function automatically computes an optimal bandwidth parameter $h$, so that
 
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
 # Kernel regression #
- ghat_kernel <- npreg(food ~ inc)
+ ghat_kernel <- npreg(food ~ exp)
 \end{lstlisting}
 
 Next, we perform the series regression.
 The B-spline basis function can be computed using the \textbf{bs} function.
-Here, we set the 25\%, 50\%, and 75\% empirical quantiles of \texttt{inc} as the knot values and create B-splines with $k = 6$.
+Here, we set the 25\%, 50\%, and 75\% empirical quantiles of \texttt{exp} as the knot values and create B-splines with $k = 6$.
 After the B-splines are created, we simply run an OLS regression.
 
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
 # Spline series regression #
- knots <- quantile(inc, (1:3)/4)
- p <- bs(inc, knots = knots) # compute the B-splines with k = 6 (excluding the intercept)
+ knots <- quantile(exp, (1:3)/4)
+ p <- bs(exp, knots = knots) # compute the B-splines with k = 6
  ghat_spline <- predict(lm(food ~ p))
 \end{lstlisting}
 
-To summarize the estimation results of nonparametric regression, they should be presented visually.
+To summarize the estimation results of nonparametric regression, we present them visually.
 Running the code below, we can observe that both the kernel and series regression perform very similarly.
 
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
- plot(inc, food, xlim = range(inc), ylim = range(food), 
-	main = "Nonparametric regression", xlab = "inc", ylab = "food")
+ plot(exp, food, xlim = range(exp), ylim = range(food), 
+	main = "Nonparametric regression", xlab = "exp", ylab = "food")
  par(new = T)
- plot(inc[order(inc)], ghat_kernel$mean[order(inc)], xlab = "", ylab = "",
-	xlim = range(inc), ylim = range(food), type = "l", lwd = 2, col = 2)
+ plot(exp[order(exp)], ghat_kernel$mean[order(exp)], xlab = "", ylab = "",
+	xlim = range(exp), ylim = range(food), type = "l", lwd = 2, col = 2)
  par(new = T)
- plot(inc[order(inc)], ghat_spline[order(inc)], xlab = "", ylab = "",
-	xlim = range(inc), ylim = range(food), type = "l", lwd = 2, col = 3)
+ plot(exp[order(exp)], ghat_spline[order(exp)], xlab = "", ylab = "",
+	xlim = range(exp), ylim = range(food), type = "l", lwd = 2, col = 3)
  legend("topright", c("Kernel regression", "Spline series regression"), 
 	lty = c(1,1), lwd = c(2,2), col = c(2,3))
 \end{lstlisting}

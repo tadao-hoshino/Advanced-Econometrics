@@ -1,5 +1,5 @@
 
- m <- function(x){
+ g <- function(x){
     if(-pi <= x & x < -3*pi/4) return(4*x + 4*pi)
     if(-3*pi/4 <= x & x < -pi/2) return(-3*x - 5*pi/4)
     if(-pi/2 <= x & x < pi/2) return(-(x^2)/10 + (pi^2)/40 + pi/4)
@@ -8,7 +8,7 @@
   }
 
  xx <- -(50*pi):(50*pi)/50
- Y <- mapply(m,xx)
+ Y <- mapply(g,xx)
 
  Pol <- function(k){
 	pol <- 1
@@ -22,14 +22,14 @@
 
  par(mfrow = c(1,2))
 
- plot(xx, Y, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, lty = 2, xlab = "x", ylab = "m(x)", main = "Power Series")
+ plot(xx, Y, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, lty = 2, xlab = "x", ylab = "g0(x)", main = "Power Series")
  par(new = T)
- plot(xx, pol2, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 2)
+ plot(xx, pol2, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "g0(x)", main = "", col = 2)
  par(new = T)
- plot(xx, pol4, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 3)
+ plot(xx, pol4, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "g0(x)", main = "", col = 3)
  par(new = T)
- plot(xx, pol10, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 4)
- legend("topright", c("True m(x)", "k = 2", "k = 4", "k = 10"), lty = c(2,1,1,1), lwd = c(2,2,2,2), col = c(1,2,3,4))
+ plot(xx, pol10, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "g0(x)", main = "", col = 4)
+ legend("topright", c("True g0(x)", "k = 2", "k = 4", "k = 10"), lty = c(2,1,1,1), lwd = c(2,2,2,2), col = c(1,2,3,4))
 
  Fou <- function(k){
 	fou <- 1
@@ -41,11 +41,11 @@
  fou4 <- predict(lm(Y ~ Fou(4) - 1))
  fou10 <- predict(lm(Y ~ Fou(10) - 1))
 
- plot(xx, Y, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, lty = 2, xlab = "x", ylab = "m(x)", main = "Fourier Series")
+ plot(xx, Y, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, lty = 2, xlab = "x", ylab = "g0(x)", main = "Fourier Series")
  par(new = T)
- plot(xx, fou2, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 2)
+ plot(xx, fou2, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "g0(x)", main = "", col = 2)
  par(new = T)
- plot(xx, fou4, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 3)
+ plot(xx, fou4, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "g0(x)", main = "", col = 3)
  par(new = T)
- plot(xx, fou10, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "m(x)", main = "", col = 4)
- legend("topright", c("True m(x)", "k = 2", "k = 4", "k = 10"), lty = c(2,1,1,1), lwd = c(2,2,2,2), col = c(1,2,3,4))
+ plot(xx, fou10, xlim = range(xx), ylim = range(Y), type = "l", lwd = 2, xlab = "x", ylab = "g0(x)", main = "", col = 4)
+ legend("topright", c("True g0(x)", "k = 2", "k = 4", "k = 10"), lty = c(2,1,1,1), lwd = c(2,2,2,2), col = c(1,2,3,4))

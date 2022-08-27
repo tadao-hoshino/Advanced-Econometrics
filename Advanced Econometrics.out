@@ -52,7 +52,7 @@
 \BOOKMARK [1][-]{section.8.1}{Nonparametric regression}{chapter.8}% 52
 \BOOKMARK [2][-]{subsection.8.1.1}{k-nearest-neighbor regression and kernel regression}{section.8.1}% 53
 \BOOKMARK [2][-]{subsection.8.1.2}{Series regression}{section.8.1}% 54
-\BOOKMARK [2][-]{subsection.8.1.3}{A numerical illustration: estimation of Engel curve}{section.8.1}% 55
+\BOOKMARK [2][-]{subsection.8.1.3}{An empirical illustration: estimation of Engel curve}{section.8.1}% 55
 \BOOKMARK [1][-]{section.8.2}{Semiparamtric regression}{chapter.8}% 56
 \BOOKMARK [2][-]{subsection.8.2.1}{Partially linear models}{section.8.2}% 57
 \BOOKMARK [2][-]{subsection.8.2.2}{Generalized additive models}{section.8.2}% 58
@@ -93,15 +93,15 @@
 \BOOKMARK [2][-]{subsection.14.1.1}{Two spatial-lag probit models}{section.14.1}% 93
 \BOOKMARK [2][-]{subsection.14.1.2}{Spatial-error probit model}{section.14.1}% 94
 \BOOKMARK [1][-]{section.14.2}{GMM estimation of spatial probit models}{chapter.14}% 95
-\BOOKMARK [0][-]{Appendix.1.A}{Appendix Introductory Graph Theory}{part.2}% 96
-\BOOKMARK [1][-]{section.1.A.1}{Basic terminology}{Appendix.1.A}% 97
-\BOOKMARK [1][-]{section.1.A.2}{Paths, Cycles and Connectivity}{Appendix.1.A}% 98
-\BOOKMARK [1][-]{section.1.A.3}{Degree}{Appendix.1.A}% 99
-\BOOKMARK [1][-]{section.1.A.4}{Eulerian graph}{Appendix.1.A}% 100
-\BOOKMARK [1][-]{section.1.A.5}{Adjacency matrix}{Appendix.1.A}% 101
-\BOOKMARK [1][-]{section.1.A.6}{Centrality in networks}{Appendix.1.A}% 102
-\BOOKMARK [0][-]{Appendix.1.B}{Appendix Supplementary Mathematical Notes}{part.2}% 103
-\BOOKMARK [1][-]{section.1.B.1}{Some supplementary results in probability theory.}{Appendix.1.B}% 104
-\BOOKMARK [1][-]{section.1.B.2}{Neumann series expansion}{Appendix.1.B}% 105
-\BOOKMARK [1][-]{section.1.B.3}{Expectation of a truncated random variable}{Appendix.1.B}% 106
-\BOOKMARK [1][-]{section.1.B.4}{The inverse of a partitioned matrix}{Appendix.1.B}% 107
+\BOOKMARK [0][-]{appendix.1.A}{Appendix Introductory Graph Theory}{part.2}% 96
+\BOOKMARK [1][-]{section.1.A.1}{Basic terminology}{appendix.1.A}% 97
+\BOOKMARK [1][-]{section.1.A.2}{Paths, Cycles and Connectivity}{appendix.1.A}% 98
+\BOOKMARK [1][-]{section.1.A.3}{Degree}{appendix.1.A}% 99
+\BOOKMARK [1][-]{section.1.A.4}{Eulerian graph}{appendix.1.A}% 100
+\BOOKMARK [1][-]{section.1.A.5}{Adjacency matrix}{appendix.1.A}% 101
+\BOOKMARK [1][-]{section.1.A.6}{Centrality in networks}{appendix.1.A}% 102
+\BOOKMARK [0][-]{appendix.1.B}{Appendix Supplementary Mathematical Notes}{part.2}% 103
+\BOOKMARK [1][-]{section.1.B.1}{Some supplementary results in probability theory.}{appendix.1.B}% 104
+\BOOKMARK [1][-]{section.1.B.2}{Neumann series expansion}{appendix.1.B}% 105
+\BOOKMARK [1][-]{section.1.B.3}{Expectation of a truncated random variable}{appendix.1.B}% 106
+\BOOKMARK [1][-]{section.1.B.4}{The inverse of a partitioned matrix}{appendix.1.B}% 107

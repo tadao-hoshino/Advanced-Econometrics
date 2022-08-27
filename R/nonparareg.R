@@ -6,25 +6,25 @@ rm(list = ls())
  data("Engel95")
  dim(Engel95)
  food <- Engel95$food # share of food consumption
- inc  <- Engel95$logexp # log of total expenditure 
+ exp  <- Engel95$logexp # log of total expenditure 
  
- plot(inc, food)
+ plot(exp, food)
 
- mhat_kernel <- npreg(food ~ inc)
+ mhat_kernel <- npreg(food ~ exp)
 
- knots <- quantile(inc, (1:3)/4)
- p <- bs(inc, knots = knots)
+ knots <- quantile(exp, (1:3)/4)
+ p <- bs(exp, knots = knots)
  dim(p)
 
  mhat_spline <- predict(lm(food ~ p))
 
- plot(inc, food, xlim = range(inc), ylim = range(food), 
-	main = "Nonparametric regression", xlab = "inc", ylab = "food")
+ plot(exp, food, xlim = range(exp), ylim = range(food), 
+	main = "Nonparametric regression", xlab = "exp", ylab = "food")
  par(new = T)
- plot(inc[order(inc)], mhat_kernel$mean[order(inc)], xlab = "", ylab = "",
-	xlim = range(inc), ylim = range(food), type = "l", lwd = 2, col = 2)
+ plot(exp[order(exp)], mhat_kernel$mean[order(exp)], xlab = "", ylab = "",
+	xlim = range(exp), ylim = range(food), type = "l", lwd = 2, col = 2)
  par(new = T)
- plot(inc[order(inc)], mhat_spline[order(inc)], xlab = "", ylab = "",
-	xlim = range(inc), ylim = range(food), type = "l", lwd = 2, col = 3)
+ plot(exp[order(exp)], mhat_spline[order(exp)], xlab = "", ylab = "",
+	xlim = range(exp), ylim = range(food), type = "l", lwd = 2, col = 3)
  legend("topright", c("Kernel regression", "Spline series regression"), 
 	lty = c(1,1), lwd = c(2,2), col = c(2,3))
