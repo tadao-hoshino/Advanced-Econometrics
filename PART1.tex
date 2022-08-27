@@ -3159,10 +3159,10 @@ Hence, the heteroskedasticity in the original sample is retained in the bootstra
 
 \chapter{Nonparametric Regression}
 
-As shown in \eqref{eq:msemin},  in terms of minimization of MSE, the most optimal regression function is the conditional expectation function $\E [Y \mid X]$.
-Thus, the validity of linear regression hinges on whether the funcitonal-form assumption $\E[Y \mid X] = X^\top\beta$ is true for some $\beta$ or not.
+When we consider a linear regression model $Y = X^\top\beta + \eps$, we often assume that $\E[\eps \mid X] = 0$ is true, which is equivalent to imposing a funcitonal-form assumption $\E[Y \mid X] = X^\top\beta$.
 In reality, however, it would be extremely rare that data follow such a linear relationship exactly, and if the functional-form assumption is not met, what the linear regression produces is only a ``linear approaximation" of $\E[Y \mid X]$.
 As shown in the figure below, linear approximation is not always informative and sometimes even misleading.
+
 \begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width = 8cm]{reg.png}
@@ -3170,6 +3170,7 @@ As shown in the figure below, linear approximation is not always informative and
 	\end{center}
 \end{figure}
 
+Recall that the most optimal regression function is the conditional expectation function $\E [Y \mid X]$ in terms of minimization of MSE, as shown \eqref{eq:msemin}.
 Thus, ideally, we would like to estimate $\E [Y \mid X]$ without imposing any a priori functional-form assumptions.
 Such a regression approach is called \textbf{nonparametric\index{nonparametric}}.
 In contrast, if one assumes a specific functional form $g(X, \theta)$ for $\E[Y \mid X]$ with a finite dimensional parameter vector $\theta$, this approach is \textbf{parametric\index{parametric}}.

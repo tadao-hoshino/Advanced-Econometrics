@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2022.8.13)  27 AUG 2022 01:07
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2022.8.13)  27 AUG 2022 11:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -970,45 +970,45 @@ File: ./figs//reg.png Graphic file (type bmp)
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3209.
+(hyperref)                removing `math shift' on input line 3210.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3209.
+(hyperref)                removing `math shift' on input line 3210.
 
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/sl' undefined
-(Font)              No change on input line 3228.
+(Font)              No change on input line 3226.
 [71]
 File: ./figs//kernels.png Graphic file (type bmp)
 <./figs//kernels.png>
 
-Overfull \hbox (23.04652pt too wide) in paragraph at lines 3240--3241
+Overfull \hbox (23.04652pt too wide) in paragraph at lines 3241--3242
  [] 
  []
 
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/sl' undefined
-(Font)              No change on input line 3260.
+(Font)              No change on input line 3261.
 [72]
 File: ./figs//localreg.png Graphic file (type bmp)
 <./figs//localreg.png>
 
-Overfull \hbox (23.04652pt too wide) in paragraph at lines 3269--3270
+Overfull \hbox (23.04652pt too wide) in paragraph at lines 3270--3271
  [] 
  []
 
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/sl' undefined
-(Font)              No change on input line 3294.
+(Font)              No change on input line 3295.
 [73]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/sl' undefined
-(Font)              No change on input line 3336.
+(Font)              No change on input line 3337.
  [74]
 File: ./figs//seriesreg.png Graphic file (type bmp)
 <./figs//seriesreg.png>
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/sl' undefined
-(Font)              No change on input line 3367.
+(Font)              No change on input line 3368.
  [75] Excluding 'comment' comment.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/sl' undefined
-(Font)              No change on input line 3427.
+(Font)              No change on input line 3428.
  [76]
 File: ./figs//engel.png Graphic file (type bmp)
 <./figs//engel.png>
@@ -1016,7 +1016,7 @@ File: ./figs//engel.png Graphic file (type bmp)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/sl' undefined
-(Font)              No change on input line 3478.
+(Font)              No change on input line 3479.
  [77])
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/sl' undefined
 (Font)              No change on input line 27.
@@ -1508,4 +1508,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  77i,23n,80p,772b,1895s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on "Advanced Econometrics.dvi" (142 pages, 783840 bytes).
+Output written on "Advanced Econometrics.dvi" (142 pages, 783932 bytes).
