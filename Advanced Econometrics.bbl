@@ -35,6 +35,12 @@ Ballester, C., Calv{\'o}-Armengol, A., and Zenou, Y. (2006).
 \newblock Who's who in networks. wanted: The key player.
 \newblock {\em Econometrica}, 74(5):1403--1417.
 
+\bibitem[Belloni et~al., 2015]{belloni2015some}
+Belloni, A., Chernozhukov, V., Chetverikov, D., and Kato, K. (2015).
+\newblock Some new asymptotic theory for least squares series: Pointwise and
+  uniform results.
+\newblock {\em Journal of Econometrics}, 186(2):345--366.
+
 \bibitem[Berry, 1992]{berry1992estimation}
 Berry, S.~T. (1992).
 \newblock Estimation of a model of entry in the airline industry.
@@ -60,6 +66,12 @@ Chen, X. (2007).
 \newblock Large sample sieve estimation of semi-nonparametric models.
 \newblock volume~6 of {\em Handbook of Econometrics}, pages 5549--5632.
   Elsevier.
+
+\bibitem[Chen and Christensen, 2015]{chen2015optimal}
+Chen, X. and Christensen, T.~M. (2015).
+\newblock Optimal uniform convergence rates and asymptotic normality for series
+  estimators under weak dependence and weak conditions.
+\newblock {\em Journal of Econometrics}, 188(2):447--465.
 
 \bibitem[Ciliberto and Tamer, 2009]{ciliberto2009market}
 Ciliberto, F. and Tamer, E. (2009).
@@ -97,6 +109,11 @@ Horowitz, J.~L. (2001).
 Horowitz, J.~L. (2019).
 \newblock Bootstrap methods in econometrics.
 \newblock {\em Annual Review of Economics}, 11:193--224.
+
+\bibitem[Horowitz and Mammen, 2004]{horowitz2004nonparametric}
+Horowitz, J.~L. and Mammen, E. (2004).
+\newblock Nonparametric estimation of an additive model with a link function.
+\newblock {\em The Annals of Statistics}, 32(6):2412--2443.
 
 \bibitem[Hoshino, 2018]{hoshino2018semiparametric}
 Hoshino, T. (2018).

@@ -42,12 +42,14 @@ alternates between $1$ and $-1$.
 
 The statement ``the sequence $(a_n)_{n=1}^\infty$ gets closer to $\alpha$ as $n$ increases'' is rather informal and mathematically unclear.
 A formal definition of convergence is as follows.
+
 \begin{definition}\label{def:conv}
 We say that a sequence of real numbers $(a_n)_{n=1}^\infty$ converges to a limit $\alpha$ if for any given positive number $\kappa > 0$, there exists a natural number $n(\kappa)$ such that
 \begin{equation}
 	|a_n - \alpha| < \kappa \;\; \text{for all $n$ satisfying } n(\kappa) \leq n. \label{eq:conv}
 \end{equation}
 \end{definition}
+
 The interpretation of \eqref{eq:conv} is as follows.
 Choose an arbitrary small $\kappa$, say $\kappa < 10^{-100}$ or even smaller.
 Even for such a small value of $\kappa$, if we set $n(\kappa)$ sufficiently large, the distance between the terms of the sequence after $a_{n(\kappa)}$ and $\alpha$ can be smaller than $\kappa$ (see Figure \ref{fig:limit}).
@@ -59,8 +61,8 @@ Even for such a small value of $\kappa$, if we set $n(\kappa)$ sufficiently larg
 	\end{center}
 \end{figure}
 
-\hrulefill
-\begin{exercise}\upshape
+\begin{framed}
+\begin{exercise}\label{ex:seq}\upshape
 	What are the limits of the following sequences?
 	\begin{enumerate}
 		\item $a_n = n^2 - n$
@@ -75,6 +77,7 @@ Even for such a small value of $\kappa$, if we set $n(\kappa)$ sufficiently larg
 	Let $S_n = \sum_{k=1}^n a_k$ and $\bar S_n = \sum_{k=1}^n |a_k|$.
 	Show that if $\bar S_n$ converges to a finite number, so does $S_n$. (This is called \textbf{absolute convergence}.)
 \end{exercise}
+\end{framed}
 
 Note  that $a_k \to 0$ as $k \to \infty$ does not ensure the convergence of $S_n = \sum_{k = 1}^n a_k$ at all.
 For example, as is well known, $\sum_{k = 1}^n k^{-1}$ diverges to infinity.\footnote{
@@ -95,6 +98,7 @@ Recall that random variables are not numbers, but they are functions (rules) tha
 Thus, whether the sequence of random variables $Z_n$ converges to a limit or not is itself a stochastic event, and hence the definition \ref{def:conv} cannot be applied directly.
 However, since a probability is a real number, we can still consider the convergence of a sequence of probabilities in the usual sense.
 Then, we introduce the notion of ``convergence in probability''.
+
 \begin{definition}
 For any given positive number $\kappa > 0$, if
 \[
@@ -110,7 +114,9 @@ holds, we say that $Z_n$ \textbf{converges in probability\index{convergence in p
 The above definition can be read as follows: $a_n \equiv \Pr(|Z_n - \mu| \le \kappa)$, which is a real number, converges to one for any $\kappa$ in the sense of Definition \ref{def:conv}.
 It is important to note that $\mu$ can be either a random variable or a constant number in this definition.
 
-When $Z_n$ is a sequence of vector-valued random variables, one can use an appropriate norm $||\cdot||$, such as Euclidean norm, in place of the absolute value $|\cdot|$.
+When $Z_n$ is a sequence of vector-valued random variables, one can use an appropriate norm $||\cdot||$, such as the Euclidean norm, in place of the absolute value $|\cdot|$.\footnote{
+	Throughout, when not explicitly mentioned, $||\cdot||$ stands for the Euclidean norm (i.e., the square root of the sum of squared elements).
+}
 Note that the choice of $\kappa$ is arbitrary, and thus it can be, for example, $\kappa < 10^{-100}$ or even smaller as long as it is larger than 0.
 This definition says that the probability of observing the event $\{|Z_n - \mu| \le \kappa\}$ approaches to one as $n$ increases even for such very small $\kappa$. 
 
@@ -174,7 +180,7 @@ This result is known as the \textbf{weak law of large numbers\index{weak law of 
 	SLLN implies WLLN.}
 As shown above, an easy-to-check sufficient condition for WLLN to hold is that $\Var(\bar X_n)$ converges to zero as $n$ increases.
 In the case when the data $\{X_1, \ldots , X_n\}$ are independent and identically distributed (IID), the condition can be easily confirmed by the fact that $\Var(\bar X_n) = \Var(X)/n \to 0$ as $n \to \infty$ as long as $\Var(X)$ is finite.\footnote{
-	Perhaps somewhat surprisingly, $\Var(X) < \infty$ is not a necessary condition for WLLN in general.
+	That said, perhaps somewhat surprisingly, $\Var(X) < \infty$ is not a necessary condition for WLLN in general.
 	}
 \bigskip
 
@@ -182,7 +188,7 @@ An estimator which converges in probability to its population value is called a 
 That is, letting $\what \theta_n$ be an estimator of $\theta_0$ obtained from a sample of size $n$, if $\what \theta_n \overset{p}{\to} \theta_0$, we say that $\what \theta_n$ is consistent for $\theta_0$.
 WLLN states that the sample mean is a consistent estimator of the population mean under IID sampling.
 
-\hrulefill
+\begin{framed}
 \begin{exercise}\upshape
 	Suppose that $\{X_1, \ldots, X_n\}$ are independent, and
 	\[
@@ -206,10 +212,122 @@ WLLN states that the sample mean is a consistent estimator of the population mea
 	Prove the following claim: Suppose that $g(\cdot)$ is a continuous function.
 	Then, if $Z_n \overset{p}{\to} \mu$, we have $g(Z_n) \overset{p}{\to} g(\mu)$.
 \end{exercise}
+\end{framed}
 
-\section{Laudau's notation: big $O$ and small $o$}
+\section{Laudau's notation: big $O$ and little $o$}
 
-to be written soon: $O$, $o$, $O_P$, $o_P$
+\textbf{Landau's notation} is a convenient tool for representing asymptotic behavior of a sequence, also known as ``Big-$O$, little-$o$ notation'' or ``asymptotic notation''.
+Let $a_n$ be a sequence of real numbers, and $p_n$ be a sequence of positive numbers.
+We write
+\begin{align*}
+	a_n = O(p_n)
+\end{align*}
+if there exists a constant $C$ such that 
+\begin{align*}
+	|a_n| \le C p_n \;\; \text{for all sufficiently large $n$.}
+\end{align*}
+When $a_n = O(p_n)$ holds, we say that $a_n$ is of order $p_n$. 
+Intuitively, if $p_n \to \infty$, this means that $a_n$ grows not faster than $p_n$.
+Similarly, if $p_n \to 0$, $a_n = O(p_n)$ means that $a_n$ converges to zero at the same rate or faster than $p_n$.
+For example, if $a_n = O(n^{-1})$, $a_n$ converges to zero at a rate at least $n^{-1}$ because $a_n$ does not diverge even if it is multiplied by $n$ (i.e., $n |a_n| \le C$).
+When $a_n$ is bounded by some finite constant, then we can write $a_n = O(1)$.
+
+By the definition of $O$ symbol, the following properties can be easily verified:
+\begin{lemma}\label{lem:bigo}
+\begin{itemize}
+	\item $a_n = O(p_n)$ \& $p_n = O(q_n)$ $\Longrightarrow$ $a_n = O(q_n)$
+	\begin{itemize}
+		\item \upshape \textbf{Proof.} By assumption, $|a_n| \le C_1 p_n$ and $p_n \le C_2 q_n$. Then, $|a_n| \le C_1 C_2 q_n$.
+	\end{itemize}
+	\item $a_n = O(p_n)$ \& $b_n = O(q_n)$ $\Longrightarrow$ $a_n b_n = O(p_n q_n)$
+	\begin{itemize}
+		\item \upshape \textbf{Proof.} By assumption, $|a_n| \le C_1 p_n$ and $|b_n| \le C_2 q_n$.
+		Then, $|a_n b_n| \le C_1 C_2 p_n q_n$.
+	\end{itemize}
+	\item $a_n = O(p_n)$ \& $b_n = O(q_n)$ $\Longrightarrow$ $a_n + b_n = O(\max\{p_n, q_n\})$
+	\begin{itemize}
+		\item \upshape \textbf{Proof.} By assumption, $|a_n| \le C_1 p_n$ and $|b_n| \le C_2 q_n$.
+		Then, the triangle inequality gives $|a_n + b_n| \le |a_n| + |b_n| \le C_1 p_n + C_2 q_n \le \max\{C_1, C_2\} (p_n + q_n) \le 2 \max\{C_1, C_2\} \max\{p_n, q_n\}$.
+	\end{itemize}
+\end{itemize}
+\end{lemma}
+
+For illustrations, the orders of the sequences in Exercise \ref{ex:seq} are as follows:
+\begin{enumerate}
+	\item $a_n = n^2 - n = O(n^2) + O(n) = O(n^2)$
+	\item $a_n = (-1)^n/\sqrt{n} = O(n^{-1/2})$
+	\item $a_n = \sqrt{n + 1} - \sqrt{n} = O(1)$
+\end{enumerate}
+
+
+Little-$o$ notation $a_n = o(p_n)$ is a special case of Big-$O$ notation $a_n = O(p_n)$.
+If
+\begin{align*}
+	\frac{|a_n|}{p_n} \to 0 \;\; \text{as $n \to \infty$},
+\end{align*}
+we write
+\begin{align*}
+	a_n = o(p_n).
+\end{align*}
+Obviously, if $a_n = o(p_n)$ is true, so is $a_n = O(p_n)$.
+If a sequence is $o(1)$, it means that the sequence is just a convergent to zero.
+For example, if we have $a_n = o(n^{-1})$, $a_n$ goes to zero so quickly that it can converge to zero even when multiplied by $n$.
+
+By the definitions of $O$ and $o$, the following properties are evident:
+\begin{lemma}\label{lem:smallo}
+\begin{itemize}
+	\item $a_n = o(p_n)$ \& $p_n = o(q_n)$ $\Longrightarrow$ $a_n = o(q_n)$
+	\begin{itemize}
+		\item \upshape \textbf{Proof.} By assumption, $|a_n|/p_n \to 0$ and $p_n/q_n \to 0$. Then, $|a_n|/q_n = (|a_n|/p_n)(p_n/q_n) \to 0$.
+	\end{itemize}
+	\item $a_n = o(p_n)$ \& $b_n = o(q_n)$ $\Longrightarrow$ $a_n b_n = o(p_n q_n)$
+	\begin{itemize}
+		\item \upshape \textbf{Proof.} By assumption, $|a_n|/p_n \to 0$ and $|b_n|/q_n \to 0$.
+		Then, $|a_n b_n|/(p_n q_n) \to 0$.
+	\end{itemize}
+	\item $a_n = o(p_n)$ \& $b_n = o(q_n)$ $\Longrightarrow$ $a_n + b_n = o(\max\{p_n, q_n\})$
+	\begin{itemize}
+		\item \upshape \textbf{Proof.} By assumption, $|a_n|/p_n \to 0$ and $|b_n|/q_n \to 0$.
+		It is clear to see that $|a_n|/\max\{p_n, q_n\} \to 0$ and $|b_n|/\max\{p_n, q_n\} \to 0$.
+		Then, the triangle inequality gives $|a_n + b_n|/\max\{p_n, q_n\} \le |a_n|/\max\{p_n, q_n\} + |b_n|/\max\{p_n, q_n\} \to 0$.
+	\end{itemize}
+	\item[$\spadesuit$] $a_n = o(p_n)$ \& $b_n = O(q_n)$ $\Longrightarrow$ $a_n b_n = o(p_n q_n)$
+	\item[$\clubsuit$] $a_n = o(p_n)$ \& $b_n = O(q_n)$ $\Longrightarrow$ $a_n + b_n = O(\max\{p_n, q_n\})$
+\end{itemize}
+\end{lemma}
+
+\begin{framed}
+	\begin{exercise}\upshape
+		Prove $\spadesuit$ and $\clubsuit$.
+	\end{exercise}
+\end{framed}
+
+So far, we have considered asymptotic behavior of real sequences.
+If $a_n$ is a sequence of random variables, we write
+\begin{align*}
+	a_n = O_P(p_n)
+\end{align*}
+if for any given number $\epsilon > 0$ there exists a constant $C$ such that 
+\begin{align*}
+	\Pr(|a_n| > C p_n) < \epsilon \;\; \text{for all sufficiently large $n$.}
+\end{align*}
+In words, $a_n = O_P(p_n)$ means that the probability that $|a_n|/p_n$ is unbounded is arbitrarily small for large $n$.
+In particular, a random variable that is bounded in probability is $O_P(1)$.
+We can verify that the same results as those in Lemma \ref{lem:bigo} hold for $O_P$ as well (proofs are omitted).
+
+Now, letting $\hat \theta_n$ be an estimator of $\theta_0$, when $\hat \theta_n - \theta_0 = O_P(n^{-1/2})$ is satisfied (i.e., $\sqrt{n}(\hat \theta_n - \theta_0) = O_P(1)$), we say that $\hat \theta_n$ is \textbf{root-n-consistent}\index{root-n-consistency} for $\theta_0$.
+Most of the estimators introduced in this textbook, except those in Chapter \ref{chap:nonpara}, are root-n-consistent.
+
+The probabilistic version of little $o$ is $o_P$.
+We denote
+\begin{align*}
+	a_n = o_P(p_n)
+\end{align*}
+if 
+\begin{align*}
+	\frac{|a_n|}{p_n} \overset{p}{\to} 0 \;\; \text{as $n \to \infty$}.
+\end{align*}
+All the results in Lemma \ref{lem:smallo} hold with $O$ and $o$ replaced with $O_P$ and $o_P$, respectively (proofs are omitted).
 
 \section{Convergence in distribution}\label{subsec:indist}
 
@@ -293,7 +411,7 @@ Let $\what \theta_n$ be an estimator of $\theta_0$ obtained from a sample of siz
 If $\sqrt{n}(\what \theta_n - \theta_0) \overset{d}{\to} \mbf{N}(\mbf{0},\Omega)$, where $\mbf{N}(\mbf{0}, \Omega)$ is a multivariate normal distribution with mean vector $\mbf{0}$ and covariance matrix $\Omega$, we say that $\what \theta_n$ is \textbf{asymptotically normally distributed\index{asymptotic normality}} (at ``parametric'' rate).
 $\Omega$ is called the asymptotic covariance matrix of $\sqrt{n}(\what \theta_n - \theta_0)$.
 
-\hrulefill
+\begin{framed}
 \begin{exercise}\upshape
 	Prove that $Z_n \overset{d}{\to} Z$ does not imply $Z_n \overset{p}{\to} Z$ by presenting a counterexample.
 \end{exercise}
@@ -302,6 +420,7 @@ $\Omega$ is called the asymptotic covariance matrix of $\sqrt{n}(\what \theta_n 
 $X_0 \sim \text{Uniform}[-1,1]$, $X_n \equiv (-1)^n X_0$. 
 Then $\Pr(X_n < x) = \Pr(X_0 < x)$, but $X_n$ never converges to $X_0$.
 \end{comment}
+\end{framed}
 
 \section{Asymptotic properties of OLS estimator}
 
@@ -390,7 +509,7 @@ implying that
 	\sqrt{n}(\hat \beta_n^{ols} - \beta_0) \overset{d}{\to} \mbf{N}(\mbf{0}, \sigma^2 \E[XX^\top]^{-1}).
 \]
 
-\hrulefill
+\begin{framed}
 \begin{exercise}\upshape
 	Prove \eqref{eq:msemin}.
 \end{exercise}
@@ -411,6 +530,7 @@ implying that
 	where $\lambda$ is a given positive number, and $I_{\text{dim}(X)}$ is an identity matrix of dimension $\text{dim}(X)$.
 	Prove that (1) $\hat \beta_n^{ridge}$ is a biased estimator of $\beta_0$, and that (2) if $\lambda \to 0$, $\hat \beta_n^{ridge}$ is consistent for $\beta_0$.
 \end{exercise}
+\end{framed}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -527,12 +647,11 @@ Thus, endogeneity problem arises when simultaneity exists.
 	\end{center}
 \end{figure}
 
-\bigskip
-\hrulefill
+\begin{framed}
 \begin{exercise}\upshape
 	Give specific examples of endogeneity bias caused by (1) omitted variables and (2) simultaneity (other than those mentioned above).
 \end{exercise}
-
+\end{framed}
 
 \section{Instrumental variables}
 
@@ -608,11 +727,12 @@ Thus, in this case, the estimation bias of $\what{\beta}_{n1}$ can be very large
 This problem is known as the \textbf{weak instruments problem\index{weak instruments problem}}. 
 There are several formal tests for weak instruments (see, e.g., \cite{stock2005testing}); however, the details are omitted here.
 
-\hrulefill
+\begin{framed}
 \begin{exercise}\upshape
 	Suppose that we would like to estimate the causal impact of aircraft noise on land prices by a regression analysis.
 	In this regression model, we should suspect that the aircraft noise variable is endogenous. Explain why, and give an example of a valid instrumental variable in this analysis.
 \end{exercise}
+\end{framed}
 
 \section{2SLS procedure}
 
@@ -711,12 +831,12 @@ First, noting that $\mbf{Y}_n = \mbf{H}_n^\top\theta_0 + \mcl{E}_n$, where $\mcl
 	\what \theta_n^{2sls} 
 	& = \theta_0 + \left[\mbf{H}_n^\top \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1}\mbf{Z}_n^\top \mbf{H}_n  \right]^{-1}\mbf{H}_n^\top \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1}\mbf{Z}_n^\top\mcl{E}_n.
 \end{align*}
-by WLLN, under standard conditions, we have $\mbf{H}_n^\top \mbf{Z}_n/n \overset{p}{\to} \E[H Z^\tr]$,  $\mbf{Z}_n^\tr \mbf{Z}_n/n \overset{p}{\to} \E[Z Z^\tr]$, and  $\mbf{Z}_n^\tr \mcl{E}_n/n \overset{p}{\to} \E[Z \eps] = \underset{(d_z + d_x)\times 1}{\mathbf{0}}$ as the sample size increases to infinity.
+by WLLN, under standard conditions, we have $\mbf{H}_n^\top \mbf{Z}_n/n \overset{p}{\to} \E[H Z^\tr]$,  $\mbf{Z}_n^\tr \mbf{Z}_n/n \overset{p}{\to} \E[Z Z^\tr]$, and  $\mbf{Z}_n^\tr \mcl{E}_n/n \overset{p}{\to} \E[Z \eps] = \underset{(d_z + d_x)\times 1}{\mbf{0}}$ as the sample size increases to infinity.
 Thus,
 \begin{align*}	
 	\what \theta_n^{2sls} - \theta_0
 	& = \left[(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}(\mbf{Z}_n^\top \mbf{H}_n/n ) \right]^{-1}(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}(\mbf{Z}_n^\top\mcl{E}_n/n) \\
-	& \overset{p}{\to} \left[ \E[H Z^\tr] \E[Z Z^\tr]^{-1} \E[Z H^\tr] \right]^{-1} \E[H Z^\tr] \E[Z Z^\tr]^{-1} \underbrace{\E[Z \eps]}_{= \; \mathbf{0}} = \mathbf{0}
+	& \overset{p}{\to} \left[ \E[H Z^\tr] \E[Z Z^\tr]^{-1} \E[Z H^\tr] \right]^{-1} \E[H Z^\tr] \E[Z Z^\tr]^{-1} \underbrace{\E[Z \eps]}_{= \; \mbf{0}} = \mbf{0}
 \end{align*}
 by Lemma \ref{lem:prodconv} and the continuous mapping theorem, implying that the 2SLS estimator $\what \theta_n^{2sls}$ is consistent for $\theta_0$.
 
@@ -730,11 +850,12 @@ Hence, by Slutsky's theorem \ref{lem:slutsky}, we obtain the asymptotic normalit
 	& \overset{d}{\to} \mbf{N}\left(\mbf{0}, \sigma^2  \left[ \E[H Z^\tr] \E[Z Z^\tr]^{-1} \E[Z H^\tr] \right]^{-1}\right).
 \end{align*}
 
-\hrulefill
+\begin{framed}
 \begin{exercise}\upshape
 	Explain what happens if we create $\hat D$ using only $Z_1$ without $X$ and perform a 2SLS estimation.
 	Is such an estimator consistent? If yes, prove that, and if no, explain under what additional condition(s) the estimator becomes consistent.
 \end{exercise}
+\end{framed}
 
 \section{Durbin-Wu-Hausman test for endogeneity}
 
@@ -872,10 +993,11 @@ The second equality of \eqref{eq:LATE} is left for an exercise.
 Recall that the slope coefficient $\alpha_0$ in the regression model $Y = \beta_0 + D \cdot \alpha_0 + \eps$ can be expressed as $\alpha_0 = \Cov(Z, Y)/\Cov(Z, D)$.
 This means that the 2SLS estimator for $\alpha_0$ can be seen as an estimator of the LATE parameter.
 
-\hrulefill
+\begin{framed}
 \begin{exercise}\upshape
 	Prove the following equality: $\displaystyle \frac{\Cov(Z, Y)}{\Cov(Z, D)} = \frac{\E[Y \mid Z = 1] - \E[Y \mid Z = 0]}{\E[D \mid Z = 1] - \E[D \mid Z = 0]}$.
 \end{exercise}
+\end{framed}
 
 \section{Numerical simulations with \textbf{R}}
 
@@ -986,17 +1108,17 @@ Using the formula in \eqref{eq:inverse}, denoting $\E_{AB} \equiv \E[A B^\tr] $,
 	\end{array}	\right)\\
 	& \hspace{-80pt}= 
 	\left(\begin{array}{c}
-	\underset{d_z \times d_x}{\mathbf{0}} \\
+	\underset{d_z \times d_x}{\mbf{0}} \\
 	-(\E_{X X}  - \E_{X Z_1} \E_{Z_1 Z_1}^{-1} \E_{Z_1 X} )^{-1} \E_{X Z_1} \E_{Z_1 Z_1}^{-1} \E_{Z_1 X} + (\E_{X X} - \E_{X Z_1} \E_{Z_1 Z_1}^{-1} \E_{Z_1 X} )^{-1} \E_{XX}
 	\end{array} \right) \\
 	& \hspace{-80pt}= 
 	\left(\begin{array}{c}
-	\underset{d_z \times d_x}{\mathbf{0}} \\
+	\underset{d_z \times d_x}{\mbf{0}} \\
 	(\E_{X X}  - \E_{X Z_1} \E_{Z_1 Z_1}^{-1} \E_{Z_1 X} )^{-1} (\E_{X X} - \E_{X Z_1} \E_{Z_1 Z_1}^{-1} \E_{Z_1 X} )
 	\end{array} \right)
 	= 
 	\left(\begin{array}{c}
-	\underset{d_z \times d_x}{\mathbf{0}} \\
+	\underset{d_z \times d_x}{\mbf{0}} \\
 	I_{d_x}
 	\end{array} \right).
 \end{split}
@@ -1005,7 +1127,7 @@ Hence,
 \begin{align*}
 	\mcl{P}_Z(X)
 	& = \left( Z^\tr \E[ZZ^\tr]^{-1} \E[ZX^\tr] \right)^\tr  = \left( \left[ Z^\tr_1 \; , \; X^\tr \right] \left(\begin{array}{c}
-	\underset{d_z \times d_x}{\mathbf{0}} \\
+	\underset{d_z \times d_x}{\mbf{0}} \\
 	I_{d_x}
 	\end{array} \right) \right)^\tr = X.
 \end{align*}
@@ -1209,7 +1331,7 @@ Dividing the objective function by $n$ is for technical convenience in deriving 
 	However, by dividing it by $n$, under standard conditions, we can have $\frac{1}{n} \ell_n(\theta) \overset{p}{\to} \E[\log p(X_i; \theta)]$ for all $\theta$ by the ``uniform" law of large numbers.\label{foot:UWLLN}
 	}
 
-\hrulefill
+\begin{framed}
 \begin{exercise}\upshape
 	Suppose that we have $n$ IID observations $\{X_1, \ldots, X_n\}$ drawn from a Poisson distribution with parameter $\lambda_0$; i.e.,
 	\[
@@ -1224,6 +1346,7 @@ Dividing the objective function by $n$ is for technical convenience in deriving 
 	\hat \alpha_n^{mle} = \max\{X_1, \ldots, X_n\}. 
 	\] 
 \end{exercise}
+\end{framed}
 
 \subsection{Kullback-Leibler divergence}
 
@@ -1329,7 +1452,7 @@ Observe that the expectation of the score function (under $p(x; \theta)$) is alw
 	& = \int \left\{\frac{\partial}{\partial \theta}\log p(x; \theta)\right\} p(x; \theta) \mrm{d}x \\
 	& =  \int \frac{\frac{\partial}{\partial \theta} p(x; \theta)}{p(x; \theta)}p(x; \theta) \mrm{d}x \\
 	& = \int \frac{\partial}{\partial \theta} p(x; \theta)  \mrm{d}x \\
-	& = \frac{\partial}{\partial \theta} \underbrace{\int p(x; \theta) \mrm{d}x}_{=1} = \mathbf{0},
+	& = \frac{\partial}{\partial \theta} \underbrace{\int p(x; \theta) \mrm{d}x}_{=1} = \mbf{0},
 \end{split}
 \end{align}
 and, therefore
@@ -1502,7 +1625,7 @@ By the chain rule, the Hessian $H(X; \beta_0)$ can be written as
 By LIE, we can see that the second term on the right-hand side will be zero after taking the expectation.
 Thus, we have $-\E[H(X; \beta_0) ] = I(\beta_0)$, as desired.
 
-\hrulefill
+\begin{framed}
 \begin{exercise}\upshape
 	Consider an ordered choice model with three ordered outcomes:
 	\begin{align*}
@@ -1516,6 +1639,7 @@ Thus, we have $-\E[H(X; \beta_0) ] = I(\beta_0)$, as desired.
 	The error term $\eps$ is assumed to be independent of $X$ and has a known distribution function $F$.
 	Derive the log-likelihood function for this model and define the MLE $\hat \theta_n^{mle}$ of $\theta_0$.
 \end{exercise}
+\end{framed}
 
 \section{Likelihood ratio test}\label{sec:LRT}
 Partition the estimation parameters as $\theta_0 = (\theta_{01}, \theta_{02})$, where $\theta_{01}$ is a $q_1 \times 1$ vector, and $\theta_{02}$ is a $q_2 \times 1$ vector.
@@ -2045,7 +2169,7 @@ Finally, by Slutsky's theorem \ref{lem:slutsky}, we have the asymptotic normalit
 \end{split}
 \end{align}
 
-\hrulefill
+\begin{framed}
 \begin{exercise}\upshape
 	Consider a linear regression model:
 	\[
@@ -2058,7 +2182,7 @@ Finally, by Slutsky's theorem \ref{lem:slutsky}, we have the asymptotic normalit
 \begin{exercise}\upshape
 	Consider an endogenous probit model:
 	\[
-		Y = \mathbf{1}\{\beta_0 + D \alpha_0 \ge \eps\}, \;\; \eps \sim N(0,1),
+		Y = \mbf{1}\{\beta_0 + D \alpha_0 \ge \eps\}, \;\; \eps \sim N(0,1),
 	\]
 	where $D$ is potentially dependent on $\eps$.
 	Suppose that there is an IV $Z_1$ for $D$ such that it is a determinant of $D$ and is independent of $\eps$. 
@@ -2066,6 +2190,7 @@ Finally, by Slutsky's theorem \ref{lem:slutsky}, we have the asymptotic normalit
 	However, such an estimator is generally inconsistent.
 	Explain why.
 \end{exercise}
+\end{framed}
 
 \section{Two-step optimal GMM}
 It can be seen from \eqref{eq:GMMnormal} that the variance of the GMM estimator depends on the choice of the weight matrix $\Omega_n$.
@@ -2128,7 +2253,7 @@ The two-step estimator has the same asymptotic distribution as the infeasible op
 	Thus, the optimal GMM estimator is asymptotically equivalent to the MLE in this case.
 \end{example}
 
-\hrulefill
+\begin{framed}
 \begin{exercise}\upshape
 	\begin{enumerate}
 	\item Consider the multiple regression models in Example \ref{ex:ols}. 
@@ -2139,9 +2264,10 @@ The two-step estimator has the same asymptotic distribution as the infeasible op
 \end{exercise}
 
 \begin{exercise}\upshape
-	Consider the following model: $Y = \theta_0 + \varepsilon$ with $\E[\eps] = 0$ and, for a $J \times 1$ vector of random variables $X$, $\E[X \varepsilon] = \mathbf{0}$.
+	Consider the following model: $Y = \theta_0 + \varepsilon$ with $\E[\eps] = 0$ and, for a $J \times 1$ vector of random variables $X$, $\E[X \varepsilon] = \mbf{0}$.
 	Assuming that IID data $\{(Y_i,X_i): 1 \le i \le n\}$ are available, derive the optimal GMM estimator of $\theta_0$.
 \end{exercise}
+\end{framed}
 
 \section{Over-identification test}
 
@@ -2211,8 +2337,8 @@ Even when there seem to be no problems with the data and statistical programming
 
 Suppose that a researcher considers estimating the following two heteroskedastic probit models:
 \begin{align*}
-	\text{Model 1} & \;\; Y = \mathbf{1}\{\beta_0 + X \beta_1 \ge \eps\}, \;\; \text{where} \;\; \eps \sim N(0, \sigma^2_1(X)), \;\; \sigma_1(X) = |X\beta_2| \\
-	\text{Model 2} & \;\; Y = \mathbf{1}\{\beta_0 + X \beta_1 \ge \eps\}, \;\; \text{where} \;\; \eps \sim N(0, \sigma^2_2(X)), \;\; \sigma_2(X) = |(1 + \sqrt{X})\beta_2|.
+	\text{Model 1} & \;\; Y = \mbf{1}\{\beta_0 + X \beta_1 \ge \eps\}, \;\; \text{where} \;\; \eps \sim N(0, \sigma^2_1(X)), \;\; \sigma_1(X) = |X\beta_2| \\
+	\text{Model 2} & \;\; Y = \mbf{1}\{\beta_0 + X \beta_1 \ge \eps\}, \;\; \text{where} \;\; \eps \sim N(0, \sigma^2_2(X)), \;\; \sigma_2(X) = |(1 + \sqrt{X})\beta_2|.
 \end{align*}
 Here, we assume that $X$ is one-dimensional and non-negative.
 At first glance, both models are quite similar and seem to be valid.
@@ -2571,7 +2697,7 @@ In the literature on partial identification, we are usually interested in findin
 	For more general discussion on this topic, see \cite{bontemps2012set}
 \end{example}
 
-\hrulefill
+\begin{framed}
 \begin{exercise}\upshape
 	Consider a simple regression model:
 	\[
@@ -2588,6 +2714,17 @@ You have sold out your products to 300 people at the site.
 Among these 300 buyers, 100 of them posted the product's review with a star rating.
 The distribution of the star-ratings is as follows.
 Suppose that you would like to know the value of $\mu \equiv \E[\text{the number of $\star$'s}|\text{buyers}]$.
+
+\begin{enumerate}
+	\item If you assume that the missing-at-random (MAR) holds, what is the estimate of $\mu$?
+	\item Do you think the MAR assumption is credible in this context? Why?
+	\item When imposing no assumptions on the non-respondents, we can only partially identify $\mu$.
+	(a) Derive the identified set, and (b) report the computed identified set.
+	\item Suppose you would like to obtain a smaller identified set than the one obtained in 3.
+	Explain specifically (a) what kind of additional assumption(s) you would introduce and (b) to what extent the resulting identified set is smaller than the one in 3. 
+\end{enumerate}
+\end{exercise}
+\end{framed}
 
 \begin{table}[h]
 	\caption{Distribution of star-ratings}
@@ -2606,15 +2743,6 @@ Suppose that you would like to know the value of $\mu \equiv \E[\text{the number
 	\end{center}
 \end{table}
 
-\begin{enumerate}
-	\item If you assume that the missing-at-random (MAR) holds, what is the estimate of $\mu$?
-	\item Do you think the MAR assumption is credible in this context? Why?
-	\item When imposing no assumptions on the non-respondents, we can only partially identify $\mu$.
-	(a) Derive the identified set, and (b) report the computed identified set.
-	\item Suppose you would like to obtain a smaller identified set than the one obtained in 3.
-	Explain specifically (a) what kind of additional assumption(s) you would introduce and (b) to what extent the resulting identified set is smaller than the one in 3. 
-\end{enumerate}
-\end{exercise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2752,8 +2880,8 @@ In addition, suppose that the game is a simultaneous-move game.
 Then, we can see that the players' entry decisions follow the following simultaneous binary choice model:
 \begin{align}\label{eq:entry}
 \begin{split}
-D_1 & = \mathbf{1}\{\rho D_2 + X_1^\top \beta \geq \eps_1 \} \\
-D_2 & = \mathbf{1}\{\rho D_1 + X_2^\top \beta \geq \eps_2 \}.
+D_1 & = \mbf{1}\{\rho D_2 + X_1^\top \beta \geq \eps_1 \} \\
+D_2 & = \mbf{1}\{\rho D_1 + X_2^\top \beta \geq \eps_2 \}.
 \end{split}
 \end{align}
 Then, we have the following relationship between the realized outcomes $(D_1, D_2)$ and the error terms $(\eps_1, \eps_2)$:
@@ -2912,14 +3040,14 @@ Now, consider a general statistic $T_n$ and let $G_n(\cdot \mid F)$ be the distr
 \begin{align*}
 	G_n(t \mid F) 
 	& \equiv P_F(T_n(X_1, \ldots, X_n) \le t) \\
-	& = \int \mathbf{1}\{T_n(x_1, \ldots, x_n) \le t\} \mathrm{d} F^n.
+	& = \int \mbf{1}\{T_n(x_1, \ldots, x_n) \le t\} \mathrm{d} F^n.
 \end{align*}
 The true distribution of $T_n$ under $F_0$ can be written as $G_n(\cdot \mid F_0)$.
 Thus, if we happen to know the exact form of $G_n(\cdot \mid F_0)$, we can conduct any statistical inference on $T_n$; however, this is a rare case since $F_0$ is usually unknown.
 
 For data $\{X_1, \ldots, X_n\}$ that are drawn from $F_0$, we have the empirical distribution function $F_n$ defined as
 \begin{align*}
-	F_n(t) \equiv \frac{1}{n}\sum_{i = 1}^n \mathbf{1}\{X_i \le t\}.
+	F_n(t) \equiv \frac{1}{n}\sum_{i = 1}^n \mbf{1}\{X_i \le t\}.
 \end{align*} 
 Using this empirical distribution, we can compute $G_n(\cdot \mid F_n)$, instead of $G_n(\cdot \mid F_0)$, in the following manner:
 \begin{description}
@@ -2982,8 +3110,8 @@ Then, the bootstrap analog of $T_n$ is $T_n^* \equiv n(\hat \alpha_n^{mle} - \ha
 Hence,
 \begin{align*}
 	P_{F_n}(T_n^* = 0)
-	& = \int \mathbf{1}\{\hat \alpha_n^* = \hat \alpha_n^{mle}\} \mathrm{d} F_n^n\\
-	& = \int (1 - \mathbf{1}\{\text{$\hat \alpha_n^{mle} \not\in $ bootstrap sample}\}) \mathrm{d} F_n^n\\
+	& = \int \mbf{1}\{\hat \alpha_n^* = \hat \alpha_n^{mle}\} \mathrm{d} F_n^n\\
+	& = \int (1 - \mbf{1}\{\text{$\hat \alpha_n^{mle} \not\in $ bootstrap sample}\}) \mathrm{d} F_n^n\\
 	& = 1 - (1 - (1/n))^n \to 1 - e^{-1}.
 \end{align*}
 Thus, the bootstrap distribution of $T_n^*$ is not consistent for the distribution of $T_n$.
@@ -3043,10 +3171,7 @@ Then, under the Cram\'er condition, we have the following result:
 		G_n(t \mid F_n) & = G_\infty(t \mid F_n) + \frac{1}{n^{1/2}} g_1(t, F_n) + \frac{1}{n} g_2(t, F_n) + \frac{1}{n^{3/2}} g_3(t, F_n) + O(n^{-2}) 
 	\end{split}
 \end{align}
-uniformly over $t$.\footnote{
-	For those who are unfamiliar with the Big-O notation (a.k.a. Landau notation): $f(n) = O(g(n))$ is equivalent to that there exists a constant $C$ such that $|f(n)| \le C |g(n)|$ for all sufficiently large $n$.
-	Hence, for example, $O(n^{-2})$ means that it is a term converging to zero at rate $n^{-2}$ or faster.
-}
+uniformly over $t$.
 Here, $g_1$ and $g_3$ are even functions and $g_2$ is an odd function with respect to the first argument.
 The series expansion of a distribution function as given in \eqref{eq:edgeworth} is called an \textbf{Edgeworth expansion\index{Edgeworth expansion}}.
 From this result, we can see that the conventional asymptotic method that approximates $G_n(t \mid F_0)$ by its asymptotic analog $G_\infty(t \mid F_0)$ has an approximation error of order $n^{-1/2}$.
@@ -3090,6 +3215,7 @@ Then, the error of the bootstrap approximation of the distribution
 of a statistic that is not asymptotically pivotal converges to zero at the same rate as that of the conventional asymptotic approximation (i.e., no asymptotic refinements); there is no merit of using bootstrap other than  computational simplicity.
 
 \begin{table}[h]
+	\caption{Approximation errors for estimating $G_n(\cdot \mid F_0)$}
 	\begin{tabular}{l|cccc}
 		\hline
 	& Asymptotic distribution     & \multicolumn{3}{c}{Bootstrap}    \\
@@ -3098,7 +3224,6 @@ of a statistic that is not asymptotically pivotal converges to zero at the same 
 	The speed of approximation & $n^{-1/2}$ & $n^{-1}$ & $n^{-3/2}$ & $n^{-1/2}$ \\
 		\hline
 	\end{tabular}
-	\caption{Approximation errors for estimating $G_n(\cdot \mid F_0)$}
 \end{table}
 
 \section{Other bootstrap resampling schemes}
@@ -3146,10 +3271,10 @@ and $\{W_i: 1 \le i \le n\}$ is a randomly generated IID sequence that is indepe
 Common choices of distributions for $W_i$ include the standard normal and the two-point distribution that takes $(1 - \sqrt{5})/2$ with probability $(\sqrt{5} + 1)/(2 \sqrt{5})$ and $(\sqrt{5} + 1)/2$ with probability $(\sqrt{5} - 1)/(2 \sqrt{5})$.
 It can be easily confirmed that
 \begin{align*}
-	\E [u_i^* \mid \{(\mbf{X}_i, Y_i)\}] 
-	& = \E [W_i \mid \{(\mbf{X}_i, Y_i)\}]  \hat \eps_i = 0 \\
-	\E [(u_i^*)^2 \mid \{(\mbf{X}_i, Y_i)\}] 
-	& = \E [W_i^2  \mid \{(\mbf{X}_i, Y_i)\}]  \hat \eps_i^2 =  \hat \eps_i^2.
+	\E [u_i^* \mid \{(\mbf{X}_j, Y_j)\}_{j=1}^n] 
+	& = \E [W_i \mid \{(\mbf{X}_j, Y_j)\}_{j=1}^n]  \hat \eps_i = 0 \\
+	\E [(u_i^*)^2 \mid \{(\mbf{X}_j, Y_j)\}_{j=1}^n] 
+	& = \E [W_i^2  \mid \{(\mbf{X}_j, Y_j)\}_{j=1}^n]  \hat \eps_i^2 =  \hat \eps_i^2.
 \end{align*}
 Hence, the heteroskedasticity in the original sample is retained in the bootstrap sample.
 
@@ -3157,7 +3282,7 @@ Hence, the heteroskedasticity in the original sample is retained in the bootstra
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Nonparametric Regression}
+\chapter{Nonparametric Regression}\label{chap:nonpara}
 
 Consider a general regression model: $Y = g(X) + \eps$.
 As shown in \eqref{eq:msemin}, in terms of minimization of MSE, the best regression function is the conditional expectation function: $g(X) = \E[Y \mid X]$.
@@ -3202,10 +3327,10 @@ If we additionally assume a parametric regression model $g(X, \theta_0) = g_0(X)
 However, the correct parametric specification is usually unknown to us.
 Then, we consider estimating $g_0(\cdot)$ with its functional form fully unrestricted, except for some smoothness constraints.
 
-Let $\mathcal{X} \subseteq \mathbb{R}^d$ be the support of $X$.
-For any given $x \in \mathcal{X}$, we would like to develop a consistent estimator of $g_0(x)$.
+Let $\mcl{X} \subseteq \mathbb{R}^d$ be the support of $X$.
+For any given $x \in \mcl{X}$, we would like to develop a consistent estimator of $g_0(x)$.
 There are two major approaches used in nonparametric regression: local regression and global regression.
-The local approach is to estimate $g_0(x)$ by fitting a simple model using only the observations in the neighborhood of $x$ (the evaluation point $x \in \mathcal{X}$ does not have to be an observaed data point).
+The local approach is to estimate $g_0(x)$ by fitting a simple model using only the observations in the neighborhood of $x$ (the evaluation point $x \in \mcl{X}$ does not have to be an observaed data point).
 Since any local estimator only gives an estimate of $g_0(\cdot)$ at a specific point $x$, if one wants to recover the whole shape of $g_0(\cdot)$, it is necessary to repeat the estimation at different points many times.
 In contrast, the global approach considers a basis expansion of the function $g_0(x)\approx p(x)^\top \theta_0$ and estimates the whole functional form of $g_0(\cdot)$ at once.
 Here, $p(\cdot)$ is a vector of known basis functions of increasing dimension, and $\theta_0$ is the corresponding coefficient vector.
@@ -3216,7 +3341,7 @@ This type of nonparametric regression is called \textbf{series regression\index{
 We first describe the local approach.
 For simplicity, we temporarily assume that $X$ is one-dimensional.
 One simplest local regression method is the \textbf{$k$-nearest-neighbor ($k$NN) regression\index{$k$-nearest-neighbor regression}}.
-The $k$NN regression estimator simply computes the average of $Y$ over the $k$-closest observations to $x$ on $\mathcal{X}$.
+The $k$NN regression estimator simply computes the average of $Y$ over the $k$-closest observations to $x$ on $\mcl{X}$.
 Suppose we have $n$ IID observations $\{(Y_i, X_i): 1 \le i \le n\}$.
 Re-ordering the observations in the increasing order of $|X_i - x|$, so that $|X^{(1)} - x| \le |X^{(2)} - x| \le \cdots \le |X^{(n)} - x|$, we estimate $g_0(x)$ by
 \begin{align*}
@@ -3233,14 +3358,14 @@ Another popularly used local regression method is the \textbf{kernel regression\
 The idea of kernel regression is similar to that of $k$NN regression, but differs in that it introduces a \textbf{bandwidth\index{bandwidth}} parameter $h$ such that only the observations whose $X$ value falling into the interval $[x-h, \; x+h]$ are used to compute the estimator.
 For example, a \textbf{local constant regression\index{local constant regression}} estimator is given by
 \begin{align*}
-	\hat g^{const}_n(x) \equiv \frac{\sum_{i = 1}^n \mathbf{1}\{|X_i - x | \le h\} Y_i}{\sum_{i = 1}^n\mathbf{1}\{|X_i - x | \le h\}}.
+	\hat g^{const}_n(x) \equiv \frac{\sum_{i = 1}^n \mbf{1}\{|X_i - x | \le h\} Y_i}{\sum_{i = 1}^n\mbf{1}\{|X_i - x | \le h\}}.
 \end{align*}
 The above estimator is slightly inefficient in practice because, once the criterion $|X_i - x | \le h$ is met, the observations adjacent to $x$ and those not that close to $x$ have the same contributions to the estimator.
-Thus, it is possible to improve the estimator by assigning larger weights for the observations closer to the evaluation point $x \in \mathcal{X}$.
+Thus, it is possible to improve the estimator by assigning larger weights for the observations closer to the evaluation point $x \in \mcl{X}$.
 
 To this end, we introduce a general weighting function $K(\cdot)$, which is referred to as the \textbf{kernel function\index{kernel function}}.
 The kernel function is a continuous density function (i.e., $\int K(u)\text{d}u = 1$), and is assumed to be symmetric around zero.
-Some typical choices for the kernel function are: uniform kernel $K(u) = \frac{1}{2}\mathbf{1}\{|u| \le 1\}$, Epanechnikov kernel $K(u) = \frac{3}{4}(1-u^2)\mathbf{1}\{|u| \le 1\}$, and Gaussian kernel $K(u) = \frac{1}{\sqrt{2\pi}}\exp(-u^2/2)$; see Figure \ref{fig:kernels}.
+Some typical choices for the kernel function are: uniform kernel $K(u) = \frac{1}{2}\mbf{1}\{|u| \le 1\}$, Epanechnikov kernel $K(u) = \frac{3}{4}(1-u^2)\mbf{1}\{|u| \le 1\}$, and Gaussian kernel $K(u) = \frac{1}{\sqrt{2\pi}}\exp(-u^2/2)$; see Figure \ref{fig:kernels}.
 
 \begin{figure}[h!]
 	\begin{center}
@@ -3307,14 +3432,14 @@ Intuitively, the effective sample size for a kernel regression is of order $O(nh
 
 So far, we have focused on the case where the dimension of $X$ is just one.
 When $X = (X_1, \ldots, X_d)$ is a general $d$-dimensional variable, the aforementioned estimators require some modifications.
-Specifically, we introduce a ``multivariate'' kernel weighting function, say $\mathbf{K}(u)$, where $u = (u_1, \ldots, u_d) \in \mathbb{R}^d$, and we can estimate $g_0(x)$ in a similar manner using $\mathbf{K}(u)$ in the place of $K(u)$.
-One simple way to construct $\mathbf{K}(u)$ is to take the product of one-dimensional kernel functions: $\mathbf{K}(u) = \prod_{j=1}^d K(u_j)$.
+Specifically, we introduce a ``multivariate'' kernel weighting function, say $\mbf{K}(u)$, where $u = (u_1, \ldots, u_d) \in \mathbb{R}^d$, and we can estimate $g_0(x)$ in a similar manner using $\mbf{K}(u)$ in the place of $K(u)$.
+One simple way to construct $\mbf{K}(u)$ is to take the product of one-dimensional kernel functions: $\mbf{K}(u) = \prod_{j=1}^d K(u_j)$.
 For example, if one employs the same bandwith $h$ for all $X_j$'s, the product uniform kernel function is
 \begin{align*}
-	\mathbf{K}\left(\frac{X_i - x}{h}\right) = \frac{1}{2^d}\mathbf{1}\{|X_{i,1} - x_1| \le h\}\mathbf{1}\{|X_{i,2} - x_2| \le h\} \times \cdots \times \mathbf{1}\{|X_{i,d} - x_d| \le h\}.
+	\mbf{K}\left(\frac{X_i - x}{h}\right) = \frac{1}{2^d}\mbf{1}\{|X_{i,1} - x_1| \le h\}\mbf{1}\{|X_{i,2} - x_2| \le h\} \times \cdots \times \mbf{1}\{|X_{i,d} - x_d| \le h\}.
 \end{align*}
 This means that only the observations contained in the $d$-dimensional cube centered at $x$ with each side length of $2h$ can be used for estimating $g_0(x)$.
-If the data are uniformly distributed on $\mathcal{X}$, the size of the subsample in each cube is of order $O(nh^d)$.
+If the data are uniformly distributed on $\mcl{X}$, the size of the subsample in each cube is of order $O(nh^d)$.
 Therefore, since $h$ is assumed to tend to zero, the size of the effective sample decreases ``exponentially'' (not proportionally) with respect to $d$.
 Thus, nonparametric estimation of $g_0(x)$ becomes less and less feasible quickly and inefficient as $d$ grows.
 This issue is known as the \textbf{curse of dimensionality\index{curse of dimensionality}}.
@@ -3325,7 +3450,7 @@ As far as I can see in the empirical literature, full nonparametric regression h
 Again, we first focus on the estimation of the model in \eqref{eq:nonpara} with a one-dimensional $X$, and extend the discussion to more general cases later.
 The idea of approximating a general continuous function by a linear combination of basis functions has a long history.
 Perhaps one of the most familiar to readers would be the Maclaurin expansion (i.e., the Taylor expansion at 0):
-assuming that $g_0(\cdot)$ is sufficiently many times differentiable, at each $x \in \mathcal{X}$
+assuming that $g_0(\cdot)$ is sufficiently many times differentiable, at each $x \in \mcl{X}$
 \begin{align*}
 	g_0(x) = g_0(0) + g_0^{(1)}(0)x + \frac{g_0^{(2)}(0)}{2!}x^2 + \cdots + \frac{g_0^{(k)}(0)}{k!}x^k + \cdots,
 \end{align*}
@@ -3333,17 +3458,17 @@ where $g_0^{(k)}$ denotes the $k$-th order derivative of $g_0$.
 This suggests that if $g_0(\cdot)$ is sufficiently smooth, we can approximate $g_0(x)$ by $g_0(x) \approx p(x)^\top \theta_0$ with $p(x) = (1, x, x^2, \ldots, x^k)^\top$, the \textbf{power series} of order $k$, and $\theta_0 = (g_0(0), g_0^{(1)}(0), \ldots, g_0^{(k)}(0)/k!)^\top$.
 
 A similar well-known result is the Weierstrass approximation theorem.
-The theorem states that for any continuous function on a closed interval $\mathcal{X}$, the same power-series approximation holds in the sense that the approximation error $g_0(x) - p(x)^\top \theta_0$ can be made arbitrarily small for any $x \in \mathcal{X}$ by choosing a sufficiently large polynomial order and an appropriate coefficient vector $\theta_0$. 
+The theorem states that for any continuous function on a closed interval $\mcl{X}$, the same power-series approximation holds in the sense that the approximation error $g_0(x) - p(x)^\top \theta_0$ can be made arbitrarily small for any $x \in \mcl{X}$ by choosing a sufficiently large polynomial order and an appropriate coefficient vector $\theta_0$. 
 Remarkably, the differentiability is not required here.
 
 Historically, the most important series expansion result for humankind would be the \textbf{Fourier series\index{Fourier series}} expansion.
 The French mathematician Joseph Fourier (1768-1830) claimed that any periodic function can be decomposed into a linear combination of sine and cosine curves.
 Although its formal proof was not given by Fourier, it was later shown that his claim was after all true for a wide class of functions.
-Then, named after his discovery, the following series expansion is called the Fourier series expansion: for a continuous function $g_0(\cdot)$ on a closed interval $\mathcal{X}$,
+Then, named after his discovery, the following series expansion is called the Fourier series expansion: for a continuous function $g_0(\cdot)$ on a closed interval $\mcl{X}$,
 \begin{align*}
 	g_0(x) = a_0 + a_1\sin(\omega x) + b_1\cos(\omega x) + a_2\sin(\omega 2 x) + b_2\cos(\omega 2 x) + \cdots + a_k\sin(\omega k x) + b_k\cos(\omega k x) + \cdots,
 \end{align*}
-where $\omega$ is a constant determined by the size of $\mathcal{X}$.
+where $\omega$ is a constant determined by the size of $\mcl{X}$.
 
 In Figure \ref{fig:seriesreg}, we provide numerical results for the power series approximation and the Fourier series approximation.
 In the figure, the true functional form of $g_0(\cdot)$ is presented as the dotted curve.
@@ -3359,22 +3484,23 @@ We can clearly observe that in both series expansions, more and more precise app
 As such, with suitable conitnuity conditions, a fairly large class of functions can be approximated by some series expansion.
 In addition to those introduced above, basis functions that are often adopted in applications include splines, wavelets, artificial neural networks, and so forth (see \cite{chen2007large} for their definitions and other examples).
 Now, let $\{p_1(x), p_2(x), \ldots \}$ be a sequence of $\mathbb{R}$-valued basis functions, and $p(x) = (p_1(x), \ldots , p_k(x))^\top$.
-We assume that for a sufficiently large $k$, there exists a $k \times 1$ vector $\theta_0$ such that the target function $g_0(\cdot)$ can be well-approximated by $p(\cdot)^\top\theta_0$ uniformly over $\mathcal{X}$ in the following sense:
+We assume that for a sufficiently large $k$, there exists a $k \times 1$ vector $\theta_0$ such that the target function $g_0(\cdot)$ can be well-approximated by $p(\cdot)^\top\theta_0$ uniformly over $\mcl{X}$ in the following sense:
 \begin{align*}
-	|g_0(x) - p(x)^\top\theta_0 | \le O(k^{-\alpha}) \;\; \text{for any $x \in \mathcal{X}$},
+	|g_0(x) - p(x)^\top\theta_0 | \le O(k^{-\alpha}) \;\; \text{for any $x \in \mcl{X}$},
 \end{align*}
-where $\alpha > 0$ is a constant that depends on the choice of the basis function, the smoothness of $g_0$, and the dimension of $X$ (for details, see \cite{chen2007large}).\footnote{
+where $\alpha > 0$ is a constant that depends on the choice of the basis function, the smoothness of $g_0$, and the dimension of $X$ (for details, see \cite{chen2007large}).
+The larger $\alpha$, the smoother the function $g_0$ is (the larger number of derivatives $g_0$ has).\footnote{
 	Among the basis functions listed above, while the power series is quite popular, it is known that the power series expansion has relatively a ``slower'' convergence rate than the others.
 }
 Using this series approximation, we can rewrite \eqref{eq:nonpara} as follows:
 \begin{align*}
 	Y
-	& = g_0(x) + \eps\\
+	& = g_0(X) + \eps\\
 	& = p(X)^\top\theta_0 + \eta
 \end{align*}
-where $\eta \equiv g_0(x) - p(X)^\top\theta_0 + \eps$.
+where $\eta \equiv g_0(X) - p(X)^\top\theta_0 + \eps$.
 Thus, the nonparametric regression model can be transformed into a ``linear regression'' model with increasing dimension.
-Indeed, we can estimate $\theta_0$ simply by running an OLS regression of $Y$ on $p(x)$:\footnote{
+Indeed, we can estimate $\theta_0$ simply by running an OLS regression of $Y$ on $p(X)$:\footnote{
 	Here, we implicitly assume for simplicity that $\frac{1}{n}\sum_{i = 1}^n p(X_i)p(X_i)^\top$ is a nonsingular matrix.
 	However, noting that the dimension of this matrix grows to infinity along with $n$, it is generally possible that the matrix is not invertible for finite $n$.
 	In that case, the inverse should be replaced by a generalized inverse.
@@ -3384,7 +3510,7 @@ Indeed, we can estimate $\theta_0$ simply by running an OLS regression of $Y$ on
 	& \equiv \argmin_\theta \frac{1}{n}\sum_{i = 1}^n (Y_i -  p(X_i)^\top\theta)^2 \\
 	& = \left(\frac{1}{n}\sum_{i = 1}^n p(X_i)p(X_i)^\top\right)^{-1}\frac{1}{n}\sum_{i = 1}^n p(X_i)Y_i
 \end{align*}
-Once we obtain $\hat \theta_n$, for any given $x \in \mathcal{X}$, we can estimate $g_0(x)$ by $\hat g_n(x)  \equiv p(x)^\top \hat \theta_n$.
+Once we obtain $\hat \theta_n$, for any given $x \in \mcl{X}$, we can estimate $g_0(x)$ by $\hat g_n(x)  \equiv p(x)^\top \hat \theta_n$.
 Thus, compared to the kernel regression approach, series regression is much easier to implement.
 
 To prove the consistency of $\hat g_n(x)$, by the triangle inequality, observe that
@@ -3397,15 +3523,18 @@ Hence, it suffices to show that $|p(x)^\top (\hat \theta_n - \theta_0)| = o_P(1)
 Here, assuming that the basis functions are bounded, we have $||p(x)|| = (p_1^2(x) + \cdots + p_k^2(x))^{1/2} = O(\sqrt{k})$.
 Further, under some regularity conditions, we can show that
 \begin{align}\label{eq:seriesrate}
-		||\hat \theta_n - \theta_0|| = O_P\left( \sqrt{\frac{k}{n}} \right).
+		||\hat \theta_n - \theta_0|| = O_P\left( \sqrt{\frac{k}{n}} + k^{-\alpha}\right).
 \end{align}
 A sketch of the proof of this result can be found in the appendix of this chapter.
-Then, combining these results with Cauchy-Schwarz inequality gives that $|p(x)^\top (\hat \theta_n - \theta_0)| \le ||p(x)|| \cdot ||\hat \theta_n - \theta_0 || = O_P(k/\sqrt{n})$.
-Thus, if $k$ grows to infinity sufficiently slowly such that $k/\sqrt{n} \to 0$ is maintained, we obtain $\hat g_n(x) - g_0(x) \overset{p}{\to} 0$ for any $x \in \mathcal{X}$, as desired.
+Then, combining these results with Cauchy-Schwarz inequality gives that $|p(x)^\top (\hat \theta_n - \theta_0)| \le ||p(x)|| \cdot ||\hat \theta_n - \theta_0 || = O_P(k/\sqrt{n} + k^{1/2 - \alpha})$.\footnote{
+	This evaluation is actually a rough bound.
+	For more sophisticated results, see, for example, \cite{belloni2015some} and \cite{chen2015optimal}.
+}
+Thus, if $\alpha > 1/2$ (i.e., $g_0$ is sufficiently smooth) and $k$ grows to infinity sufficiently slowly so that $k/\sqrt{n} \to 0$ is maintained, we obtain $\hat g_n(x) - g_0(x) \overset{p}{\to} 0$ for any $x \in \mcl{X}$, as desired.
 
 \begin{comment}
 To prove the asymptotic normality, we require much stronger conditions.
-Here, we only state the result under the homoskedasticity assumption $\E[\eps^2 \mid X] = \sigma^2$: for a given $x \in \mathcal{X}$,
+Here, we only state the result under the homoskedasticity assumption $\E[\eps^2 \mid X] = \sigma^2$: for a given $x \in \mcl{X}$,
 \begin{align*}
 	\frac{\sqrt{n}(\hat m_n(x) - g_0(x))}{\sigma \sqrt{p(x)^\top \E[p(X)p(X)^\top]^{-1}p(x)}} \overset{d}{\to} N(0,1).
 \end{align*}
@@ -3489,4 +3618,39 @@ Running the code below, we can observe that both the kernel and series regressio
 
 \section*{Appendix: Proof of \eqref{eq:seriesrate}}
 
+Let $P = (p(X_1), \ldots, p(X_n))^\top$, $\mbf{Y} = (Y_1, \ldots, Y_n)^\top$, $\mcl{E} = (\eps_1, \ldots, \eps_n)^\top$, $v_i = g_0(X_i) - p(X_i)^\top \theta_0$, and $\mbf{V} = (v_1, \ldots , v_n)^\top$.
+Using these notations, we can write $\mbf{Y} /n = P \theta_0 + \mbf{V} + \mcl{E}$.
+Then,
+\begin{align*}
+	\hat \theta_n - \theta_0 
+	& = \left[P^\top P /n \right]^{-1}P^\top \mbf{Y} /n - \theta_0 \\
+	& = \left[P^\top P /n \right]^{-1}P^\top (P \theta_0 + \mbf{V} + \mcl{E}) /n - \theta_0 \\
+	& = \left[P^\top P /n \right]^{-1}P^\top \mbf{V} /n + \left[P^\top P /n \right]^{-1}P^\top \mcl{E} /n 
+\end{align*}
+Assume that $\E[P^\top P /n]$ is positive definite for all $k$.
+Applying a matrix law of large numbers to $P^\top P /n$, we have $||P^\top P /n - \E[P^\top P /n]|| = o_P(1)$.\footnote{
+	A rigorous proof of this result is not that easy since $P^\top P /n$ is a matrix whose dimension increases to infinity along with $n$.
+	For interested readers, see, for example, Lemma 4 of \cite{horowitz2004nonparametric}.
+}
+Then, with sufficeitnly large $n$, the minimum eigenvalue of $\left[P^\top P /n \right]^{-1}$ is bounded by some postive constant with a high probability.
+Hence, noting that the maximum eigenvalue of an idempotent matrix is at most one (see Footnote 3, Chapter 4),
+\begin{align*}
+	||\left[P^\top P /n \right]^{-1}P^\top \mbf{V} /n||^2 
+	& = \mbf{V}^\top P \left[P^\top P /n \right]^{-2}P^\top \mbf{V} /n^2 \\
+	& \le O_P(1) \cdot \mbf{V}^\top P \left[P^\top P /n \right]^{-1}P^\top \mbf{V} /n^2 \\
+	& \le O_P(1) \cdot \mbf{V}^\top \mbf{V} /n \\
+	& = O_P(1) \cdot \frac{1}{n}\sum_{i=1}^n |v_i|^2 \le O_P(k^{-2\alpha}),
+\end{align*}
+where in the last inequality, we have used $\max_i |v_i| = O(k^{-\alpha})$.
+This implies that $||\left[P^\top P /n \right]^{-1}P^\top \mbf{V} /n|| = O(k^{-\alpha})$.
+
+Next, observe that $\E[\mcl{E}\mcl{E}^\top \mid \{X_i\}_{i=1}^n]$ is a diagonal matrix whose typical element is $\E[\eps_i^2 \mid \{X_i\}_{i=1}^n]$, which we assume to be bounded by some large constant $C$, uniformly in $i$.
+Then, we have
+\begin{align*}
+	\E\left[||\left[P^\top P /n \right]^{-1}P^\top \mcl{E} /n||^2 \mid \{X_i\}_{i=1}^n \right]
+	& = \text{trace}\left\{ \left[P^\top P /n \right]^{-1}P^\top \E[\mcl{E}\mcl{E}^\top \mid \{X_i\}_{i=1}^n] P \left[P^\top P /n \right]^{-1}\right\}/n^2 \\
+	& \le C \text{trace}\left\{ \left[P^\top P /n \right]^{-1} \right\}/n = O(k/n).
+\end{align*}
+Thus, by Markov's inequality, $||\left[P^\top P /n \right]^{-1}P^\top \mcl{E} /n||^2 = O_P(k/n)$, implying that $||\left[P^\top P /n \right]^{-1}P^\top \mcl{E} /n|| = O_P(\sqrt{k/n})$.
+Finally, \eqref{eq:seriesrate} holds by the triangle inequality.
 \end{document}

@@ -1,226 +1,227 @@
 \begin{theindex}
 
-  \item $k$-nearest-neighbor regression, \hyperpage{71}
+  \item $k$-nearest-neighbor regression, \hyperpage{73}
 
   \indexspace
 
-  \item adjacency matrix, \hyperpage{123}
-  \item adjacent, \hyperpage{121}
-  \item Akaike's Information Criterion, \hyperpage{37}
-  \item asymptotic distribution, \hyperpage{6}
-  \item asymptotic normality, \hyperpage{7}
-  \item asymptotic refinement, \hyperpage{67}
-  \item asymptotically pivotal, \hyperpage{67}
+  \item adjacency matrix, \hyperpage{126}
+  \item adjacent, \hyperpage{124}
+  \item Akaike's Information Criterion, \hyperpage{39}
+  \item asymptotic distribution, \hyperpage{8}
+  \item asymptotic normality, \hyperpage{9}
+  \item asymptotic refinement, \hyperpage{69}
+  \item asymptotically pivotal, \hyperpage{69}
 
   \indexspace
 
-  \item bandwidth, \hyperpage{72}
-  \item Bernoulli distribution, \hyperpage{25}
-  \item Bonacich centrality, \hyperpage{125}
-  \item Bootstrap consistency, \hyperpage{64}
+  \item bandwidth, \hyperpage{74}
+  \item Bernoulli distribution, \hyperpage{27}
+  \item Bonacich centrality, \hyperpage{128}
+  \item Bootstrap consistency, \hyperpage{66}
 
   \indexspace
 
-  \item central limit theorem, \hyperpage{7}
+  \item central limit theorem, \hyperpage{9}
   \item Chevyshev's inequality, \hyperpage{5}
-  \item closed, \hyperpage{120}
-  \item complementarity, \hyperpage{92}
-  \item complete graph, \hyperpage{119}
-  \item complete information game, \hyperpage{60}
-  \item conformity, \hyperpage{92}
-  \item connected, \hyperpage{120}
+  \item closed, \hyperpage{123}
+  \item complementarity, \hyperpage{95}
+  \item complete graph, \hyperpage{122}
+  \item complete information game, \hyperpage{62}
+  \item conformity, \hyperpage{95}
+  \item connected, \hyperpage{123}
   \item consistent estimator, \hyperpage{5}
-  \item contextual effect, \hyperpage{80}, \hyperpage{85}
+  \item contextual effect, \hyperpage{83}, \hyperpage{88}
   \item convergence, \hyperpage{2}
-  \item convergence in distribution, \hyperpage{6}
+  \item convergence in distribution, \hyperpage{8}
   \item convergence in probability, \hyperpage{4}
-  \item correlated effects, \hyperpage{80}, \hyperpage{85}
-  \item Cramer-Rao lower bound, \hyperpage{29}
-  \item curse of dimensionality, \hyperpage{74}
-  \item cycle, \hyperpage{120}
+  \item correlated effects, \hyperpage{83}, \hyperpage{88}
+  \item Cramer-Rao lower bound, \hyperpage{31}
+  \item curse of dimensionality, \hyperpage{76}
+  \item cycle, \hyperpage{123}
 
   \indexspace
 
-  \item degree, \hyperpage{121}
-  \item degree centrality, \hyperpage{124}
-  \item directed graph, \hyperpage{119}
+  \item degree, \hyperpage{124}
+  \item degree centrality, \hyperpage{127}
+  \item directed graph, \hyperpage{122}
   \item divergent, \hyperpage{2}
-  \item Durbin-Wu-Hausman test, \hyperpage{17}
+  \item Durbin-Wu-Hausman test, \hyperpage{19}
 
   \indexspace
 
-  \item eccentricity, \hyperpage{125}
-  \item edge, \hyperpage{118}
-  \item Edgeworth expansion, \hyperpage{66}
-  \item efficiency, \hyperpage{29}
-  \item end vertex, \hyperpage{121}
-  \item endogeneity, \hyperpage{10}
-  \item endogeneity bias, \hyperpage{11}
-  \item endogenous effects, \hyperpage{80}, \hyperpage{85}
-  \item entry games, \hyperpage{59}
-  \item Eulerian graph, \hyperpage{122}
-  \item Eulerian trail, \hyperpage{122}
-  \item exclusion restriction, \hyperpage{13}
-  \item exogeneity, \hyperpage{10}
+  \item eccentricity, \hyperpage{128}
+  \item edge, \hyperpage{121}
+  \item Edgeworth expansion, \hyperpage{68}
+  \item efficiency, \hyperpage{31}
+  \item end vertex, \hyperpage{124}
+  \item endogeneity, \hyperpage{12}
+  \item endogeneity bias, \hyperpage{13}
+  \item endogenous effects, \hyperpage{83}, \hyperpage{88}
+  \item entry games, \hyperpage{61}
+  \item Eulerian graph, \hyperpage{125}
+  \item Eulerian trail, \hyperpage{125}
+  \item exclusion restriction, \hyperpage{15}
+  \item exogeneity, \hyperpage{12}
 
   \indexspace
 
-  \item Fisher infromation matrix, \hyperpage{29}
-  \item Fourier series, \hyperpage{75}
+  \item Fisher infromation matrix, \hyperpage{31}
+  \item Fourier series, \hyperpage{77}
 
   \indexspace
 
-  \item Geary's C, \hyperpage{101}
-  \item generalized method of moments, \hyperpage{43}
-  \item GIS, \hyperpage{98}
-  \item graph, \hyperpage{90}, \hyperpage{118}
+  \item Geary's C, \hyperpage{104}
+  \item generalized method of moments, \hyperpage{45}
+  \item GIS, \hyperpage{101}
+  \item graph, \hyperpage{93}, \hyperpage{121}
 
   \indexspace
 
-  \item Hodge's estimator, \hyperpage{38}
-  \item homoskedasticity, \hyperpage{9}
+  \item Hodge's estimator, \hyperpage{40}
+  \item homoskedasticity, \hyperpage{11}
 
   \indexspace
 
-  \item identification, \hyperpage{48}
-  \item identified set, \hyperpage{53}
-  \item incident, \hyperpage{121}
-  \item incompleteness, \hyperpage{60}
-  \item increasing domain asymptotics, \hyperpage{103}
-  \item infill asymptotics, \hyperpage{104}
-  \item information matrix equality, \hyperpage{31}
-  \item instrumental variables, \hyperpage{12}
-  \item intransitive triad, \hyperpage{95}
-  \item isolated, \hyperpage{91}
-  \item isolated vertex, \hyperpage{121}
-  \item isotropy, \hyperpage{103}
+  \item identification, \hyperpage{50}
+  \item identified set, \hyperpage{55}
+  \item incident, \hyperpage{124}
+  \item incompleteness, \hyperpage{62}
+  \item increasing domain asymptotics, \hyperpage{107}
+  \item infill asymptotics, \hyperpage{107}
+  \item information matrix equality, \hyperpage{33}
+  \item instrumental variables, \hyperpage{15}
+  \item intransitive triad, \hyperpage{98}
+  \item isolated, \hyperpage{94}
+  \item isolated vertex, \hyperpage{124}
+  \item isotropy, \hyperpage{106}
 
   \indexspace
 
-  \item just-identification, \hyperpage{41}
+  \item just-identification, \hyperpage{43}
 
   \indexspace
 
-  \item kernel density estimator, \hyperpage{74}
-  \item kernel function, \hyperpage{72}
-  \item kernel regression, \hyperpage{72}
-  \item Kullback-Leibler divergence, \hyperpage{27}
+  \item kernel density estimator, \hyperpage{76}
+  \item kernel function, \hyperpage{74}
+  \item kernel regression, \hyperpage{74}
+  \item Kullback-Leibler divergence, \hyperpage{29}
 
   \indexspace
 
-  \item LATE, \hyperpage{19}
-  \item length, \hyperpage{120}
-  \item lieklihood function, \hyperpage{24}
-  \item likelihood function, \hyperpage{26}
-  \item likelihood ratio statistic, \hyperpage{33}
-  \item likelihood ratio test, \hyperpage{34}
+  \item LATE, \hyperpage{21}
+  \item length, \hyperpage{123}
+  \item lieklihood function, \hyperpage{26}
+  \item likelihood function, \hyperpage{28}
+  \item likelihood ratio statistic, \hyperpage{35}
+  \item likelihood ratio test, \hyperpage{36}
   \item limit, \hyperpage{2}
-  \item limiting distribution, \hyperpage{6}
-  \item linear-in-means model, \hyperpage{80}, \hyperpage{85}
-  \item local constant regression, \hyperpage{72}
-  \item local linear regression, \hyperpage{73}
-  \item log-likelihood function, \hyperpage{24}, \hyperpage{26}
-  \item logit model, \hyperpage{32}
-  \item loop, \hyperpage{118}
-  \item Lucas critique, \hyperpage{57}
+  \item limiting distribution, \hyperpage{8}
+  \item linear-in-means model, \hyperpage{83}, \hyperpage{88}
+  \item local constant regression, \hyperpage{74}
+  \item local linear regression, \hyperpage{75}
+  \item log-likelihood function, \hyperpage{26}, \hyperpage{28}
+  \item logit model, \hyperpage{34}
+  \item loop, \hyperpage{121}
+  \item Lucas critique, \hyperpage{59}
 
   \indexspace
 
   \item Markov's inequality, \hyperpage{4}
-  \item maximum likelihood estimator, \hyperpage{23}, \hyperpage{26}
-  \item method of moments, \hyperpage{43}
-  \item missing at random, \hyperpage{54}
-  \item monotonicity assumption, \hyperpage{18}
-  \item Moran's I, \hyperpage{101}
-  \item MSE, \hyperpage{8}
-  \item multiple edges, \hyperpage{118}
-  \item multiple equilibria, \hyperpage{60}
+  \item maximum likelihood estimator, \hyperpage{25}, \hyperpage{28}
+  \item method of moments, \hyperpage{45}
+  \item missing at random, \hyperpage{56}
+  \item monotonicity assumption, \hyperpage{20}
+  \item Moran's I, \hyperpage{104}
+  \item MSE, \hyperpage{10}
+  \item multiple edges, \hyperpage{121}
+  \item multiple equilibria, \hyperpage{62}
 
   \indexspace
 
-  \item Neumann series, \hyperpage{129}
-  \item nonparametric, \hyperpage{70}
-  \item nonparametric bootstrap, \hyperpage{64}
+  \item Neumann series, \hyperpage{132}
+  \item nonparametric, \hyperpage{72}
+  \item nonparametric bootstrap, \hyperpage{66}
 
   \indexspace
 
-  \item observationally equivalent, \hyperpage{50}
-  \item OLS, \hyperpage{8}
-  \item omitted variables, \hyperpage{11}
-  \item over-identification, \hyperpage{41}
-  \item over-identification test, \hyperpage{47}
-  \item overfitting, \hyperpage{36}
+  \item observationally equivalent, \hyperpage{52}
+  \item OLS, \hyperpage{10}
+  \item omitted variables, \hyperpage{13}
+  \item over-identification, \hyperpage{43}
+  \item over-identification test, \hyperpage{49}
+  \item overfitting, \hyperpage{38}
 
   \indexspace
 
-  \item parametric, \hyperpage{70}
-  \item parametric bootstrap, \hyperpage{68}
-  \item partial identification, \hyperpage{53}
-  \item path, \hyperpage{120}
-  \item probit model, \hyperpage{32}
+  \item parametric, \hyperpage{72}
+  \item parametric bootstrap, \hyperpage{70}
+  \item partial identification, \hyperpage{55}
+  \item path, \hyperpage{123}
+  \item probit model, \hyperpage{34}
 
   \indexspace
 
-  \item Queen contiguity, \hyperpage{99}
+  \item Queen contiguity, \hyperpage{102}
 
   \indexspace
 
-  \item random utility model, \hyperpage{59}
-  \item reflection problem, \hyperpage{81}, \hyperpage{86}
-  \item regular estimators, \hyperpage{39}
-  \item relevance condition, \hyperpage{13}
-  \item residual bootstrap, \hyperpage{68}
-  \item Rook contiguity, \hyperpage{99}
-  \item Rubin's Causal Model, \hyperpage{17}
+  \item random utility model, \hyperpage{61}
+  \item reflection problem, \hyperpage{84}, \hyperpage{89}
+  \item regular estimators, \hyperpage{41}
+  \item relevance condition, \hyperpage{15}
+  \item residual bootstrap, \hyperpage{70}
+  \item Rook contiguity, \hyperpage{102}
+  \item root-n-consistency, \hyperpage{7}
+  \item Rubin's Causal Model, \hyperpage{20}
 
   \indexspace
 
-  \item score function, \hyperpage{29}
-  \item semiparametric, \hyperpage{70}
-  \item series regression, \hyperpage{71}
-  \item sieve method, \hyperpage{71}
-  \item simple graph, \hyperpage{119}
-  \item simultaneity, \hyperpage{11}
-  \item social interaction, \hyperpage{80}
-  \item social multiplier effect, \hyperpage{81}
-  \item social network, \hyperpage{81}, \hyperpage{90}
-  \item spatial autocorrelation, \hyperpage{82}, \hyperpage{99}
-  \item spatial data, \hyperpage{98}
-  \item spatial dependence, \hyperpage{82}
-  \item spatial econometrics, \hyperpage{82}
-  \item spatial error model, \hyperpage{105}, \hyperpage{107}
-  \item spatial lag model, \hyperpage{105}
-  \item spatial statistics, \hyperpage{82}
-  \item spatial stochastic process, \hyperpage{102}
-  \item spatial weight, \hyperpage{100}
-  \item spatial weight matrix, \hyperpage{101}
-  \item spillover effect, \hyperpage{81}
-  \item strategic interaction effect, \hyperpage{60}
-  \item structural equation, \hyperpage{50}
-  \item structural estimation, \hyperpage{57}
+  \item score function, \hyperpage{31}
+  \item semiparametric, \hyperpage{72}
+  \item series regression, \hyperpage{73}
+  \item sieve method, \hyperpage{73}
+  \item simple graph, \hyperpage{122}
+  \item simultaneity, \hyperpage{13}
+  \item social interaction, \hyperpage{83}
+  \item social multiplier effect, \hyperpage{84}
+  \item social network, \hyperpage{84}, \hyperpage{93}
+  \item spatial autocorrelation, \hyperpage{85}, \hyperpage{102}
+  \item spatial data, \hyperpage{101}
+  \item spatial dependence, \hyperpage{85}
+  \item spatial econometrics, \hyperpage{85}
+  \item spatial error model, \hyperpage{108}, \hyperpage{110}
+  \item spatial lag model, \hyperpage{108}
+  \item spatial statistics, \hyperpage{85}
+  \item spatial stochastic process, \hyperpage{105}
+  \item spatial weight, \hyperpage{103}
+  \item spatial weight matrix, \hyperpage{104}
+  \item spillover effect, \hyperpage{84}
+  \item strategic interaction effect, \hyperpage{62}
+  \item structural equation, \hyperpage{52}
+  \item structural estimation, \hyperpage{59}
 
   \indexspace
 
-  \item trail, \hyperpage{120}
-  \item treatment effect, \hyperpage{17}
-  \item treatment variable, \hyperpage{17}
-  \item two-stage least squares, \hyperpage{15}
-  \item two-step optimal GMM estimator, \hyperpage{46}
-  \item Type-1 Extreme Value, \hyperpage{59}
+  \item trail, \hyperpage{123}
+  \item treatment effect, \hyperpage{20}
+  \item treatment variable, \hyperpage{20}
+  \item two-stage least squares, \hyperpage{18}
+  \item two-step optimal GMM estimator, \hyperpage{48}
+  \item Type-1 Extreme Value, \hyperpage{61}
 
   \indexspace
 
-  \item unbiased estimator, \hyperpage{29}
+  \item unbiased estimator, \hyperpage{31}
 
   \indexspace
 
-  \item vertex, \hyperpage{118}
+  \item vertex, \hyperpage{121}
 
   \indexspace
 
-  \item walk, \hyperpage{120}
-  \item weak instruments problem, \hyperpage{14}
+  \item walk, \hyperpage{123}
+  \item weak instruments problem, \hyperpage{16}
   \item weak law of large numbers, \hyperpage{5}
-  \item wild bootstrap, \hyperpage{68}
+  \item wild bootstrap, \hyperpage{70}
 
 \end{theindex}

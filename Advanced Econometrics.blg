@@ -9,46 +9,46 @@ Database file #1: references.bib
 Warning--there's a number but no volume in arpino2017implementing
 Warning--empty booktitle in chen2007large
 Warning--empty publisher in stock2005testing
-You've used 43 entries,
+You've used 46 entries,
             1935 wiz_defined-function locations,
-            736 strings with 10140 characters,
-and the built_in function-call counts, 17212 in all, are:
-= -- 1766
-> -- 480
-< -- 46
-+ -- 162
-- -- 148
-* -- 1414
-:= -- 2865
-add.period$ -- 134
-call.type$ -- 43
-change.case$ -- 284
-chr.to.int$ -- 43
-cite$ -- 46
-duplicate$ -- 696
-empty$ -- 1338
-format.name$ -- 217
-if$ -- 3464
+            751 strings with 10655 characters,
+and the built_in function-call counts, 18498 in all, are:
+= -- 1897
+> -- 529
+< -- 48
++ -- 178
+- -- 164
+* -- 1535
+:= -- 3083
+add.period$ -- 143
+call.type$ -- 46
+change.case$ -- 307
+chr.to.int$ -- 46
+cite$ -- 49
+duplicate$ -- 738
+empty$ -- 1430
+format.name$ -- 240
+if$ -- 3713
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 48
-newline$ -- 218
-num.names$ -- 131
-pop$ -- 226
+missing$ -- 51
+newline$ -- 233
+num.names$ -- 140
+pop$ -- 241
 preamble$ -- 1
-purify$ -- 288
+purify$ -- 311
 quote$ -- 0
-skip$ -- 548
+skip$ -- 580
 stack$ -- 0
-substring$ -- 1500
-swap$ -- 116
+substring$ -- 1617
+swap$ -- 119
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 248
+type$ -- 266
 warning$ -- 3
-while$ -- 164
+while$ -- 176
 width$ -- 0
-write$ -- 563
+write$ -- 602
 is.kanji.str$ -- 0
 (There were 3 warnings)
