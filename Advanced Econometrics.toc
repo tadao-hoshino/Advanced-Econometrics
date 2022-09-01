@@ -5,112 +5,113 @@
 \contentsline {section}{\numberline {1.3}Laudau's notation: big $O$ and little $o$}{6}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Convergence in distribution}{8}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Asymptotic properties of OLS estimator}{10}{section.1.5}%
-\contentsline {paragraph}{Proof of consistency}{10}{section*.2}%
-\contentsline {paragraph}{Proof of asymptotic normality}{11}{section*.3}%
-\contentsline {chapter}{\numberline {2}Two-Stage Least Squares}{12}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Endogeneity and exogeneity}{12}{section.2.1}%
-\contentsline {paragraph}{Omitted variables}{13}{section*.4}%
-\contentsline {paragraph}{Simultaneity}{13}{section*.5}%
-\contentsline {section}{\numberline {2.2}Instrumental variables}{15}{section.2.2}%
-\contentsline {section}{\numberline {2.3}2SLS procedure}{16}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Asymptotic properties}{18}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Durbin-Wu-Hausman test for endogeneity}{19}{section.2.5}%
-\contentsline {section}{\numberline {2.6}A causal interpretation of the 2SLS estimate}{19}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Numerical simulations with \textbf {R}}{21}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Maximum Likelihood Estimation}{24}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Maximum likelihood principle}{24}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Kullback-Leibler divergence}{29}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}MLE minimizes the KL divergence}{30}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Cramer-Rao lower bound}{31}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Asymptotic properties}{32}{section.3.3}%
-\contentsline {section}{\numberline {3.4}An application: Binary response models}{33}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Likelihood ratio test}{35}{section.3.5}%
-\contentsline {paragraph}{A numerical simulation with R}{36}{section*.7}%
-\contentsline {section}{\numberline {3.6}Akaike's Information Criterion}{38}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Generalized Method of Moments}{43}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Moment conditions}{43}{section.4.1}%
-\contentsline {section}{\numberline {4.2}GMM procedure}{45}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Asymptotic properties}{46}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Two-step optimal GMM}{47}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Over-identification test}{49}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Identification}{50}{chapter.5}%
-\contentsline {section}{\numberline {5.1}A numerical illustration: a heteroskedastic probit model}{51}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Definition of identification}{52}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Partial identification}{55}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Structural Estimation}{59}{chapter.6}%
-\contentsline {section}{\numberline {6.1}OLS estimation of production functions}{59}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Discrete choice models: the random utility framework}{60}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Estimation of entry games}{61}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Rewriting the model in terms of the number of entrants}{62}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Stochastic equilibrium selection rule}{63}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}When the sign of $\rho $ is unknown}{64}{subsection.6.3.3}%
-\contentsline {section}{\numberline {6.4}Estimation of first-price auction models}{64}{section.6.4}%
-\contentsline {section}{\numberline {6.5}BLP Demand Estimation}{64}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Bootstrap}{65}{chapter.7}%
-\contentsline {section}{\numberline {7.1}The basic idea of the bootstrap method}{65}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Asymptotic refinements}{68}{section.7.2}%
-\contentsline {paragraph}{Cram\'{e}r Condition}{68}{section*.9}%
-\contentsline {section}{\numberline {7.3}Other bootstrap resampling schemes}{70}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Parametric bootstrap}{70}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Residual bootstrap}{70}{subsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}Wild bootstrap}{70}{subsection.7.3.3}%
-\contentsline {chapter}{\numberline {8}Nonparametric Regression}{72}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Nonparametric regression}{73}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}$k$-nearest-neighbor regression and kernel regression}{73}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Series regression}{76}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}An empirical illustration: estimation of Engel curve}{79}{subsection.8.1.3}%
-\contentsline {section}{\numberline {8.2}Semiparamtric regression}{80}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Partially linear models}{80}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}Generalized additive models}{80}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}Functional coefficient models}{80}{subsection.8.2.3}%
-\contentsline {part}{II\hspace {1em}Econometric Analysis of Cross-Sectional Dependence Models}{82}{part.2}%
-\contentsline {chapter}{\numberline {9}Cross-Sectional Dependence}{83}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Social interaction}{83}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Social network}{84}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Spatial dependence}{85}{section.9.3}%
-\contentsline {chapter}{\numberline {10}The Reflection Problem}{88}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Linear-in-means model}{88}{section.10.1}%
-\contentsline {section}{\numberline {10.2}The reflection problem}{89}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Numerical simulation with \textbf {R}}{90}{section.10.3}%
-\contentsline {section}{\numberline {10.4}A game theoretic interpretation}{91}{section.10.4}%
-\contentsline {chapter}{\numberline {11}Social Interactions through Social Networks}{93}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Common types of social network graphs}{93}{section.11.1}%
-\contentsline {section}{\numberline {11.2}Linear-in-means social network model}{94}{section.11.2}%
-\contentsline {paragraph}{A game theoretic interpretation}{95}{section*.11}%
-\contentsline {section}{\numberline {11.3}Using network structure to identify social interactions}{95}{section.11.3}%
-\contentsline {section}{\numberline {11.4}Estimation}{99}{section.11.4}%
-\contentsline {chapter}{\numberline {12}Spatial Data}{101}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Spatial data}{101}{section.12.1}%
-\contentsline {section}{\numberline {12.2}Moran's I and Geary's C}{102}{section.12.2}%
-\contentsline {subsection}{\numberline {12.2.1}Spatial weight matrix}{102}{subsection.12.2.1}%
-\contentsline {paragraph}{Polygon data}{103}{section*.13}%
-\contentsline {paragraph}{Point data}{104}{section*.14}%
-\contentsline {subsection}{\numberline {12.2.2}Moran's I and Geary's C}{104}{subsection.12.2.2}%
-\contentsline {section}{\numberline {12.3}Spatial random variables}{105}{section.12.3}%
-\contentsline {subsection}{\numberline {12.3.1}Spatial stochastic process}{105}{subsection.12.3.1}%
-\contentsline {subsection}{\numberline {12.3.2}Spatial sampling}{106}{subsection.12.3.2}%
-\contentsline {chapter}{\numberline {13}Spatial Econometrics}{108}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Spatial lag model}{108}{section.13.1}%
-\contentsline {subsection}{\numberline {13.1.1}Maximum likelihood estimation}{109}{subsection.13.1.1}%
-\contentsline {subsection}{\numberline {13.1.2}2SLS estimation}{110}{subsection.13.1.2}%
-\contentsline {section}{\numberline {13.2}Spatial error model}{110}{section.13.2}%
-\contentsline {subsection}{\numberline {13.2.1}Maximum likelihood estimation}{111}{subsection.13.2.1}%
-\contentsline {subsection}{\numberline {13.2.2}Method of moments estimation}{111}{subsection.13.2.2}%
-\contentsline {section}{\numberline {13.3}Empirical analysis with \textbf {R}: Household burglary in Tokyo}{112}{section.13.3}%
-\contentsline {chapter}{\numberline {14}Binary Response Models with Spatial Interactions}{117}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Spatial probit models}{117}{section.14.1}%
-\contentsline {subsection}{\numberline {14.1.1}Two spatial-lag probit models}{117}{subsection.14.1.1}%
-\contentsline {subsection}{\numberline {14.1.2}Spatial-error probit model}{119}{subsection.14.1.2}%
-\contentsline {section}{\numberline {14.2}GMM estimation of spatial probit models}{119}{section.14.2}%
-\contentsline {chapter}{Appendix \numberline {A}Introductory Graph Theory}{121}{appendix.1.A}%
-\contentsline {section}{\numberline {A.1}Basic terminology}{121}{section.1.A.1}%
-\contentsline {section}{\numberline {A.2}Paths, Cycles and Connectivity}{123}{section.1.A.2}%
-\contentsline {section}{\numberline {A.3}Degree}{124}{section.1.A.3}%
-\contentsline {section}{\numberline {A.4}Eulerian graph}{125}{section.1.A.4}%
-\contentsline {section}{\numberline {A.5}Adjacency matrix}{126}{section.1.A.5}%
-\contentsline {section}{\numberline {A.6}Centrality in networks}{127}{section.1.A.6}%
-\contentsline {chapter}{Appendix \numberline {B}Supplementary Mathematical Notes}{130}{appendix.1.B}%
-\contentsline {section}{\numberline {B.1}Some supplementary results in probability theory.}{130}{section.1.B.1}%
-\contentsline {section}{\numberline {B.2}Neumann series expansion}{132}{section.1.B.2}%
-\contentsline {section}{\numberline {B.3}Expectation of a truncated random variable}{133}{section.1.B.3}%
-\contentsline {section}{\numberline {B.4}The inverse of a partitioned matrix}{133}{section.1.B.4}%
+\contentsline {paragraph}{Proof of consistency}{11}{section*.2}%
+\contentsline {paragraph}{Proof of root-n-consistency}{11}{section*.3}%
+\contentsline {paragraph}{Proof of asymptotic normality}{11}{section*.4}%
+\contentsline {chapter}{\numberline {2}Two-Stage Least Squares}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Endogeneity and exogeneity}{13}{section.2.1}%
+\contentsline {paragraph}{Omitted variables}{14}{section*.5}%
+\contentsline {paragraph}{Simultaneity}{14}{section*.6}%
+\contentsline {section}{\numberline {2.2}Instrumental variables}{16}{section.2.2}%
+\contentsline {section}{\numberline {2.3}2SLS procedure}{17}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Asymptotic properties}{19}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Durbin-Wu-Hausman test for endogeneity}{20}{section.2.5}%
+\contentsline {section}{\numberline {2.6}A causal interpretation of the 2SLS estimate}{20}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Numerical simulations with \textbf {R}}{22}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Maximum Likelihood Estimation}{25}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Maximum likelihood principle}{25}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Kullback-Leibler divergence}{30}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}MLE minimizes the KL divergence}{31}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Cramer-Rao lower bound}{32}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Asymptotic properties}{33}{section.3.3}%
+\contentsline {section}{\numberline {3.4}An application: Binary response models}{34}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Likelihood ratio test}{36}{section.3.5}%
+\contentsline {paragraph}{A numerical simulation with R}{37}{section*.8}%
+\contentsline {section}{\numberline {3.6}Akaike's Information Criterion}{39}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Generalized Method of Moments}{44}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Moment conditions}{44}{section.4.1}%
+\contentsline {section}{\numberline {4.2}GMM procedure}{46}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Asymptotic properties}{47}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Two-step optimal GMM}{48}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Over-identification test}{50}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Identification}{51}{chapter.5}%
+\contentsline {section}{\numberline {5.1}A numerical illustration: a heteroskedastic probit model}{52}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Definition of identification}{53}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Partial identification}{56}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Structural Estimation}{60}{chapter.6}%
+\contentsline {section}{\numberline {6.1}OLS estimation of production functions}{60}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Discrete choice models: the random utility framework}{61}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Estimation of entry games}{62}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Rewriting the model in terms of the number of entrants}{63}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Stochastic equilibrium selection rule}{64}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}When the sign of $\rho $ is unknown}{65}{subsection.6.3.3}%
+\contentsline {section}{\numberline {6.4}Estimation of first-price auction models}{65}{section.6.4}%
+\contentsline {section}{\numberline {6.5}BLP Demand Estimation}{65}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Bootstrap}{66}{chapter.7}%
+\contentsline {section}{\numberline {7.1}The basic idea of the bootstrap method}{66}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Asymptotic refinements}{69}{section.7.2}%
+\contentsline {paragraph}{Cram\'{e}r Condition}{69}{section*.10}%
+\contentsline {section}{\numberline {7.3}Other bootstrap resampling schemes}{71}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Parametric bootstrap}{71}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Residual bootstrap}{71}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}Wild bootstrap}{71}{subsection.7.3.3}%
+\contentsline {chapter}{\numberline {8}Nonparametric Regression}{73}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Nonparametric regression}{74}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}$k$-nearest-neighbor regression and kernel regression}{74}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Series regression}{77}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}An empirical illustration: estimation of Engel curve}{80}{subsection.8.1.3}%
+\contentsline {section}{\numberline {8.2}Semiparamtric regression}{81}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Partially linear models}{81}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Generalized additive models}{81}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Functional coefficient models}{81}{subsection.8.2.3}%
+\contentsline {part}{II\hspace {1em}Econometric Analysis of Cross-Sectional Dependence Models}{83}{part.2}%
+\contentsline {chapter}{\numberline {9}Cross-Sectional Dependence}{84}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Social interaction}{84}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Social network}{85}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Spatial dependence}{86}{section.9.3}%
+\contentsline {chapter}{\numberline {10}The Reflection Problem}{89}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Linear-in-means model}{89}{section.10.1}%
+\contentsline {section}{\numberline {10.2}The reflection problem}{90}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Numerical simulation with \textbf {R}}{91}{section.10.3}%
+\contentsline {section}{\numberline {10.4}A game theoretic interpretation}{92}{section.10.4}%
+\contentsline {chapter}{\numberline {11}Social Interactions through Social Networks}{94}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Common types of social network graphs}{94}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Linear-in-means social network model}{95}{section.11.2}%
+\contentsline {paragraph}{A game theoretic interpretation}{96}{section*.12}%
+\contentsline {section}{\numberline {11.3}Using network structure to identify social interactions}{96}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Estimation}{100}{section.11.4}%
+\contentsline {chapter}{\numberline {12}Spatial Data}{102}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Spatial data}{102}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Moran's I and Geary's C}{103}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Spatial weight matrix}{103}{subsection.12.2.1}%
+\contentsline {paragraph}{Polygon data}{104}{section*.14}%
+\contentsline {paragraph}{Point data}{105}{section*.15}%
+\contentsline {subsection}{\numberline {12.2.2}Moran's I and Geary's C}{105}{subsection.12.2.2}%
+\contentsline {section}{\numberline {12.3}Spatial random variables}{106}{section.12.3}%
+\contentsline {subsection}{\numberline {12.3.1}Spatial stochastic process}{106}{subsection.12.3.1}%
+\contentsline {subsection}{\numberline {12.3.2}Spatial sampling}{107}{subsection.12.3.2}%
+\contentsline {chapter}{\numberline {13}Spatial Econometrics}{109}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Spatial lag model}{109}{section.13.1}%
+\contentsline {subsection}{\numberline {13.1.1}Maximum likelihood estimation}{110}{subsection.13.1.1}%
+\contentsline {subsection}{\numberline {13.1.2}2SLS estimation}{111}{subsection.13.1.2}%
+\contentsline {section}{\numberline {13.2}Spatial error model}{111}{section.13.2}%
+\contentsline {subsection}{\numberline {13.2.1}Maximum likelihood estimation}{112}{subsection.13.2.1}%
+\contentsline {subsection}{\numberline {13.2.2}Method of moments estimation}{112}{subsection.13.2.2}%
+\contentsline {section}{\numberline {13.3}Empirical analysis with \textbf {R}: Household burglary in Tokyo}{113}{section.13.3}%
+\contentsline {chapter}{\numberline {14}Binary Response Models with Spatial Interactions}{118}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Spatial probit models}{118}{section.14.1}%
+\contentsline {subsection}{\numberline {14.1.1}Two spatial-lag probit models}{118}{subsection.14.1.1}%
+\contentsline {subsection}{\numberline {14.1.2}Spatial-error probit model}{120}{subsection.14.1.2}%
+\contentsline {section}{\numberline {14.2}GMM estimation of spatial probit models}{120}{section.14.2}%
+\contentsline {chapter}{Appendix \numberline {A}Introductory Graph Theory}{122}{appendix.1.A}%
+\contentsline {section}{\numberline {A.1}Basic terminology}{122}{section.1.A.1}%
+\contentsline {section}{\numberline {A.2}Paths, Cycles and Connectivity}{124}{section.1.A.2}%
+\contentsline {section}{\numberline {A.3}Degree}{125}{section.1.A.3}%
+\contentsline {section}{\numberline {A.4}Eulerian graph}{126}{section.1.A.4}%
+\contentsline {section}{\numberline {A.5}Adjacency matrix}{127}{section.1.A.5}%
+\contentsline {section}{\numberline {A.6}Centrality in networks}{128}{section.1.A.6}%
+\contentsline {chapter}{Appendix \numberline {B}Supplementary Mathematical Notes}{131}{appendix.1.B}%
+\contentsline {section}{\numberline {B.1}Some supplementary results in probability theory.}{131}{section.1.B.1}%
+\contentsline {section}{\numberline {B.2}Neumann series expansion}{133}{section.1.B.2}%
+\contentsline {section}{\numberline {B.3}Expectation of a truncated random variable}{134}{section.1.B.3}%
+\contentsline {section}{\numberline {B.4}The inverse of a partitioned matrix}{134}{section.1.B.4}%

@@ -2,16 +2,13 @@ This is pBibTeX, Version 0.99d-j0.34 (utf8.euc) (TeX Live 2022)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Advanced Econometrics.aux
 The style file: apalike.bst
-A level-1 auxiliary file: PART1.aux
-A level-1 auxiliary file: PART2.aux
-A level-1 auxiliary file: appendices.aux
 Database file #1: references.bib
 Warning--there's a number but no volume in arpino2017implementing
 Warning--empty booktitle in chen2007large
 Warning--empty publisher in stock2005testing
 You've used 46 entries,
             1935 wiz_defined-function locations,
-            751 strings with 10655 characters,
+            748 strings with 10623 characters,
 and the built_in function-call counts, 18498 in all, are:
 = -- 1897
 > -- 529
