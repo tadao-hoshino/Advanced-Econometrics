@@ -3177,9 +3177,11 @@ Now, consider a general statistic $T_n$ and let $G_n(\cdot \mid F)$ be the distr
 	& = \int \mbf{1}\{T_n(x_1, \ldots, x_n) \le t\} \mathrm{d} F^n.
 \end{align*}
 The true distribution of $T_n$ under $F_0$ can be written as $G_n(\cdot \mid F_0)$.
-Thus, if we happen to know the exact form of $G_n(\cdot \mid F_0)$, we can conduct any statistical inference on $T_n$; however, this is a rare case since $F_0$ is usually unknown.
+Thus, if we happen to know the exact form of $G_n(\cdot \mid F_0)$, we can conduct any statistical inference on $T_n$; however, this is a rare case since $F_0$ is usually unknown.\footnote{
+	For example, in a randomized experiment setup where any randomness comes only through the treatments, it is possible to know the exact distribution of a test statistic (cf., Fisher's randomization test).
+}
 
-For data $\{X_1, \ldots, X_n\}$ that are drawn from $F_0$, we have the empirical distribution function $F_n$ defined as
+For data $\{X_1, \ldots, X_n\}$ that are drawn from $F_0$, we have the empirical distribution function $F_n$ of $X$ (as an approximate of $F_0$) as
 \begin{align*}
 	F_n(t) \equiv \frac{1}{n}\sum_{i = 1}^n \mbf{1}\{X_i \le t\}.
 \end{align*} 
@@ -3189,7 +3191,8 @@ Using this empirical distribution, we can compute $G_n(\cdot \mid F_n)$, instead
 	\item[Step 2.] Compute the test statistic $T_n^* = T_n(X_1^*, \dots, X_n^*)$.
 	\item[Step 3.] Repeat Steps 1 and 2 many times, and compute the empirical distribution of $T_n^*$. 
 \end{description}
-Step 1 can be simply performed by a simple random sampling from $\{X_1, \ldots, X_n\}$ with replacement.
+Note that the empirical distribution $F_n$ is just a discrete uniform distribution that assigns probability $1/n$ on each observed value.
+Thus, Step 1 can be simply performed by a simple random sampling from $\{X_1, \ldots, X_n\}$ with replacement.
 By increasing the number of repetitions in Step 3, we can approximate $G_n(\cdot \mid F_n)$ arbitrarily precisely.\footnote{
 	Note that, theoretically, the exact form of $G_n(t \mid F_n)$ can be obtained by calculating the proportion of all possible bootstrap samples that have $\{T_n^* \le t\}$.
 	However, this would require $n^n$ calculations, which is not possible in practice except when $n$ is very small.
@@ -3197,9 +3200,9 @@ By increasing the number of repetitions in Step 3, we can approximate $G_n(\cdot
 }
 The above procedure is called the \textbf{nonparametric bootstrap\index{nonparametric bootstrap}}.
 
-By a uniform LLN, we have $|F_n(z) - F_0(z)| \to 0$ over all $z$ with probability one.
-(Formally, this result is known as the \textbf{Glivenko-Cantelli theorem}.)
-From this result,  for sufficiently large $n$, we can anticipate that $G_n(\cdot \mid F_n) \approx G_n(\cdot \mid F_0)$ in some sense if $G_n$ is continuous in $F$.
+By a uniform LLN, we have $|F_n(z) - F_0(z)| = o_P(1)$ over all $z$.
+Formally, this result is known as the \textbf{Glivenko-Cantelli theorem}.
+From this result, for sufficiently large $n$, we can anticipate that $G_n(\cdot \mid F_n) \approx G_n(\cdot \mid F_0)$ in some sense if $G_n$ is continuous in $F$.
 This is the consistency property of bootstrap.
 A more formal definition is as follows.
 
@@ -3282,16 +3285,16 @@ Let $\tau$ be a vector of constants with the same dimension as $\mbf{Z}$.
 Let $i \equiv \sqrt{-1}$.
 $\mbf{Z}$ satisfies the Cram\'{e}r condition:
 \begin{align*}
-	\limsup_{||\tau || \to \infty} |\E \exp(i \tau' \mbf{Z})| < 1. 
+	\limsup_{||\tau || \to \infty} |\E \exp(i \tau^\top \mbf{Z})| < 1. 
 \end{align*} 
-That is,  the Cram\'er condition requires that the absolute value of the characteristic function $\phi_\mbf{Z}(\tau) \equiv \E \exp(i \tau' \mbf{Z})$ is strictly bounded by one uniformly in $\tau$.
+That is,  the Cram\'er condition requires that the absolute value of the characteristic function $\phi_\mbf{Z}(\tau) \equiv \E \exp(i \tau^\top \mbf{Z})$ is strictly bounded by one uniformly in $\tau$.
 This condition is satisfied if $\mbf{Z}$ is continuous and has a proper density function.\footnote{
 	Note that $|\phi_\mbf{Z}(\tau)| \le 1$ always holds for all $\tau$:
 	\begin{align*}
 		|\phi_\mbf{Z}(\tau)| 
-		& \le \E | \exp(i \tau' \mbf{Z})| \\
-		& = \E |\cos(\tau' \mbf{Z}) + i \sin (\tau' \mbf{Z})| \;\; (\text{Euler's formula}) \\
-		& = \E\left[  (\cos^2(\tau' \mbf{Z}) +  \sin^2(\tau' \mbf{Z}))^{1/2} \right] = 1.
+		& \le \E | \exp(i \tau^\top \mbf{Z})| \\
+		& = \E |\cos(\tau^\top \mbf{Z}) + i \sin (\tau^\top \mbf{Z})| \;\; (\text{Euler's formula}) \\
+		& = \E\left[  (\cos^2(\tau^\top \mbf{Z}) +  \sin^2(\tau^\top \mbf{Z}))^{1/2} \right] = 1.
 	\end{align*}
 	For a formal derivation of the Cram\'er condition, see, e.g., Section 2.4 of \cite{hall1992bootstrap}.
 }
@@ -3301,14 +3304,14 @@ Similarly, $G_n(\cdot \mid F_n)$ and $G_\infty(\cdot \mid F_n)$ are defined as t
 Then, under the Cram\'er condition, we have the following result:
 \begin{align}\label{eq:edgeworth}
 	\begin{split}
-		G_n(t \mid F_0) & = G_\infty(t \mid F_0) + \frac{1}{n^{1/2}} g_1(t, F_0) + \frac{1}{n} g_2(t, F_0) + \frac{1}{n^{3/2}} g_3(t, F_0) + O(n^{-2}) \\
-		G_n(t \mid F_n) & = G_\infty(t \mid F_n) + \frac{1}{n^{1/2}} g_1(t, F_n) + \frac{1}{n} g_2(t, F_n) + \frac{1}{n^{3/2}} g_3(t, F_n) + O(n^{-2}) 
+		\underset{\text{target}}{G_n(t \mid F_0)} & = \underset{\text{asymp dist}}{G_\infty(t \mid F_0)} + \frac{1}{n^{1/2}} g_1(t, F_0) + \frac{1}{n} g_2(t, F_0) + \frac{1}{n^{3/2}} g_3(t, F_0) + O(n^{-2}) \\
+		\underset{\text{boot dist}}{G_n(t \mid F_n)} & = G_\infty(t \mid F_n) + \frac{1}{n^{1/2}} g_1(t, F_n) + \frac{1}{n} g_2(t, F_n) + \frac{1}{n^{3/2}} g_3(t, F_n) + O(n^{-2}) 
 	\end{split}
 \end{align}
 uniformly over $t$.
 Here, $g_1$ and $g_3$ are even functions and $g_2$ is an odd function with respect to the first argument.
-The series expansion of a distribution function as given in \eqref{eq:edgeworth} is called an \textbf{Edgeworth expansion\index{Edgeworth expansion}}.
-From this result, we can see that the conventional asymptotic method that approximates $G_n(t \mid F_0)$ by its asymptotic analog $G_\infty(t \mid F_0)$ has an approximation error of order $n^{-1/2}$.
+The series expansion of a distribution function given in \eqref{eq:edgeworth} is called an \textbf{Edgeworth expansion\index{Edgeworth expansion}}.
+From this result, we can see that the conventional asymptotic method that approximates $G_n(t \mid F_0)$ by its asymptotic analog $G_\infty(t \mid F_0)$ has an approximation error of order $O(n^{-1/2})$.
 
 Note that in our setup, both $T_n \overset{d}{\to} N(0,1)$ and $T_n^* \overset{d}{\to} N(0,1)$ hold.
 That is, the first terms on the right-hand side of \eqref{eq:edgeworth} are both $\Phi(t)$, the standard normal CDF.
@@ -3322,7 +3325,7 @@ Then, it follows from \eqref{eq:edgeworth} that the gap between the true distrib
 \end{align*}
 The leading term on the right-hand side is $n^{-1/2}[g_1(t, F_0) - g_1(t, F_n)]$.
 Since $F_n$ converges to $F_0$, this term converges to zero faster than $n^{-1/2}$.
-Indeed, one can show that $[g_1(t, F_0) - g_1(t, F_n)] = O(n^{-1/2})$, and therefore the approximation error by the bootstrap is of order $n^{-1}$, i.e., an \textbf{asymptotic refinement\index{asymptotic refinement}}.
+Indeed, one can show that $[g_1(t, F_0) - g_1(t, F_n)] = O(n^{-1/2})$, and therefore the approximation error by the bootstrap is of order $O(n^{-1})$, i.e., an \textbf{asymptotic refinement\index{asymptotic refinement}}.
 Thus, the bootstrap is more accurate than the conventional asymptotic approximation.
 \bigskip
 
@@ -3342,11 +3345,10 @@ Similarly,
 	& = 2 \Phi(t) - 1 + \frac{2}{n}g_2(t, F_n) + O(n^{-2}).
 \end{align*}
 Further, similarly as above, one can show that $[g_2(t, F_0) - g_2(t, F_n)] = O(n^{-1/2})$.
-Thus, the order of the error in the bootstrap approximation to the symmetrical distribution is $n^{-3/2}$.
+Thus, the error in the bootstrap approximation to the symmetrical distribution is $O(n^{-3/2})$.
 
-Note that if the statistic $T_n$ is not asymptotically pivotal (for example, not standardized $T_n = \sqrt{n}(H(\bar{\mbf{Z}}) - H(\zeta))$), the leading term of the difference $G_n(t \mid F_0) - G_n(t \mid F_n)$ will be $G_\infty(t \mid F_0) - G_\infty(t \mid F_n)$, which is typically of order $n^{-1/2}$.
-Then, the error of the bootstrap approximation of the distribution
-of a statistic that is not asymptotically pivotal converges to zero at the same rate as that of the conventional asymptotic approximation (i.e., no asymptotic refinements); there is no merit of using bootstrap other than  computational simplicity.
+Note that if the statistic $T_n$ is not asymptotically pivotal (for example when a non-standardized $T_n = \sqrt{n}(H(\bar{\mbf{Z}}) - H(\zeta))$ is used), the leading term of the difference $G_n(t \mid F_0) - G_n(t \mid F_n)$ will be $G_\infty(t \mid F_0) - G_\infty(t \mid F_n)$, which is typically of order $O(n^{-1/2})$.
+Then, in this case, the error of the bootstrap approximation converges to zero at the same rate as that of the conventional asymptotic approximation (i.e., no asymptotic refinements); that is, there is no merit of using bootstrap other than computational simplicity.
 
 \begin{table}[h]
 	\caption{Approximation errors for estimating $G_n(\cdot \mid F_0)$}
@@ -3355,7 +3357,7 @@ of a statistic that is not asymptotically pivotal converges to zero at the same 
 	& Asymptotic distribution     & \multicolumn{3}{c}{Bootstrap}    \\
     &                             & Pivotal                   & Pivotal + Symmetricity         & Not pivotal                 \\
 		\hline
-	The speed of approximation & $n^{-1/2}$ & $n^{-1}$ & $n^{-3/2}$ & $n^{-1/2}$ \\
+	The order of approximation error & $n^{-1/2}$ & $n^{-1}$ & $n^{-3/2}$ & $n^{-1/2}$ \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -3374,17 +3376,17 @@ This approach is called the \textbf{parametric bootstrap\index{parametric bootst
 
 Suppose that we are interested in estimating the regression model
 \begin{align*}
-	Y_i = \mbf{X}_i^\top \beta_0 + \eps_i, \;\; \E(\eps_i \mid \mbf{X}_i) = 0.
+	Y_i = X_i^\top \beta_0 + \eps_i, \;\; \E(\eps_i \mid X_i) = 0.
 \end{align*}
-We assume that the data $\{(\mbf{X}_i, Y_i) : 1 \le i \le n\}$ are IID such that $\E(\eps_i^2) = \sigma^2$ (i.e., homoskedasticity).
+We assume that the data $\{(X_i, Y_i) : 1 \le i \le n\}$ are IID such that $\E(\eps_i^2) = \sigma^2$ (i.e., homoskedasticity).
 $\mbf{X}_i$ includes a constant term.
 For this setup, we can generate bootstrap samples in the following manner:
 \begin{description}
 	\item[Step 1.] Obtain the OLS estimate $\hat \beta_n$ of $\beta_0$.
-	\item[Step 2.] Compute the residuals $\hat \eps_i = Y_i - \mbf{X}_i^\top \hat \beta_n$ for all $i=1, \ldots, n$.
-	\item[Step 3.] Create a bootstrap sample $\{(Y_i^*, \mbf{X}_i): 1 \le i \le n\}$, where $Y_i^* = \mbf{X}_i^\top \hat \beta_n + \hat \eps_i^*$, and $\eps^*_i$'s are obtained by a random sampling from $\{\hat \eps_1, \ldots, \hat \eps_n\}$ with replacement.
+	\item[Step 2.] Compute the residuals $\hat \eps_i = Y_i - X_i^\top \hat \beta_n$ for all $i= 1, \ldots, n$.
+	\item[Step 3.] Create a bootstrap sample $\{(Y_i^*, X_i): 1 \le i \le n\}$, where $Y_i^* = X_i^\top \hat \beta_n + \hat \eps_i^*$, and $\eps^*_i$'s are obtained by a random sampling from $\{\hat \eps_1, \ldots, \hat \eps_n\}$ with replacement.
 \end{description}
-In the above procedure, only the residuals are resampled repeatedly to create bootstrap samples, and the regressors $\mbf{X}_i$'s are the same as the original sample and are not resampled.
+In the above procedure, only the residuals are resampled repeatedly to create bootstrap samples, and the regressors $X_i$'s are the same as the original sample and are not resampled.
 This approach is called the \textbf{residual bootstrap\index{residual bootstrap}}.
 Note that in Step 3, we implicitly assume that the errors are identically distributed.
 
@@ -3397,7 +3399,7 @@ We continue to consider the same regression model as above.
 However, we now assume that the error terms are heteroskedastic: $\E(\eps_i^2) = \sigma_i^2$.
 In this case, using the residual bootstrap is not appropriate.
 
-Letting $\hat \beta_n$ denote the OLS estimate of $\beta_0$ and $\hat \eps_i = Y_i - \mbf{X}_i^\top \hat \beta_n$, the \textbf{wild bootstrap\index{wild bootstrap}} generates new $Y_i^*$'s as $Y_i^* = \mbf{X}_i^\top \hat \beta_n + u_i^*$, where
+Letting $\hat \beta_n$ denote the OLS estimate of $\beta_0$ and $\hat \eps_i = Y_i - X_i^\top \hat \beta_n$, the \textbf{wild bootstrap\index{wild bootstrap}} generates new $Y_i^*$'s as $Y_i^* = X_i^\top \hat \beta_n + u_i^*$, where
 \begin{align*}
 	u_i^* \equiv W_i \hat \eps_i, \;\; i = 1, \ldots, n
 \end{align*}
@@ -3405,12 +3407,12 @@ and $\{W_i: 1 \le i \le n\}$ is a randomly generated IID sequence that is indepe
 Common choices of distributions for $W_i$ include the standard normal and the two-point distribution that takes $(1 - \sqrt{5})/2$ with probability $(\sqrt{5} + 1)/(2 \sqrt{5})$ and $(\sqrt{5} + 1)/2$ with probability $(\sqrt{5} - 1)/(2 \sqrt{5})$.
 It can be easily confirmed that
 \begin{align*}
-	\E [u_i^* \mid \{(\mbf{X}_j, Y_j)\}_{j=1}^n] 
-	& = \E [W_i \mid \{(\mbf{X}_j, Y_j)\}_{j=1}^n]  \hat \eps_i = 0 \\
-	\E [(u_i^*)^2 \mid \{(\mbf{X}_j, Y_j)\}_{j=1}^n] 
-	& = \E [W_i^2  \mid \{(\mbf{X}_j, Y_j)\}_{j=1}^n]  \hat \eps_i^2 =  \hat \eps_i^2.
+	\E [u_i^* \mid \{(X_j, Y_j)\}_{j=1}^n] 
+	& = \E [W_i \mid \{(X_j, Y_j)\}_{j=1}^n]  \hat \eps_i = 0 \\
+	\E [(u_i^*)^2 \mid \{(X_j, Y_j)\}_{j=1}^n] 
+	& = \E [W_i^2  \mid \{(X_j, Y_j)\}_{j=1}^n]  \hat \eps_i^2 =  \hat \eps_i^2.
 \end{align*}
-Hence, the heteroskedasticity in the original sample is retained in the bootstrap sample.
+Hence, the heteroskedasticity in the original sample is maintained in the bootstrap sample.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3476,8 +3478,9 @@ We first describe the local approach.
 For simplicity, we temporarily assume that $X$ is one-dimensional.
 One simplest local regression method is the \textbf{$k$-nearest-neighbor ($k$NN) regression\index{$k$-nearest-neighbor regression}}.
 The $k$NN regression estimator simply computes the average of $Y$ over the $k$-closest observations to $x$ on $\mcl{X}$.
+
 Suppose we have $n$ IID observations $\{(Y_i, X_i): 1 \le i \le n\}$.
-Re-ordering the observations in the increasing order of $|X_i - x|$, so that $|X^{(1)} - x| \le |X^{(2)} - x| \le \cdots \le |X^{(n)} - x|$, we estimate $g_0(x)$ by
+Re-ordering the observations in the increasing order of $|X_i - x|$, so that $|X^{(1)} - x| \le |X^{(2)} - x| \le \cdots \le |X^{(n)} - x|$, the $k$NN estimator of $g_0(x)$ is given by
 \begin{align*}
 	\hat g^{knn}_n(x) \equiv \frac{1}{k}\sum_{i = 1}^k Y^{(i)}.
 \end{align*}
@@ -3604,7 +3607,7 @@ Then, named after his discovery, the following series expansion is called the Fo
 \end{align*}
 where $\omega$ is a constant determined by the size of $\mcl{X}$.
 
-In Figure \ref{fig:seriesreg}, we provide numerical results for the power series approximation and the Fourier series approximation.
+In Figure \ref{fig:seriesreg}, we provide numerical evidence for the power series approximation and the Fourier series approximation.
 In the figure, the true functional form of $g_0(\cdot)$ is presented as the dotted curve.
 We can clearly observe that in both series expansions, more and more precise approximation can be achieved by increasing the order of the basis functions.
 
@@ -3615,15 +3618,16 @@ We can clearly observe that in both series expansions, more and more precise app
 	\end{center}
 \end{figure}
 
-As such, with suitable conitnuity conditions, a fairly large class of functions can be approximated by some series expansion.
+As such, with suitable continuity conditions, a fairly large class of functions can be approximated by some series expansion.
 In addition to those introduced above, basis functions that are often adopted in applications include splines, wavelets, artificial neural networks, and so forth (see \cite{chen2007large} for their definitions and other examples).
+
 Now, let $\{p_1(x), p_2(x), \ldots \}$ be a sequence of $\mathbb{R}$-valued basis functions, and $p(x) = (p_1(x), \ldots , p_k(x))^\top$.
 We assume that for a sufficiently large $k$, there exists a $k \times 1$ vector $\theta_0$ such that the target function $g_0(\cdot)$ can be well-approximated by $p(\cdot)^\top\theta_0$ uniformly over $\mcl{X}$ in the following sense:
 \begin{align*}
 	|g_0(x) - p(x)^\top\theta_0 | \le O(k^{-\alpha}) \;\; \text{for any $x \in \mcl{X}$},
 \end{align*}
 where $\alpha > 0$ is a constant that depends on the choice of the basis function, the smoothness of $g_0$, and the dimension of $X$ (for details, see \cite{chen2007large}).
-The larger $\alpha$, the smoother the function $g_0$ is (the larger number of derivatives $g_0$ has).\footnote{
+The smoother the function $g_0$ (the larger number of derivatives $g_0$ has), the larger $\alpha$ is.\footnote{
 	Among the basis functions listed above, while the power series is quite popular, it is known that the power series expansion has relatively a ``slower'' convergence rate than the others.
 }
 Using this series approximation, we can rewrite \eqref{eq:nonpara} as follows:
@@ -3645,7 +3649,7 @@ Indeed, we can estimate $\theta_0$ simply by running an OLS regression of $Y$ on
 	& = \left(\frac{1}{n}\sum_{i = 1}^n p(X_i)p(X_i)^\top\right)^{-1}\frac{1}{n}\sum_{i = 1}^n p(X_i)Y_i
 \end{align*}
 Once we obtain $\hat \theta_n$, for any given $x \in \mcl{X}$, we can estimate $g_0(x)$ by $\hat g_n(x)  \equiv p(x)^\top \hat \theta_n$.
-Thus, compared to the kernel regression approach, series regression is much easier to implement.
+Thus, the series regression is able to recover the shape of $g_0(\cdot)$ much more easily than the kernel regression.
 
 To prove the consistency of $\hat g_n(x)$, by the triangle inequality, observe that
 \begin{align*}
@@ -3752,40 +3756,40 @@ Running the code below, we can observe that both the kernel and series regressio
 
 \section*{Appendix: Proof of \eqref{eq:seriesrate}}
 
-Let $P = (p(X_1), \ldots, p(X_n))^\top$, $\mbf{Y} = (Y_1, \ldots, Y_n)^\top$, $\mcl{E} = (\eps_1, \ldots, \eps_n)^\top$, $v_i = g_0(X_i) - p(X_i)^\top \theta_0$, and $\mbf{V} = (v_1, \ldots , v_n)^\top$.
-Using these notations, we can write $\mbf{Y} /n = P \theta_0 + \mbf{V} + \mcl{E}$.
+Let $\mbf{P}_n = (p(X_1), \ldots, p(X_n))^\top$, $\mbf{Y}_n = (Y_1, \ldots, Y_n)^\top$, $\mcl{E}_n = (\eps_1, \ldots, \eps_n)^\top$, $v_i \equiv g_0(X_i) - p(X_i)^\top \theta_0$, and $\mbf{V}_n = (v_1, \ldots , v_n)^\top$.
+Using these notations, we can write $\mbf{Y}_n = \mbf{P}_n \theta_0 + \mbf{V}_n + \mcl{E}_n$.
 Then,
 \begin{align*}
 	\hat \theta_n - \theta_0 
-	& = \left[P^\top P /n \right]^{-1}P^\top \mbf{Y} /n - \theta_0 \\
-	& = \left[P^\top P /n \right]^{-1}P^\top (P \theta_0 + \mbf{V} + \mcl{E}) /n - \theta_0 \\
-	& = \left[P^\top P /n \right]^{-1}P^\top \mbf{V} /n + \left[P^\top P /n \right]^{-1}P^\top \mcl{E} /n 
+	& = \left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top \mbf{Y}_n /n - \theta_0 \\
+	& = \left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top (\mbf{P}_n \theta_0 + \mbf{V}_n + \mcl{E}_n) /n - \theta_0 \\
+	& = \left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top \mbf{V}_n /n + \left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top \mcl{E}_n /n 
 \end{align*}
-Assume that $\E[P^\top P /n]$ is positive definite for all $k$.
-Applying a matrix law of large numbers to $P^\top P /n$, we have $||P^\top P /n - \E[P^\top P /n]|| = o_P(1)$.\footnote{
-	A rigorous proof of this result is not that easy since $P^\top P /n$ is a matrix whose dimension increases to infinity along with $n$.
+Assume that $\E[\mbf{P}_n^\top \mbf{P}_n /n]$ is positive definite for all $k$.
+Applying a matrix law of large numbers to $\mbf{P}_n^\top \mbf{P}_n /n$, we have $||\mbf{P}_n^\top \mbf{P}_n /n - \E[\mbf{P}_n^\top \mbf{P}_n /n]|| = o_P(1)$.\footnote{
+	A rigorous proof of this result is not that easy since $\mbf{P}_n^\top \mbf{P}_n /n$ is a matrix whose dimension increases to infinity along with $n$.
 	For interested readers, see, for example, Lemma 4 of \cite{horowitz2004nonparametric}.
 }
-Then, with sufficeitnly large $n$, the minimum eigenvalue of $\left[P^\top P /n \right]^{-1}$ is bounded by some postive constant with a high probability.
-Hence, noting that the maximum eigenvalue of an idempotent matrix is at most one (see Footnote 3, Chapter 4),
+Then, with a sufficeitnly large $n$, the minimum eigenvalue of $\left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}$ is $O_P(1)$.
+Hence, noting that the maximum eigenvalue of an idempotent matrix is at most one (see Footnote \ref{foot:idempotent}, Chapter 4),
 \begin{align*}
-	||\left[P^\top P /n \right]^{-1}P^\top \mbf{V} /n||^2 
-	& = \mbf{V}^\top P \left[P^\top P /n \right]^{-2}P^\top \mbf{V} /n^2 \\
-	& \le O_P(1) \cdot \mbf{V}^\top P \left[P^\top P /n \right]^{-1}P^\top \mbf{V} /n^2 \\
-	& \le O_P(1) \cdot \mbf{V}^\top \mbf{V} /n \\
+	\left\|\left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top \mbf{V}_n /n \right\|^2 
+	& = \mbf{V}_n^\top \mbf{P}_n \left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-2}\mbf{P}_n^\top \mbf{V}_n /n^2 \\
+	& \le O_P(1) \cdot \mbf{V}_n^\top \mbf{P}_n \left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top \mbf{V}_n /n^2 \\
+	& \le O_P(1) \cdot \mbf{V}_n^\top \mbf{V}_n /n \\
 	& = O_P(1) \cdot \frac{1}{n}\sum_{i=1}^n |v_i|^2 \le O_P(k^{-2\alpha}),
 \end{align*}
 where in the last inequality, we have used $\max_i |v_i| = O(k^{-\alpha})$.
-This implies that $||\left[P^\top P /n \right]^{-1}P^\top \mbf{V} /n|| = O(k^{-\alpha})$.
+This implies that $\left\|\left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top \mbf{V} /n \right| = O(k^{-\alpha})$.
 
-Next, observe that $\E[\mcl{E}\mcl{E}^\top \mid \{X_i\}_{i=1}^n]$ is a diagonal matrix whose typical element is $\E[\eps_i^2 \mid \{X_i\}_{i=1}^n]$, which we assume to be bounded by some large constant $C$, uniformly in $i$.
+Next, note that $\E[\mcl{E}_n\mcl{E}_n^\top \mid \{X_j\}_{j=1}^n]$ is a diagonal matrix whose typical element is $\E[\eps_i^2 \mid \{X_j\}_{j=1}^n]$, which we assume to be bounded by some large constant $C$, uniformly in $i$.
 Then, we have
 \begin{align*}
-	\E\left[||\left[P^\top P /n \right]^{-1}P^\top \mcl{E} /n||^2 \mid \{X_i\}_{i=1}^n \right]
-	& = \text{trace}\left\{ \left[P^\top P /n \right]^{-1}P^\top \E[\mcl{E}\mcl{E}^\top \mid \{X_i\}_{i=1}^n] P \left[P^\top P /n \right]^{-1}\right\}/n^2 \\
-	& \le C \text{trace}\left\{ \left[P^\top P /n \right]^{-1} \right\}/n = O(k/n).
+	\E\left[ \left\| \left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top \mcl{E}_n /n \right\|^2 \mid \{X_j\}_{j=1}^n \right]
+	& = \text{trace}\left\{ \left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top \E[\mcl{E}_n\mcl{E}_n^\top \mid \{X_j\}_{j=1}^n] \mbf{P}_n \left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\right\}/n^2 \\
+	& \le C \text{trace}\left\{ \left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1} \right\}/n = O_P(k/n).
 \end{align*}
-Thus, by Markov's inequality, $||\left[P^\top P /n \right]^{-1}P^\top \mcl{E} /n||^2 = O_P(k/n)$, implying that $||\left[P^\top P /n \right]^{-1}P^\top \mcl{E} /n|| = O_P(\sqrt{k/n})$.
+Thus, by Markov's inequality, $\left\|\left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top \mcl{E}_n /n \right\|^2 = O_P(k/n)$, implying that $\left\|\left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top \mcl{E}_n /n \right\| = O_P(\sqrt{k/n})$.
 Finally, \eqref{eq:seriesrate} holds by the triangle inequality.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

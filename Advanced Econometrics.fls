@@ -1,8 +1,8 @@
-PWD c:/Users/tadao/Documents/授業/git_advanced_econometrics
+PWD c:/Users/tadao/OneDrive/ドキュメント/授業/git_advanced_econometrics
 INPUT c:/texlive/2022/texmf.cnf
 INPUT c:/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2022/texmf-var/web2c/eptex/platex.fmt
-INPUT Advanced Econometrics.tex
+INPUT c:/Users/tadao/OneDrive/ドキュメント/授業/git_advanced_econometrics/Advanced Econometrics.tex
 OUTPUT Advanced Econometrics.log
 INPUT c:/texlive/2022/texmf-dist/tex/latex/base/book.cls
 INPUT c:/texlive/2022/texmf-dist/tex/latex/base/book.cls
@@ -995,7 +995,7 @@ INPUT ./figs//fig_nash.xbb
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT ./figs//bootstrap.png
 INPUT ./figs//bootstrap.png
-INPUT ./figs//bootstrap.xbb
+INPUT extractbb -B cropbox -O ./figs//bootstrap.png
 INPUT ./figs//reg.png
 INPUT ./figs//reg.png
 INPUT ./figs//reg.xbb
