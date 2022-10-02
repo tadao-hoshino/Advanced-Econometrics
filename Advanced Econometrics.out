@@ -53,10 +53,10 @@
 \BOOKMARK [2][-]{subsection.8.1.1}{k-nearest-neighbor regression and kernel regression}{section.8.1}% 53
 \BOOKMARK [2][-]{subsection.8.1.2}{Series regression}{section.8.1}% 54
 \BOOKMARK [2][-]{subsection.8.1.3}{An empirical illustration: estimation of Engel curve}{section.8.1}% 55
-\BOOKMARK [1][-]{section.8.2}{Semiparamtric regression}{chapter.8}% 56
+\BOOKMARK [1][-]{section.8.2}{Semiparametric regression}{chapter.8}% 56
 \BOOKMARK [2][-]{subsection.8.2.1}{Partially linear models}{section.8.2}% 57
-\BOOKMARK [2][-]{subsection.8.2.2}{Generalized additive models}{section.8.2}% 58
-\BOOKMARK [2][-]{subsection.8.2.3}{Functional coefficient models}{section.8.2}% 59
+\BOOKMARK [2][-]{subsection.8.2.2}{Functional coefficient models}{section.8.2}% 58
+\BOOKMARK [2][-]{subsection.8.2.3}{Generalized additive models}{section.8.2}% 59
 \BOOKMARK [-1][-]{part.2}{II Econometric Analysis of Cross-Sectional Dependence Models}{}% 60
 \BOOKMARK [0][-]{chapter.9}{Cross-Sectional Dependence}{part.2}% 61
 \BOOKMARK [1][-]{section.9.1}{Social interaction}{chapter.9}% 62

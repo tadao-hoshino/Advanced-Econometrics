@@ -1005,12 +1005,18 @@ INPUT ./figs//kernels.xbb
 INPUT ./figs//localreg.png
 INPUT ./figs//localreg.png
 INPUT ./figs//localreg.xbb
+INPUT ./figs//CoD.png
+INPUT ./figs//CoD.png
+INPUT extractbb -B cropbox -O ./figs//CoD.png
 INPUT ./figs//seriesreg.png
 INPUT ./figs//seriesreg.png
 INPUT extractbb -B cropbox -O ./figs//seriesreg.png
 INPUT ./figs//engel.png
 INPUT ./figs//engel.png
 INPUT extractbb -B cropbox -O ./figs//engel.png
+INPUT ./figs//gam.png
+INPUT ./figs//gam.png
+INPUT extractbb -B cropbox -O ./figs//gam.png
 INPUT ./figs//GATT.png
 INPUT ./figs//GATT.png
 INPUT ./figs//GATT.xbb
