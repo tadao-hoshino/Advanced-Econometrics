@@ -29,7 +29,6 @@
 \newcommand{\mbb}{\mathbb}
 \newcommand{\mrm}{\mathrm}
 \newcommand{\msc}{\mathscr}
-\newcommand{\tr}{\top}
 \newcommand{\eps}{\varepsilon}
 \newcommand{\R}{\textbf{R}}
 \newcommand{\E}{\mathbb{E}}
@@ -88,7 +87,7 @@
 
 \normalsize
 
-\author{Tadao Hoshino (êØñÏãßòY)\thanks{
+\author{Tadao Hoshino (ÊòüÈáéÂå°ÈÉé)\thanks{
 		School of Political Science and Economics, Waseda University. 1-6-1 Nishi-waseda, Shinjuku-ku, Tokyo 169-8050, Japan. Email: thoshino@waseda.jp. 
 		If you find any typos and errors please let me know.}}
 \date{\today}
@@ -319,11 +318,6 @@ WLLN states that the sample average is a consistent estimator of the population 
 	\]
 	Prove that $a_n$ converges to one in probability.
 \end{exercise}
-\begin{exercise}\upshape
-	(\textbf{Continuous mapping theorem}) 
-	Prove the following claim: Suppose that $g(\cdot)$ is a continuous function.
-	Then, if $Z_n \overset{p}{\to} \mu$, we have $g(Z_n) \overset{p}{\to} g(\mu)$.
-\end{exercise}
 \end{framed}
 
 \section{Laudau's notation: big $O$ and little $o$}
@@ -553,7 +547,7 @@ Then $\Pr(X_n < x) = \Pr(X_0 < x)$, but $X_n$ never converges to $X_0$.
 \end{comment}
 \end{framed}
 
-\section{Asymptotic properties of OLS estimator}
+\section{Asymptotic properties of OLS estimator}\label{sec:OLSasymp}
 
 Consider a linear regression model:
 \begin{align}\label{eq:linmodel}
@@ -608,12 +602,13 @@ To prove the consistency of $\hat \beta_n^{ols}$, it is sufficient to show that
 \end{align}
 Assume that the data are IID and that $\E[XX^\top]$ exists and is nonsingular.
 Then, by WLLN, $\frac{1}{n}\sum_{i = 1}^n X_i X_i^\top \overset{p}{\to} \E[XX^\top]$ element-wisely.
-Further, by the continuity of matrix inversion, we can show that $\left(\frac{1}{n}\sum_{i = 1}^n X_i X_i^\top \right)^{-1} \overset{p}{\to} \E[XX^\top]^{-1}$.
-In addition, it holds that $\frac{1}{n}\sum_{i = 1}^n X_i \eps_i \overset{p}{\to} \mbf{0}$ since
+Further, note that matrix inversion is a continuous operation.
+Thus, by Lemma \ref{lem:cmt}, we can also show that $\left(\frac{1}{n}\sum_{i = 1}^n X_i X_i^\top \right)^{-1} \overset{p}{\to} \E[XX^\top]^{-1}$.
+In addition, it holds that $\frac{1}{n}\sum_{i = 1}^n X_i \eps_i \overset{p}{\to} \E[X \eps] = \mbf{0}$ since
 \[
-	\E[X_i \eps_i ] = \E[X_i \E[\eps_i \mid X_i]] = \mbf{0}
+	\E[X \eps ] = \E[X \E[\eps \mid X]] = \mbf{0}
 \]
-by the law of iterated expectations (LIE) and $\E[\eps_i \mid X_i] = 0$.
+by the law of iterated expectations (LIE).
 Finally, we can prove \eqref{eq:convzero} using Lemma \ref{lem:prodconv}.
 
 \paragraph{Proof of root-n-consistency}
@@ -623,18 +618,19 @@ Write
 \begin{align*}
 	\sqrt{n}(\hat \beta_n^{ols} - \beta_0) 
 	& = \left(\frac{1}{n}\sum_{i = 1}^n X_i X_i^\top \right)^{-1}\frac{1}{\sqrt{n}}\sum_{i = 1}^n X_i \eps_i\\
-	& = \left(\mbf{X}_n^\tr \mbf{X}_n/n\right)^{-1}\mbf{X}_n^\tr\mcl{E}_n/\sqrt{n},
+	& = \left(\mbf{X}_n^\top \mbf{X}_n/n\right)^{-1}\mbf{X}_n^\top\mcl{E}_n/\sqrt{n},
 \end{align*}
-where $\mbf{X}_n = (X_1, \ldots, X_n)^\tr$, and $\mcl{E}_n = (\eps_1, \ldots, \eps_n)^\tr$.
-The independence and homoskedasticity assumptions imply that $\E[\mcl{E}_n\mcl{E}_n^\tr \mid \{X_i\}_{i=1}^n] = \sigma^2 I_n$.
+where $\mbf{X}_n = (X_1, \ldots, X_n)^\top$, and $\mcl{E}_n = (\eps_1, \ldots, \eps_n)^\top$.
+The independence and homoskedasticity assumptions imply that $\E[\mcl{E}_n\mcl{E}_n^\top \mid \mbf{X}_n] = \sigma^2 I_n$.
 Hence,
 \begin{align*}
-	\E\left[||\sqrt{n}(\hat \beta_n^{ols} - \beta_0)||^2 \mid \{X_i\}_{i=1}^n \right]
-	& = \text{trace}\left\{\left(\mbf{X}_n^\tr \mbf{X}_n/n\right)^{-1}\mbf{X}_n^\tr \E[\mcl{E}_n\mcl{E}_n^\tr \mid \{X_i\}_{i=1}^n] \mbf{X}_n \left(\mbf{X}_n^\tr \mbf{X}_n/n\right)^{-1}\right\}/n \\
-	& = \sigma^2 \text{trace}\left\{\left(\mbf{X}_n^\tr \mbf{X}_n/n\right)^{-1}\right\} = O(\text{dim}(X)).
+	\E\left[\left\|\sqrt{n}(\hat \beta_n^{ols} - \beta_0)\right\|^2 \mid \mbf{X}_n \right]
+	& = \E\left[\left\|\left(\mbf{X}_n^\top \mbf{X}_n/n\right)^{-1}\mbf{X}_n^\top\mcl{E}_n/\sqrt{n} \right\|^2 \mid \mbf{X}_n \right] \\
+	& = \text{trace}\left\{\left(\mbf{X}_n^\top \mbf{X}_n/n\right)^{-1} \left(\mbf{X}_n^\top \E[\mcl{E}_n\mcl{E}_n^\top \mid \mbf{X}_n] \mbf{X}_n/n \right) \left(\mbf{X}_n^\top \mbf{X}_n/n\right)^{-1}\right\} \\
+	& = \sigma^2 \text{trace}\left\{\left(\mbf{X}_n^\top \mbf{X}_n/n\right)^{-1}\right\} = O_P(\text{dim}(X)) = O_P(1).
 \end{align*}
-Thus, by LIE, we have $\E||\sqrt{n}(\hat \beta_n^{ols} - \beta_0)||^2 = O(1)$.
-Further, by Lemma \ref{lem:markov_order}, we have $||\sqrt{n}(\hat \beta_n^{ols} - \beta_0)|| = O_P(1)$.
+Thus, by LIE, we have $\E\left\|\sqrt{n}(\hat \beta_n^{ols} - \beta_0)\right\|^2 = O(1)$.
+Further, by Lemma \ref{lem:markov_order}, we have $\sqrt{n}(\hat \beta_n^{ols} - \beta_0) = O_P(1)$.
 
 \paragraph{Proof of asymptotic normality}
 
@@ -655,6 +651,34 @@ implying that
 \[
 	\sqrt{n}(\hat \beta_n^{ols} - \beta_0) \overset{d}{\to} \mbf{N}(\mbf{0}, \sigma^2 \E[XX^\top]^{-1}).
 \]
+
+\paragraph{A numerical simulation with R}
+
+From the following simulation result, we can see that the convergence rate of the OLS estimator is indeed $n^{-1/2}$.
+That is, the expected estimation error can be halved if the sample size is quadrupled.
+
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
+  Simulation <- function(n){
+   X <- runif(n)
+   Y <- 1 + X + rnorm(n)
+   abs(lm(Y ~ X)$coef - 1)
+   }
+	
+  MAE <- function(n){
+   result <- matrix(0,1000,2)
+   for(i in 1:1000) result[i,] <- Simulation(n)
+   colMeans(result)
+   }
+\end{lstlisting}
+
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
+>  MAE(100)
+[1] 0.1577385 0.2702668
+>  MAE(400)
+[1] 0.07834698 0.13866477
+>  MAE(1600)
+[1] 0.04085008 0.07162175
+\end{lstlisting}
 
 \begin{framed}
 \begin{exercise}\upshape
@@ -714,8 +738,10 @@ Notice that the sample analog of the left-hand side of \eqref{eq:beta1} is exact
 \[
 	\hat \beta_{n1}^{ols} \overset{p}{\to} \beta_1 + \frac{\Cov(X,\eps)}{\Var(X)}.
 \]
-This implies that the OLS estimator $\hat \beta_{n1}^{ols} $ cannot correctly (i.e., consistently) estimate $\beta_1$ if $\Cov(X, \eps) \neq 0$.
-When $\Cov(X, \eps) = 0$ holds true, we say that $X$ is \textbf{exogenous\index{exogeneity}}.
+This implies that the OLS estimator $\hat \beta_{n1}^{ols} $ is not consistent for $\beta_1$ if $\Cov(X, \eps) \neq 0$.
+When $\Cov(X, \eps) = 0$ holds true, we say that $X$ is \textbf{exogenous\index{exogeneity}} (in the context of \eqref{eq:simple}).\footnote{
+	The requirement for exogeneity depends on the specification of the model. For a general nonlinear regression model with additive error, $X$ is exogenous if it satisfies a stronger condition $\E[\eps \mid X] = 0$. For models with non-additive error (e.g., binary choice models), $X$ needs to be independent of $\eps$ for $X$ to be exogenous.
+}
 If it is not satisfied, we say that $X$ is \textbf{endogenous\index{endogeneity}}.
 \[
 \begin{array}{ll}
@@ -803,6 +829,11 @@ Thus, endogeneity problem arises when simultaneity exists.
 \begin{exercise}\upshape
 	Give specific examples of endogeneity bias caused by (1) omitted variables and (2) simultaneity (other than those mentioned above).
 \end{exercise}
+
+\begin{exercise}\upshape
+	If we are only interested in accurately predicting one's $Y$ from his/her observed $X$, the endogeneity issue is not necessarily a problem.
+	Explain why.
+\end{exercise}
 \end{framed}
 
 \section{Instrumental variables}
@@ -872,7 +903,8 @@ Hence,
 	\hat{\beta}_{n1} = \beta_1 + \frac{\hat{\Cov}_n(Z, \eps)}{\hat{\Cov}_n(Z, X)}.
 \end{align}
 The second term on the right-hand side of \eqref{eq:weakIV} is the finite sample estimation bias.\footnote{
-	Thus, this IV-based estimator is not an unbiased estimator.
+	Thus, taking the expectation of both sides, we can see that this estimator is not an unbiased estimator.
+	However, the bias term converges to zero in probability.
 }
 If $\Cov(Z,X)$ is close to zero, i.e., if $Z$ is almost irrelevant to $X$, $\hat{\Cov}_n(Z, X)$ is also close to zero.
 Thus, in this case, the estimation bias of $\hat{\beta}_{n1}$ can be very large.
@@ -881,8 +913,9 @@ There are several formal tests for weak instruments (see, e.g., \cite{stock2005t
 
 \begin{framed}
 \begin{exercise}\upshape
-	Suppose that we would like to estimate the causal impact of aircraft noise on land prices by a simple regression analysis.
-	In this regression model, we should suspect that the aircraft noise variable is endogenous. Explain why, and give an example of a valid instrumental variable in this analysis.
+	Suppose that we would like to estimate the causal impact of aircraft noise on land prices by estimating a regression model: $\text{land price} = \beta_0 + \text{noise level}\beta_1 + \eps$.
+	In this regression model, we should suspect that the aircraft noise variable is endogenous. 
+	Explain why, and give an example of a valid instrumental variable in this analysis.
 \end{exercise}
 \end{framed}
 
@@ -890,27 +923,37 @@ There are several formal tests for weak instruments (see, e.g., \cite{stock2005t
 
 In the following, we consider a more general case with multiple regressors and multiple instrumental variables:
 \begin{align*}
-	Y = D \cdot \alpha_0 + X^\tr \beta_0 + \eps,
+	Y = D \cdot \alpha_0 + X^\top \beta_0 + \eps,
 \end{align*}
-where $X = (X_1, \ldots , X_{d_x})^\tr$ is a vector of exogenous explanatory variables (including a constant term), and $D$ is an endogenous explanatory variable.
-Suppose that we have a vector of instrumental variables $Z_1 = (Z_{11}, \ldots, Z_{1d_z})^\tr$ for $D$.
+where $X = (X_1, \ldots , X_{d_x})^\top$ is a vector of exogenous explanatory variables (including a constant term), and $D$ is an endogenous explanatory variable.
+Suppose that we have a vector of instrumental variables $Z_1 = (Z_{11}, \ldots, Z_{1d_z})^\top$ for $D$.
 
 We modify the above estimation procedure for a simple regression model as follows.
-First, let $Z = (Z_1^\tr, X^\tr)^\tr$ be a vector of all exogenous variables, and assume that the inverse matrix $\E[Z Z^\tr]^{-1}$ exists.
-Further, let $\mcl{P}_Z(A)$ be the orthogonal projection of $A$ onto $Z$; that is, $\mcl{P}_Z(A) \equiv Z^\tr \E[ZZ^\tr]^{-1}\E[Z A]$.
-When $A$ is a vector $A = (A_1, \ldots A_k)^\tr$, $\mcl{P}_Z(A)$ is defined as 
+First, let $Z = (Z_1^\top, X^\top)^\top$ be a vector of all exogenous variables, and assume that the inverse matrix $\E[Z Z^\top]^{-1}$ exists.
+Here, we consider creating a linear function of $Z$, $Z^\top\gamma$, that returns an approximated value of $D$.
+This can be achieved by solving the following linear regression model:
+\begin{align*}
+D = Z^\top \gamma + \text{error}.
+\end{align*}
+Note that $Z^\top\gamma$ is a function of $Z$, and thus it is uncorrelated with $\eps$, while it can approximate the movement of $D$.
+Thus, performing an OLS regression of $Y$ on $(Z^\top\gamma, X)$, instead of on $(D, X)$, we should be able to estimate $(\alpha_0, \beta_0)$ consistently.
+
+We can easily see that $\gamma$ can be characterized as $\gamma = \E[ZZ^\top]^{-1}\E[Z D]$.
+Let $\mcl{P}_Z(A)$ be the orthogonal projection of $A$ onto $Z$; that is, $\mcl{P}_Z(A) \equiv Z^\top \E[ZZ^\top]^{-1}\E[Z A]$.
+Thus, $Z^\top\gamma = \mcl{P}_Z(D)$.
+When $A$ is a vector $A = (A_1, \ldots A_k)^\top$, $\mcl{P}_Z(A)$ is defined as 
 \[
-	\mcl{P}_Z(A) = (Z^\tr \E[Z Z^\tr]^{-1} \E[ZA_1], \ldots , Z^\tr \E[Z Z^\tr]^{-1} \E[ZA_k])^\tr.
+	\mcl{P}_Z(A) = (Z^\top \E[Z Z^\top]^{-1} \E[ZA_1], \ldots , Z^\top \E[Z Z^\top]^{-1} \E[ZA_k])^\top.
 \]
 Rewrite the model as follows:
 \begin{align}\label{eq:projection}
 \begin{split}
 	Y 
-	& = \mcl{P}_Z(D) \cdot \alpha_0 + X^\tr \beta_0 +u \\
-	& = \mcl{P}_Z(H)^\tr \theta_0 +u ,
+	& = \mcl{P}_Z(D) \cdot \alpha_0 + X^\top \beta_0 +u \\
+	& = \mcl{P}_Z(H)^\top \theta_0 + u ,
 \end{split}
 \end{align}
-where $H = (D, X^\tr)^\tr$, $\theta_0 = (\alpha_0, \beta_0^\tr)^\tr$, and $u = (D - \mcl{P}_Z(D)) \cdot \alpha_0 + \eps$.
+where $H = (D, X^\top)^\top$, $\theta_0 = (\alpha_0, \beta_0^\top)^\top$, and $u = (D - \mcl{P}_Z(D)) \cdot \alpha_0 + \eps$.
 The second equality in \eqref{eq:projection} is due to the fact that $\mcl{P}_Z(X) = X$ (see the supplementary material in this chapter).
 By the exclusion restriction and \eqref{eq:ZX} below, we can find that 
 \begin{align*}
@@ -928,7 +971,7 @@ By the exclusion restriction and \eqref{eq:ZX} below, we can find that
 	\end{array}
 	\right] \cdot \alpha_0  = \underset{(1 + d_x) \times 1}{\mbf{0}}.
 \end{align*}
-This result implies that $\theta_0$ can be estimated by the least squares regression of $Y$ on $(\mcl{P}_Z(D), X)$, or equivalently, on $\mcl{P}_Z(H)$.
+This implies that $\theta_0$ can be estimated by the OLS regression of $Y$ on $(\mcl{P}_Z(D), X)$, or equivalently, on $\mcl{P}_Z(H)$.
 Figure \ref{fig:geo2sls} provides a simple geometry of the above discussion.
 
 \begin{figure}[h!]
@@ -940,66 +983,68 @@ Figure \ref{fig:geo2sls} provides a simple geometry of the above discussion.
 \end{figure}
 
 Now, suppose that we have data of $n$ observations $\{(Y_i, D_i, X_i, Z_{1i}): 1 \le i \le n\}$.
-For a sample analog to the above procedure, the parameter $\theta_0$ can be estimated in the following two steps:
+As a sample analog to the above procedure, the parameter $\theta_0$ can be estimated in the following two steps:
 
-\textbf{Step (1)}: perform a least squares regression of $D$ on $Z = (Z_1^\tr, X^\tr)^\tr$, and compute the predicted value of $D$ by $\hat D = Z^\tr \hat\gamma_n$, where
+\textbf{Step (1)}: perform the least squares regression of $D$ on $Z = (Z_1^\top, X^\top)^\top$, and compute the predicted value of $D$ by $\hat D = Z^\top \hat\gamma_n$, where
 \[
-\hat\gamma_n \equiv \left( \frac{1}{n}\sum_{i=1}^n Z_i Z_i^\tr \right)^{-1}\frac{1}{n}\sum_{i=1}^n Z_i D_i. 
+\hat\gamma_n \equiv \left( \frac{1}{n}\sum_{i=1}^n Z_i Z_i^\top \right)^{-1}\frac{1}{n}\sum_{i=1}^n Z_i D_i. 
 \]
 (At this step, it is important to check the significance of $\hat \gamma_n$.
 If all elements of $\hat\gamma_n$ are close to zero, the weak instruments problem can occur.)
-Let $\hat H = (\hat D, X^\tr)^\tr$.
+Let $\hat H = (\hat D, X^\top)^\top$.
 
-\textbf{Step (2)}: perform a least squares regression of $Y$ on $\hat H$ to estimate $\theta_0$:
+\textbf{Step (2)}: perform the least squares regression of $Y$ on $\hat H$ to estimate $\theta_0$:
 \[
-	\hat\theta_n^{2sls} \equiv \left( \frac{1}{n}\sum_{i=1}^n \hat H_i \hat H_i^\tr \right)^{-1}\frac{1}{n}\sum_{i=1}^n \hat H_i Y_i.
+	\hat\theta_n^{2sls} \equiv \left( \frac{1}{n}\sum_{i=1}^n \hat H_i \hat H_i^\top \right)^{-1}\frac{1}{n}\sum_{i=1}^n \hat H_i Y_i.
 \]
 The above estimation procedure is called the \textbf{two-stage least squares\index{two-stage least squares}} (2SLS) estimator.
+\bigskip
 
 Noting the second equality in \eqref{eq:projection}, the 2SLS estimator can be, in fact, implemented in one step.
-To do so, we introduce the following matrix notations: $\mbf{Y}_n = (Y_1, \ldots , Y_n)^\tr$, $\mbf{D}_n = (D_1, \ldots, D_n)^\tr$, $\mbf{X}_n = (X_1, \ldots, X_n)^\tr$, $\mbf{Z}_n = (Z_1, \ldots, Z_n)^\tr$, and $\mbf{H}_n = (H_1, \dots , H_n)^\tr$.
+To do so, we introduce the following matrix notations: $\mbf{Y}_n = (Y_1, \ldots , Y_n)^\top$, $\mbf{D}_n = (D_1, \ldots, D_n)^\top$, $\mbf{X}_n = (X_1, \ldots, X_n)^\top$, $\mbf{Z}_n = (Z_1, \ldots, Z_n)^\top$, and $\mbf{H}_n = (H_1, \dots , H_n)^\top$.
 Further, let $\mcl{P}_{\mbf{Z}_n}$ be an empirical projection matrix, which is defined by
 \[
-	\mcl{P}_{\mbf{Z}_n} \equiv \mbf{Z}_n(\mbf{Z}_n^\tr \mbf{Z}_n)^{-1} \mbf{Z}_n^\tr.
+	\mcl{P}_{\mbf{Z}_n} \equiv \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1} \mbf{Z}_n^\top.
 \]
-Then, $\hat{\mbf{D}}_n = (\hat D_1, \ldots , \hat D_n)^\tr$ is obtained by $\hat{\mbf{D}}_n = \mcl{P}_{\mbf{Z}_n} \mbf{D}_n$.
+Then, $\hat{\mbf{D}}_n = (\hat D_1, \ldots , \hat D_n)^\top$ is obtained by $\hat{\mbf{D}}_n = \mcl{P}_{\mbf{Z}_n} \mbf{D}_n$.
 In addition, by the same argument as the fact $\mcl{P}_Z(X) = X$, we can easily see that $\mbf{X}_n = \mcl{P}_{\mbf{Z}_n} \mbf{X}_n$.
 Therefore, $\hat{\mbf{H}}_n \equiv [\hat{\mbf{D}}_n \; ; \; \mbf{X}_n] = \mcl{P}_{\mbf{Z}_n}\mbf{H}_n$.
 Consequently, noting the fact that $\mcl{P}_{\mbf{Z}_n}\mcl{P}_{\mbf{Z}_n} = \mcl{P}_{\mbf{Z}_n}$,\footnote{This property is called \textit{idempotency}.} the 2SLS estimator $\hat\theta_n^{2sls}$ can be numerically equivalently expressed as 
 \begin{align}\label{eq:2slsMat}
 	\begin{split}
 	\hat\theta_n^{2sls}
-	& = \left(\hat{\mbf{H}}_n^\tr \hat{\mbf{H}}_n \right)^{-1} \hat{\mbf{H}}_n^\tr \mbf{Y}_n\\
-	& = \left(\mbf{H}_n^\tr \mcl{P}_{\mbf{Z}_n} \mcl{P}_{\mbf{Z}_n} \mbf{H}_n \right)^{-1} \mbf{H}_n^\tr \mcl{P}_{\mbf{Z}_n} \mbf{Y}_n \\
-	& = \left(\mbf{H}_n^\tr  \mbf{Z}_n(\mbf{Z}_n^\tr \mbf{Z}_n)^{-1} \mbf{Z}_n^\tr \mbf{H}_n \right)^{-1} \mbf{H}_n^\tr  \mbf{Z}_n(\mbf{Z}_n^\tr \mbf{Z}_n)^{-1} \mbf{Z}_n^\tr \mbf{Y}_n.
+	& = \left(\hat{\mbf{H}}_n^\top \hat{\mbf{H}}_n \right)^{-1} \hat{\mbf{H}}_n^\top \mbf{Y}_n\\
+	& = \left(\mbf{H}_n^\top \mcl{P}_{\mbf{Z}_n} \mcl{P}_{\mbf{Z}_n} \mbf{H}_n \right)^{-1} \mbf{H}_n^\top \mcl{P}_{\mbf{Z}_n} \mbf{Y}_n \\
+	& = \left(\mbf{H}_n^\top  \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1} \mbf{Z}_n^\top \mbf{H}_n \right)^{-1} \mbf{H}_n^\top  \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1} \mbf{Z}_n^\top \mbf{Y}_n.
 	\end{split}
 \end{align}
 
 \section{Asymptotic properties}\label{sec:2slsAsymptotics}
 
 The asymptotic properties of the 2SLS estimator \eqref{eq:2slsMat} can be relatively easily derived.
-First, noting that $\mbf{Y}_n = \mbf{H}_n^\top\theta_0 + \mcl{E}_n$, where $\mcl{E}_n = (\eps_1, \ldots , \eps_n)^\tr$, we can obtain
+First, noting that $\mbf{Y}_n = \mbf{H}_n^\top\theta_0 + \mcl{E}_n$, where $\mcl{E}_n = (\eps_1, \ldots , \eps_n)^\top$, we can obtain
 \begin{align*}
 	\hat\theta_n^{2sls} 
 	& = \theta_0 + \left[\mbf{H}_n^\top \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1}\mbf{Z}_n^\top \mbf{H}_n  \right]^{-1}\mbf{H}_n^\top \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1}\mbf{Z}_n^\top\mcl{E}_n.
 \end{align*}
-by WLLN, under standard conditions, we have $\mbf{H}_n^\top \mbf{Z}_n/n \overset{p}{\to} \E[H Z^\tr]$,  $\mbf{Z}_n^\tr \mbf{Z}_n/n \overset{p}{\to} \E[Z Z^\tr]$, and  $\mbf{Z}_n^\tr \mcl{E}_n/n \overset{p}{\to} \E[Z \eps] = \underset{(d_z + d_x)\times 1}{\mbf{0}}$ as the sample size increases to infinity.
+by WLLN, under standard conditions, we have $\mbf{H}_n^\top \mbf{Z}_n/n \overset{p}{\to} \E[H Z^\top]$,  $\mbf{Z}_n^\top \mbf{Z}_n/n \overset{p}{\to} \E[Z Z^\top]$, and  $\mbf{Z}_n^\top \mcl{E}_n/n \overset{p}{\to} \E[Z \eps] = \underset{(d_z + d_x)\times 1}{\mbf{0}}$ as the sample size increases to infinity.
 Thus,
 \begin{align*}	
 	\hat\theta_n^{2sls} - \theta_0
 	& = \left[(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}(\mbf{Z}_n^\top \mbf{H}_n/n ) \right]^{-1}(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}(\mbf{Z}_n^\top\mcl{E}_n/n) \\
-	& \overset{p}{\to} \left[ \E[H Z^\tr] \E[Z Z^\tr]^{-1} \E[Z H^\tr] \right]^{-1} \E[H Z^\tr] \E[Z Z^\tr]^{-1} \underbrace{\E[Z \eps]}_{= \; \mbf{0}} = \mbf{0}
+	& \overset{p}{\to} \left[ \E[H Z^\top] \E[Z Z^\top]^{-1} \E[Z H^\top] \right]^{-1} \E[H Z^\top] \E[Z Z^\top]^{-1} \underbrace{\E[Z \eps]}_{= \; \mbf{0}} = \mbf{0}
 \end{align*}
-by Lemma \ref{lem:prodconv} and the continuous mapping theorem, implying that the 2SLS estimator $\hat\theta_n^{2sls}$ is consistent for $\theta_0$.
+by Lemma \ref{lem:prodconv} and the continuous mapping theorem \ref{lem:cmt}, implying that the 2SLS estimator $\hat\theta_n^{2sls}$ is consistent for $\theta_0$.
+In addition, following the same argument as in Section \ref{sec:OLSasymp}, we can easily show that the 2SLS estimator is root-n-consistent.
 
 Next, suppose for simplicity that the error terms $\eps_i$'s are IID with variance $\E[\eps^2] = \sigma^2$.
 Further, assume that $\eps$ is independent of $Z$ (note that this is a stronger condition than the uncorrelation between $\eps$ and $Z$).
-Then, by CLT, it would hold that $\mbf{Z}_n^\top\mcl{E}_n/\sqrt{n} \overset{d}{\to} \mbf{N}(\mbf{0}, \E[Z Z^\tr]\sigma^2)$.
+Then, by CLT, it would hold that $\mbf{Z}_n^\top\mcl{E}_n/\sqrt{n} \overset{d}{\to} \mbf{N}(\mbf{0}, \E[Z Z^\top]\sigma^2)$.
 Hence, by Slutsky's theorem \ref{lem:slutsky}, we obtain the asymptotic normality of $\sqrt{n}(\hat\theta_n^{2sls} - \theta_0)$ as follows:
 \begin{align*}
 	\sqrt{n}(\hat\theta_n^{2sls} - \theta_0) 
 	& = \left[(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}(\mbf{Z}_n^\top \mbf{H}_n/n ) \right]^{-1}(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}\mbf{Z}_n^\top\mcl{E}_n/\sqrt{n} \\
-	& \overset{d}{\to} \mbf{N}\left(\mbf{0}, \sigma^2  \left[ \E[H Z^\tr] \E[Z Z^\tr]^{-1} \E[Z H^\tr] \right]^{-1}\right).
+	& \overset{d}{\to} \mbf{N}\left(\mbf{0}, \sigma^2  \left[ \E[H Z^\top] \E[Z Z^\top]^{-1} \E[Z H^\top] \right]^{-1}\right).
 \end{align*}
 
 \begin{framed}
@@ -1023,7 +1068,7 @@ and the alternative hypothesis is its negation
 \[
 	\mbb{H}_1: \Cov(D, \eps) \neq 0.
 \]
-Under the null hypothesis $\mbb{H}_0$, both OLS and 2SLS estimators of $\alpha_0$, say $\hat \alpha_n^{ols}$ and $\hat \alpha_n^{2sls}$, respectively,  are consistent and asymptotically normal.
+Under the null hypothesis $\mbb{H}_0$, both OLS and 2SLS estimators of $\alpha_0$, $\hat \alpha_n^{ols}$ and $\hat \alpha_n^{2sls}$, are consistent and asymptotically normal.
 However under $\mbb{H}_1$, the OLS estimator $\hat \alpha_n^{ols}$ converges to $\alpha_0 + \text{endogeneity bias}$, while the 2SLS estimator is still consistent for $\alpha_0$.
 Thus the difference between the OLS and 2SLS estimators is a valid test statistic for endogeneity. 
 
@@ -1064,10 +1109,10 @@ Therefore, studies on treatment effects typically aim at estimating treatment ef
 \begin{align*}
 	&\text{ATE (the average treatment effect)}: \E[Y(1) - Y(0)]\\
 	&\text{CATE (the conditional average treatment effect)}: \E[Y(1) - Y(0) \mid X = x] \\
-	&\text{ATET (the average treatment effect on the treated)}: \E[Y(1) - Y(0) \mid D = 1].
+	&\text{ATT (the average treatment effect on the treated)}: \E[Y(1) - Y(0) \mid D = 1].
 \end{align*}
 
-In a seminal paper, \cite{imbens1994identification} studied conditions under which the 2SLS estimate can be interpreted as the \textbf{LATE} (local average treatment effect) -- the average treatment effect for those whose treatment status is altered by the instrument. 
+In a seminal paper, \cite{imbens1994identification} studied conditions under which the 2SLS estimate can be interpreted as the \textbf{LATE} (local average treatment effect) -- the average treatment effect for those whose treatment status complies with the instrument. 
 Note that when both $D$ and $Z$ are dummy variables, we can classify individuals into the following four latent types:
 \[
 \begin{array}{ll}
@@ -1151,9 +1196,9 @@ This means that the 2SLS estimator for $\alpha_0$ can be seen as an estimator of
 \end{exercise}
 \end{framed}
 
-\section{Numerical simulations with \textbf{R}}
+\paragraph{Numerical simulations with \textbf{R}}
 
-In this section, we see how the endogeneity problem is serious and can be solved by the method of instrumental variables.
+In the following simulation analysis, we examine how the endogeneity problem is serious and can be solved by the method of instrumental variables.
 We first generate data of sample size $500$ as follows.
 \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, frame=single]
 N   <- 500      # sample size
@@ -1238,10 +1283,10 @@ As can be seen from this result, the estimation performance of the 2SLS is clear
 
 \section*{Appendix: A property of the orthogonal projection}
 	
-Using the formula in \eqref{eq:inverse}, denoting $\E_{AB} \equiv \E[A B^\tr] $, we have
+Using the formula in \eqref{eq:inverse}, denoting $\E_{AB} \equiv \E[A B^\top] $, we have
 \small\begin{align}\label{eq:ZX}
 \begin{split}
-\E[ZZ^\tr]^{-1}\E[ZX^\tr] 
+\E[ZZ^\top]^{-1}\E[ZX^\top] 
 	& = \left(\begin{array}{cc}
 		\E_{Z_1 Z_1} & \E_{Z_1 X} \\
 		\E_{X Z_1} & \E_{X X} 
@@ -1278,10 +1323,10 @@ Using the formula in \eqref{eq:inverse}, denoting $\E_{AB} \equiv \E[A B^\tr] $,
 Hence,
 \begin{align*}
 	\mcl{P}_Z(X)
-	& = \left( Z^\tr \E[ZZ^\tr]^{-1} \E[ZX^\tr] \right)^\tr  = \left( \left[ Z^\tr_1 \; , \; X^\tr \right] \left(\begin{array}{c}
+	& = \left( Z^\top \E[ZZ^\top]^{-1} \E[ZX^\top] \right)^\top  = \left( \left[ Z^\top_1 \; , \; X^\top \right] \left(\begin{array}{c}
 	\underset{d_z \times d_x}{\mbf{0}} \\
 	I_{d_x}
-	\end{array} \right) \right)^\tr = X.
+	\end{array} \right) \right)^\top = X.
 \end{align*}
 That is, the orthogonal projection of $X$ onto $Z = (Z_1, X)$ is $X$ itself.
 
@@ -4831,7 +4876,7 @@ Further, let $w_{ij}$ be a spatial weight term between $i$ and $j$.
 Recall that $w_{ii} = 0$ for normalization.
 Then, the following model is called the \textbf{spatial lag model\index{spatial lag model}} (SLM):
 \begin{align}\label{eq:slm}
-	Y_i = \rho_0 \sum_{j = 1}^n w_{ij} Y_j + X_i^\tr\beta_0 + \eps_i, \;\; i = 1,\ldots,n.
+	Y_i = \rho_0 \sum_{j = 1}^n w_{ij} Y_j + X_i^\top\beta_0 + \eps_i, \;\; i = 1,\ldots,n.
 \end{align}
 Here, $\rho_0$ is a parameter that captures the spatial endogenous effect, $\beta_0$ is a vector of unknown coefficients, and $\eps$ is an unobserved random variable such that $\E \eps = 0$.
 The SLM assumes that the average outcome of the neighboring districts influences on own outcome.
@@ -4840,7 +4885,7 @@ For example, imagine that there are two districts, which are almost identical in
 Suppose that one of them is surrounded by areas with higher crime rates, and the other is  located in a low crime rate area.
 Then, if the crime rate of the former district is higher than that of the latter, this suggests the existence of spatial endogenous effect, and the spatial parameter $\rho_0$ will be estimated as positive.
 
-Let $W_n = (w_{ij})_{i,j = 1}^n$ be the spatial weight matrix, and write $\mbf{Y}_n = (Y_1, \ldots, Y_n)^\top$ÅC$\mbf{X}_n = (X_1, \ldots , X_n)^\top$ÅCand $\mcl{E}_n = (\eps_1, ...., \eps_n)^\top$.
+Let $W_n = (w_{ij})_{i,j = 1}^n$ be the spatial weight matrix, and write $\mbf{Y}_n = (Y_1, \ldots, Y_n)^\top$, $\mbf{X}_n = (X_1, \ldots , X_n)^\top$, and $\mcl{E}_n = (\eps_1, ...., \eps_n)^\top$.
 Then, we can rewrite model \eqref{eq:slm} in matrix form as
 \[
 	\mbf{Y}_n =  \rho_0 W_n \mbf{Y}_n + \mbf{X}_n \beta_0 + \mcl{E}_n.
@@ -4930,7 +4975,7 @@ If they are spatially correlated, the model has spatial correlated effects.
 To account for the spatial correlated effects (i.e., spatial autocorrelation of $\eps$), we can consider the following model:
 \begin{align}\label{eq:sem}
 \begin{split}
-	Y_i  & = X_i^\tr\beta_0 + \eps_i \\
+	Y_i  & = X_i^\top\beta_0 + \eps_i \\
 	\eps_i & = \lambda_0 \sum_{j = 1}^n w_{ij} \eps_j + u_i, \;\; i = 1,\ldots,n
 \end{split}
 \end{align}
@@ -4958,7 +5003,7 @@ After some calculations, the log-likelihood function of the SEM can be obtained 
 \begin{align*}
 	\ell^{SE}_n(\lambda, \beta, \sigma^2) 
 	& = -\frac{n}{2} \log (2\pi) -\frac{n}{2} \log\sigma^2 + \log | I_n - \lambda W_n| \\
-	& \quad - \frac{1}{2\sigma^2} (\mbf{Y}_n - \mbf{X}_n \beta)^\tr(I_n - \lambda W_n)^\tr (I_n - \lambda W_n) (\mbf{Y}_n  - \mbf{X}_n \beta).
+	& \quad - \frac{1}{2\sigma^2} (\mbf{Y}_n - \mbf{X}_n \beta)^\top(I_n - \lambda W_n)^\top (I_n - \lambda W_n) (\mbf{Y}_n  - \mbf{X}_n \beta).
 \end{align*}
 By maximizing the above log-likelihood function, we can obtain a consistent estimator of $(\lambda_0, \beta_0, \sigma^2_0)$.
 However, the IID normality assumption is restrictive as mentioned above.
@@ -5307,7 +5352,7 @@ Namely, consider the following model:
 	Y^*_i & = \rho_0 \sum_{j = 1}^n w_{ij} Y^*_j + X_i^\top \beta_0 - \eps_i, \;\;  i =1 , \ldots, n.
 \end{split}
 \end{align}
-Let $W_n = (w_{ij})_{i,j = 1}^n$ be the spatial weight matrix, and write $\mbf{Y}^*_n = (Y^*_1, \ldots, Y^*_n)^\top$ÅC$\mbf{X}_n = (X_1, \ldots , X_n)^\top$ÅCand $\mcl{E}_n = (\eps_1, \ldots , \eps_n)^\top$.
+Let $W_n = (w_{ij})_{i,j = 1}^n$ be the spatial weight matrix, and write $\mbf{Y}^*_n = (Y^*_1, \ldots, Y^*_n)^\top$, $\mbf{X}_n = (X_1, \ldots , X_n)^\top$, and $\mcl{E}_n = (\eps_1, \ldots , \eps_n)^\top$.
 Then, we can rewrite the second equation in \eqref{eq:sl_probit2} in matrix form as
 \begin{align*}
 	\mbf{Y}^*_n 
@@ -5723,25 +5768,29 @@ See also \cite{pinkse1998contracting} for more details.
 		|X_n Y_n - \bar X \bar Y|
 		& = |X_n Y_n - \bar X Y_n + \bar X Y_n - \bar X \bar Y| \\
 		& \le |X_n Y_n - \bar X Y_n| + |\bar X Y_n - \bar X \bar Y| \\
-		& = |Y_n| \cdot |X_n - \bar X| + |\bar X |\cdot | Y_n - \bar Y|. 
+		& = |Y_n| \cdot |X_n - \bar X| + |\bar X |\cdot | Y_n - \bar Y| \\
+		& = O_P(1) \cdot o_P(1) + O(1) \cdot o_P(1) = o_P(1). 
 		\end{align*}
-		The second term on the right-hand side clearly converges to zero in probability.
-		For the first term, note that $|Y_n|$ is not necessarily finite for some $n$.
-		Let $\kappa > 0$ and $\eta > 0$ be positive numbers.
-		 \begin{align*}
-		\Pr(|Y_n| \cdot |X_n - \bar X| > \kappa) 
-		& = \Pr(|Y_n| \cdot |X_n - \bar X| > \kappa, |Y_n| \le 1/\eta) +	\Pr(|Y_n| \cdot |X_n - \bar X| > \kappa, |Y_n| > 1/\eta) \\
-		& \le \Pr(|X_n - \bar X| > \kappa \eta) +	\Pr(|Y_n| > 1/\eta) \\
-		& \le \Pr(|X_n - \bar X| > \kappa \eta) +	\Pr(|\bar Y| > 1/(2\eta)) + \Pr(|Y_n - \bar Y| > 1/(2\eta)).
-		 \end{align*}
-		By choosing sufficiently small $\eta$, the terms on the right-hand side all converge to zero in probability by assumption.
-		Thus, we have 
-		 \[
-		 \lim_{n\to\infty} \Pr(|Y_n| \cdot |X_n - \bar X| > \kappa) = 0.
-		 \]
-		 Since ths choice of $\kappa$ is arbitrary, this gives the desired result.
 	\end{proof}
 	
+	\begin{lemma}[Continuous mapping theorem]\label{lem:cmt} 
+		Suppose that $g(\cdot)$ is a continuous function.
+		Then, if $Z_n \overset{p}{\to} \mu$, we have $g(Z_n) \overset{p}{\to} g(\mu)$.
+	\end{lemma}
+
+	\begin{proof}
+		The definition of continuity is as follows: 
+		Let $\eps > 0$ be given.
+		Then, for some $\delta > 0$ and all $Z$ such that $|Z - \mu| < \delta$, we have $|g(Z) - g(\mu) | < \eps$.
+
+		Thus, for such $\delta$, $|Z_n - \mu| < \delta$ implies $|g(Z_n) - g(\mu)| < \eps$.
+		Hence,
+		\begin{align*}
+			\underset{\to 1}{\Pr(|Z_n - \mu| < \delta)} \le \Pr(|g(Z_n) - g(\mu)| < \eps) \le 1.
+		\end{align*}
+		Thus, $\Pr(|g(Z_n) - g(\mu)| < \eps) \to 1$.
+	\end{proof}
+
 	\begin{lemma}[Slutsky's theorem]\label{lem:slutsky}
 		Let $X_n \in \mathbb{R}$ and $Y_n \in \mathbb{R}$ be sequences of random variables such that $X_n \overset{d}{\to} \bar X$ and $Y_n \overset{p}{\to} c$, respectively.
 		Then,

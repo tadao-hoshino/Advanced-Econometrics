@@ -942,6 +942,13 @@ INPUT c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth8.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/goth8.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
+INPUT c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
+INPUT c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
+INPUT c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
+INPUT c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tctt0800.tfm
 INPUT ./figs//polcrime.png
 INPUT ./figs//polcrime.png
 INPUT ./figs//polcrime.xbb
@@ -950,9 +957,6 @@ INPUT ./figs//projection.png
 INPUT ./figs//projection.xbb
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbxsl10.tfm
 INPUT ./figs//hist.png
 INPUT ./figs//hist.png
 INPUT ./figs//hist.xbb
@@ -978,11 +982,6 @@ INPUT ./figs//hodge.xbb
 INPUT ./figs//identifications.png
 INPUT ./figs//identifications.png
 INPUT ./figs//identifications.xbb
-INPUT c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
-INPUT c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
-INPUT c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
-INPUT c:/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tctt0800.tfm
 INPUT ./figs//partialident.png
 INPUT ./figs//partialident.png
 INPUT ./figs//partialident.xbb
@@ -1029,6 +1028,7 @@ INPUT ./figs//Brazil.xbb
 INPUT ./figs//crime.png
 INPUT ./figs//crime.png
 INPUT ./figs//crime.xbb
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbxsl10.tfm
 INPUT ./figs//snets.png
 INPUT ./figs//snets.png
 INPUT ./figs//snets.xbb

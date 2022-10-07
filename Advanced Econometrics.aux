@@ -40,6 +40,7 @@
 \newlabel{lem:p_to_d}{{1.4.2}{9}{Convergence in distribution}{theorem.1.4.2}{}}
 \newlabel{eq:ineq}{{1.4.1}{9}{Convergence in distribution}{equation.1.4.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.5}Asymptotic properties of OLS estimator}{10}{section.1.5}\protected@file@percent }
+\newlabel{sec:OLSasymp}{{1.5}{10}{Asymptotic properties of OLS estimator}{section.1.5}{}}
 \newlabel{eq:linmodel}{{1.5.1}{10}{Asymptotic properties of OLS estimator}{equation.1.5.1}{}}
 \newlabel{eq:ols}{{1.5.2}{10}{Asymptotic properties of OLS estimator}{equation.1.5.2}{}}
 \newlabel{eq:msemin}{{1.5.3}{10}{Asymptotic properties of OLS estimator}{equation.1.5.3}{}}
@@ -48,387 +49,389 @@
 \@writefile{toc}{\contentsline {paragraph}{Proof of root-n-consistency}{11}{section*.3}\protected@file@percent }
 \newlabel{foot:ols_moment}{{6}{11}{}{Hfootnote.6}{}}
 \@writefile{toc}{\contentsline {paragraph}{Proof of asymptotic normality}{12}{section*.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Two-Stage Least Squares}{13}{chapter.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A numerical simulation with R}{12}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Two-Stage Least Squares}{14}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:2sls}{{2}{13}{Two-Stage Least Squares}{chapter.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Endogeneity and exogeneity}{13}{section.2.1}\protected@file@percent }
-\newlabel{eq:simple}{{2.1.1}{13}{Endogeneity and exogeneity}{equation.2.1.1}{}}
-\newlabel{eq:simplediff}{{2.1.2}{13}{Endogeneity and exogeneity}{equation.2.1.2}{}}
-\newlabel{eq:beta1}{{2.1.3}{13}{Endogeneity and exogeneity}{equation.2.1.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Omitted variables}{14}{section*.5}\protected@file@percent }
-\newlabel{eq:multiple}{{2.1.4}{14}{Omitted variables}{equation.2.1.4}{}}
-\newlabel{eq:simple2}{{2.1.5}{14}{Omitted variables}{equation.2.1.5}{}}
-\@writefile{toc}{\contentsline {paragraph}{Simultaneity}{14}{section*.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Simultaneity between police and crime.}}{15}{figure.2.1}\protected@file@percent }
+\newlabel{chap:2sls}{{2}{14}{Two-Stage Least Squares}{chapter.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Endogeneity and exogeneity}{14}{section.2.1}\protected@file@percent }
+\newlabel{eq:simple}{{2.1.1}{14}{Endogeneity and exogeneity}{equation.2.1.1}{}}
+\newlabel{eq:simplediff}{{2.1.2}{14}{Endogeneity and exogeneity}{equation.2.1.2}{}}
+\newlabel{eq:beta1}{{2.1.3}{14}{Endogeneity and exogeneity}{equation.2.1.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Omitted variables}{15}{section*.6}\protected@file@percent }
+\newlabel{eq:multiple}{{2.1.4}{15}{Omitted variables}{equation.2.1.4}{}}
+\newlabel{eq:simple2}{{2.1.5}{15}{Omitted variables}{equation.2.1.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Simultaneity}{15}{section*.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Simultaneity between police and crime.}}{16}{figure.2.1}\protected@file@percent }
 \citation{levitt1997using}
 \citation{levitt1997using}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Instrumental variables}{16}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Instrumental variables}{17}{section.2.2}\protected@file@percent }
 \citation{stock2005testing}
-\newlabel{eq:weakIV}{{2.2.1}{17}{Instrumental variables}{equation.2.2.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}2SLS procedure}{17}{section.2.3}\protected@file@percent }
-\newlabel{eq:projection}{{2.3.1}{18}{2SLS procedure}{equation.2.3.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projection of $D$ onto $Z = (Z_1, X)$.}}{18}{figure.2.2}\protected@file@percent }
-\newlabel{fig:geo2sls}{{2.2}{18}{Orthogonal projection of $D$ onto $Z = (Z_1, X)$}{figure.2.2}{}}
-\newlabel{eq:2slsMat}{{2.3.2}{19}{2SLS procedure}{equation.2.3.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Asymptotic properties}{19}{section.2.4}\protected@file@percent }
-\newlabel{sec:2slsAsymptotics}{{2.4}{19}{Asymptotic properties}{section.2.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Durbin-Wu-Hausman test for endogeneity}{20}{section.2.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}A causal interpretation of the 2SLS estimate}{20}{section.2.6}\protected@file@percent }
+\newlabel{eq:weakIV}{{2.2.1}{18}{Instrumental variables}{equation.2.2.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}2SLS procedure}{18}{section.2.3}\protected@file@percent }
+\newlabel{eq:projection}{{2.3.1}{19}{2SLS procedure}{equation.2.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projection of $D$ onto $Z = (Z_1, X)$.}}{19}{figure.2.2}\protected@file@percent }
+\newlabel{fig:geo2sls}{{2.2}{19}{Orthogonal projection of $D$ onto $Z = (Z_1, X)$}{figure.2.2}{}}
+\newlabel{eq:2slsMat}{{2.3.2}{20}{2SLS procedure}{equation.2.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Asymptotic properties}{20}{section.2.4}\protected@file@percent }
+\newlabel{sec:2slsAsymptotics}{{2.4}{20}{Asymptotic properties}{section.2.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Durbin-Wu-Hausman test for endogeneity}{21}{section.2.5}\protected@file@percent }
 \citation{imbens1994identification}
-\newlabel{eq:LATE}{{2.6.1}{22}{A causal interpretation of the 2SLS estimate}{equation.2.6.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.7}Numerical simulations with \textbf  {R}}{22}{section.2.7}\protected@file@percent }
-\newlabel{eq:ZX}{{2.7.1}{24}{Appendix: A property of the orthogonal projection}{equation.2.7.1}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Maximum Likelihood Estimation}{25}{chapter.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}A causal interpretation of the 2SLS estimate}{22}{section.2.6}\protected@file@percent }
+\newlabel{eq:LATE}{{2.6.1}{23}{A causal interpretation of the 2SLS estimate}{equation.2.6.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Numerical simulations with \textbf  {R}}{24}{section*.8}\protected@file@percent }
+\newlabel{eq:ZX}{{2.6.2}{25}{Appendix: A property of the orthogonal projection}{equation.2.6.2}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Maximum Likelihood Estimation}{27}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:mle}{{3}{25}{Maximum Likelihood Estimation}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Maximum likelihood principle}{25}{section.3.1}\protected@file@percent }
-\newlabel{ex:normal}{{3.1.1}{26}{Maximum likelihood principle}{theorem.3.1.1}{}}
-\newlabel{eq:mle-normal}{{3.1.1}{27}{Maximum likelihood principle}{equation.3.1.1}{}}
-\newlabel{ex:coin}{{3.1.3}{28}{Maximum likelihood principle}{theorem.3.1.3}{}}
-\newlabel{foot:UWLLN}{{4}{29}{}{Hfootnote.13}{}}
-\newlabel{ex:maxuni}{{3.1.5}{30}{Maximum likelihood principle}{theorem.3.1.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Kullback-Leibler divergence}{30}{subsection.3.1.1}\protected@file@percent }
-\newlabel{thm:KL}{{3.1.6}{30}{Kullback-Leibler divergence}{theorem.3.1.6}{}}
+\newlabel{chap:mle}{{3}{27}{Maximum Likelihood Estimation}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Maximum likelihood principle}{27}{section.3.1}\protected@file@percent }
+\newlabel{ex:normal}{{3.1.1}{28}{Maximum likelihood principle}{theorem.3.1.1}{}}
+\newlabel{eq:mle-normal}{{3.1.1}{29}{Maximum likelihood principle}{equation.3.1.1}{}}
+\newlabel{ex:coin}{{3.1.3}{30}{Maximum likelihood principle}{theorem.3.1.3}{}}
+\newlabel{foot:UWLLN}{{4}{31}{}{Hfootnote.14}{}}
+\newlabel{ex:maxuni}{{3.1.5}{32}{Maximum likelihood principle}{theorem.3.1.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Kullback-Leibler divergence}{32}{subsection.3.1.1}\protected@file@percent }
+\newlabel{thm:KL}{{3.1.6}{32}{Kullback-Leibler divergence}{theorem.3.1.6}{}}
 \citation{newey1994large}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}MLE minimizes the KL divergence}{31}{subsection.3.1.2}\protected@file@percent }
-\newlabel{subsec:MLEconsistency}{{3.1.2}{31}{MLE minimizes the KL divergence}{subsection.3.1.2}{}}
-\newlabel{eq:pop-mle}{{3.1.2}{31}{MLE minimizes the KL divergence}{equation.3.1.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Cramer-Rao lower bound}{32}{section.3.2}\protected@file@percent }
-\newlabel{sec:CRLB}{{3.2}{32}{Cramer-Rao lower bound}{section.3.2}{}}
-\newlabel{eq:scorezero}{{3.2.1}{32}{Cramer-Rao lower bound}{equation.3.2.1}{}}
-\newlabel{eq:CRLB}{{3.2.2}{32}{Cramer-Rao lower bound}{equation.3.2.2}{}}
-\newlabel{eq:unbiased}{{3.2.3}{32}{Cramer-Rao lower bound}{equation.3.2.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Asymptotic properties}{33}{section.3.3}\protected@file@percent }
-\newlabel{eq:taylor}{{3.3.1}{33}{Asymptotic properties}{equation.3.3.1}{}}
-\newlabel{eq:infoeq}{{3.3.2}{34}{Asymptotic properties}{equation.3.3.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}An application: Binary response models}{34}{section.3.4}\protected@file@percent }
-\newlabel{sec:binary}{{3.4}{34}{An application: Binary response models}{section.3.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Likelihood ratio test}{36}{section.3.5}\protected@file@percent }
-\newlabel{sec:LRT}{{3.5}{36}{Likelihood ratio test}{section.3.5}{}}
-\newlabel{eq:LRT}{{3.5.1}{36}{Likelihood ratio test}{equation.3.5.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{A numerical simulation with R}{37}{section*.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Akaike's Information Criterion}{39}{section.3.6}\protected@file@percent }
-\newlabel{eq:aic1}{{3.6.1}{39}{Akaike's Information Criterion}{equation.3.6.1}{}}
-\newlabel{eq:aic2}{{3.6.2}{39}{Akaike's Information Criterion}{equation.3.6.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}MLE minimizes the KL divergence}{33}{subsection.3.1.2}\protected@file@percent }
+\newlabel{subsec:MLEconsistency}{{3.1.2}{33}{MLE minimizes the KL divergence}{subsection.3.1.2}{}}
+\newlabel{eq:pop-mle}{{3.1.2}{33}{MLE minimizes the KL divergence}{equation.3.1.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Cramer-Rao lower bound}{34}{section.3.2}\protected@file@percent }
+\newlabel{sec:CRLB}{{3.2}{34}{Cramer-Rao lower bound}{section.3.2}{}}
+\newlabel{eq:scorezero}{{3.2.1}{34}{Cramer-Rao lower bound}{equation.3.2.1}{}}
+\newlabel{eq:CRLB}{{3.2.2}{34}{Cramer-Rao lower bound}{equation.3.2.2}{}}
+\newlabel{eq:unbiased}{{3.2.3}{34}{Cramer-Rao lower bound}{equation.3.2.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Asymptotic properties}{35}{section.3.3}\protected@file@percent }
+\newlabel{eq:taylor}{{3.3.1}{35}{Asymptotic properties}{equation.3.3.1}{}}
+\newlabel{eq:infoeq}{{3.3.2}{36}{Asymptotic properties}{equation.3.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}An application: Binary response models}{36}{section.3.4}\protected@file@percent }
+\newlabel{sec:binary}{{3.4}{36}{An application: Binary response models}{section.3.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Likelihood ratio test}{38}{section.3.5}\protected@file@percent }
+\newlabel{sec:LRT}{{3.5}{38}{Likelihood ratio test}{section.3.5}{}}
+\newlabel{eq:LRT}{{3.5.1}{38}{Likelihood ratio test}{equation.3.5.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{A numerical simulation with R}{39}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Akaike's Information Criterion}{41}{section.3.6}\protected@file@percent }
+\newlabel{eq:aic1}{{3.6.1}{41}{Akaike's Information Criterion}{equation.3.6.1}{}}
+\newlabel{eq:aic2}{{3.6.2}{41}{Akaike's Information Criterion}{equation.3.6.2}{}}
 \citation{akaike1973information}
 \citation{van2000asymptotic}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces MSE of Hodge's estimator}}{42}{figure.3.1}\protected@file@percent }
-\newlabel{fig:hodge}{{3.1}{42}{MSE of Hodge's estimator}{figure.3.1}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Generalized Method of Moments}{44}{chapter.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces MSE of Hodge's estimator}}{44}{figure.3.1}\protected@file@percent }
+\newlabel{fig:hodge}{{3.1}{44}{MSE of Hodge's estimator}{figure.3.1}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Generalized Method of Moments}{46}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:gmm}{{4}{44}{Generalized Method of Moments}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Moment conditions}{44}{section.4.1}\protected@file@percent }
-\newlabel{sec:mom}{{4.1}{44}{Moment conditions}{section.4.1}{}}
-\newlabel{eq:momcond}{{4.1.1}{44}{Moment conditions}{equation.4.1.1}{}}
-\newlabel{ex:ols}{{4.1.1}{45}{Moment conditions}{theorem.4.1.1}{}}
-\newlabel{ex:2sls}{{4.1.2}{45}{Moment conditions}{theorem.4.1.2}{}}
-\newlabel{ex:probit}{{4.1.3}{45}{Moment conditions}{theorem.4.1.3}{}}
-\newlabel{ex:prob2}{{4.1.4}{45}{Moment conditions}{theorem.4.1.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}GMM procedure}{46}{section.4.2}\protected@file@percent }
-\newlabel{eq:mm_estimator}{{4.2.1}{46}{GMM procedure}{equation.4.2.1}{}}
-\newlabel{eq:gmm}{{4.2.2}{46}{GMM procedure}{equation.4.2.2}{}}
+\newlabel{chap:gmm}{{4}{46}{Generalized Method of Moments}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Moment conditions}{46}{section.4.1}\protected@file@percent }
+\newlabel{sec:mom}{{4.1}{46}{Moment conditions}{section.4.1}{}}
+\newlabel{eq:momcond}{{4.1.1}{46}{Moment conditions}{equation.4.1.1}{}}
+\newlabel{ex:ols}{{4.1.1}{47}{Moment conditions}{theorem.4.1.1}{}}
+\newlabel{ex:2sls}{{4.1.2}{47}{Moment conditions}{theorem.4.1.2}{}}
+\newlabel{ex:probit}{{4.1.3}{47}{Moment conditions}{theorem.4.1.3}{}}
+\newlabel{ex:prob2}{{4.1.4}{47}{Moment conditions}{theorem.4.1.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}GMM procedure}{48}{section.4.2}\protected@file@percent }
+\newlabel{eq:mm_estimator}{{4.2.1}{48}{GMM procedure}{equation.4.2.1}{}}
+\newlabel{eq:gmm}{{4.2.2}{48}{GMM procedure}{equation.4.2.2}{}}
 \citation{newey1994large}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Asymptotic properties}{47}{section.4.3}\protected@file@percent }
-\newlabel{sec:asympGMM}{{4.3}{47}{Asymptotic properties}{section.4.3}{}}
-\newlabel{eq:GMMnormal}{{4.3.1}{48}{Asymptotic properties}{equation.4.3.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Two-step optimal GMM}{48}{section.4.4}\protected@file@percent }
-\newlabel{eq:matdiff}{{4.4.1}{48}{Two-step optimal GMM}{equation.4.4.1}{}}
-\newlabel{foot:idempotent}{{3}{49}{}{Hfootnote.17}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Over-identification test}{50}{section.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Asymptotic properties}{49}{section.4.3}\protected@file@percent }
+\newlabel{sec:asympGMM}{{4.3}{49}{Asymptotic properties}{section.4.3}{}}
+\newlabel{eq:GMMnormal}{{4.3.1}{50}{Asymptotic properties}{equation.4.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Two-step optimal GMM}{50}{section.4.4}\protected@file@percent }
+\newlabel{eq:matdiff}{{4.4.1}{50}{Two-step optimal GMM}{equation.4.4.1}{}}
+\newlabel{foot:idempotent}{{3}{51}{}{Hfootnote.18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Over-identification test}{52}{section.4.5}\protected@file@percent }
 \citation{hurwicz1950generalization}
 \citation{matzkin2013nonparametric}
 \citation{lewbel2019identification}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Identification}{51}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Identification}{53}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:identification}{{5}{51}{Identification}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}A numerical illustration: a heteroskedastic probit model}{52}{section.5.1}\protected@file@percent }
+\newlabel{chap:identification}{{5}{53}{Identification}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}A numerical illustration: a heteroskedastic probit model}{54}{section.5.1}\protected@file@percent }
 \citation{hurwicz1950generalization}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Definition of identification}{53}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Definition of identification}{55}{section.5.2}\protected@file@percent }
 \citation{lewbel2019identification}
-\newlabel{def:identification}{{5.2.3}{54}{Definition of identification}{theorem.5.2.3}{}}
-\newlabel{eq:prob_nonident}{{5.2.1}{55}{Definition of identification}{equation.5.2.1}{}}
+\newlabel{def:identification}{{5.2.3}{56}{Definition of identification}{theorem.5.2.3}{}}
+\newlabel{eq:prob_nonident}{{5.2.1}{57}{Definition of identification}{equation.5.2.1}{}}
 \citation{manski1975maximum}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Partial identification}{56}{section.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Partial identification}{58}{section.5.3}\protected@file@percent }
 \citation{bontemps2012set}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Distribution of star-ratings}}{59}{table.5.1}\protected@file@percent }
-\newlabel{table:stars}{{5.1}{59}{Distribution of star-ratings}{table.5.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Distribution of star-ratings}}{61}{table.5.1}\protected@file@percent }
+\newlabel{table:stars}{{5.1}{61}{Distribution of star-ratings}{table.5.1}{}}
 \citation{LUCAS197619}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Structural Estimation}{60}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Structural Estimation}{62}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}OLS estimation of production functions}{60}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}OLS estimation of production functions}{62}{section.6.1}\protected@file@percent }
 \citation{bajari2015machine}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Discrete choice models: the random utility framework}{61}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Discrete choice models: the random utility framework}{63}{section.6.2}\protected@file@percent }
 \citation{de2013econometric}
 \citation{bresnahan1990entry}
 \citation{berry1992estimation}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Estimation of entry games}{62}{section.6.3}\protected@file@percent }
-\newlabel{sec:games}{{6.3}{62}{Estimation of entry games}{section.6.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Estimation of entry games}{64}{section.6.3}\protected@file@percent }
+\newlabel{sec:games}{{6.3}{64}{Estimation of entry games}{section.6.3}{}}
 \citation{tamer2003incomplete}
-\newlabel{eq:entry}{{6.3.1}{63}{Estimation of entry games}{equation.6.3.1}{}}
-\newlabel{eq:equilibrium}{{6.3.2}{63}{Estimation of entry games}{equation.6.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Rewriting the model in terms of the number of entrants}{63}{subsection.6.3.1}\protected@file@percent }
+\newlabel{eq:entry}{{6.3.1}{65}{Estimation of entry games}{equation.6.3.1}{}}
+\newlabel{eq:equilibrium}{{6.3.2}{65}{Estimation of entry games}{equation.6.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Rewriting the model in terms of the number of entrants}{65}{subsection.6.3.1}\protected@file@percent }
 \citation{bresnahan1990entry}
 \citation{berry1992estimation}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Nash equilibrium}}{64}{figure.6.1}\protected@file@percent }
-\newlabel{fig:nash}{{6.1}{64}{Nash equilibrium}{figure.6.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Stochastic equilibrium selection rule}{64}{subsection.6.3.2}\protected@file@percent }
-\newlabel{subsec:stochastic}{{6.3.2}{64}{Stochastic equilibrium selection rule}{subsection.6.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Nash equilibrium}}{66}{figure.6.1}\protected@file@percent }
+\newlabel{fig:nash}{{6.1}{66}{Nash equilibrium}{figure.6.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Stochastic equilibrium selection rule}{66}{subsection.6.3.2}\protected@file@percent }
+\newlabel{subsec:stochastic}{{6.3.2}{66}{Stochastic equilibrium selection rule}{subsection.6.3.2}{}}
 \citation{ciliberto2009market}
 \citation{bajari2010identification}
 \citation{ciliberto2009market}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}When the sign of $\rho $ is unknown}{65}{subsection.6.3.3}\protected@file@percent }
-\newlabel{eq:gameinequality}{{6.3.3}{65}{When the sign of $\rho $ is unknown}{equation.6.3.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Estimation of first-price auction models}{65}{section.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}BLP Demand Estimation}{65}{section.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}When the sign of $\rho $ is unknown}{67}{subsection.6.3.3}\protected@file@percent }
+\newlabel{eq:gameinequality}{{6.3.3}{67}{When the sign of $\rho $ is unknown}{equation.6.3.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Estimation of first-price auction models}{67}{section.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}BLP Demand Estimation}{67}{section.6.5}\protected@file@percent }
 \citation{efron1979bootstrap}
 \citation{HOROWITZ20013159}
 \citation{horowitz2019bootstrap}
 \citation{hall1992bootstrap}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Bootstrap}{66}{chapter.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Bootstrap}{68}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}The basic idea of the bootstrap method}{66}{section.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}The basic idea of the bootstrap method}{68}{section.7.1}\protected@file@percent }
 \citation{mammen1992bootstrap}
 \citation{HOROWITZ20013159}
 \citation{horowitz2019bootstrap}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces The idea of bootstrap}}{68}{figure.7.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces The idea of bootstrap}}{70}{figure.7.1}\protected@file@percent }
 \citation{hall1992bootstrap}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Asymptotic refinements}{69}{section.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Cram\'{e}r Condition}{69}{section*.10}\protected@file@percent }
-\newlabel{eq:edgeworth}{{7.2.1}{69}{Cram\'{e}r Condition}{equation.7.2.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7.1}{\ignorespaces Approximation errors for estimating $G_n(\cdot \mid F_0)$}}{70}{table.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Other bootstrap resampling schemes}{71}{section.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.1}Parametric bootstrap}{71}{subsection.7.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.2}Residual bootstrap}{71}{subsection.7.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.3}Wild bootstrap}{71}{subsection.7.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Nonparametric Regression}{73}{chapter.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Asymptotic refinements}{71}{section.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Cram\'{e}r Condition}{71}{section*.12}\protected@file@percent }
+\newlabel{eq:edgeworth}{{7.2.1}{71}{Cram\'{e}r Condition}{equation.7.2.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7.1}{\ignorespaces Approximation errors for estimating $G_n(\cdot \mid F_0)$}}{72}{table.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Other bootstrap resampling schemes}{73}{section.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.1}Parametric bootstrap}{73}{subsection.7.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.2}Residual bootstrap}{73}{subsection.7.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.3}Wild bootstrap}{73}{subsection.7.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Nonparametric Regression}{75}{chapter.8}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:nonpara}{{8}{73}{Nonparametric Regression}{chapter.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces Linear approximation of a quadratic function}}{73}{figure.8.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8.1}Nonparametric regression}{74}{section.8.1}\protected@file@percent }
-\newlabel{eq:nonpara}{{8.1.1}{74}{Nonparametric regression}{equation.8.1.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}$k$-nearest-neighbor regression and kernel regression}{74}{subsection.8.1.1}\protected@file@percent }
-\newlabel{subsec:kernel}{{8.1.1}{74}{$k$-nearest-neighbor regression and kernel regression}{subsection.8.1.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Kernel density functions}}{75}{figure.8.2}\protected@file@percent }
-\newlabel{fig:kernels}{{8.2}{75}{Kernel density functions}{figure.8.2}{}}
+\newlabel{chap:nonpara}{{8}{75}{Nonparametric Regression}{chapter.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces Linear approximation of a quadratic function}}{75}{figure.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}Nonparametric regression}{76}{section.8.1}\protected@file@percent }
+\newlabel{eq:nonpara}{{8.1.1}{76}{Nonparametric regression}{equation.8.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}$k$-nearest-neighbor regression and kernel regression}{76}{subsection.8.1.1}\protected@file@percent }
+\newlabel{subsec:kernel}{{8.1.1}{76}{$k$-nearest-neighbor regression and kernel regression}{subsection.8.1.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Kernel density functions}}{77}{figure.8.2}\protected@file@percent }
+\newlabel{fig:kernels}{{8.2}{77}{Kernel density functions}{figure.8.2}{}}
 \citation{li2007nonparametric}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.3}{\ignorespaces Local nonparametric regression}}{76}{figure.8.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}Series regression}{77}{subsection.8.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8.3}{\ignorespaces Local nonparametric regression}}{78}{figure.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}Series regression}{79}{subsection.8.1.2}\protected@file@percent }
 \citation{chen2007large}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.4}{\ignorespaces Curse of dimensionality}}{78}{figure.8.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8.4}{\ignorespaces Curse of dimensionality}}{80}{figure.8.4}\protected@file@percent }
 \citation{chen2007large}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.5}{\ignorespaces Series approximation}}{79}{figure.8.5}\protected@file@percent }
-\newlabel{fig:seriesreg}{{8.5}{79}{Series approximation}{figure.8.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.5}{\ignorespaces Series approximation}}{81}{figure.8.5}\protected@file@percent }
+\newlabel{fig:seriesreg}{{8.5}{81}{Series approximation}{figure.8.5}{}}
 \citation{belloni2015some}
 \citation{chen2015optimal}
-\newlabel{eq:seriesrate}{{8.1.2}{80}{Series regression}{equation.8.1.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.3}An empirical illustration: estimation of Engel curve}{80}{subsection.8.1.3}\protected@file@percent }
+\newlabel{eq:seriesrate}{{8.1.2}{82}{Series regression}{equation.8.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.3}An empirical illustration: estimation of Engel curve}{82}{subsection.8.1.3}\protected@file@percent }
 \citation{robinson1988root}
-\@writefile{toc}{\contentsline {section}{\numberline {8.2}Semiparametric regression}{82}{section.8.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.1}Partially linear models}{82}{subsection.8.2.1}\protected@file@percent }
-\newlabel{eq:plm}{{8.2.1}{82}{Partially linear models}{equation.8.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.2}Functional coefficient models}{83}{subsection.8.2.2}\protected@file@percent }
-\newlabel{eq:fcm}{{8.2.2}{83}{Functional coefficient models}{equation.8.2.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.3}Generalized additive models}{84}{subsection.8.2.3}\protected@file@percent }
-\newlabel{eq:gam}{{8.2.3}{84}{Generalized additive models}{equation.8.2.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.2}Semiparametric regression}{84}{section.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.1}Partially linear models}{84}{subsection.8.2.1}\protected@file@percent }
+\newlabel{eq:plm}{{8.2.1}{84}{Partially linear models}{equation.8.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.2}Functional coefficient models}{85}{subsection.8.2.2}\protected@file@percent }
+\newlabel{eq:fcm}{{8.2.2}{85}{Functional coefficient models}{equation.8.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.3}Generalized additive models}{86}{subsection.8.2.3}\protected@file@percent }
+\newlabel{eq:gam}{{8.2.3}{86}{Generalized additive models}{equation.8.2.3}{}}
 \citation{horowitz2004nonparametric}
-\@writefile{toc}{\contentsline {part}{II\hspace  {1em}Econometric Analysis of Cross-Sectional Dependence Models}{87}{part.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {part}{II\hspace  {1em}Econometric Analysis of Cross-Sectional Dependence Models}{89}{part.2}\protected@file@percent }
 \citation{manski1993identification}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Cross-Sectional Dependence}{88}{chapter.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Cross-Sectional Dependence}{90}{chapter.9}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {9.1}Social interaction}{88}{section.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9.1}Social interaction}{90}{section.9.1}\protected@file@percent }
 \citation{arpino2017implementing}
 \citation{arpino2017implementing}
 \citation{said2010author}
 \citation{said2010author}
 \citation{bramoulle2009identification}
-\@writefile{toc}{\contentsline {section}{\numberline {9.2}Social network}{89}{section.9.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9.1}{\ignorespaces Trade partners in 1954 and GATT membership, \cite  {arpino2017implementing}.}}{89}{figure.9.1}\protected@file@percent }
-\newlabel{fig:GATT}{{9.1}{89}{Trade partners in 1954 and GATT membership, \cite {arpino2017implementing}}{figure.9.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.2}Social network}{91}{section.9.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9.1}{\ignorespaces Trade partners in 1954 and GATT membership, \cite  {arpino2017implementing}.}}{91}{figure.9.1}\protected@file@percent }
+\newlabel{fig:GATT}{{9.1}{91}{Trade partners in 1954 and GATT membership, \cite {arpino2017implementing}}{figure.9.1}{}}
 \citation{harling2014spatial}
 \citation{harling2014spatial}
 \citation{harling2014spatial}
 \citation{hoshino2018semiparametric}
 \citation{hoshino2018semiparametric}
 \citation{anselin1988spatial}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.2}{\ignorespaces Co-authorship social network of statisticians, \cite  {said2010author}.}}{90}{figure.9.2}\protected@file@percent }
-\newlabel{fig:coauthor}{{9.2}{90}{Co-authorship social network of statisticians, \cite {said2010author}}{figure.9.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.3}Spatial dependence}{90}{section.9.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9.3}{\ignorespaces Municipal tuberculosis notification rates per 100,000 in Brazil 2002-2009, \cite  {harling2014spatial}.}}{91}{figure.9.3}\protected@file@percent }
-\newlabel{fig:Tuberculosis}{{9.3}{91}{Municipal tuberculosis notification rates per 100,000 in Brazil 2002-2009, \cite {harling2014spatial}}{figure.9.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9.4}{\ignorespaces Distribution of household burglary rates in Tokyo 23-wards area 2011, \cite  {hoshino2018semiparametric}.}}{91}{figure.9.4}\protected@file@percent }
-\newlabel{fig:crime}{{9.4}{91}{Distribution of household burglary rates in Tokyo 23-wards area 2011, \cite {hoshino2018semiparametric}}{figure.9.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.2}{\ignorespaces Co-authorship social network of statisticians, \cite  {said2010author}.}}{92}{figure.9.2}\protected@file@percent }
+\newlabel{fig:coauthor}{{9.2}{92}{Co-authorship social network of statisticians, \cite {said2010author}}{figure.9.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.3}Spatial dependence}{92}{section.9.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9.3}{\ignorespaces Municipal tuberculosis notification rates per 100,000 in Brazil 2002-2009, \cite  {harling2014spatial}.}}{93}{figure.9.3}\protected@file@percent }
+\newlabel{fig:Tuberculosis}{{9.3}{93}{Municipal tuberculosis notification rates per 100,000 in Brazil 2002-2009, \cite {harling2014spatial}}{figure.9.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9.4}{\ignorespaces Distribution of household burglary rates in Tokyo 23-wards area 2011, \cite  {hoshino2018semiparametric}.}}{93}{figure.9.4}\protected@file@percent }
+\newlabel{fig:crime}{{9.4}{93}{Distribution of household burglary rates in Tokyo 23-wards area 2011, \cite {hoshino2018semiparametric}}{figure.9.4}{}}
 \citation{manski1993identification}
 \citation{manski1993identification}
-\@writefile{toc}{\contentsline {chapter}{\numberline {10}The Reflection Problem}{93}{chapter.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {10}The Reflection Problem}{95}{chapter.10}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:reflection}{{10}{93}{The Reflection Problem}{chapter.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {10.1}Linear-in-means model}{93}{section.10.1}\protected@file@percent }
-\newlabel{eq:lim1}{{10.1.1}{93}{Linear-in-means model}{equation.10.1.1}{}}
-\newlabel{eq:lim2}{{10.1.2}{93}{Linear-in-means model}{equation.10.1.2}{}}
+\newlabel{chap:reflection}{{10}{95}{The Reflection Problem}{chapter.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10.1}Linear-in-means model}{95}{section.10.1}\protected@file@percent }
+\newlabel{eq:lim1}{{10.1.1}{95}{Linear-in-means model}{equation.10.1.1}{}}
+\newlabel{eq:lim2}{{10.1.2}{95}{Linear-in-means model}{equation.10.1.2}{}}
 \citation{manski1993identification}
 \citation{manski1993identification}
-\@writefile{toc}{\contentsline {section}{\numberline {10.2}The reflection problem}{94}{section.10.2}\protected@file@percent }
-\newlabel{eq:lim3}{{10.2.1}{94}{The reflection problem}{equation.10.2.1}{}}
-\newlabel{eq:lim4}{{10.2.2}{94}{The reflection problem}{equation.10.2.2}{}}
-\newlabel{thm:reflection}{{10.2.1}{94}{The reflection problem}{theorem.10.2.1}{}}
-\newlabel{prop:reflection2}{{10.2.2}{94}{The reflection problem}{theorem.10.2.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {10.3}Numerical simulation with \textbf  {R}}{95}{section.10.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10.4}A game theoretic interpretation}{96}{section.10.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10.2}The reflection problem}{96}{section.10.2}\protected@file@percent }
+\newlabel{eq:lim3}{{10.2.1}{96}{The reflection problem}{equation.10.2.1}{}}
+\newlabel{eq:lim4}{{10.2.2}{96}{The reflection problem}{equation.10.2.2}{}}
+\newlabel{thm:reflection}{{10.2.1}{96}{The reflection problem}{theorem.10.2.1}{}}
+\newlabel{prop:reflection2}{{10.2.2}{96}{The reflection problem}{theorem.10.2.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10.3}Numerical simulation with \textbf  {R}}{97}{section.10.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10.4}A game theoretic interpretation}{98}{section.10.4}\protected@file@percent }
 \citation{lee2014binary}
 \citation{lee2014binary}
-\@writefile{toc}{\contentsline {chapter}{\numberline {11}Social Interactions through Social Networks}{98}{chapter.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {11}Social Interactions through Social Networks}{100}{chapter.11}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:social_network}{{11}{98}{Social Interactions through Social Networks}{chapter.11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {11.1}Common types of social network graphs}{98}{section.11.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {11.1}{\ignorespaces Social network graphs}}{98}{figure.11.1}\protected@file@percent }
+\newlabel{chap:social_network}{{11}{100}{Social Interactions through Social Networks}{chapter.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11.1}Common types of social network graphs}{100}{section.11.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11.1}{\ignorespaces Social network graphs}}{100}{figure.11.1}\protected@file@percent }
 \citation{bramoulle2009identification}
 \citation{lee2007identification}
 \citation{bramoulle2009identification}
-\@writefile{toc}{\contentsline {section}{\numberline {11.2}Linear-in-means social network model}{99}{section.11.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {11.2}{\ignorespaces Reference groups. The arrows represent friendship nominations.}}{99}{figure.11.2}\protected@file@percent }
-\newlabel{eq:bramoulle}{{11.2.1}{99}{Linear-in-means social network model}{equation.11.2.1}{}}
-\newlabel{eq:bramat}{{11.2.2}{100}{Linear-in-means social network model}{equation.11.2.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{A game theoretic interpretation}{100}{section*.13}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {11.3}Using network structure to identify social interactions}{100}{section.11.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11.2}Linear-in-means social network model}{101}{section.11.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11.2}{\ignorespaces Reference groups. The arrows represent friendship nominations.}}{101}{figure.11.2}\protected@file@percent }
+\newlabel{eq:bramoulle}{{11.2.1}{101}{Linear-in-means social network model}{equation.11.2.1}{}}
+\newlabel{eq:bramat}{{11.2.2}{102}{Linear-in-means social network model}{equation.11.2.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{A game theoretic interpretation}{102}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11.3}Using network structure to identify social interactions}{102}{section.11.3}\protected@file@percent }
 \citation{bramoulle2009identification}
-\newlabel{eq:intercept}{{11.3.1}{101}{Using network structure to identify social interactions}{equation.11.3.1}{}}
-\newlabel{prop:bra}{{11.3.1}{101}{Using network structure to identify social interactions}{theorem.11.3.1}{}}
-\newlabel{eq:ident1}{{11.3.2}{101}{Using network structure to identify social interactions}{equation.11.3.2}{}}
+\newlabel{eq:intercept}{{11.3.1}{103}{Using network structure to identify social interactions}{equation.11.3.1}{}}
+\newlabel{prop:bra}{{11.3.1}{103}{Using network structure to identify social interactions}{theorem.11.3.1}{}}
+\newlabel{eq:ident1}{{11.3.2}{103}{Using network structure to identify social interactions}{equation.11.3.2}{}}
 \citation{bramoulle2009identification}
-\newlabel{eq:ident2}{{11.3.3}{102}{Using network structure to identify social interactions}{equation.11.3.3}{}}
+\newlabel{eq:ident2}{{11.3.3}{104}{Using network structure to identify social interactions}{equation.11.3.3}{}}
 \citation{lee2007identification}
-\@writefile{lof}{\contentsline {figure}{\numberline {11.3}{\ignorespaces Intransitive triad}}{104}{figure.11.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {11.4}Estimation}{104}{section.11.4}\protected@file@percent }
-\newlabel{sec:estimation_soc}{{11.4}{104}{Estimation}{section.11.4}{}}
-\newlabel{eq:2slssoc}{{11.4.1}{105}{Estimation}{equation.11.4.1}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {12}Spatial Data}{106}{chapter.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11.3}{\ignorespaces Intransitive triad}}{106}{figure.11.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11.4}Estimation}{106}{section.11.4}\protected@file@percent }
+\newlabel{sec:estimation_soc}{{11.4}{106}{Estimation}{section.11.4}{}}
+\newlabel{eq:2slssoc}{{11.4.1}{107}{Estimation}{equation.11.4.1}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {12}Spatial Data}{108}{chapter.12}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:spatial_correlation}{{12}{106}{Spatial Data}{chapter.12}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {12.1}Spatial data}{106}{section.12.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12.1}{\ignorespaces Spatial data}}{106}{figure.12.1}\protected@file@percent }
-\newlabel{fig:spdata}{{12.1}{106}{Spatial data}{figure.12.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12.2}{\ignorespaces Open-source free GIS}}{107}{figure.12.2}\protected@file@percent }
-\newlabel{fig:GIS}{{12.2}{107}{Open-source free GIS}{figure.12.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {12.2}Moran's I and Geary's C}{107}{section.12.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.1}Spatial weight matrix}{107}{subsection.12.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12.3}{\ignorespaces Spatial autocorrelation}}{107}{figure.12.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12.4}{\ignorespaces Rook contiguity and Queen contiguity}}{108}{figure.12.4}\protected@file@percent }
-\newlabel{fig:contiguity}{{12.4}{108}{Rook contiguity and Queen contiguity}{figure.12.4}{}}
-\@writefile{toc}{\contentsline {paragraph}{Polygon data}{108}{section*.15}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Point data}{109}{section*.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.2}Moran's I and Geary's C}{109}{subsection.12.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12.5}{\ignorespaces Numerical examples: Moran's I and Geary's C}}{110}{figure.12.5}\protected@file@percent }
-\newlabel{fig:IandC}{{12.5}{110}{Numerical examples: Moran's I and Geary's C}{figure.12.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {12.3}Spatial random variables}{110}{section.12.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.3.1}Spatial stochastic process}{110}{subsection.12.3.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12.6}{\ignorespaces A type of weak spatial dependence}}{111}{figure.12.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.3.2}Spatial sampling}{111}{subsection.12.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {12.7}{\ignorespaces Increasing domain asymptotics and infill asymptotics}}{112}{figure.12.7}\protected@file@percent }
+\newlabel{chap:spatial_correlation}{{12}{108}{Spatial Data}{chapter.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12.1}Spatial data}{108}{section.12.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12.1}{\ignorespaces Spatial data}}{108}{figure.12.1}\protected@file@percent }
+\newlabel{fig:spdata}{{12.1}{108}{Spatial data}{figure.12.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12.2}{\ignorespaces Open-source free GIS}}{109}{figure.12.2}\protected@file@percent }
+\newlabel{fig:GIS}{{12.2}{109}{Open-source free GIS}{figure.12.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12.2}Moran's I and Geary's C}{109}{section.12.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.1}Spatial weight matrix}{109}{subsection.12.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12.3}{\ignorespaces Spatial autocorrelation}}{109}{figure.12.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12.4}{\ignorespaces Rook contiguity and Queen contiguity}}{110}{figure.12.4}\protected@file@percent }
+\newlabel{fig:contiguity}{{12.4}{110}{Rook contiguity and Queen contiguity}{figure.12.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Polygon data}{110}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Point data}{111}{section*.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.2}Moran's I and Geary's C}{111}{subsection.12.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12.5}{\ignorespaces Numerical examples: Moran's I and Geary's C}}{112}{figure.12.5}\protected@file@percent }
+\newlabel{fig:IandC}{{12.5}{112}{Numerical examples: Moran's I and Geary's C}{figure.12.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12.3}Spatial random variables}{112}{section.12.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.3.1}Spatial stochastic process}{112}{subsection.12.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12.6}{\ignorespaces A type of weak spatial dependence}}{113}{figure.12.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.3.2}Spatial sampling}{113}{subsection.12.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12.7}{\ignorespaces Increasing domain asymptotics and infill asymptotics}}{114}{figure.12.7}\protected@file@percent }
 \citation{manski1993identification}
-\@writefile{toc}{\contentsline {chapter}{\numberline {13}Spatial Econometrics}{113}{chapter.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {13}Spatial Econometrics}{115}{chapter.13}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:spatial_econometrics}{{13}{113}{Spatial Econometrics}{chapter.13}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {13.1}Spatial lag model}{113}{section.13.1}\protected@file@percent }
-\newlabel{sec:SLM}{{13.1}{113}{Spatial lag model}{section.13.1}{}}
-\newlabel{eq:slm}{{13.1.1}{113}{Spatial lag model}{equation.13.1.1}{}}
+\newlabel{chap:spatial_econometrics}{{13}{115}{Spatial Econometrics}{chapter.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {13.1}Spatial lag model}{115}{section.13.1}\protected@file@percent }
+\newlabel{sec:SLM}{{13.1}{115}{Spatial lag model}{section.13.1}{}}
+\newlabel{eq:slm}{{13.1.1}{115}{Spatial lag model}{equation.13.1.1}{}}
 \citation{lee2004asymptotic}
 \citation{kelejian1998generalized}
-\@writefile{toc}{\contentsline {subsection}{\numberline {13.1.1}Maximum likelihood estimation}{114}{subsection.13.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {13.1.2}2SLS estimation}{115}{subsection.13.1.2}\protected@file@percent }
-\newlabel{subsec:2sls}{{13.1.2}{115}{2SLS estimation}{subsection.13.1.2}{}}
-\newlabel{eq:2sls}{{13.1.2}{115}{2SLS estimation}{equation.13.1.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {13.2}Spatial error model}{115}{section.13.2}\protected@file@percent }
-\newlabel{sec:SEM}{{13.2}{115}{Spatial error model}{section.13.2}{}}
-\newlabel{eq:sem}{{13.2.1}{115}{Spatial error model}{equation.13.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.1.1}Maximum likelihood estimation}{116}{subsection.13.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.1.2}2SLS estimation}{117}{subsection.13.1.2}\protected@file@percent }
+\newlabel{subsec:2sls}{{13.1.2}{117}{2SLS estimation}{subsection.13.1.2}{}}
+\newlabel{eq:2sls}{{13.1.2}{117}{2SLS estimation}{equation.13.1.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {13.2}Spatial error model}{117}{section.13.2}\protected@file@percent }
+\newlabel{sec:SEM}{{13.2}{117}{Spatial error model}{section.13.2}{}}
+\newlabel{eq:sem}{{13.2.1}{117}{Spatial error model}{equation.13.2.1}{}}
 \citation{kelejian1999generalized}
 \citation{kelejian2010specification}
-\@writefile{toc}{\contentsline {subsection}{\numberline {13.2.1}Maximum likelihood estimation}{116}{subsection.13.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {13.2.2}Method of moments estimation}{116}{subsection.13.2.2}\protected@file@percent }
-\newlabel{subsec:mm}{{13.2.2}{116}{Method of moments estimation}{subsection.13.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.2.1}Maximum likelihood estimation}{118}{subsection.13.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.2.2}Method of moments estimation}{118}{subsection.13.2.2}\protected@file@percent }
+\newlabel{subsec:mm}{{13.2.2}{118}{Method of moments estimation}{subsection.13.2.2}{}}
 \citation{kelejian1999generalized}
 \citation{kelejian2010specification}
 \citation{hoshino2018semiparametric}
-\newlabel{eq:gls}{{13.2.2}{117}{Method of moments estimation}{equation.13.2.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {13.3}Empirical analysis with \textbf  {R}: Household burglary in Tokyo}{117}{section.13.3}\protected@file@percent }
-\newlabel{sec:emp_burglar}{{13.3}{117}{Empirical analysis with \textbf {R}: Household burglary in Tokyo}{section.13.3}{}}
+\newlabel{eq:gls}{{13.2.2}{119}{Method of moments estimation}{equation.13.2.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {13.3}Empirical analysis with \textbf  {R}: Household burglary in Tokyo}{119}{section.13.3}\protected@file@percent }
+\newlabel{sec:emp_burglar}{{13.3}{119}{Empirical analysis with \textbf {R}: Household burglary in Tokyo}{section.13.3}{}}
 \citation{lesage2009introduction}
-\@writefile{toc}{\contentsline {chapter}{\numberline {14}Binary Response Models with Spatial Interactions}{122}{chapter.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {14}Binary Response Models with Spatial Interactions}{124}{chapter.14}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:binary}{{14}{122}{Binary Response Models with Spatial Interactions}{chapter.14}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {14.1}Spatial probit models}{122}{section.14.1}\protected@file@percent }
-\newlabel{sec:spprobit}{{14.1}{122}{Spatial probit models}{section.14.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {14.1.1}Two spatial-lag probit models}{122}{subsection.14.1.1}\protected@file@percent }
-\newlabel{eq:sl_probit1}{{14.1.1}{122}{Two spatial-lag probit models}{equation.14.1.1}{}}
+\newlabel{chap:binary}{{14}{124}{Binary Response Models with Spatial Interactions}{chapter.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {14.1}Spatial probit models}{124}{section.14.1}\protected@file@percent }
+\newlabel{sec:spprobit}{{14.1}{124}{Spatial probit models}{section.14.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {14.1.1}Two spatial-lag probit models}{124}{subsection.14.1.1}\protected@file@percent }
+\newlabel{eq:sl_probit1}{{14.1.1}{124}{Two spatial-lag probit models}{equation.14.1.1}{}}
 \citation{soetevent2007discrete}
-\newlabel{eq:sl_probit2}{{14.1.2}{123}{Two spatial-lag probit models}{equation.14.1.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {14.1.2}Spatial-error probit model}{124}{subsection.14.1.2}\protected@file@percent }
-\newlabel{eq:se_probit}{{14.1.3}{124}{Spatial-error probit model}{equation.14.1.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {14.2}GMM estimation of spatial probit models}{124}{section.14.2}\protected@file@percent }
-\newlabel{sec:spGMM}{{14.2}{124}{GMM estimation of spatial probit models}{section.14.2}{}}
+\newlabel{eq:sl_probit2}{{14.1.2}{125}{Two spatial-lag probit models}{equation.14.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {14.1.2}Spatial-error probit model}{126}{subsection.14.1.2}\protected@file@percent }
+\newlabel{eq:se_probit}{{14.1.3}{126}{Spatial-error probit model}{equation.14.1.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {14.2}GMM estimation of spatial probit models}{126}{section.14.2}\protected@file@percent }
+\newlabel{sec:spGMM}{{14.2}{126}{GMM estimation of spatial probit models}{section.14.2}{}}
 \citation{pinkse1998contracting}
-\newlabel{eq:spGMM}{{14.2.1}{125}{GMM estimation of spatial probit models}{equation.14.2.1}{}}
-\@writefile{toc}{\contentsline {chapter}{Appendix \numberline {A}Introductory Graph Theory}{126}{appendix.1.A}\protected@file@percent }
+\newlabel{eq:spGMM}{{14.2.1}{127}{GMM estimation of spatial probit models}{equation.14.2.1}{}}
+\@writefile{toc}{\contentsline {chapter}{Appendix \numberline {A}Introductory Graph Theory}{128}{appendix.1.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Seven Bridges of K\"onigsberg}}{126}{figure.1.A.1}\protected@file@percent }
-\newlabel{fig:konig}{{A.1}{126}{Seven Bridges of K\"onigsberg}{figure.1.A.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Basic terminology}{126}{section.1.A.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {A.2}{\ignorespaces A graph $G = (V, E)$}}{127}{figure.1.A.2}\protected@file@percent }
-\newlabel{fig:graph}{{A.2}{127}{A graph $G = (V, E)$}{figure.1.A.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.3}{\ignorespaces Complete graphs}}{127}{figure.1.A.3}\protected@file@percent }
-\newlabel{fig:complete}{{A.3}{127}{Complete graphs}{figure.1.A.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}Paths, Cycles and Connectivity}{128}{section.1.A.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {A.4}{\ignorespaces Connected/disconnected graph}}{128}{figure.1.A.4}\protected@file@percent }
-\newlabel{fig:connected}{{A.4}{128}{Connected/disconnected graph}{figure.1.A.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.3}Degree}{129}{section.1.A.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {A.5}{\ignorespaces Adjacency and incidence}}{129}{figure.1.A.5}\protected@file@percent }
-\newlabel{fig:adjacency}{{A.5}{129}{Adjacency and incidence}{figure.1.A.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.6}{\ignorespaces Degree}}{129}{figure.1.A.6}\protected@file@percent }
-\newlabel{fig:degree}{{A.6}{129}{Degree}{figure.1.A.6}{}}
-\newlabel{prop:handshake}{{A.3.1}{129}{Degree}{theorem.1.A.3.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.4}Eulerian graph}{130}{section.1.A.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {A.7}{\ignorespaces Eulerian graphs and non-Eulerian graphs}}{130}{figure.1.A.7}\protected@file@percent }
-\newlabel{fig:euler}{{A.7}{130}{Eulerian graphs and non-Eulerian graphs}{figure.1.A.7}{}}
-\newlabel{lem:cycle}{{A.4.1}{131}{Eulerian graph}{theorem.1.A.4.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.5}Adjacency matrix}{131}{section.1.A.5}\protected@file@percent }
-\newlabel{sec:adjacency}{{A.5}{131}{Adjacency matrix}{section.1.A.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.8}{\ignorespaces Adjacency matrix}}{132}{figure.1.A.8}\protected@file@percent }
-\newlabel{fig:adjmat}{{A.8}{132}{Adjacency matrix}{figure.1.A.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.6}Centrality in networks}{132}{section.1.A.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {A.9}{\ignorespaces Number of walks}}{133}{figure.1.A.9}\protected@file@percent }
-\newlabel{fig:nwalks}{{A.9}{133}{Number of walks}{figure.1.A.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Seven Bridges of K\"onigsberg}}{128}{figure.1.A.1}\protected@file@percent }
+\newlabel{fig:konig}{{A.1}{128}{Seven Bridges of K\"onigsberg}{figure.1.A.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Basic terminology}{128}{section.1.A.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {A.2}{\ignorespaces A graph $G = (V, E)$}}{129}{figure.1.A.2}\protected@file@percent }
+\newlabel{fig:graph}{{A.2}{129}{A graph $G = (V, E)$}{figure.1.A.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.3}{\ignorespaces Complete graphs}}{129}{figure.1.A.3}\protected@file@percent }
+\newlabel{fig:complete}{{A.3}{129}{Complete graphs}{figure.1.A.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}Paths, Cycles and Connectivity}{130}{section.1.A.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {A.4}{\ignorespaces Connected/disconnected graph}}{130}{figure.1.A.4}\protected@file@percent }
+\newlabel{fig:connected}{{A.4}{130}{Connected/disconnected graph}{figure.1.A.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.3}Degree}{131}{section.1.A.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {A.5}{\ignorespaces Adjacency and incidence}}{131}{figure.1.A.5}\protected@file@percent }
+\newlabel{fig:adjacency}{{A.5}{131}{Adjacency and incidence}{figure.1.A.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.6}{\ignorespaces Degree}}{131}{figure.1.A.6}\protected@file@percent }
+\newlabel{fig:degree}{{A.6}{131}{Degree}{figure.1.A.6}{}}
+\newlabel{prop:handshake}{{A.3.1}{131}{Degree}{theorem.1.A.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.4}Eulerian graph}{132}{section.1.A.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {A.7}{\ignorespaces Eulerian graphs and non-Eulerian graphs}}{132}{figure.1.A.7}\protected@file@percent }
+\newlabel{fig:euler}{{A.7}{132}{Eulerian graphs and non-Eulerian graphs}{figure.1.A.7}{}}
+\newlabel{lem:cycle}{{A.4.1}{133}{Eulerian graph}{theorem.1.A.4.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.5}Adjacency matrix}{133}{section.1.A.5}\protected@file@percent }
+\newlabel{sec:adjacency}{{A.5}{133}{Adjacency matrix}{section.1.A.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.8}{\ignorespaces Adjacency matrix}}{134}{figure.1.A.8}\protected@file@percent }
+\newlabel{fig:adjmat}{{A.8}{134}{Adjacency matrix}{figure.1.A.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.6}Centrality in networks}{134}{section.1.A.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {A.9}{\ignorespaces Number of walks}}{135}{figure.1.A.9}\protected@file@percent }
+\newlabel{fig:nwalks}{{A.9}{135}{Number of walks}{figure.1.A.9}{}}
 \citation{ballester2006s}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.10}{\ignorespaces Centrality measures}}{134}{figure.1.A.10}\protected@file@percent }
-\newlabel{fig:center}{{A.10}{134}{Centrality measures}{figure.1.A.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.10}{\ignorespaces Centrality measures}}{136}{figure.1.A.10}\protected@file@percent }
+\newlabel{fig:center}{{A.10}{136}{Centrality measures}{figure.1.A.10}{}}
 \citation{van2000asymptotic}
-\@writefile{toc}{\contentsline {chapter}{Appendix \numberline {B}Supplementary Mathematical Notes}{135}{appendix.1.B}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Appendix \numberline {B}Supplementary Mathematical Notes}{137}{appendix.1.B}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {B.1}Some supplementary results in probability theory.}{135}{section.1.B.1}\protected@file@percent }
-\newlabel{lem:prodconv}{{B.1.1}{135}{Some supplementary results in probability theory}{theorem.1.B.1.1}{}}
-\newlabel{lem:slutsky}{{B.1.2}{135}{Some supplementary results in probability theory}{theorem.1.B.1.2}{}}
-\newlabel{lem:Jensen}{{B.1.3}{136}{Some supplementary results in probability theory}{theorem.1.B.1.3}{}}
-\newlabel{lem:CS}{{B.1.4}{136}{Some supplementary results in probability theory}{theorem.1.B.1.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B.2}Neumann series expansion}{137}{section.1.B.2}\protected@file@percent }
-\newlabel{sec:neumann}{{B.2}{137}{Neumann series expansion}{section.1.B.2}{}}
-\newlabel{lem:neumann}{{B.2.2}{137}{Neumann series expansion}{theorem.1.B.2.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B.3}Expectation of a truncated random variable}{138}{section.1.B.3}\protected@file@percent }
-\newlabel{sec:truncate}{{B.3}{138}{Expectation of a truncated random variable}{section.1.B.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B.4}The inverse of a partitioned matrix}{138}{section.1.B.4}\protected@file@percent }
-\newlabel{eq:inverse}{{B.4.1}{138}{The inverse of a partitioned matrix}{equation.1.B.4.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.1}Some supplementary results in probability theory.}{137}{section.1.B.1}\protected@file@percent }
+\newlabel{lem:prodconv}{{B.1.1}{137}{Some supplementary results in probability theory}{theorem.1.B.1.1}{}}
+\newlabel{lem:cmt}{{B.1.2}{137}{Some supplementary results in probability theory}{theorem.1.B.1.2}{}}
+\newlabel{lem:slutsky}{{B.1.3}{137}{Some supplementary results in probability theory}{theorem.1.B.1.3}{}}
+\newlabel{lem:Jensen}{{B.1.4}{138}{Some supplementary results in probability theory}{theorem.1.B.1.4}{}}
+\newlabel{lem:CS}{{B.1.5}{138}{Some supplementary results in probability theory}{theorem.1.B.1.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.2}Neumann series expansion}{139}{section.1.B.2}\protected@file@percent }
+\newlabel{sec:neumann}{{B.2}{139}{Neumann series expansion}{section.1.B.2}{}}
+\newlabel{lem:neumann}{{B.2.2}{139}{Neumann series expansion}{theorem.1.B.2.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.3}Expectation of a truncated random variable}{140}{section.1.B.3}\protected@file@percent }
+\newlabel{sec:truncate}{{B.3}{140}{Expectation of a truncated random variable}{section.1.B.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.4}The inverse of a partitioned matrix}{140}{section.1.B.4}\protected@file@percent }
+\newlabel{eq:inverse}{{B.4.1}{140}{The inverse of a partitioned matrix}{equation.1.B.4.1}{}}
 \bibdata{references}
 \bibcite{akaike1973information}{Akaike, 1973}
 \bibcite{anselin1988spatial}{Anselin, 1988}
@@ -477,4 +480,4 @@
 \bibcite{stock2005testing}{Stock and Yogo, 2005}
 \bibcite{tamer2003incomplete}{Tamer, 2003}
 \bibcite{van2000asymptotic}{Van\nobreakspace  {}der Vaart, 2000}
-\gdef \@abspage@last{151}
+\gdef \@abspage@last{153}

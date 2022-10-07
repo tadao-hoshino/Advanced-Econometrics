@@ -15,158 +15,158 @@
 \indexentry{OLS|hyperpage}{10}
 \indexentry{MSE|hyperpage}{10}
 \indexentry{homoskedasticity|hyperpage}{11}
-\indexentry{exogeneity|hyperpage}{13}
-\indexentry{endogeneity|hyperpage}{13}
-\indexentry{endogeneity bias|hyperpage}{14}
-\indexentry{omitted variables|hyperpage}{14}
-\indexentry{simultaneity|hyperpage}{14}
-\indexentry{instrumental variables|hyperpage}{16}
-\indexentry{exclusion restriction|hyperpage}{16}
-\indexentry{relevance condition|hyperpage}{16}
-\indexentry{weak instruments problem|hyperpage}{17}
-\indexentry{two-stage least squares|hyperpage}{19}
-\indexentry{Durbin-Wu-Hausman test|hyperpage}{20}
-\indexentry{treatment effect|hyperpage}{21}
-\indexentry{treatment variable|hyperpage}{21}
-\indexentry{Rubin's Causal Model|hyperpage}{21}
-\indexentry{monotonicity assumption|hyperpage}{21}
-\indexentry{LATE|hyperpage}{22}
-\indexentry{maximum likelihood estimator|hyperpage}{26}
-\indexentry{lieklihood function|hyperpage}{27}
-\indexentry{log-likelihood function|hyperpage}{27}
-\indexentry{Bernoulli distribution|hyperpage}{28}
-\indexentry{likelihood function|hyperpage}{29}
+\indexentry{exogeneity|hyperpage}{14}
+\indexentry{endogeneity|hyperpage}{14}
+\indexentry{endogeneity bias|hyperpage}{15}
+\indexentry{omitted variables|hyperpage}{15}
+\indexentry{simultaneity|hyperpage}{15}
+\indexentry{instrumental variables|hyperpage}{17}
+\indexentry{exclusion restriction|hyperpage}{17}
+\indexentry{relevance condition|hyperpage}{17}
+\indexentry{weak instruments problem|hyperpage}{18}
+\indexentry{two-stage least squares|hyperpage}{20}
+\indexentry{Durbin-Wu-Hausman test|hyperpage}{21}
+\indexentry{treatment effect|hyperpage}{22}
+\indexentry{treatment variable|hyperpage}{22}
+\indexentry{Rubin's Causal Model|hyperpage}{22}
+\indexentry{monotonicity assumption|hyperpage}{23}
+\indexentry{LATE|hyperpage}{23}
+\indexentry{maximum likelihood estimator|hyperpage}{28}
+\indexentry{lieklihood function|hyperpage}{29}
 \indexentry{log-likelihood function|hyperpage}{29}
-\indexentry{maximum likelihood estimator|hyperpage}{29}
-\indexentry{Kullback-Leibler divergence|hyperpage}{30}
-\indexentry{score function|hyperpage}{32}
-\indexentry{Fisher infromation matrix|hyperpage}{32}
-\indexentry{efficiency|hyperpage}{32}
-\indexentry{Cramer-Rao lower bound|hyperpage}{32}
-\indexentry{unbiased estimator|hyperpage}{32}
-\indexentry{information matrix equality|hyperpage}{34}
-\indexentry{probit model|hyperpage}{35}
-\indexentry{logit model|hyperpage}{35}
-\indexentry{likelihood ratio statistic|hyperpage}{36}
-\indexentry{likelihood ratio test|hyperpage}{37}
-\indexentry{overfitting|hyperpage}{39}
-\indexentry{Akaike's Information Criterion|hyperpage}{40}
-\indexentry{Hodge's estimator|hyperpage}{41}
-\indexentry{regular estimators|hyperpage}{42}
-\indexentry{just-identification|hyperpage}{44}
-\indexentry{over-identification|hyperpage}{44}
-\indexentry{method of moments|hyperpage}{46}
-\indexentry{generalized method of moments|hyperpage}{46}
-\indexentry{two-step optimal GMM estimator|hyperpage}{49}
-\indexentry{over-identification test|hyperpage}{50}
-\indexentry{identification|hyperpage}{51}
-\indexentry{structural equation|hyperpage}{53}
-\indexentry{observationally equivalent|hyperpage}{53}
-\indexentry{partial identification|hyperpage}{56}
-\indexentry{identified set|hyperpage}{57}
-\indexentry{missing at random|hyperpage}{57}
-\indexentry{structural estimation|hyperpage}{60}
-\indexentry{Lucas critique|hyperpage}{60}
-\indexentry{random utility model|hyperpage}{62}
-\indexentry{Type-1 Extreme Value|hyperpage}{62}
-\indexentry{entry games|hyperpage}{62}
-\indexentry{strategic interaction effect|hyperpage}{63}
-\indexentry{complete information game|hyperpage}{63}
-\indexentry{multiple equilibria|hyperpage}{63}
-\indexentry{incompleteness|hyperpage}{63}
-\indexentry{nonparametric bootstrap|hyperpage}{67}
-\indexentry{Bootstrap consistency|hyperpage}{67}
-\indexentry{Edgeworth expansion|hyperpage}{69}
-\indexentry{asymptotically pivotal|hyperpage}{70}
-\indexentry{asymptotic refinement|hyperpage}{70}
-\indexentry{parametric bootstrap|hyperpage}{71}
-\indexentry{residual bootstrap|hyperpage}{71}
-\indexentry{wild bootstrap|hyperpage}{71}
-\indexentry{nonparametric|hyperpage}{73}
-\indexentry{parametric|hyperpage}{73}
-\indexentry{semiparametric|hyperpage}{74}
-\indexentry{series regression|hyperpage}{74}
-\indexentry{sieve method|hyperpage}{74}
-\indexentry{$k$-nearest-neighbor regression|hyperpage}{74}
-\indexentry{kernel regression|hyperpage}{75}
-\indexentry{bandwidth|hyperpage}{75}
-\indexentry{local constant regression|hyperpage}{75}
-\indexentry{kernel function|hyperpage}{75}
-\indexentry{local linear regression|hyperpage}{76}
-\indexentry{kernel density estimator|hyperpage}{77}
-\indexentry{curse of dimensionality|hyperpage}{77}
-\indexentry{Fourier series|hyperpage}{78}
-\indexentry{semiparametric regression|hyperpage}{82}
-\indexentry{partially linear model|hyperpage}{82}
-\indexentry{functional coefficient model|hyperpage}{83}
-\indexentry{geographically weighted regression model|hyperpage}{83}
-\indexentry{generalized additive model|hyperpage}{84}
-\indexentry{social interaction|hyperpage}{88}
-\indexentry{linear-in-means model|hyperpage}{88}
-\indexentry{endogenous effects|hyperpage}{88}
-\indexentry{contextual effect|hyperpage}{88}
-\indexentry{correlated effects|hyperpage}{88}
-\indexentry{spillover effect|hyperpage}{89}
-\indexentry{social multiplier effect|hyperpage}{89}
-\indexentry{reflection problem|hyperpage}{89}
-\indexentry{social network|hyperpage}{89}
-\indexentry{spatial dependence|hyperpage}{90}
-\indexentry{spatial autocorrelation|hyperpage}{90}
-\indexentry{spatial statistics|hyperpage}{90}
-\indexentry{spatial econometrics|hyperpage}{90}
-\indexentry{endogenous effects|hyperpage}{93}
-\indexentry{contextual effect|hyperpage}{93}
-\indexentry{correlated effects|hyperpage}{93}
-\indexentry{linear-in-means model|hyperpage}{93}
-\indexentry{reflection problem|hyperpage}{94}
-\indexentry{social network|hyperpage}{98}
-\indexentry{graph|hyperpage}{98}
-\indexentry{isolated|hyperpage}{99}
-\indexentry{complementarity|hyperpage}{100}
-\indexentry{conformity|hyperpage}{100}
-\indexentry{intransitive triad|hyperpage}{103}
-\indexentry{spatial data|hyperpage}{106}
-\indexentry{GIS|hyperpage}{106}
-\indexentry{spatial autocorrelation|hyperpage}{107}
-\indexentry{Rook contiguity|hyperpage}{107}
-\indexentry{Queen contiguity|hyperpage}{107}
-\indexentry{spatial weight|hyperpage}{108}
-\indexentry{spatial weight matrix|hyperpage}{109}
-\indexentry{Moran's I|hyperpage}{109}
-\indexentry{Geary's C|hyperpage}{109}
-\indexentry{spatial stochastic process|hyperpage}{110}
-\indexentry{isotropy|hyperpage}{111}
-\indexentry{increasing domain asymptotics|hyperpage}{112}
-\indexentry{infill asymptotics|hyperpage}{112}
-\indexentry{spatial lag model|hyperpage}{113}
-\indexentry{spatial error model|hyperpage}{113}
-\indexentry{spatial lag model|hyperpage}{113}
+\indexentry{Bernoulli distribution|hyperpage}{30}
+\indexentry{likelihood function|hyperpage}{31}
+\indexentry{log-likelihood function|hyperpage}{31}
+\indexentry{maximum likelihood estimator|hyperpage}{31}
+\indexentry{Kullback-Leibler divergence|hyperpage}{32}
+\indexentry{score function|hyperpage}{34}
+\indexentry{Fisher infromation matrix|hyperpage}{34}
+\indexentry{efficiency|hyperpage}{34}
+\indexentry{Cramer-Rao lower bound|hyperpage}{34}
+\indexentry{unbiased estimator|hyperpage}{34}
+\indexentry{information matrix equality|hyperpage}{36}
+\indexentry{probit model|hyperpage}{37}
+\indexentry{logit model|hyperpage}{37}
+\indexentry{likelihood ratio statistic|hyperpage}{38}
+\indexentry{likelihood ratio test|hyperpage}{39}
+\indexentry{overfitting|hyperpage}{41}
+\indexentry{Akaike's Information Criterion|hyperpage}{42}
+\indexentry{Hodge's estimator|hyperpage}{43}
+\indexentry{regular estimators|hyperpage}{44}
+\indexentry{just-identification|hyperpage}{46}
+\indexentry{over-identification|hyperpage}{46}
+\indexentry{method of moments|hyperpage}{48}
+\indexentry{generalized method of moments|hyperpage}{48}
+\indexentry{two-step optimal GMM estimator|hyperpage}{51}
+\indexentry{over-identification test|hyperpage}{52}
+\indexentry{identification|hyperpage}{53}
+\indexentry{structural equation|hyperpage}{55}
+\indexentry{observationally equivalent|hyperpage}{55}
+\indexentry{partial identification|hyperpage}{58}
+\indexentry{identified set|hyperpage}{59}
+\indexentry{missing at random|hyperpage}{59}
+\indexentry{structural estimation|hyperpage}{62}
+\indexentry{Lucas critique|hyperpage}{62}
+\indexentry{random utility model|hyperpage}{64}
+\indexentry{Type-1 Extreme Value|hyperpage}{64}
+\indexentry{entry games|hyperpage}{64}
+\indexentry{strategic interaction effect|hyperpage}{65}
+\indexentry{complete information game|hyperpage}{65}
+\indexentry{multiple equilibria|hyperpage}{65}
+\indexentry{incompleteness|hyperpage}{65}
+\indexentry{nonparametric bootstrap|hyperpage}{69}
+\indexentry{Bootstrap consistency|hyperpage}{69}
+\indexentry{Edgeworth expansion|hyperpage}{71}
+\indexentry{asymptotically pivotal|hyperpage}{72}
+\indexentry{asymptotic refinement|hyperpage}{72}
+\indexentry{parametric bootstrap|hyperpage}{73}
+\indexentry{residual bootstrap|hyperpage}{73}
+\indexentry{wild bootstrap|hyperpage}{73}
+\indexentry{nonparametric|hyperpage}{75}
+\indexentry{parametric|hyperpage}{75}
+\indexentry{semiparametric|hyperpage}{76}
+\indexentry{series regression|hyperpage}{76}
+\indexentry{sieve method|hyperpage}{76}
+\indexentry{$k$-nearest-neighbor regression|hyperpage}{76}
+\indexentry{kernel regression|hyperpage}{77}
+\indexentry{bandwidth|hyperpage}{77}
+\indexentry{local constant regression|hyperpage}{77}
+\indexentry{kernel function|hyperpage}{77}
+\indexentry{local linear regression|hyperpage}{78}
+\indexentry{kernel density estimator|hyperpage}{79}
+\indexentry{curse of dimensionality|hyperpage}{79}
+\indexentry{Fourier series|hyperpage}{80}
+\indexentry{semiparametric regression|hyperpage}{84}
+\indexentry{partially linear model|hyperpage}{84}
+\indexentry{functional coefficient model|hyperpage}{85}
+\indexentry{geographically weighted regression model|hyperpage}{85}
+\indexentry{generalized additive model|hyperpage}{86}
+\indexentry{social interaction|hyperpage}{90}
+\indexentry{linear-in-means model|hyperpage}{90}
+\indexentry{endogenous effects|hyperpage}{90}
+\indexentry{contextual effect|hyperpage}{90}
+\indexentry{correlated effects|hyperpage}{90}
+\indexentry{spillover effect|hyperpage}{91}
+\indexentry{social multiplier effect|hyperpage}{91}
+\indexentry{reflection problem|hyperpage}{91}
+\indexentry{social network|hyperpage}{91}
+\indexentry{spatial dependence|hyperpage}{92}
+\indexentry{spatial autocorrelation|hyperpage}{92}
+\indexentry{spatial statistics|hyperpage}{92}
+\indexentry{spatial econometrics|hyperpage}{92}
+\indexentry{endogenous effects|hyperpage}{95}
+\indexentry{contextual effect|hyperpage}{95}
+\indexentry{correlated effects|hyperpage}{95}
+\indexentry{linear-in-means model|hyperpage}{95}
+\indexentry{reflection problem|hyperpage}{96}
+\indexentry{social network|hyperpage}{100}
+\indexentry{graph|hyperpage}{100}
+\indexentry{isolated|hyperpage}{101}
+\indexentry{complementarity|hyperpage}{102}
+\indexentry{conformity|hyperpage}{102}
+\indexentry{intransitive triad|hyperpage}{105}
+\indexentry{spatial data|hyperpage}{108}
+\indexentry{GIS|hyperpage}{108}
+\indexentry{spatial autocorrelation|hyperpage}{109}
+\indexentry{Rook contiguity|hyperpage}{109}
+\indexentry{Queen contiguity|hyperpage}{109}
+\indexentry{spatial weight|hyperpage}{110}
+\indexentry{spatial weight matrix|hyperpage}{111}
+\indexentry{Moran's I|hyperpage}{111}
+\indexentry{Geary's C|hyperpage}{111}
+\indexentry{spatial stochastic process|hyperpage}{112}
+\indexentry{isotropy|hyperpage}{113}
+\indexentry{increasing domain asymptotics|hyperpage}{114}
+\indexentry{infill asymptotics|hyperpage}{114}
+\indexentry{spatial lag model|hyperpage}{115}
 \indexentry{spatial error model|hyperpage}{115}
-\indexentry{graph|hyperpage}{126}
-\indexentry{vertex|hyperpage}{126}
-\indexentry{edge|hyperpage}{126}
-\indexentry{loop|hyperpage}{126}
-\indexentry{multiple edges|hyperpage}{126}
-\indexentry{simple graph|hyperpage}{127}
-\indexentry{directed graph|hyperpage}{127}
-\indexentry{directed graph|hyperpage}{127}
-\indexentry{complete graph|hyperpage}{127}
-\indexentry{walk|hyperpage}{128}
-\indexentry{closed|hyperpage}{128}
-\indexentry{length|hyperpage}{128}
-\indexentry{trail|hyperpage}{128}
-\indexentry{path|hyperpage}{128}
-\indexentry{cycle|hyperpage}{128}
-\indexentry{connected|hyperpage}{128}
-\indexentry{adjacent|hyperpage}{129}
-\indexentry{incident|hyperpage}{129}
-\indexentry{degree|hyperpage}{129}
-\indexentry{isolated vertex|hyperpage}{129}
-\indexentry{end vertex|hyperpage}{129}
-\indexentry{Eulerian graph|hyperpage}{130}
-\indexentry{Eulerian trail|hyperpage}{130}
-\indexentry{adjacency matrix|hyperpage}{131}
-\indexentry{degree centrality|hyperpage}{132}
-\indexentry{eccentricity|hyperpage}{133}
-\indexentry{Bonacich centrality|hyperpage}{133}
-\indexentry{Neumann series|hyperpage}{137}
+\indexentry{spatial lag model|hyperpage}{115}
+\indexentry{spatial error model|hyperpage}{117}
+\indexentry{graph|hyperpage}{128}
+\indexentry{vertex|hyperpage}{128}
+\indexentry{edge|hyperpage}{128}
+\indexentry{loop|hyperpage}{128}
+\indexentry{multiple edges|hyperpage}{128}
+\indexentry{simple graph|hyperpage}{129}
+\indexentry{directed graph|hyperpage}{129}
+\indexentry{directed graph|hyperpage}{129}
+\indexentry{complete graph|hyperpage}{129}
+\indexentry{walk|hyperpage}{130}
+\indexentry{closed|hyperpage}{130}
+\indexentry{length|hyperpage}{130}
+\indexentry{trail|hyperpage}{130}
+\indexentry{path|hyperpage}{130}
+\indexentry{cycle|hyperpage}{130}
+\indexentry{connected|hyperpage}{130}
+\indexentry{adjacent|hyperpage}{131}
+\indexentry{incident|hyperpage}{131}
+\indexentry{degree|hyperpage}{131}
+\indexentry{isolated vertex|hyperpage}{131}
+\indexentry{end vertex|hyperpage}{131}
+\indexentry{Eulerian graph|hyperpage}{132}
+\indexentry{Eulerian trail|hyperpage}{132}
+\indexentry{adjacency matrix|hyperpage}{133}
+\indexentry{degree centrality|hyperpage}{134}
+\indexentry{eccentricity|hyperpage}{135}
+\indexentry{Bonacich centrality|hyperpage}{135}
+\indexentry{Neumann series|hyperpage}{139}
