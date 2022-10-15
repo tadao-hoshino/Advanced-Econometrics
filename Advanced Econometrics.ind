@@ -45,7 +45,7 @@
   \item degree centrality, \hyperpage{134}
   \item directed graph, \hyperpage{129}
   \item divergent, \hyperpage{2}
-  \item Durbin-Wu-Hausman test, \hyperpage{21}
+  \item Durbin-Wu-Hausman test, \hyperpage{23}
 
   \indexspace
 
@@ -111,7 +111,7 @@
 
   \indexspace
 
-  \item LATE, \hyperpage{23}
+  \item LATE, \hyperpage{25}
   \item length, \hyperpage{130}
   \item lieklihood function, \hyperpage{29}
   \item likelihood function, \hyperpage{31}
@@ -133,7 +133,7 @@
   \item maximum likelihood estimator, \hyperpage{28}, \hyperpage{31}
   \item method of moments, \hyperpage{48}
   \item missing at random, \hyperpage{59}
-  \item monotonicity assumption, \hyperpage{23}
+  \item monotonicity assumption, \hyperpage{24}
   \item Moran's I, \hyperpage{111}
   \item MSE, \hyperpage{10}
   \item multiple edges, \hyperpage{128}
@@ -176,7 +176,7 @@
   \item residual bootstrap, \hyperpage{73}
   \item Rook contiguity, \hyperpage{109}
   \item root-n-consistency, \hyperpage{8}
-  \item Rubin's Causal Model, \hyperpage{22}
+  \item Rubin's Causal Model, \hyperpage{24}
 
   \indexspace
 
@@ -208,8 +208,8 @@
   \indexspace
 
   \item trail, \hyperpage{130}
-  \item treatment effect, \hyperpage{22}
-  \item treatment variable, \hyperpage{22}
+  \item treatment effect, \hyperpage{24}
+  \item treatment variable, \hyperpage{24}
   \item two-stage least squares, \hyperpage{20}
   \item two-step optimal GMM estimator, \hyperpage{51}
   \item Type-1 Extreme Value, \hyperpage{64}

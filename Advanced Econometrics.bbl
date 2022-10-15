@@ -215,6 +215,12 @@ Matzkin, R.~L. (2013).
 \newblock Nonparametric identification in structural economic models.
 \newblock {\em Annual Review of Econonomics}, 5(1):457--486.
 
+\bibitem[Mogstad et~al., 2021]{mogstad2021causal}
+Mogstad, M., Torgovitsky, A., and Walters, C.~R. (2021).
+\newblock The causal interpretation of two-stage least squares with multiple
+  instrumental variables.
+\newblock {\em American Economic Review}, 111(11):3663--98.
+
 \bibitem[Newey and McFadden, 1994]{newey1994large}
 Newey, W.~K. and McFadden, D. (1994).
 \newblock Large sample estimation and hypothesis testing.

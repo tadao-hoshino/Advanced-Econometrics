@@ -15,10 +15,11 @@
 \contentsline {paragraph}{Simultaneity}{15}{section*.7}%
 \contentsline {section}{\numberline {2.2}Instrumental variables}{17}{section.2.2}%
 \contentsline {section}{\numberline {2.3}2SLS procedure}{18}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Asymptotic properties}{20}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Durbin-Wu-Hausman test for endogeneity}{21}{section.2.5}%
-\contentsline {section}{\numberline {2.6}A causal interpretation of the 2SLS estimate}{22}{section.2.6}%
-\contentsline {paragraph}{Numerical simulations with \textbf {R}}{24}{section*.8}%
+\contentsline {subsection}{\numberline {2.3.1}Numerical simulations with \textbf {R}}{20}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}Asymptotic properties}{22}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Durbin-Wu-Hausman test for endogeneity}{23}{section.2.5}%
+\contentsline {section}{\numberline {2.6}A causal interpretation of the 2SLS estimate}{23}{section.2.6}%
+\contentsline {paragraph}{Multiple instruments}{25}{section*.8}%
 \contentsline {chapter}{\numberline {3}Maximum Likelihood Estimation}{27}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Maximum likelihood principle}{27}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Kullback-Leibler divergence}{32}{subsection.3.1.1}%

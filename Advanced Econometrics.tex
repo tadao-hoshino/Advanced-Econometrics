@@ -1019,184 +1019,7 @@ Consequently, noting the fact that $\mcl{P}_{\mbf{Z}_n}\mcl{P}_{\mbf{Z}_n} = \mc
 	\end{split}
 \end{align}
 
-\section{Asymptotic properties}\label{sec:2slsAsymptotics}
-
-The asymptotic properties of the 2SLS estimator \eqref{eq:2slsMat} can be relatively easily derived.
-First, noting that $\mbf{Y}_n = \mbf{H}_n^\top\theta_0 + \mcl{E}_n$, where $\mcl{E}_n = (\eps_1, \ldots , \eps_n)^\top$, we can obtain
-\begin{align*}
-	\hat\theta_n^{2sls} 
-	& = \theta_0 + \left[\mbf{H}_n^\top \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1}\mbf{Z}_n^\top \mbf{H}_n  \right]^{-1}\mbf{H}_n^\top \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1}\mbf{Z}_n^\top\mcl{E}_n.
-\end{align*}
-by WLLN, under standard conditions, we have $\mbf{H}_n^\top \mbf{Z}_n/n \overset{p}{\to} \E[H Z^\top]$,  $\mbf{Z}_n^\top \mbf{Z}_n/n \overset{p}{\to} \E[Z Z^\top]$, and  $\mbf{Z}_n^\top \mcl{E}_n/n \overset{p}{\to} \E[Z \eps] = \underset{(d_z + d_x)\times 1}{\mbf{0}}$ as the sample size increases to infinity.
-Thus,
-\begin{align*}	
-	\hat\theta_n^{2sls} - \theta_0
-	& = \left[(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}(\mbf{Z}_n^\top \mbf{H}_n/n ) \right]^{-1}(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}(\mbf{Z}_n^\top\mcl{E}_n/n) \\
-	& \overset{p}{\to} \left[ \E[H Z^\top] \E[Z Z^\top]^{-1} \E[Z H^\top] \right]^{-1} \E[H Z^\top] \E[Z Z^\top]^{-1} \underbrace{\E[Z \eps]}_{= \; \mbf{0}} = \mbf{0}
-\end{align*}
-by Lemma \ref{lem:prodconv} and the continuous mapping theorem \ref{lem:cmt}, implying that the 2SLS estimator $\hat\theta_n^{2sls}$ is consistent for $\theta_0$.
-In addition, following the same argument as in Section \ref{sec:OLSasymp}, we can easily show that the 2SLS estimator is root-n-consistent.
-
-Next, suppose for simplicity that the error terms $\eps_i$'s are IID with variance $\E[\eps^2] = \sigma^2$.
-Further, assume that $\eps$ is independent of $Z$ (note that this is a stronger condition than the uncorrelation between $\eps$ and $Z$).
-Then, by CLT, it would hold that $\mbf{Z}_n^\top\mcl{E}_n/\sqrt{n} \overset{d}{\to} \mbf{N}(\mbf{0}, \E[Z Z^\top]\sigma^2)$.
-Hence, by Slutsky's theorem \ref{lem:slutsky}, we obtain the asymptotic normality of $\sqrt{n}(\hat\theta_n^{2sls} - \theta_0)$ as follows:
-\begin{align*}
-	\sqrt{n}(\hat\theta_n^{2sls} - \theta_0) 
-	& = \left[(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}(\mbf{Z}_n^\top \mbf{H}_n/n ) \right]^{-1}(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}\mbf{Z}_n^\top\mcl{E}_n/\sqrt{n} \\
-	& \overset{d}{\to} \mbf{N}\left(\mbf{0}, \sigma^2  \left[ \E[H Z^\top] \E[Z Z^\top]^{-1} \E[Z H^\top] \right]^{-1}\right).
-\end{align*}
-
-\begin{framed}
-\begin{exercise}\upshape
-	Explain what happens if we create $\hat D$ using only $Z_1$ without $X$ and perform a 2SLS estimation.
-	Is such an estimator consistent? If yes, prove that, and if no, explain under what additional condition(s) the estimator becomes consistent.
-\end{exercise}
-\end{framed}
-
-\section{Durbin-Wu-Hausman test for endogeneity}
-
-Note that the 2SLS estimator is consistent and asymptotically normal even when the variable $D$ is in fact exogenous. 
-Of course, if $D$ is an exogenous variable, we can use the OLS estimator, and, in general, the OLS estimator is more efficient than the 2SLS estimator when both estimators are available.
-Thus, statistically testing the appropriateness of using OLS or the necessity of using 2SLS is useful.
-
-Here, we consider the following null hypothesis
-\[
-	\mbb{H}_0: \Cov(D, \eps) = 0,
-\]
-and the alternative hypothesis is its negation
-\[
-	\mbb{H}_1: \Cov(D, \eps) \neq 0.
-\]
-Under the null hypothesis $\mbb{H}_0$, both OLS and 2SLS estimators of $\alpha_0$, $\hat \alpha_n^{ols}$ and $\hat \alpha_n^{2sls}$, are consistent and asymptotically normal.
-However under $\mbb{H}_1$, the OLS estimator $\hat \alpha_n^{ols}$ converges to $\alpha_0 + \text{endogeneity bias}$, while the 2SLS estimator is still consistent for $\alpha_0$.
-Thus the difference between the OLS and 2SLS estimators is a valid test statistic for endogeneity. 
-
-Suppose that $\mbb{H}_0$ is true.
-Then, since both $\hat \alpha_n^{ols}$ and $\hat \alpha_n^{2sls}$ are asymptotically distributed as normal, we can show that the difference of them $\hat \alpha_n^{ols} - \hat \alpha_n^{2sls}$ is also asymptotically normal.
-Thus, letting 
-\[
-	T_n \equiv \frac{\hat \alpha_n^{ols} - \hat \alpha_n^{2sls}}{\sqrt{\Var(\hat \alpha_n^{ols} - \hat \alpha_n^{2sls})}},
-\]	
-we have $T_n \overset{d}{\to} N (0,1)$ and also $T_n^2 \overset{d}{\to} \chi^2(1)$ under $\mbb{H}_0$, where $\chi^2(1)$ denotes the chi-square distribution with one degree of freedom.
-Thus, if $T_n^2 > 3.841\ldots$ for instance, we can reject $\mbb{H}_0$ at the 5\% significance level.
-
-In a more general setting where $q$ endogenous regressors $D = (D_1, \ldots, D_q)^\top$ exist, the statistic $T_n$ can be defined as $T_n \equiv \left[\Cov(\hat \alpha_n^{ols} - \hat \alpha_n^{2sls})\right]^{-1/2}(\hat \alpha_n^{ols} - \hat \alpha_n^{2sls})$, and it holds that $T_n^\top T_n \overset{d}{\to} \chi^2(q)$.
-The above testing procedure for endogeneity is called the \textbf{Durbin-Wu-Hausman test\index{Durbin-Wu-Hausman test}}.
-
- 
-\section{A causal interpretation of the 2SLS estimate}
-
-In this section, for simplicity, suppose that we have a dummy endogenous variable $D \in \{0,1\}$ and a dummy instrumental variable $Z \in \{0,1\}$ only, with no other covariates.
-Here, we are interested in estimating the ``causal'' impact of $D$ on $Y$, rather than a mere correlation between them.
-
-For each $d \in \{0,1\}$, define the \textbf{potential outcome} $Y(d)$ as the outcome that will be obtained when $D = d$.
-Note that we never observe outcomes for the same individual under different treatment status at the same time.
-That is, when $D = 1$ (resp. $D = 0$) is realized, we can observe only $Y(1)$ (resp. $Y(0)$), but $Y(0)$ (resp. $Y(1)$) is an unobservable ``counterfactual'' outcome.
-Thus, the ``observed'' outcome $Y$ can be written as
-\[
-	Y = D \cdot Y(1) + (1 - D) \cdot Y(0).
-\]
-In this framework, the causal effect of $D$ on $Y$ is defined as
-\[
-	Y(1) - Y(0).
-\]
-This quantity is referred to as the \textbf{treatment effect\index{treatment effect}}, and $D$ is called the \textbf{treatment variable\index{treatment variable}} in this context.
-In this way, we can define the causal effect of the treatment $D$ on the outcome $Y$ as the difference of the potential outcomes $Y(0)$ and $Y(1)$.
-This approach of defining causal relationship between variables is called the \textbf{Rubin's Causal Model\index{Rubin's Causal Model}}.
-Since we cannot observe both potential outcomes $Y_i(0)$ and $Y_i(1)$ at the same time (unless there is someone completely identical to $i$), it is generally impossible to estimate the individual-specific treatment effects.
-Therefore, studies on treatment effects typically aim at estimating treatment effects averaged over some subpopulation; for example, 
-\begin{align*}
-	&\text{ATE (the average treatment effect)}: \E[Y(1) - Y(0)]\\
-	&\text{CATE (the conditional average treatment effect)}: \E[Y(1) - Y(0) \mid X = x] \\
-	&\text{ATT (the average treatment effect on the treated)}: \E[Y(1) - Y(0) \mid D = 1].
-\end{align*}
-
-In a seminal paper, \cite{imbens1994identification} studied conditions under which the 2SLS estimate can be interpreted as the \textbf{LATE} (local average treatment effect) -- the average treatment effect for those whose treatment status complies with the instrument. 
-Note that when both $D$ and $Z$ are dummy variables, we can classify individuals into the following four latent types:
-\[
-\begin{array}{ll}
-	\text{\bf Complier:} & Z = 0 \Rightarrow D = 0 \;\; \& \;\; Z = 1 \Rightarrow D = 1 \\
-	\text{\bf Defier:}   & Z = 0 \Rightarrow D = 1 \;\; \& \;\; Z = 1 \Rightarrow D = 0 \\
-	\text{\bf Always-taker:} & Z = 0 \Rightarrow D = 1 \;\; \& \;\; Z = 1 \Rightarrow D = 1 \\
-	\text{\bf Never-taker:}  & Z = 0 \Rightarrow D = 0 \;\; \& \;\; Z = 1 \Rightarrow D = 0 
-\end{array}
-\]
-For example, consider estimating the causal effect of college degree ($D = 1$: college graduate or higher, $D = 0$: otherwise) on annual income ($Y$).
-As an instrumental variable for $D$, we consider father's education level ($Z = 1$: the individual's father has a college degree or higher, $Z = 0$: otherwise).
-Then, the compliers are those who will (not) go on to a college if their fathers (do not) have a college degree, the always-takers are those who will go on to a college irrespective of their fathers' education level, and so forth.
-If we can assume that there are no defiers, we can distinguish the latent types from the observed data in the following sense: 
-\begin{center}
-	$
-	\begin{array}
-	[c]{cc|ccc}
-	&  &  & Z & \\
-	&  & 0 &  & 1\\\hline
-	& 0 & \text{Complier or Never-Taker} &  & \text{Never-taker}\\
-	D &  &  &  & \\
-	& 1 & \text{Always-taker} &  & \text{Complier or Always-taker}
-	\end{array}
-	$
-\end{center}
-The assumption of no defiers is called \textbf{monotonicity assumption\index{monotonicity assumption}} because, when no defiers exist, increasing $Z$ from 0 to 1 never decreases $D$.
-In addition, assume that $Z$ is independent of the potential outcomes (i.e., the exclusion restriction) and the individuals' types such that
-\begin{align*}
-	& \Pr(\text{Always-taker} \mid Z = 1) = \Pr(\text{Always-taker} \mid Z = 0) = \pi_A\\
-	& \Pr(\text{Never-taker} \mid Z = 1) = \Pr(\text{Never-taker} \mid Z = 0) = \pi_N\\
-	& \Pr(\text{Complier} \mid Z = 1) = \Pr(\text{Complier} \mid Z = 0) = \pi_C.
-\end{align*}
-Under these conditions, one can show that
-\begin{align}\label{eq:LATE}
-\begin{split}
-	\underset{\text{\bf LATE}}{\E[Y(1) - Y(0) \mid \text{Complier}]} 
-	& = \frac{\E[Y \mid Z = 1] - \E[Y \mid Z = 0]}{\E[D \mid Z = 1] - \E[D \mid Z = 0]}\\
-	& = \frac{\Cov(Z, Y)}{\Cov(Z, D)}.
-\end{split}
-\end{align}
-The term on the left-hand side of \eqref{eq:LATE} is called \textbf{LATE\index{LATE}} (the local average treatment effect).
-The first equality of \eqref{eq:LATE} can be shown as follows.
-Observe that
-\small{\begin{align*}
-	\E[Y \mid Z = 1 ] 
-	& = \E[Y \mid Z = 1, \text{AT} ] \cdot \Pr(\text{AT} \mid Z = 1) + \E[Y \mid Z = 1, \text{NT} ] \cdot \Pr(\text{NT} \mid Z = 1) + \E[Y \mid Z = 1, \text{C} ] \cdot \Pr(\text{C} \mid Z = 1)\\
-	& = \E[Y(1) \mid Z = 1, \text{AT} ] \cdot \pi_A + \E[Y(0) \mid Z = 1, \text{NT} ] \cdot \pi_N + E[Y(1) \mid Z = 1, \text{C} ] \cdot \pi_C\\
-	& = \E[Y(1) \mid \text{AT} ] \cdot \pi_A  + E[Y(0) \mid \text{NT} ] \cdot \pi_N  + E[Y(1) \mid \text{C} ] \cdot \pi_C,
-\end{align*}}
-\normalsize
-where the last equality follows from the exclusion restriction.
-Similarly, we can show that
-\begin{align*}
-	\E[Y \mid Z = 0]
-	& = \E[Y(1) \mid \text{AT} ] \cdot \pi_A + \E[ Y(0) \mid \text{NT} ] \cdot \pi_N  + \E[ Y(0) \mid \text{C} ]  \cdot \pi_C
-\end{align*}
-Thus, 
-\begin{align*}
-	\E [ Y \mid Z = 1 ] - E[ Y \mid Z = 0 ] 
-	&= \left\{ \E[ Y(1) \mid \text{Complier} ] - \E[ Y(0) \mid \text{Complier} ] \right\} \cdot \pi_C\\
-	& = \mbf{LATE}\cdot\pi_C
-\end{align*}
-Here, since we have assumed that there are no defiers, we must have
-\begin{align*}
-	\E[ D \mid Z = 1 ]   &  = \pi_C + \pi_A \\
-	\E[ D \mid Z = 0 ]   &  = \pi_A.
-\end{align*}
-Therefore, it holds that
-\begin{equation*}
-	\E [D \mid Z = 1 ] - \E[ D \mid Z = 0 ] = \pi_C.
-\end{equation*}
-Finally, combining these results gives the desired equality, provided that $\pi_C > 0$.
-
-The second equality of \eqref{eq:LATE} is left for an exercise.
-Recall that the slope coefficient $\alpha_0$ in the regression model $Y = \beta_0 + D \cdot \alpha_0 + \eps$ can be expressed as $\alpha_0 = \Cov(Z, Y)/\Cov(Z, D)$.
-This means that the 2SLS estimator for $\alpha_0$ can be seen as an estimator of the LATE parameter.
-
-\begin{framed}
-\begin{exercise}\upshape
-	Prove the following equality: $\displaystyle \frac{\Cov(Z, Y)}{\Cov(Z, D)} = \frac{\E[Y \mid Z = 1] - \E[Y \mid Z = 0]}{\E[D \mid Z = 1] - \E[D \mid Z = 0]}$.
-\end{exercise}
-\end{framed}
-
-\paragraph{Numerical simulations with \textbf{R}}
+\subsection{Numerical simulations with \textbf{R}}
 
 In the following simulation analysis, we examine how the endogeneity problem is serious and can be solved by the method of instrumental variables.
 We first generate data of sample size $500$ as follows.
@@ -1280,6 +1103,231 @@ D 1.3973392
 X 0.9839573
 \end{lstlisting}
 As can be seen from this result, the estimation performance of the 2SLS is clearly deteriorated when the instrument is weak.
+
+\section{Asymptotic properties}\label{sec:2slsAsymptotics}
+
+The asymptotic properties of the 2SLS estimator \eqref{eq:2slsMat} can be relatively easily derived.
+First, noting that $\mbf{Y}_n = \mbf{H}_n^\top\theta_0 + \mcl{E}_n$, where $\mcl{E}_n = (\eps_1, \ldots , \eps_n)^\top$, we can obtain
+\begin{align*}
+	\hat\theta_n^{2sls} 
+	& = \theta_0 + \left[\mbf{H}_n^\top \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1}\mbf{Z}_n^\top \mbf{H}_n  \right]^{-1}\mbf{H}_n^\top \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1}\mbf{Z}_n^\top\mcl{E}_n.
+\end{align*}
+Here, note that the existence of the inverse $\left[\mbf{H}_n^\top \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1}\mbf{Z}_n^\top \mbf{H}_n  \right]^{-1}$ implicitly rules out weak instruments.
+That is, recalling that the first-stage regression coefficient is obtained by $\Gamma_n \equiv (\mbf{Z}_n^\top \mbf{Z}_n)^{-1}\mbf{Z}_n^\top \mbf{H}_n$, we have
+\begin{align*}
+	\mbf{H}_n^\top \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1}\mbf{Z}_n^\top \mbf{H}_n
+	& = \mbf{H}_n^\top \mbf{Z}_n(\mbf{Z}_n^\top \mbf{Z}_n)^{-1}\mbf{Z}_n^\top \mbf{Z}_n (\mbf{Z}_n^\top \mbf{Z}_n)^{-1} \mbf{Z}_n^\top \mbf{H}_n \\
+	& = (\Gamma_n^\top \mbf{Z}_n^\top) (\mbf{Z}_n \Gamma_n).
+\end{align*}
+Thus, if $\Gamma_n = o_P(1)$, the inverse may not exist.
+
+Now, under standard conditions, we have $\mbf{H}_n^\top \mbf{Z}_n/n \overset{p}{\to} \E[H Z^\top]$,  $\mbf{Z}_n^\top \mbf{Z}_n/n \overset{p}{\to} \E[Z Z^\top]$, and  $\mbf{Z}_n^\top \mcl{E}_n/n \overset{p}{\to} \E[Z \eps] = \underset{(d_z + d_x)\times 1}{\mbf{0}}$ as the sample size increases to infinity.
+Thus,
+\begin{align*}	
+	\hat\theta_n^{2sls} - \theta_0
+	& = \left[(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}(\mbf{Z}_n^\top \mbf{H}_n/n ) \right]^{-1}(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}(\mbf{Z}_n^\top\mcl{E}_n/n) \\
+	& \overset{p}{\to} \left[ \E[H Z^\top] \E[Z Z^\top]^{-1} \E[Z H^\top] \right]^{-1} \E[H Z^\top] \E[Z Z^\top]^{-1} \underbrace{\E[Z \eps]}_{= \; \mbf{0}} = \mbf{0}
+\end{align*}
+by Lemma \ref{lem:prodconv} and the continuous mapping theorem \ref{lem:cmt}, implying that the 2SLS estimator $\hat\theta_n^{2sls}$ is consistent for $\theta_0$.
+In addition, following a similar argument to that in Section \ref{sec:OLSasymp}, we can easily show that the 2SLS estimator is root-n-consistent.
+
+Next, suppose for simplicity that the error terms $\eps_i$'s are IID with variance $\E[\eps^2] = \sigma^2$.
+Further, assume that $\eps$ is independent of $Z$ (note that this is a stronger condition than the uncorrelation between $\eps$ and $Z$).
+Then, by CLT, it would hold that $\mbf{Z}_n^\top\mcl{E}_n/\sqrt{n} \overset{d}{\to} \mbf{N}(\mbf{0}, \E[Z Z^\top]\sigma^2)$.
+Hence, by Slutsky's theorem \ref{lem:slutsky}, we obtain the asymptotic normality of $\sqrt{n}(\hat\theta_n^{2sls} - \theta_0)$ as follows:
+\begin{align*}
+	\sqrt{n}(\hat\theta_n^{2sls} - \theta_0) 
+	& = \left[(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}(\mbf{Z}_n^\top \mbf{H}_n/n ) \right]^{-1}(\mbf{H}_n^\top \mbf{Z}_n/n)(\mbf{Z}_n^\top \mbf{Z}_n/n)^{-1}\mbf{Z}_n^\top\mcl{E}_n/\sqrt{n} \\
+	& \overset{d}{\to} \mbf{N}\left(\mbf{0}, \sigma^2  \left[ \E[H Z^\top] \E[Z Z^\top]^{-1} \E[Z H^\top] \right]^{-1}\right).
+\end{align*}
+
+\begin{framed}
+\begin{exercise}\upshape
+	Explain what happens if we create $\hat D$ using only $Z_1$ without $X$ and perform a 2SLS estimation.
+	Is such an estimator consistent? If yes, prove that, and if no, explain under what additional condition(s) the estimator becomes consistent.
+\end{exercise}
+\end{framed}
+
+\section{Durbin-Wu-Hausman test for endogeneity}
+
+Note that the 2SLS estimator is consistent and asymptotically normal even when the variable $D$ is in fact exogenous. 
+Of course, if $D$ is an exogenous variable, we can use the OLS estimator, and, in general, the OLS estimator is more efficient than the 2SLS estimator when both estimators are available.
+Thus, statistically testing the appropriateness of using OLS or the necessity of using 2SLS is useful.
+
+Here, we consider the following null hypothesis
+\[
+	\mbb{H}_0: \Cov(D, \eps) = 0,
+\]
+and the alternative hypothesis is its negation
+\[
+	\mbb{H}_1: \Cov(D, \eps) \neq 0.
+\]
+Under the null hypothesis $\mbb{H}_0$, both OLS and 2SLS estimators of $\alpha_0$, $\hat \alpha_n^{ols}$ and $\hat \alpha_n^{2sls}$, are consistent and asymptotically normal.
+However under $\mbb{H}_1$, the OLS estimator $\hat \alpha_n^{ols}$ converges to $\alpha_0 + \text{endogeneity bias}$, while the 2SLS estimator is still consistent for $\alpha_0$.
+Thus the difference between the OLS and 2SLS estimators is a valid test statistic for endogeneity. 
+
+Suppose that $\mbb{H}_0$ is true.
+Then, since both $\hat \alpha_n^{ols}$ and $\hat \alpha_n^{2sls}$ are asymptotically distributed as normal, we can show that the difference of them $\hat \alpha_n^{ols} - \hat \alpha_n^{2sls}$ is also asymptotically normal.
+Thus, letting 
+\[
+	T_n \equiv \frac{\hat \alpha_n^{ols} - \hat \alpha_n^{2sls}}{\sqrt{\Var(\hat \alpha_n^{ols} - \hat \alpha_n^{2sls})}},
+\]	
+we have $T_n \overset{d}{\to} N (0,1)$ and also $T_n^2 \overset{d}{\to} \chi^2(1)$ under $\mbb{H}_0$, where $\chi^2(1)$ denotes the chi-square distribution with one degree of freedom.
+Thus, if $T_n^2 > 3.841\ldots$ for instance, we can reject $\mbb{H}_0$ at the 5\% significance level.
+
+In a more general setting where $q$ endogenous regressors $D = (D_1, \ldots, D_q)^\top$ exist, the statistic $T_n$ can be defined as $T_n \equiv \left[\Cov(\hat \alpha_n^{ols} - \hat \alpha_n^{2sls})\right]^{-1/2}(\hat \alpha_n^{ols} - \hat \alpha_n^{2sls})$, and it holds that $T_n^\top T_n \overset{d}{\to} \chi^2(q)$.
+The above testing procedure for endogeneity is called the \textbf{Durbin-Wu-Hausman test\index{Durbin-Wu-Hausman test}}.
+
+ 
+\section{A causal interpretation of the 2SLS estimate}
+
+In this section, for simplicity, suppose that we have a dummy endogenous variable $D \in \{0,1\}$ and a dummy instrumental variable $Z \in \{0,1\}$ only, with no other covariates.
+Here, we are interested in estimating the ``causal'' impact of $D$ on $Y$, rather than a mere correlation between them.
+
+For each $d \in \{0,1\}$, define the \textbf{potential outcome} $Y(d)$ as the outcome that will be obtained when $D = d$.
+Note that we never observe outcomes for the same individual under different treatment status at the same time.
+That is, when $D = 1$ (resp. $D = 0$) is realized, we can observe only $Y(1)$ (resp. $Y(0)$), but $Y(0)$ (resp. $Y(1)$) is an unobservable ``counterfactual'' outcome.
+Thus, the ``observed'' outcome $Y$ can be written as
+\[
+	Y = D \cdot Y(1) + (1 - D) \cdot Y(0).
+\]
+In this framework, the causal effect of $D$ on $Y$ is defined as
+\[
+	Y(1) - Y(0).
+\]
+This quantity is referred to as the (individual) \textbf{treatment effect\index{treatment effect}}, and $D$ is called the \textbf{treatment variable\index{treatment variable}} in this context.
+In this way, we can define the causal effect of the treatment $D$ on the outcome $Y$ as the difference of the potential outcomes $Y(0)$ and $Y(1)$.
+This approach of defining causal relationship between variables is called the \textbf{Rubin's Causal Model\index{Rubin's Causal Model}}.
+Since we cannot observe both potential outcomes $Y_i(0)$ and $Y_i(1)$ at the same time (unless there is someone completely identical to $i$), it is generally impossible to estimate the individual-specific treatment effects.
+Therefore, studies on treatment effects typically aim at estimating treatment effects averaged over some subpopulation; for example, 
+\begin{align*}
+	&\text{ATE (the average treatment effect)}: \E[Y(1) - Y(0)]\\
+	&\text{CATE (the conditional average treatment effect)}: \E[Y(1) - Y(0) \mid X = x] \\
+	&\text{ATT (the average treatment effect on the treated)}: \E[Y(1) - Y(0) \mid D = 1].
+\end{align*}
+
+In a seminal paper, \cite{imbens1994identification} studied conditions under which the 2SLS estimate can be interpreted as the \textbf{LATE} (local average treatment effect) -- the average treatment effect for those whose treatment status complies with the instrument. 
+Note that when both $D$ and $Z$ are dummy variables, we can classify individuals into the following four latent types:
+\[
+\begin{array}{ll}
+	\text{\bf Complier:} & Z = 0 \Rightarrow D = 0 \;\; \& \;\; Z = 1 \Rightarrow D = 1 \\
+	\text{\bf Defier:}   & Z = 0 \Rightarrow D = 1 \;\; \& \;\; Z = 1 \Rightarrow D = 0 \\
+	\text{\bf Always-taker:} & Z = 0 \Rightarrow D = 1 \;\; \& \;\; Z = 1 \Rightarrow D = 1 \\
+	\text{\bf Never-taker:}  & Z = 0 \Rightarrow D = 0 \;\; \& \;\; Z = 1 \Rightarrow D = 0 
+\end{array}
+\]
+For example, consider estimating the causal effect of college degree ($D = 1$: college graduate or higher, $D = 0$: otherwise) on annual income ($Y$).
+As an instrumental variable for $D$, we consider father's education level ($Z = 1$: the individual's father has a college degree or higher, $Z = 0$: otherwise).
+Then, the compliers are those who will (not) go on to a college if their fathers (do not) have a college degree, the always-takers are those who will go on to a college irrespective of their fathers' education level, and so forth.
+
+As another typical example, consider a randomized experimental setup where $Z$ is the ``initial'' treatment assignment determined randomly.
+Here, each individual is allowed to not comply with the initial assignment and denote his/her actual treatment choice as $D$.
+Then, the compliers are characterized as those who follow the initially recommended treatment.
+
+If we can assume that there are no defiers, we can distinguish the latent types from the observed data in the following sense: 
+\begin{center}
+	$
+	\begin{array}
+	[c]{cc|ccc}
+	&  &  & Z & \\
+	&  & 0 &  & 1\\\hline
+	& 0 & \text{Complier or Never-Taker} &  & \text{Never-taker}\\
+	D &  &  &  & \\
+	& 1 & \text{Always-taker} &  & \text{Complier or Always-taker}
+	\end{array}
+	$
+\end{center}
+The assumption of no defiers is called \textbf{monotonicity assumption\index{monotonicity assumption}} because, when no defiers exist, increasing $Z$ from 0 to 1 never decreases $D$.
+In addition, assume that $Z$ is independent of the potential outcomes (i.e., the exclusion restriction) and the individuals' types such that
+\begin{align*}
+	& \Pr(\text{Always-taker} \mid Z = 1) = \Pr(\text{Always-taker} \mid Z = 0) = \pi_A\\
+	& \Pr(\text{Never-taker} \mid Z = 1) = \Pr(\text{Never-taker} \mid Z = 0) = \pi_N\\
+	& \Pr(\text{Complier} \mid Z = 1) = \Pr(\text{Complier} \mid Z = 0) = \pi_C.
+\end{align*}
+Under these conditions, one can show that
+\begin{align}\label{eq:LATE}
+\begin{split}
+	\underset{\text{\bf LATE}}{\E[Y(1) - Y(0) \mid \text{Complier}]} 
+	& = \frac{\E[Y \mid Z = 1] - \E[Y \mid Z = 0]}{\E[D \mid Z = 1] - \E[D \mid Z = 0]}\\
+	& = \frac{\Cov(Z, Y)}{\Cov(Z, D)}.
+\end{split}
+\end{align}
+The term on the left-hand side of \eqref{eq:LATE} is called \textbf{LATE\index{LATE}} (the local average treatment effect).
+The first equality of \eqref{eq:LATE} can be shown as follows.
+Observe that
+\small{\begin{align*}
+	\E[Y \mid Z = 1 ] 
+	& = \E[Y \mid Z = 1, \text{AT} ] \cdot \Pr(\text{AT} \mid Z = 1) + \E[Y \mid Z = 1, \text{NT} ] \cdot \Pr(\text{NT} \mid Z = 1) + \E[Y \mid Z = 1, \text{C} ] \cdot \Pr(\text{C} \mid Z = 1)\\
+	& = \E[Y(1) \mid Z = 1, \text{AT} ] \cdot \pi_A + \E[Y(0) \mid Z = 1, \text{NT} ] \cdot \pi_N + E[Y(1) \mid Z = 1, \text{C} ] \cdot \pi_C\\
+	& = \E[Y(1) \mid \text{AT} ] \cdot \pi_A  + E[Y(0) \mid \text{NT} ] \cdot \pi_N  + E[Y(1) \mid \text{C} ] \cdot \pi_C,
+\end{align*}}
+\normalsize
+where the last equality follows from the exclusion restriction.
+Similarly, we can show that
+\begin{align*}
+	\E[Y \mid Z = 0]
+	& = \E[Y(1) \mid \text{AT} ] \cdot \pi_A + \E[ Y(0) \mid \text{NT} ] \cdot \pi_N  + \E[ Y(0) \mid \text{C} ]  \cdot \pi_C
+\end{align*}
+Thus, 
+\begin{align*}
+	\E [ Y \mid Z = 1 ] - \E[ Y \mid Z = 0 ] 
+	&= \left\{ \E[ Y(1) \mid \text{Complier} ] - \E[ Y(0) \mid \text{Complier} ] \right\} \cdot \pi_C\\
+	& = \mbf{LATE}\cdot\pi_C
+\end{align*}
+Here, since we have assumed that there are no defiers, we must have
+\begin{align*}
+	\E[ D \mid Z = 1 ]   &  = \pi_C + \pi_A \\
+	\E[ D \mid Z = 0 ]   &  = \pi_A.
+\end{align*}
+Therefore, it holds that
+\begin{equation*}
+	\E [D \mid Z = 1 ] - \E[ D \mid Z = 0 ] = \pi_C.
+\end{equation*}
+Finally, combining these results gives the desired equality, provided that $\pi_C > 0$.
+
+The second equality of \eqref{eq:LATE} is left for an exercise.
+Recall that the slope coefficient $\alpha_0$ in the regression model $Y = \beta_0 + D \cdot \alpha_0 + \eps$ can be expressed as $\alpha_0 = \Cov(Z, Y)/\Cov(Z, D)$.
+This means that the 2SLS estimator for $\alpha_0$ can be seen as an estimator of the LATE parameter.
+
+\begin{framed}
+\begin{exercise}\upshape
+	Prove the following equality: $\displaystyle \frac{\Cov(Z, Y)}{\Cov(Z, D)} = \frac{\E[Y \mid Z = 1] - \E[Y \mid Z = 0]}{\E[D \mid Z = 1] - \E[D \mid Z = 0]}$.
+\end{exercise}
+\end{framed}
+
+\paragraph{Multiple instruments}
+
+So far, we have assumed that there is only one binary instrumental variable for $D$.
+However, in reality there are many situations where multiple instruments are available.
+The causal interpretation of such cases has been studied only recently by \cite{mogstad2021causal}.
+
+For example, suppose we have two binary instruments $Z_1$ and $Z_2$.
+In addition, we assume the following monotonicity condition in this context:
+\begin{align*}
+	D(0, 0) \le D(0, 1) \le D(1,1), \;\; \text{and} \;\; D(0, 0) \le D(1, 0) \le D(1,1),
+\end{align*}
+where $D(z_1, z_2)$ is the ``potential treatment choice'' when $(Z_1, Z_2) = (z_1, z_2)$.
+Under the monotonicity, each individual belongs to exactly one of the following six types:
+
+\[
+\begin{array}{l|cccc}
+	                                 & D(0, 0) & D(0, 1) & D(1, 0) & D(1, 1) \\\hline
+	\text{Always-taker (AT):}        & 1       & 1       & 1       & 1       \\
+	\text{Never-taker (NT):}         & 0       & 0       & 0       & 0       \\
+	\text{Eager-complier (EC):}      & 0       & 1       & 1       & 1       \\
+	\text{Reluctant-complier (RC):}  & 0       & 0       & 0       & 1       \\	 
+	\text{$Z_1$-complier (1C):}      & 0       & 0       & 1       & 1       \\	
+	\text{$Z_2$-complier (2C):}      & 0       & 1       & 0       & 1       \\	 
+\end{array}
+\]
+
+Let $\beta^{2sls}$ be the population 2SLS estimand defined by using $(1, Z_1, Z_2, Z_1 Z_2)$ as the instruments for $D$.
+Then, \cite{mogstad2021causal} showed that $\beta^{2sls}$ is equivalent to a linear combination of LATEs for the four complier groups; that is,
+\begin{align*}
+	\beta^{2sls} = \sum_{g \in \{\text{EC}, \text{RC}, \text{1C}, \text{2C}\}} w_g \E[Y(1) - Y(0) \mid \text{type} = g],
+\end{align*}
+where $w_g$ are weights that sum to one, and $w_{\text{EC}}$ and $w_{\text{RC}}$ are always non-negative.
+For the signs of $w_{\text{1C}}$ and $w_{\text{2C}}$, although one of them can be negative depending on the share of these groups and the size of the propensity scores in some rare situations, they are positive in most cases (see their paper for details).
 
 \section*{Appendix: A property of the orthogonal projection}
 	
@@ -1750,7 +1798,7 @@ This equality is known as the \textbf{information matrix equality\index{informat
 The last line implies that $-\E_\theta[H(X; \theta)] = \E_\theta[s(X; \theta) s(X; \theta)^\top]$.
 Finally, the result follows from the definition of $I(\theta)$. $\; \blacksquare$
 
-Therefore, thanks to the information matrix equality, the asymptotic distribution of the MLE can be simply written in two ways as
+Therefore, thanks to the information matrix equality, the asymptotic distribution of the MLE can be simply written in two identical ways as
 \begin{align*}
 	& \sqrt{n}(\hat \theta_n^{mle} - \theta_0) \overset{d}{\to} \mbf{N}\left( \mbf{0}, -\E[H(X; \theta_0)]^{-1}  \right) \\
 	& \sqrt{n}(\hat \theta_n^{mle} - \theta_0) \overset{d}{\to} \mbf{N}\left( \mbf{0}, [I(\theta_0)]^{-1}  \right).
@@ -2026,7 +2074,7 @@ This way of model selection was first proposed in \cite{akaike1973information}, 
 	\includegraphics[width=12cm]{akaike.png}
 \end{center}
 It should be noted that the derivation of the AIC statistic involves a lot of large sample approximations, and it is known that the AIC tends to select a less parsimonious model under finite sample size.
-Then, to improve the finite sample model selection performance, a number of modified versions of AIC has been proposed in the literature.
+Then, to improve the finite sample model selection performance, a number of modified versions of AIC have been proposed in the literature.
 
 \section*{Appendix: Irregular estimators}
 
@@ -2049,11 +2097,11 @@ Then, since $|\mu_0| - n^{-1/4} > 0$ for sufficiently large $n$, we have
 \begin{align*}
 	\Pr(\hat \mu_n \neq \bar X_n) 
 	& = \Pr(|\mu_0 - (\mu_0 - \bar X_n) | < n^{-1/4}) \\
-	& \le \Pr(|\mu_0| - |\mu_0 - \bar X_n| < n^{-1/4}) \\
-	& = \Pr(|\mu_0| - n^{-1/4} < |\mu_0 - \bar X_n|) \to 0
+	& \le \Pr(|\mu_0| - |\mu_0 - \bar X_n| < n^{-1/4}) \quad \quad \quad \text{(triangle inequality)}\\
+	& = \Pr(|\mu_0| - n^{-1/4} < |\mu_0 - \bar X_n|) \to 0 \quad \text{(consistency of $\bar X_n$)}
 \end{align*}
 as $n \to \infty$.
-This implies that $\hat \mu_n$ has the same limiting distribution as the MLE; that is, $\sqrt{n}(\hat \mu_n - \mu_0) \overset{d}{\to} N(0, 1)$.
+This implies that $\hat \mu_n$ has the same limiting distribution as the MLE (by Lemma \ref{lem:p_to_d}); that is, $\sqrt{n}(\hat \mu_n - \mu_0) \overset{d}{\to} N(0, 1)$.
 
 Next, consider the case where $\mu_0 = 0$.
 In this case, for any $\kappa > 0$,
@@ -2068,7 +2116,7 @@ Note that
 	& = \Pr(|\bar X_n| \ge n^{-1/4}) \\
 	& = \Pr(\sqrt{n}|\bar X_n - \mu_0| \ge n^{1/4}) \to 0
 \end{align*}
-as $n \to \infty$ since $\sqrt{n}|\bar X_n - \mu_0|$ is asymptotically equivalent to $|N(0,1)|$.
+as $n \to \infty$ since $\sqrt{n}|\bar X_n - \mu_0|$ is asymptotically equivalent to $|N(0,1)|$ in distribution.
 Hence, $\sqrt{n}\hat \mu_n \overset{p}{\to} 0$ and, in view of Lemma \ref{lem:p_to_d}, $\sqrt{n}\hat \mu_n \overset{d}{\to} 0$.
 To summarize, the limiting distribution of Hodge's estimator is
 \begin{align*}
@@ -2089,7 +2137,7 @@ On the other hand,
 	& = \Pr(|\bar X_n| < n^{-1/4}) \\
 	& = \Pr(- n^{-1/4} < \bar X_n < n^{-1/4}) \\
 	& = \Pr \left(- \sqrt{n}(n^{-1/4} + h n^{-1/4}) < \sqrt{n}(\bar X_n - h n^{-1/4}) < \sqrt{n}(n^{-1/4} - h n^{-1/4}) \right) \\
-	& = \Pr\left(-n^{1/4}(1 + h) < \sqrt{n}(\bar X_n - h n^{-1/4}) < n^{1/4}(1 - h)\right) \to 1.
+	& = \Pr\Bigl(-n^{1/4}(1 + h) < \underbrace{\sqrt{n}(\bar X_n - h n^{-1/4})}_{\overset{d}{\to}N(0,1)} < n^{1/4}(1 - h)\Bigr) \to 1.
 \end{align*}
 Hence,
 \begin{align*}
@@ -2111,7 +2159,7 @@ Hodge's estimator ``buys'' its extremely better asymptotic behavior exactly at $
 The above discussion shows that in order to have a meaningful discussion on the efficiency of estimators, we need to rule out pathological estimators such as Hodge's estimator and focus on ``regular'' estimators.
 An estimator $\hat \theta_n$ is called \textbf{regular\index{regular estimators}} if a small change in the true parameter $\theta_0$ changes the distribution of the estimator only slightly.
 Hodge's estimator is a typical example of ``irregular'' estimators.
-Within the class of regular estimators, we can show the optimality of MLE.
+Within the class of regular estimators (including those biased ones), we can show the optimality of MLE.
 For more precise discussion, see, for example, Section 8.5 of \cite{van2000asymptotic}.
 
 \bigskip
