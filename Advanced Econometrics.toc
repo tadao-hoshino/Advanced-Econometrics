@@ -60,8 +60,8 @@
 \contentsline {chapter}{\numberline {8}Nonparametric Regression}{75}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Nonparametric regression}{76}{section.8.1}%
 \contentsline {subsection}{\numberline {8.1.1}$k$-nearest-neighbor regression and kernel regression}{76}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Series regression}{79}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}An empirical illustration: estimation of Engel curve}{82}{subsection.8.1.3}%
+\contentsline {subsection}{\numberline {8.1.2}Series regression}{80}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}An empirical illustration: estimation of Engel curve}{83}{subsection.8.1.3}%
 \contentsline {section}{\numberline {8.2}Semiparametric regression}{84}{section.8.2}%
 \contentsline {subsection}{\numberline {8.2.1}Partially linear models}{84}{subsection.8.2.1}%
 \contentsline {subsection}{\numberline {8.2.2}Functional coefficient models}{85}{subsection.8.2.2}%

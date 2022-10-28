@@ -1,23 +1,23 @@
 # Fdb version 3
-["bibtex Advanced Econometrics"] 1665817100 "Advanced Econometrics.aux" "Advanced Econometrics.bbl" "Advanced Econometrics" 1665819328
-  "Advanced Econometrics.aux" 1665819322 40584 3abdb8f6a702b45dc625a89e59221bf9 "latex"
+["bibtex Advanced Econometrics"] 1666944802 "Advanced Econometrics.aux" "Advanced Econometrics.bbl" "Advanced Econometrics" 1666946345
+  "Advanced Econometrics.aux" 1666946338 40513 8c1f5927b38c14e9a71b67e1bac1f88b "latex"
   "c:/texlive/2022/texmf-dist/bibtex/bst/base/apalike.bst" 1664265178 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   "references.bib" 1665812221 18273 75aa285a26d72199d33f5e77f080dcef ""
   (generated)
   "Advanced Econometrics.bbl"
   "Advanced Econometrics.blg"
-["dvipdf"] 1665819322 "Advanced Econometrics.dvi" "Advanced Econometrics.pdf" "Advanced Econometrics" 1665819328
-  "Advanced Econometrics.dvi" 1665819322 878184 819a2df409ddf1bd7f2bddec6e245a61 "latex"
+["dvipdf"] 1666946339 "Advanced Econometrics.dvi" "Advanced Econometrics.pdf" "Advanced Econometrics" 1666946345
+  "Advanced Econometrics.dvi" 1666946338 878912 ffad3f8058fe3292f3f46a288e487b14 "latex"
   (generated)
   "Advanced Econometrics.pdf"
-["latex"] 1665819316 "c:/Users/tadao/OneDrive/ドキュメント/授業/git_advanced_econometrics/Advanced Econometrics.tex" "Advanced Econometrics.dvi" "Advanced Econometrics" 1665819328
-  "Advanced Econometrics.aux" 1665819322 40584 3abdb8f6a702b45dc625a89e59221bf9 "latex"
-  "Advanced Econometrics.bbl" 1665817101 10884 6b5c75255ac2095c59dae1d4d4e18425 "bibtex Advanced Econometrics"
-  "Advanced Econometrics.ind" 1665817100 7300 58605a217441b11287d8e35d3d240433 "makeindex Advanced Econometrics.idx"
-  "Advanced Econometrics.out" 1665819322 8182 9523b43622c33b45cbc8e253970ca0eb "latex"
-  "Advanced Econometrics.tex" 1665819311 371994 e930b329d7aab3f879ad871a4a11dbef ""
-  "Advanced Econometrics.toc" 1665819322 10623 1f07549c3bc0835893ba3cbf8177784d "latex"
-  "c:/Users/tadao/OneDrive/ドキュメント/授業/git_advanced_econometrics/Advanced Econometrics.tex" 1665819311 371994 e930b329d7aab3f879ad871a4a11dbef ""
+["latex"] 1666946332 "c:/Users/tadao/OneDrive/ドキュメント/授業/git_advanced_econometrics/Advanced Econometrics.tex" "Advanced Econometrics.dvi" "Advanced Econometrics" 1666946345
+  "Advanced Econometrics.aux" 1666946338 40513 8c1f5927b38c14e9a71b67e1bac1f88b "latex"
+  "Advanced Econometrics.bbl" 1666944803 10715 48045c4a26a8320380fe95c354c303aa "bibtex Advanced Econometrics"
+  "Advanced Econometrics.ind" 1666943048 7344 c52b5d7c2e0d8368e15a95a27c7aba54 "makeindex Advanced Econometrics.idx"
+  "Advanced Econometrics.out" 1666946338 8182 9523b43622c33b45cbc8e253970ca0eb "latex"
+  "Advanced Econometrics.tex" 1666946328 372904 0ebe04799e68cd5c1007a08c9250687d ""
+  "Advanced Econometrics.toc" 1666946338 10623 06c7dc560b4e6aff21d8210ba3ef0aa0 "latex"
+  "c:/Users/tadao/OneDrive/ドキュメント/授業/git_advanced_econometrics/Advanced Econometrics.tex" 1666946328 372904 0ebe04799e68cd5c1007a08c9250687d ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1664265249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1653926491 1536 b3387106d9afecbfe14bde2de6eadf47 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1653926491 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -280,8 +280,8 @@
   "Advanced Econometrics.log"
   "Advanced Econometrics.out"
   "Advanced Econometrics.toc"
-["makeindex Advanced Econometrics.idx"] 1665817100 "Advanced Econometrics.idx" "Advanced Econometrics.ind" "Advanced Econometrics" 1665819328
-  "Advanced Econometrics.idx" 1665819322 7800 6b123e9bbad64b2119f1a185010b62c8 "latex"
+["makeindex Advanced Econometrics.idx"] 1666943048 "Advanced Econometrics.idx" "Advanced Econometrics.ind" "Advanced Econometrics" 1666946345
+  "Advanced Econometrics.idx" 1666946338 7847 c8b62098b97110a190227b4e33f9c05f "latex"
   (generated)
   "Advanced Econometrics.ilg"
   "Advanced Econometrics.ind"

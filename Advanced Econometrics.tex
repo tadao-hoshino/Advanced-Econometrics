@@ -3584,7 +3584,7 @@ Suppose we would like to estimate the following regression model:
 where $\E[\eps \mid X] = 0$, i.e., $g_0(X) = \E[Y \mid X]$.
 If we additionally assume a parametric regression model $g(X, \theta_0) = g_0(X)$, once a consistent estimator $\hat \theta_n$ for $\theta_0$ is obtained, we can estimate $g(x, \hat \theta_n) \approx g_0(x)$ for any $x$.
 However, the correct parametric specification is usually unknown to us.
-Then, we consider estimating $g_0(\cdot)$ with its functional form fully unrestricted, except for some smoothness constraints.
+Thus, ideally, we would like to estimate $g_0(\cdot)$ with its functional form fully unrestricted.
 
 Note that if $X$ is a discrete random variable, the estimation of $g_0(X)$ is straightforward; split the data into subsamples according to the realized value of $X$, and compute the average of $Y$ for each subsample.
 Thus, hereinafter, we assume that $X$ is a continuous random variable.
@@ -3596,7 +3596,7 @@ For any given $x \in \mcl{X}$, we would like to develop a consistent estimator o
 There are two major approaches used in nonparametric regression: local regression and global regression.
 The local approach is to estimate $g_0(x)$ by fitting a simple model using only the observations in the neighborhood of $x$ (the evaluation point $x \in \mcl{X}$ does not have to be an observed data point).
 Since any local estimator only gives an estimate of $g_0(\cdot)$ at a specific point $x$, if one wants to recover the whole shape of $g_0(\cdot)$, it is necessary to repeat the estimation at different points many times.
-In contrast, the global approach considers a basis expansion of the function $g_0(x)\approx p(x)^\top \theta_0$ and estimates the whole functional form of $g_0(\cdot)$ at once.
+In contrast, the global approach considers a ``basis expansion'' of the function $g_0(x)\approx p(x)^\top \theta_0$ and estimates the whole functional form of $g_0(\cdot)$ at once.
 Here, $p(\cdot)$ is a vector of known basis functions of increasing dimension, and $\theta_0$ is the corresponding coefficient vector.
 This type of nonparametric regression is called \textbf{series regression\index{series regression}} estimator or \textbf{sieve method\index{sieve method}}.
 
@@ -3615,7 +3615,7 @@ Re-ordering the observations in the increasing order of $|X_i - x|$, so that $|X
 Clearly, to establish the consistency of the $k$NN estimator, $|X^{(k)} - x|$ must get closer to zero as $n$ increases.
 On the other hand, $k$ should increase to infinity to apply the law of large numbers to $\hat g^{knn}_n(x)$. 
 That is, there is a bias-variance trade-off in terms of the choice of $k$.
-Therefore, to meet these conditions simultaneously, we need to deliberately choose $k$ so that it grows to infinity but not too fast.
+Therefore, to meet these conditions simultaneously, we need to deliberately choose $k$ so that it grows to infinity but not too fast (e.g., $k \to \infty$ and $k/n \to 0$).
 
 \bigskip
 
@@ -3630,11 +3630,17 @@ Thus, it is possible to improve the estimator by assigning larger weights for th
 
 To this end, we introduce a general weighting function $K(\cdot)$, which is referred to as the \textbf{kernel function\index{kernel function}}.
 The kernel function is a continuous density function (i.e., $\int K(u)\text{d}u = 1$), and is assumed to be symmetric around zero.
-Some typical choices for the kernel function are: uniform kernel $K(u) = \frac{1}{2}\mbf{1}\{|u| \le 1\}$, Epanechnikov kernel $K(u) = \frac{3}{4}(1-u^2)\mbf{1}\{|u| \le 1\}$, and Gaussian kernel $K(u) = \frac{1}{\sqrt{2\pi}}\exp(-u^2/2)$; see Figure \ref{fig:kernels}.
+Some typical choices for the kernel function are: 
+\begin{itemize}
+	\item Uniform kernel $K(u) = \frac{1}{2}\mbf{1}\{|u| \le 1\}$
+	\item Epanechnikov kernel $K(u) = \frac{3}{4}(1-u^2)\mbf{1}\{|u| \le 1\}$
+	\item Gaussian kernel $K(u) = \frac{1}{\sqrt{2\pi}}\exp(-u^2/2)$
+\end{itemize}
+See Figure \ref{fig:kernels} for their shapes.
 
 \begin{figure}[h!]
 	\begin{center}
-		\includegraphics[width = 18cm]{kernels.png}
+		\includegraphics[width = 15cm]{kernels.png}
 		\caption{Kernel density functions}\label{fig:kernels}
 	\end{center}
 \end{figure}
@@ -3680,13 +3686,18 @@ Observe that
 \end{align*}
 Recalling that $\int K(u)\text{d}u = 1$ and assuming that $\E[ Y \mid X = \cdot]$ and $f_X (\cdot)$ are bounded continuous functions, we have 
 \begin{align*}
-	\lim_{h \to 0} \E\left[\frac{1}{nh} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i \right] = \E[ Y \mid X = x] f_X (x)
+	\E\left[\frac{1}{nh} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i \right] = \E[ Y \mid X = x] f_X (x) + o(1)
 \end{align*}
-by the bounded convergence theorem.
+as $h \to 0$ by the bounded convergence theorem.
 By similar but slightly more tedious calculations, we can show that the variance of $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i$ is of order $O((nh)^{-1})$.
 Thus, if $h \to 0$ and $nh \to \infty$ as $n \to \infty$, by Chebyshev's inequality, we get $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) Y_i \overset{p}{\to} \E[ Y \mid X = x] f_X (x)$.
 
-By the same argument as above, we can prove that the denominator of $\hat g^{const}_n(x)$, $(nh)^{-1} \sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right)$, converges to $f_X(x)$ in probability (this is the so-called \textbf{kernel density estimator\index{kernel density estimator}}) if $h \to 0$ and $nh \to \infty$ as $n \to \infty$.
+By the same argument as above, we can prove that the denominator of $\hat g^{const}_n(x)$ converges to $f_X(x)$ in probability:
+\begin{align*}
+	\frac{1}{nh}\sum_{i = 1}^n K\left( \frac{X_i - x}{h}\right) = f_X(x) + o_P(1)
+\end{align*}
+as $h \to 0$ and $nh \to \infty$.
+This is the so-called \textbf{kernel density estimator\index{kernel density estimator}}.
 Combining these results together, the consistency of $\hat g^{const}_n(x)$ is proved.
 
 Note that, similar to the $k$NN regression estimator, there is a bias-variance trade-off for the choice of the bandwidth $h$.
@@ -3703,7 +3714,7 @@ For example, if one employs the same bandwidth $h$ for all $X_j$'s, the product 
 \begin{align*}
 	\mbf{K}\left(\frac{X_i - x}{h}\right) = \frac{1}{2^d}\mbf{1}\{|X_{i,1} - x_1| \le h\}\mbf{1}\{|X_{i,2} - x_2| \le h\} \times \cdots \times \mbf{1}\{|X_{i,d} - x_d| \le h\}.
 \end{align*}
-This means that only the observations contained in the $d$-dimensional cube centered at $x$ with each side length of $2h$ can be used for estimating $g_0(x)$.
+This means that only the observations contained in the $d$-dimensional ``hyper cube'' centered at $x$ with each side length of $2h$ can be used for estimating $g_0(x)$.
 If the data are uniformly distributed on $\mcl{X}$, the size of the subsample in each cube is of order $O(nh^d)$.
 Therefore, since $h$ is assumed to tend to zero, the size of the effective sample decreases ``exponentially'' (not proportionally) with respect to $d$.
 Thus, nonparametric estimation of $g_0(x)$ becomes less and less feasible quickly and inefficient as $d$ grows.
@@ -3728,7 +3739,7 @@ assuming that $g_0(\cdot)$ is sufficiently many times differentiable, at each $x
 	g_0(x) = g_0(0) + g_0^{(1)}(0)x + \frac{g_0^{(2)}(0)}{2!}x^2 + \cdots + \frac{g_0^{(k)}(0)}{k!}x^k + \cdots,
 \end{align*}
 where $g_0^{(k)}$ denotes the $k$-th order derivative of $g_0$.
-This suggests that if $g_0(\cdot)$ is sufficiently smooth, we can approximate $g_0(x)$ by $g_0(x) \approx p(x)^\top \theta_0$ with $p(x) = (1, x, x^2, \ldots, x^k)^\top$, the \textbf{power series} of order $k$, and $\theta_0 = (g_0(0), g_0^{(1)}(0), \ldots, g_0^{(k)}(0)/k!)^\top$.
+This suggests that if $g_0(\cdot)$ is sufficiently smooth, we can approximate $g_0(x)$ by $g_0(x) \approx p(x)^\top \theta_0$ with $p(x) = (1, x, x^2, \ldots, x^k)^\top$, the \textbf{power series} of order $k$.
 
 A similar well-known result is the Weierstrass approximation theorem.
 The theorem states that for any continuous function on a closed interval $\mcl{X}$, the same power-series approximation holds in the sense that the approximation error $g_0(x) - p(x)^\top \theta_0$ can be made arbitrarily small for any $x \in \mcl{X}$ by choosing a sufficiently large polynomial order and an appropriate coefficient vector $\theta_0$. 
@@ -3755,7 +3766,24 @@ We can clearly observe that in both series expansions, more and more precise app
 \end{figure}
 
 As such, with suitable continuity conditions, a fairly large class of functions can be approximated by some series expansion.
-In addition to those introduced above, basis functions that are often adopted in applications include splines, wavelets, artificial neural networks, and so forth (see \cite{chen2007large} for their definitions and other examples).
+Including those introduced above, basis functions that are often adopted in applications are as follows:
+\begin{itemize}
+	\item Power series: $p(x) = (1, x, x^2, x^3, \ldots)$.
+	\item Fourier series: $p(x) = (1, \cos(\omega x), \sin(\omega x), \cos(\omega 2 x), \sin(\omega 2 x), \ldots)$
+	\item Cubic spline: 
+	\begin{align*}
+		p(x) = (1, x, x^2, x^3, \max\{(x - t_1)^3, 0\}, \max\{(x - t_2)^3, 0\},\ldots)
+	\end{align*}
+	where $t_1, t_2 \ldots$ are the predetermined ``knots'' (e.g., the empirical quantiled of $x$).
+	\item Artificial neural network:
+	\begin{align*}
+		p(x) = (1, \sigma(\gamma_{01} + x^\top\gamma_{11}), \sigma(\gamma_{02} + x^\top\gamma_{12}), \ldots)
+	\end{align*}
+	where $\sigma$ is a predetermined function (so-called \textbf{activation function}\index{activation function}), and $(\gamma_{01}, \gamma_{11}, \gamma_{02}, \gamma_{12}, \ldots)$ are parameters to be estimated.
+	\item B-spline, Wavelet, etc.
+\end{itemize}
+See \cite{chen2007large} for the mathematical properties of various basis functions and their applications.
+
 Now, let $\{p_1(x), p_2(x), \ldots \}$ be a sequence of $\mathbb{R}$-valued basis functions, and $p(x) = (p_1(x), \ldots , p_k(x))^\top$.
 We assume that for a sufficiently large $k$, there exists a $k \times 1$ vector $\theta_0$ such that the target function $g_0(\cdot)$ can be well-approximated by $p(\cdot)^\top\theta_0$ uniformly over $\mcl{X}$ in the following sense:
 \begin{align*}
@@ -3772,7 +3800,7 @@ Using this series approximation, we can rewrite \eqref{eq:nonpara} as follows:
 	& = p(X)^\top\theta_0 + \eta
 \end{align*}
 where $\eta \equiv g_0(X) - p(X)^\top\theta_0 + \eps$.
-Thus, the nonparametric regression model can be transformed into a ``linear regression'' model with increasing dimension.
+Thus, the nonparametric regression model can be transformed into a ``linear regression'' model with increasing dimension (if the basis function has no additional estimation parameters in its definition).
 Indeed, we can estimate $\theta_0$ simply by running an OLS regression of $Y$ on $p(X)$:\footnote{
 	Here, we implicitly assume for simplicity that $\frac{1}{n}\sum_{i = 1}^n p(X_i)p(X_i)^\top$ is a nonsingular matrix.
 	However, noting that the dimension of this matrix grows to infinity along with $n$, it is generally possible that the matrix is not invertible for finite $n$.
@@ -3827,7 +3855,7 @@ This is the series-regression version of the curse of dimensionality.
 
 \subsection{An empirical illustration: estimation of Engel curve}
 
-As an empirical illustration, we nonparametrically estimate the Engel curve for food consumption using the local constant kernel regression and the series regression based on B-splines; a B-spline function is a piecewise polynomial defined by a set of ``cut points'', called \textbf{knots}.
+As an empirical illustration, we nonparametrically estimate the Engel curve for food consumption using the local constant kernel regression and the series regression based on B-splines; a B-spline function is a piecewise polynomial defined by a set of knot points.
 
 Install \textbf{np} and \textbf{splines} packages, and load them.
 The data used here is \texttt{Engel95}, a random sample taken from the U.K. Family Expenditure Survey 1995, which can be imported from the \textbf{np} package.
@@ -3888,7 +3916,7 @@ As we have seen, while nonparametric regression is theoretically attractive, it 
 On the other hand, parametric regression models are easier to implement and interpret, but we have to account for the risk of model misspecification.
 Then, the idea of \textbf{semiparametric regression}\index{semiparametric regression} is to decompose $g_0(X)$ into a parametric part and a nonparametric part, so that we can retain certain nonparametric flexibility without losing computational feasiblity.
 Depending on which part of the model is unspecified and which part is parametrically specified, we can consider a variety of semiparametric models.
-Among them, the followings are those most commonly used in applications.
+Among them, the followings are those most popularly used in applications.
 
 \subsection{Partially linear models}
 
@@ -3899,11 +3927,12 @@ Among them, the followings are those most commonly used in applications.
 This model has been used in many empirical applications in a variety of contexts.
 For example, suppose that we would like to estimate how house prices are determined in the market, where $Y$ is the house price and $X_2$ is a vector of house attributes such as area size and number of rooms.
 Not only such physical attributes, but also spatial factors (such as noise level, air quality, and green) should be important factors in determining the price of a house.
-Note that although it is not practical to enumerate all of these spatial variables, their levels are automatically determined once the location of the house (i.e., longitude and latitude) is given.
+Note that it is not practical to enumerate all of these spatial variables, but their levels are automatically determined once the location of the house (i.e., longitude and latitude) is given.
 That is, setting $X_1 = (\text{longitude}, \text{latitude})$, we can control for all location-specific spatial factors at once by including $\varphi_0(X_1)$ in the regression model.
 
-Note that since the ``location'' of $\varphi_0(X_1)$ is not identifiable,\footnote{When an intercept term is included, we cannot distinguish $\varphi_0(X_1)$ and $\varphi(X_1) + c$ for any constant $c$ by setting $\varphi(X_1) = \varphi_0(X_1) - c$.} an intercept term should not be included in $X_2$ for identification.
-
+Note that $\varphi_0(X_1)$ is not separately identifiable from the intercept.
+That is, when an intercept term is included, we cannot distinguish $Y = \alpha_0 + \varphi_0(X_1) + X_2^\top \beta_0 + \eps$ and $Y = \alpha_0' + \varphi_0'(X_1) + X_2^\top \beta_0 + \eps$, where, for any constant $c$, $\alpha_0' = \alpha_0 + c$, and $\varphi_0'(X_1) = \varphi_0(X_1) - c$.
+Thus, the intercept term cannot be included in the model.
 
 Both kernel regression and series regression approaches can be used to estimate \eqref{eq:plm}.
 Assuming that $\E[\eps \mid X_1] = 0$, taking the conditional expectation of both sides, we have $\E[Y \mid X_1] = \varphi_0(X_1) + \E[ X_2 \mid X_1]^\top\beta_0$.
@@ -3920,9 +3949,7 @@ for $A = Y$ and $X_2$, and
 	\hat \beta_n
 	& = \left(\frac{1}{n}\sum_{i = 1}^n \{X_{2,i} - \hat{\E}_n[X_{2,i} \mid X_{i,1} ]\}\{X_{2,i} - \hat{\E}_n[X_{2,i} \mid X_{i,1} ]\}^\top\right)^{-1}\frac{1}{n}\sum_{i = 1}^n \{X_{2,i} - \hat{\E}_n[X_{2,i} \mid X_{i,1} ]\}\{Y_i - \hat{\E}_n[Y_i \mid X_{i,1} ]\}
 \end{align*}
-Once the estimator $\hat \beta_n$ is obtained, we can estimate $\varphi_0(\cdot)$ by running a nonparametric kernel regression of $Y - X_2^\top\hat \beta_n$ on $X_1$, as in Subsection \ref{subsec:kernel}.\footnote{
-	For the theoretical properties of this estimation procedure, see for example \cite{robinson1988root}.
-	}
+Once the estimator $\hat \beta_n$ is obtained, we can estimate $\varphi_0(\cdot)$ by running a nonparametric kernel regression of $Y - X_2^\top\hat \beta_n$ on $X_1$, as in Subsection \ref{subsec:kernel}.
 
 In the case of series regression, we can estimate all parameters in \eqref{eq:plm} in one step.
 For a vector of basis functions $p(\cdot)$, we assume that $\varphi_0(x_1)$ can be well approximated by $p(x_1)^\top \theta_0$ for any $x_1$ in the support.
@@ -3937,7 +3964,7 @@ Then, simply running an OLS regression of $Y$ on $(p(X_1), X_2)$ yields a consis
 
 \subsection{Functional coefficient models}
 
-Partial linear models can be viewed as models that have a ``functional intercept'' term.
+Partial linear models can be viewed as the models that have a ``functional intercept'' term.
 Then, as a generalization of partially linear models, we can consider a model in which, not only the intercept, but all coefficients are functional.
 Such a model is called the \textbf{functional coefficient model}\index{functional coefficient model}; namely, 
 \begin{align}\label{eq:fcm}
@@ -3946,7 +3973,7 @@ Such a model is called the \textbf{functional coefficient model}\index{functiona
 where $\beta_0 = (\beta_{0,1}, \ldots, \beta_{0,d_1})^\top$ ($d_1 \equiv \text{dim}(X_1)$) is a vector of ``functional coefficients''.
 $X_1$ may include an intercept term.
 In the field of spatial statistics, the functional coefficient model with $X_2 = (\text{longitude}, \text{latitude})$ is specifically referred to as the \textbf{geographically weighted regression (GWR) model}\index{geographically weighted regression model}.
-The GWR model can be used to investigate how the marginal impacts of $X_1$ vary across different locations.
+The GWR model can be used to investigate how the marginal impacts of $X_1$ vary across space.
 
 Suppose that we would like to estimate $\beta_0(x_2)$ for a given $x_2$.
 Assuming that $\E[\eps \mid X_1, X_2] = 0$, we have $\E[X_1 \eps \mid X_2] = 0$ by LIE.
@@ -3967,7 +3994,7 @@ Then, letting $\Theta_0 \equiv (\theta_{0,1}^\top, \ldots, \theta_{0,d_1}^\top)^
 	& = P(X_1, X_2)^\top\Theta_0 + \eta
 \end{align*}
 where $\eta \equiv \sum_{j = 1}^{d_1}X_{1,j}(\beta_{0,j}(X_2) - p(X_2)^\top \theta_{0,j}) + \eps$.
-Then, a consistent estimator of $\Theta_0$ can be obtained by an OLS regression of $Y$ on $P(X_1, X_2)$.
+Then, a consistent estimator of $\Theta_0$ can be obtained by performing an OLS regression of $Y$ on $P(X_1, X_2)$.
 
 \subsection{Generalized additive models}
 
@@ -3983,7 +4010,7 @@ Unlike the above semiparametric models, estimating GAM \eqref{eq:gam} with the k
 Since kernel regression is a localization-based approach, when there are multiple target functions, each of which depends on a different variable, the application of kernel method is not convenient.
 
 In contrast, the series approximation method is still computationally very easy for estimating \eqref{eq:gam}.
-For each $\varphi_{0,j}(\cdot)$, we assume that there exists a vector of basis functions $p(\cdot)$ satisfying $\varphi_{0,j}(x_j) \approx p(x_j)^\top \theta_{0,j}$ for some $\theta_{0,j}$, for any $x_j$ in the support.
+For each $\varphi_{0,j}(\cdot)$, we assume that there exists a vector of basis functions $p(\cdot)$ satisfying $\varphi_{0,j}(x_j) \approx p(x_j)^\top \theta_{0,j}$ for some $\theta_{0,j}$.
 Then, model \eqref{eq:gam} can be reduced to a multiple linear regression model with $kd$ explanatory variables $(p(x_1), p(x_2), \ldots, p(x_d))$.
 One thing that needs to be modified from the standard series regression is that some location normalization is needed for the choice of basis functions.
 For example, one may include a constant term in $p(X_1)$ to adjust the location of $\varphi_{0,1}(X_1)$ only, while fixing the locations of the other $\varphi_{0,j}(X_j)$'s at a pre-specified point (e.g., $\int_{\text{supp}(X_j)}\varphi_{0,j}(x_j) \text{d}x_j = 0$).
@@ -4041,7 +4068,7 @@ Hence, noting that the maximum eigenvalue of an idempotent matrix is at most one
 	& = O_P(1) \cdot \frac{1}{n}\sum_{i=1}^n |v_i|^2 \le O_P(k^{-2\alpha}),
 \end{align*}
 where in the last inequality, we have used $\max_i |v_i| = O(k^{-\alpha})$.
-Hence, $\left\|\left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top \mbf{V} /n \right\| = O(k^{-\alpha})$.
+Hence, $\left\|\left[\mbf{P}_n^\top \mbf{P}_n /n \right]^{-1}\mbf{P}_n^\top \mbf{V} /n \right\| = O_P(k^{-\alpha})$.
 
 Next, note that $\E[\mcl{E}_n\mcl{E}_n^\top \mid \{X_j\}_{j=1}^n]$ is a diagonal matrix whose typical element is $\E[\eps_i^2 \mid X_i]$ under the IID assumption.
 In addition, assume that $\E[\eps_i^2 \mid X_i]$ is bounded by some large constant $C$, uniformly in $i$.
